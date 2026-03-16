@@ -1,0 +1,24 @@
+.git
+.gitignore
+.env
+.env.*
+*.log
+__pycache__
+*.pyc
+.mypy_cache
+.pytest_cache
+
+# Dev artifacts
+notebooks/
+flows/
+openshift/
+*.md
+LICENSE
+
+# Docker scripts (not needed inside image)
+Dockerfile
+.dockerignore
+docker_build.sh
+docker_run.sh
+docker_push.sh
+VERSION

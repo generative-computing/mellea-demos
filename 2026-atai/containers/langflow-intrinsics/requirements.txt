@@ -1,0 +1,30 @@
+# Core dependencies for intrinsic components
+httpx
+openai
+
+# Elasticsearch support
+elasticsearch>=8.0.0,<9.0.0
+
+# Data processing
+pyarrow
+numpy
+
+# Hugging Face Hub
+huggingface-hub
+
+# NLP support
+nltk~=3.9.1
+
+# Mellea and its dependencies
+mellea @ git+https://github.com/generative-computing/mellea.git@main
+outlines>=1.2.0  # Required by mellea for structured generation
+peft>=0.18.0     # Required by mellea for parameter-efficient fine-tuning
+xgrammar        # Required by outlines for grammar-based generation
+
+# Security: pin minimum versions for vulnerable transitive dependencies
+filelock>=3.20.1
+# pillow>=12.1.1    # CVE-2026-25990 - blocked by langflow -> docling requiring pillow<12.0.0
+torch>=2.10.0       # CVE-2026-24747 - weights_only unpickler RCE
+
+# PostgreSQL support
+psycopg2-binary
