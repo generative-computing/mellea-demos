@@ -26,7 +26,6 @@ from langflow.field_typing.range_spec import RangeSpec
 import httpx
 import json
 
-from mellea.formatters import granite as granite_common
 from openai import OpenAI
 
 # Global backend cache - stores initialized Mellea backends per model
@@ -365,6 +364,7 @@ class HallucinationDetection(Component):
 
     def _call_with_granite_rewriter(self) -> dict:
         try:
+            from mellea.formatters import granite as granite_common
             request_body = self._build_request()
 
             self.log(json.dumps(request_body, indent=2), name="vLLM/Ollama request")

@@ -26,7 +26,6 @@ from langflow.field_typing.range_spec import RangeSpec
 import httpx
 import json
 
-from mellea.formatters import granite as granite_common
 from openai import OpenAI
 
 
@@ -186,6 +185,7 @@ class QueryExpansion(Component):
 
     def _call_query_rewrite(self, request_body: dict) -> dict:
         """Call query_rewrite intrinsic."""
+        from mellea.formatters import granite as granite_common
         if self.model_backend in ["vLLM", "Ollama"]:
             intrinsics_repo_name = "ibm-granite/granite-lib-rag-r1.0"
             io_yaml_file = granite_common.intrinsics.obtain_io_yaml(

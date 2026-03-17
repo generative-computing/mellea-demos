@@ -23,7 +23,6 @@ import json
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-from mellea.formatters import granite as granite_common
 from openai import OpenAI
 
 # Global model cache for LocalHF backend
@@ -349,6 +348,7 @@ class IntrinsicModel(Component):
     def _call_with_granite_rewriter(self) -> dict:
         """Call vLLM/Ollama with mellea input/output processing."""
         try:
+            from mellea.formatters import granite as granite_common
             request_body = self._build_request()
             self.log(json.dumps(request_body, indent=2), name="mellea rewriter request body")
 
