@@ -1,6 +1,6 @@
 # ATAI Demo
 
-A demo of IBM Granite intrinsic operations using Langflow. The platform runs advanced RAG (Retrieval-Augmented Generation) flows that compare prompt-based and intrinsic model approaches to query rewriting, answerability detection, and hallucination mitigation.
+A demo of IBM Granite Libraries + Mellea using Langflow.
 
 ## Prerequisites
 
