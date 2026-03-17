@@ -83,8 +83,6 @@ class IntrinsicModel(Component):
 
     ALL_INTRINSICS = [
         "answerability",
-        "answer_relevance_classifier",
-        "answer_relevance_rewriter",
         "citations",
         "context_relevance",
         "hallucination_detection",

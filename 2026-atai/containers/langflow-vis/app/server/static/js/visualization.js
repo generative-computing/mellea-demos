@@ -4106,10 +4106,6 @@ window.addEventListener('load', async function() {
                 if (cfg.langflow_api_key) {
                     localStorage.setItem('langflowApiKey', cfg.langflow_api_key);
                     savedKey = cfg.langflow_api_key;
-                    // Populate input fields so API calls pick up the key
-                    document.querySelectorAll('#langflowApiKey, #setupApiKey').forEach(el => {
-                        el.value = cfg.langflow_api_key;
-                    });
                 }
             }
         } catch (e) {

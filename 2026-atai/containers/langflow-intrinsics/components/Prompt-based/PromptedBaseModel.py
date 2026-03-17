@@ -1,8 +1,8 @@
 """
-Granite Base Model Component for Langflow
+Prompted Base Model Component for Langflow
 
-Calls the Granite base model via multiple backends (vLLM, Ollama, IntrinsicsAPI).
-Takes chat input and returns model-generated responses.
+Generate answers based on context and user questions using base models
+via multiple backends (vLLM, Ollama, IntrinsicsAPI).
 """
 
 from langflow.custom import Component
@@ -12,7 +12,7 @@ from langflow.io import (
     Output,
     DropdownInput,
     MessageInput,
-    HandleInput,
+    DataInput,
     DataFrameInput,
     SliderInput,
 )
@@ -20,12 +20,10 @@ from langflow.schema import Message, Data
 from langflow.field_typing.range_spec import RangeSpec
 import httpx
 import json
-import pandas as pd
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 from openai import OpenAI
-from mellea.formatters.granite.intrinsics.input import move_documents_to_message
 
 # Global model cache for LocalHF backend
 _localhf_model_cache = {}
@@ -38,11 +36,11 @@ _MODEL_NAME_MAPPING = {
 }
 
 
-class GraniteBaseModel(Component):
-    display_name = "Base Model Chat"
-    description = "Call Granite base models for text generation"
-    category = "llm"
-    icon = "sparkles"
+class PromptedBaseModel(Component):
+    display_name = "Prompted Base Model"
+    description = "Generate answers using retrieved context and base models via vLLM, Ollama, or IntrinsicsAPI"
+    category = "base_models"
+    icon = "message-circle"
 
     BACKEND_CONFIG = {
         "LocalHF": {
@@ -52,19 +50,19 @@ class GraniteBaseModel(Component):
             "url_editable": False,
         },
         "vLLM": {
-            "models": ["granite-4.0-micro", "granite-4.0-h-small", "gpt-oss-20b"],
+            "models": ["granite-4.0-micro"],
             "default_model": "granite-4.0-micro",
             "default_url": "http://localhost:8000",
             "url_editable": True,
         },
         "Ollama": {
-            "models": ["granite4:micro", "granite4:small-h", "gpt-oss:20b"],
+            "models": ["granite4:micro"],
             "default_model": "granite4:micro",
             "default_url": "http://localhost:11434",
             "url_editable": True,
         },
         "IntrinsicsAPI (mellea + RITS)": {
-            "models": ["granite-4.0-micro", "granite-4.0-h-small", "gpt-oss-20b"],
+            "models": ["granite-4.0-micro", "gpt-oss-20b"],
             "default_model": "granite-4.0-micro",
             "default_url": "https://intrinsics-api.intrinsics.vpc-int.res.ibm.com",
             "url_editable": False,
@@ -72,6 +70,17 @@ class GraniteBaseModel(Component):
     }
 
     CHAT_COMPLETIONS_ENDPOINT = "/v1/chat/completions"
+
+    # Default prompt template for RAG generation
+    GENERATION_PROMPT = (
+        "You are an assistant for question-answering tasks. "
+        "Use the following pieces of retrieved context to answer the question. "
+        "If you don't know the answer, just say that you don't know. "
+        "Keep the answer concise.\n\n"
+        "Context:\n{context}\n\n"
+        "Question: {question}\n\n"
+        "Answer:"
+    )
 
     inputs = [
         DropdownInput(
@@ -86,7 +95,7 @@ class GraniteBaseModel(Component):
             name="model_name",
             display_name="Model Name",
             info="Model name (options change based on backend)",
-            options=["granite-4.0-micro", "granite-4.0-h-small", "gpt-oss-20b"],
+            options=["granite-4.0-micro", "gpt-oss-20b"],
             value="granite-4.0-micro",
         ),
         StrInput(
@@ -112,11 +121,25 @@ class GraniteBaseModel(Component):
             range_spec=RangeSpec(min=0, max=2, step=0.01),
             advanced=True,
         ),
+        SliderInput(
+            name="max_tokens",
+            display_name="Max Tokens",
+            info="Maximum number of tokens to generate in the response",
+            value=512,
+            range_spec=RangeSpec(min=1, max=4096, step=1),
+            advanced=True,
+        ),
         MessageInput(
-            name="chat_input",
-            display_name="Chat Input",
-            info="User message to process",
-            required=False,
+            name="question",
+            display_name="Question",
+            info="User question to answer",
+            required=True,
+        ),
+        DataInput(
+            name="context",
+            display_name="Context",
+            info="Retrieved documents/context for answering",
+            required=True,
         ),
         DataFrameInput(
             name="message_history",
@@ -124,33 +147,27 @@ class GraniteBaseModel(Component):
             info="Previous conversation messages as a DataFrame with 'role' (user/assistant) and 'content' columns",
             required=False,
         ),
-        HandleInput(
-            name="documents",
-            display_name="Documents",
-            info="Documents to include in the request (accepts Data from vector stores)",
-            input_types=["Data", "Search Results"],
+        StrInput(
+            name="custom_prompt",
+            display_name="Custom Prompt Template (Optional)",
+            info="Override default prompt template. Use {context} and {question} placeholders.",
             required=False,
-            is_list=True,
+            advanced=True,
         ),
     ]
 
     outputs = [
         Output(
-            name="response",
-            display_name="Response",
-            method="get_response",
-        ),
-        Output(
-            name="full_response",
-            display_name="Full Response",
-            method="get_full_response",
+            name="answer",
+            display_name="Answer",
+            method="generate_answer",
         ),
     ]
 
-    def _extract_message_text(self, message: Message) -> str:
+    def _extract_message_text(self, message) -> str:
+        """Extract text content from a Message object or other input types"""
         if message is None:
             return ""
-        # Handle DataFrame case - should not happen but safety check
         import pandas as pd
         if isinstance(message, pd.DataFrame):
             return ""
@@ -158,107 +175,87 @@ class GraniteBaseModel(Component):
             return message.text
         if hasattr(message, 'content'):
             return message.content
+        if isinstance(message, str):
+            return message
         return str(message)
 
-    def _build_chat_messages(self) -> list:
+    def _extract_context(self) -> str:
+        """Extract and format context from documents"""
+        context_parts = []
+
+        if hasattr(self, 'context') and self.context:
+            if isinstance(self.context, Data):
+                data_dict = self.context.data if hasattr(self.context, 'data') else self.context
+                if isinstance(data_dict, dict):
+                    documents = data_dict.get("documents", [])
+                    if documents and isinstance(documents, list):
+                        for doc in documents:
+                            if isinstance(doc, dict):
+                                text = doc.get("text") or doc.get("content") or doc.get("page_content") or str(doc)
+                            else:
+                                text = str(doc)
+                            context_parts.append(text)
+            elif isinstance(self.context, str):
+                context_parts.append(self.context)
+            elif isinstance(self.context, list):
+                for doc in self.context:
+                    if isinstance(doc, dict):
+                        text = doc.get("text") or doc.get("content") or doc.get("page_content") or str(doc)
+                    else:
+                        text = str(doc)
+                    context_parts.append(text)
+            else:
+                context_parts.append(str(self.context))
+
+        return "\n\n".join(context_parts) if context_parts else "No context provided."
+
+    def _build_chat_messages(self, prompt: str) -> list:
+        """Build chat messages list including history and the RAG prompt"""
         messages = []
-        # Check if message_history exists - handle both pandas and Langflow DataFrames
+
+        # Add message history from DataFrame
         if hasattr(self, 'message_history'):
-            # Don't use isinstance check or boolean evaluation as it could be lfx.schema.dataframe.DataFrame
             try:
                 df = self.message_history
-                # Try to iterate - if it's None or invalid, this will fail
                 for _, row in df.iterrows():
                     sender = row.get("sender", "")
                     role = "user" if sender == "User" else "assistant"
                     content = row.get("text", "")
                     if content and str(content).strip():
                         messages.append({"role": role, "content": str(content)})
-            except (TypeError, AttributeError, ValueError) as e:
-                # None, invalid type, or DataFrame boolean evaluation error - skip silently
+            except (TypeError, AttributeError, ValueError):
                 pass
             except Exception as e:
                 self.log(f"Error processing message_history: {e}", name="message_history warning")
-        # Check if chat_input exists
-        if hasattr(self, 'chat_input'):
-            try:
-                user_message = self._extract_message_text(self.chat_input)
-                if user_message and user_message.strip():
-                    messages.append({"role": "user", "content": user_message})
-            except (TypeError, AttributeError, ValueError):
-                # None, invalid type, or DataFrame boolean evaluation error - skip silently
-                pass
+
+        # Add the RAG prompt as the current user message
+        messages.append({"role": "user", "content": prompt})
 
         return messages
 
-    def _build_request(self) -> dict:
-        messages = self._build_chat_messages()
-        if not messages:
-            raise ValueError("No messages to send")
+    def _build_rag_prompt(self) -> str:
+        """Build the RAG prompt string with context and question"""
+        question_text = self._extract_message_text(self.question)
+        context_text = self._extract_context()
+
+        prompt_template = (
+            self.custom_prompt
+            if hasattr(self, 'custom_prompt') and self.custom_prompt
+            else self.GENERATION_PROMPT
+        )
+
+        return prompt_template.format(context=context_text, question=question_text)
+
+    def _build_request(self, messages: list) -> dict:
         request_body = {
             "messages": messages,
             "model": self.model_name,
         }
-        # Add temperature if provided
         if hasattr(self, 'temperature') and self.temperature is not None:
             request_body["temperature"] = self.temperature
-        document_texts = self._extract_documents()
-        if document_texts:
-            if "extra_body" not in request_body:
-                request_body["extra_body"] = {}
-            request_body["extra_body"]["documents"] = [{"text": t} for t in document_texts]
-            if self.model_backend != "IntrinsicsAPI (mellea + RITS)":
-                # For vLLM/Ollama/LocalHF, move documents into the message
-                # (IntrinsicsAPI handles this server-side for non-Granite models)
-                request_body = move_documents_to_message(request_body, how="string")
-        self.log(json.dumps(request_body, indent=2), name="request body")
+        if hasattr(self, 'max_tokens') and self.max_tokens is not None:
+            request_body["max_tokens"] = int(self.max_tokens)
         return request_body
-
-    def _extract_documents(self) -> list:
-        """Extract document texts from the documents input.
-
-        Supports:
-        - list[Data] from vector store search results (each Data has text/page_content)
-        - Single Data with data["documents"] list
-        - dict with "documents" key
-        """
-        document_texts = []
-        if not hasattr(self, 'documents') or not self.documents:
-            return []
-
-        docs_input = self.documents
-        if not isinstance(docs_input, list):
-            docs_input = [docs_input]
-
-        for item in docs_input:
-            if isinstance(item, Data):
-                if hasattr(item, 'text') and item.text:
-                    document_texts.append(item.text)
-                elif hasattr(item, 'data') and isinstance(item.data, dict):
-                    nested = item.data.get("documents")
-                    if nested and isinstance(nested, list):
-                        for doc in nested:
-                            if isinstance(doc, dict):
-                                text = doc.get("text") or doc.get("content") or doc.get("page_content") or str(doc)
-                            else:
-                                text = str(doc)
-                            document_texts.append(text)
-            elif isinstance(item, dict):
-                nested = item.get("documents")
-                if nested and isinstance(nested, list):
-                    for doc in nested:
-                        if isinstance(doc, dict):
-                            text = doc.get("text") or doc.get("content") or doc.get("page_content") or str(doc)
-                        else:
-                            text = str(doc)
-                        document_texts.append(text)
-                else:
-                    text = item.get("text") or item.get("content") or item.get("page_content") or str(item)
-                    document_texts.append(text)
-            else:
-                document_texts.append(str(item))
-
-        return document_texts
 
     def _get_api_url(self) -> str:
         if self.model_backend == "IntrinsicsAPI (mellea + RITS)":
@@ -267,19 +264,18 @@ class GraniteBaseModel(Component):
             base_url = self.url.rstrip('/')
             return f"{base_url}{self.CHAT_COMPLETIONS_ENDPOINT}"
 
-    def _call_api(self) -> dict:
+    def _call_api(self, messages: list) -> dict:
         if self.model_backend == "LocalHF":
-            return self._call_with_localhf()
+            return self._call_with_localhf(messages)
         if not self.url or not self.url.strip():
             raise ValueError("API URL is required")
         if self.model_backend in ["vLLM", "Ollama"]:
-            return self._call_openai()
+            return self._call_openai(messages)
         else:
-            return self._call_intrinsics_api()
+            return self._call_intrinsics_api(messages)
 
-    def _call_with_localhf(self) -> dict:
+    def _call_with_localhf(self, messages: list) -> dict:
         """Call local HuggingFace model directly using transformers."""
-        messages = self._build_chat_messages()
         if not messages:
             raise ValueError("No messages to send")
 
@@ -301,10 +297,11 @@ class GraniteBaseModel(Component):
         input_length = inputs["input_ids"].shape[1]
 
         temperature = self.temperature if hasattr(self, "temperature") and self.temperature is not None else 0.0
+        max_tokens = int(self.max_tokens) if hasattr(self, "max_tokens") and self.max_tokens is not None else 512
         with torch.no_grad():
             outputs = model.generate(
                 **inputs,
-                max_new_tokens=512,
+                max_new_tokens=max_tokens,
                 temperature=temperature,
                 do_sample=temperature > 0,
                 pad_token_id=tokenizer.pad_token_id,
@@ -320,11 +317,12 @@ class GraniteBaseModel(Component):
             "backend": "LocalHF",
         }
 
-    def _call_openai(self) -> dict:
+    def _call_openai(self, messages: list) -> dict:
         try:
-            request_body = self._build_request()
-
+            request_body = self._build_request(messages)
             self.log(json.dumps(request_body, indent=2), name="vLLM/Ollama request")
+            if self.model_backend == "Ollama":
+                print(f"[Ollama request]\n{json.dumps(request_body, indent=2)}")
             api_url = self._get_api_url()
             client = OpenAI(
                 base_url=api_url.replace("/chat/completions", ""),
@@ -333,20 +331,20 @@ class GraniteBaseModel(Component):
             completion = client.chat.completions.create(**request_body)
             response_data = json.loads(completion.model_dump_json())
             self.log(json.dumps(response_data, indent=2), name="vLLM/Ollama response")
+            if self.model_backend == "Ollama":
+                print(f"[Ollama response]\n{json.dumps(response_data, indent=2)}")
             return response_data
         except Exception as e:
             raise ValueError(f"vLLM/Ollama call failed: {e}")
 
-    def _call_intrinsics_api(self) -> dict:
-        request_body = self._build_request()
-
+    def _call_intrinsics_api(self, messages: list) -> dict:
+        request_body = self._build_request(messages)
         self.log(json.dumps(request_body, indent=2), name="Intrinsics API request")
         api_url = self._get_api_url()
         headers = {"Content-Type": "application/json"}
         if self.model_backend == "IntrinsicsAPI (mellea + RITS)":
             if self.api_key and self.api_key.strip():
                 headers["RITS_API_KEY"] = self.api_key
-        self._last_request = request_body
         try:
             with httpx.Client() as client:
                 response = client.post(
@@ -357,7 +355,7 @@ class GraniteBaseModel(Component):
             error_detail = e.response.text
             try:
                 error_detail = e.response.json()
-            except:
+            except Exception:
                 pass
             raise ValueError(f"API error {e.response.status_code}: {error_detail}")
         except httpx.ConnectError:
@@ -374,7 +372,6 @@ class GraniteBaseModel(Component):
         return response_data
 
     def _extract_content_from_response(self, response_data: dict) -> str:
-        """Extract text content from API response (full response already printed in _call_* methods)"""
         if "choices" in response_data and response_data["choices"]:
             choice = response_data["choices"][0]
             if "message" in choice:
@@ -404,11 +401,34 @@ class GraniteBaseModel(Component):
                     build_config["api_key"]["show"] = True
         return build_config
 
-    def get_response(self) -> Message:
-        response_data = self._call_api()
-        content = self._extract_content_from_response(response_data)
-        return Message(text=content)
+    def generate_answer(self) -> Message:
+        """Build the RAG prompt and call the model via the selected backend"""
+        if not hasattr(self, 'question') or self.question is None:
+            return Message(text="")
+        if not hasattr(self, 'context') or self.context is None:
+            return Message(text="")
 
-    def get_full_response(self) -> str:
-        response_data = self._call_api()
-        return json.dumps(response_data, indent=2)
+        try:
+            question_text = self._extract_message_text(self.question)
+            if not question_text or not question_text.strip():
+                return Message(text="")
+        except Exception:
+            return Message(text="")
+
+        rag_prompt = self._build_rag_prompt()
+
+        print("\n" + "=" * 80)
+        print("GENERATION PROMPT:")
+        print(rag_prompt)
+        print("=" * 80)
+
+        messages = self._build_chat_messages(rag_prompt)
+        response_data = self._call_api(messages)
+        answer = self._extract_content_from_response(response_data)
+
+        print("=" * 80)
+        print("GENERATED ANSWER:")
+        print(answer)
+        print("=" * 80 + "\n")
+
+        return Message(text=answer)

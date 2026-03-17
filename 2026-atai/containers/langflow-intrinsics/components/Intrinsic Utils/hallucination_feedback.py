@@ -131,17 +131,39 @@ class HallucinationFeedback(Component):
             name="extracted text",
         )
 
-        # Add faithfulness_label to each hallucination entry based on threshold theta=0.6
-        theta = 0.6
+        
         labeled_hals = raw_hals
         all_unfaithful = False
+
+        inference_signals = [
+            "does not explicitly state",
+            "does not explicitly mention",
+            "not explicitly state",
+            "not explicitly mention",
+            "is not explicitly",
+            "reasonable to infer",
+            "based on general knowledge",
+            "general knowledge",
+            "common knowledge",
+            "not directly supported",
+        ]
+
+        def _label_from_explanation(explanation: str) -> str:
+            exp_lower = explanation.lower()
+            if any(sig in exp_lower for sig in inference_signals):
+                return "unfaithful"
+            return "faithful"
+
         try:
             import json
             hals_list = json.loads(raw_hals)
             for item in hals_list:
                 score = item.get("faithfulness_likelihood")
-                if score is not None:
-                    item["faithfulness_label"] = "faithful" if score >= theta else "unfaithful"
+                if score is not None and score >= 0.9:
+                    item["faithfulness_label"] = "faithful"
+                else:
+                    explanation = item.get("explanation", "")
+                    item["faithfulness_label"] = _label_from_explanation(explanation)
             # Reorder keys so faithfulness_label appears immediately after response_text
             reordered = []
             for item in hals_list:
@@ -154,19 +176,35 @@ class HallucinationFeedback(Component):
                         new_item["faithfulness_label"] = item["faithfulness_label"]
                 reordered.append(new_item)
             hals_list = reordered
-            labeled_hals = json.dumps(hals_list)
             labeled_items = [item for item in hals_list if item.get("faithfulness_label") is not None]
             all_unfaithful = bool(labeled_items) and all(
                 item["faithfulness_label"] == "unfaithful" for item in labeled_items
             )
+            # Only pass faithful claims to the LLM — unfaithful response_text must not be visible
+            faithful_only = [item for item in labeled_items if item["faithfulness_label"] == "faithful"]
+            labeled_hals = json.dumps(faithful_only)
         except Exception:
             pass
 
-        all_unfaithful_clause = " If all claims are unfaithful, respond only with \"I don't know the answer to the question.\"" if all_unfaithful else ""
+        all_unfaithful_clause = " Since all claims lack direct document support, respond only with \"I don't know the answer to the question.\"" if all_unfaithful else ""
 
-        feedback_instruction = f"""Based on the below feedback that identifies hallucinated claims in the last assistant response, revise the last assistant response to be fully faithful to the provided document while answering the last user's question coherently. For each claim, check its "faithfulness_label" field — remove claims labeled "unfaithful" and keep claims labeled "faithful". Do not add content not supported by the document. If after removing all unfaithful claims the remaining content does not directly answer the user's question, respond only with "I don't know the answer to the question." Do not provide any explanation or commentary about the document or the revision. Your output should be a direct, clean response to the user's question.{all_unfaithful_clause}
+        feedback_instruction = f"""Based on the hallucination analysis below, revise only the last assistant response to include only claims that are directly supported by the provided document.
+
+For each claim, examine its "faithfulness_likelihood" score and "explanation" field:
+- Always keep the claim if its "faithfulness_likelihood" score is 0.9 or above.
+- For claims below 0.9, keep the claim only if the explanation states the document directly supports or explicitly states the information.
+- Remove the claim if the explanation states the document does not explicitly state the information, or if the explanation indicates the claim is supported by reasonable inference rather than the document, or if the explanation states the claim is based on general factual knowledge or common knowledge about the world rather than information present in the document.
+You may rewrite or combine the kept claims into natural sentences, but do not introduce any new factual information not contained in the kept claims.
 
 {labeled_hals}
+
+Finally, examine each distinct part of only the last user question: {user_query}
+- Do not answer anything else besides last user question.
+- For any sub-question of the last-turn question that is not directly answered by the kept claims, address it naturally in the flow of the response by saying you don't know the answer to that specific part.
+- If after removing unsupported claims the remaining content does not directly answer the last-turn user's question, respond only with "I don't know the answer to the question."
+
+Write the full response as natural, flowing sentences. Do not repeat the question and follow the same writing style as the last agent response.  Do not provide any explanation or commentary about the document or the revision.{all_unfaithful_clause}
+
 """
 
         # Create DataFrame with three new messages
