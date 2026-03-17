@@ -80,9 +80,4 @@ The flow calls Ollama for inference using the Granite base model and intrinsic L
 ├── docker-compose.yml         # All service definitions
 ├── .env                       # Environment configuration
 ├── flows/                     # Langflow flow definitions (mounted read-only)
-├── containers/                # Custom Docker image source code
-│   ├── chromadb/              # ChromaDB with pre-computed embeddings
-│   ├── langflow-intrinsics/   # Langflow + custom intrinsic components
-│   └── langflow-vis/          # FastAPI trace visualization service
-└── granite-lib-rag-r1.0/     # LoRA adapters (cloned from Hugging Face)
 ```

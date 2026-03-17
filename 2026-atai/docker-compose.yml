@@ -181,7 +181,6 @@ services:
   # ---------------------------------------------------------------------------
   chromadb:
     image: quay.io/mellea/chromadb:latest
-    build: ./containers/chromadb
     pull_policy: if_not_present
     restart: always
     ports:
@@ -198,7 +197,6 @@ services:
   # ---------------------------------------------------------------------------
   langflow-intrinsics:
     image: quay.io/mellea/langflow-intrinsics:latest
-    build: ./containers/langflow-intrinsics
     pull_policy: if_not_present
     restart: always
     depends_on:
@@ -227,7 +225,6 @@ services:
   # ---------------------------------------------------------------------------
   langflow-vis:
     image: quay.io/mellea/langflow-vis:latest
-    build: ./containers/langflow-vis
     pull_policy: if_not_present
     restart: always
     depends_on:
