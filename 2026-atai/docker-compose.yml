@@ -220,27 +220,6 @@ services:
     volumes:
       - ./flows:/app/flows:ro
 
-  # ---------------------------------------------------------------------------
-  # Application — Langflow-Vis (trace visualization)
-  # ---------------------------------------------------------------------------
-  langflow-vis:
-    image: quay.io/mellea/langflow-vis:latest
-    pull_policy: if_not_present
-    restart: always
-    depends_on:
-      langfuse-web:
-        condition: service_started
-      langflow-intrinsics:
-        condition: service_started
-    ports:
-      - 8080:8080
-    environment:
-      LANGFUSE_BASE_URL: ${LANGFUSE_BASE_URL:-http://langfuse-web:3000}
-      LANGFUSE_PUBLIC_KEY: ${LANGFUSE_PUBLIC_KEY:-pk-lf-atai-demo}
-      LANGFUSE_SECRET_KEY: ${LANGFUSE_SECRET_KEY:-sk-lf-atai-demo}
-      LANGFLOW_BASE_URL: ${LANGFLOW_BASE_URL:-http://langflow-intrinsics:7860}
-      LANGFLOW_API_KEY: ${LANGFLOW_API_KEY:-}
-
 # =============================================================================
 # Volumes
 # =============================================================================
