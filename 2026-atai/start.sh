@@ -143,9 +143,6 @@ wait_for_service() {
 # ChromaDB (should be fast)
 wait_for_service "ChromaDB" "http://localhost:8100/api/v2/heartbeat" 30
 
-# Langfuse (needs DB migrations on first run)
-wait_for_service "Langfuse" "http://localhost:3000" 90
-
 # Langflow (needs migrations + component loading)
 wait_for_service "Langflow" "http://localhost:7860/health" 180
 

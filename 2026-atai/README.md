@@ -59,16 +59,11 @@ The start script verifies prerequisites, loads the LoRA adapters into Ollama, st
 
 The flow calls Ollama for inference using the Granite base model and intrinsic LoRA adapters, and retrieves context from ChromaDB (pre-loaded with embeddings).
 
-## Viewing Traces
-
-- **Langfuse**: http://localhost:3000 — full tracing platform (login: `demo@example.com` / `demodemo123`)
-
 ## Services
 
 | Service | URL | Description |
 |---------|-----|-------------|
 | Langflow | http://localhost:7860 | Flow design and execution UI |
-| Langfuse | http://localhost:3000 | Tracing and observability platform |
 | ChromaDB | http://localhost:8100 | Vector database with pre-computed embeddings |
 
 ## Project Structure
