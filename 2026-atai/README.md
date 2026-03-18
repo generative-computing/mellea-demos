@@ -61,7 +61,6 @@ The flow calls Ollama for inference using the Granite base model and intrinsic L
 
 ## Viewing Traces
 
-- **Visualization UI**: http://localhost:8080 — shows flow execution traces
 - **Langfuse**: http://localhost:3000 — full tracing platform (login: `demo@example.com` / `demodemo123`)
 
 ## Services
@@ -70,7 +69,6 @@ The flow calls Ollama for inference using the Granite base model and intrinsic L
 |---------|-----|-------------|
 | Langflow | http://localhost:7860 | Flow design and execution UI |
 | Langfuse | http://localhost:3000 | Tracing and observability platform |
-| Visualization | http://localhost:8080 | Flow execution trace visualization |
 | ChromaDB | http://localhost:8100 | Vector database with pre-computed embeddings |
 
 ## Project Structure

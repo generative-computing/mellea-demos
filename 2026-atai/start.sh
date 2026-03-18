@@ -3,7 +3,7 @@
 # ATAI Demo — One-Command Start
 # =============================================================================
 # Brings up the full ATAI demo stack:
-#   Langfuse + Langflow Intrinsics + Trace Visualization + ChromaDB
+#   Langfuse + Langflow Intrinsics + ChromaDB
 #
 # Prerequisites:
 #   - Docker + Docker Compose
@@ -110,10 +110,10 @@ ok "Flow files found"
 echo ""
 
 # =============================================================================
-# Step 4: Start Docker Compose (all services except langflow-vis)
+# Step 4: Start Docker Compose
 # =============================================================================
 info "Starting Docker Compose services..."
-docker compose up -d --scale langflow-vis=0
+docker compose up -d
 
 echo ""
 
@@ -152,60 +152,13 @@ wait_for_service "Langflow" "http://localhost:7860/health" 180
 echo ""
 
 # =============================================================================
-# Step 6: Provision Langflow API key for the visualization service
-# =============================================================================
-provision_langflow_api_key() {
-    local langflow_url="http://localhost:7860"
-
-    # Auto-login to get access token (works with LANGFLOW_AUTO_LOGIN=true)
-    local login_response
-    login_response=$(curl -sf "$langflow_url/api/v1/auto_login")
-
-    local token
-    token=$(echo "$login_response" \
-        | python3 -c "import json,sys; print(json.loads(sys.stdin.read())['access_token'])")
-
-    # Create API key
-    local key_response
-    key_response=$(curl -sf -X POST "$langflow_url/api/v1/api_key/" \
-        -H "Authorization: Bearer $token" \
-        -H "Content-Type: application/json" \
-        -d '{"name":"langflow-vis"}')
-
-    echo "$key_response" \
-        | python3 -c "import json,sys; print(json.loads(sys.stdin.read())['api_key'])"
-}
-
-if [ -z "${LANGFLOW_API_KEY:-}" ]; then
-    info "Provisioning Langflow API key..."
-    LANGFLOW_API_KEY=$(provision_langflow_api_key)
-    export LANGFLOW_API_KEY
-    ok "Langflow API key provisioned"
-else
-    ok "Using existing LANGFLOW_API_KEY from environment"
-fi
-
-echo ""
-
-# =============================================================================
-# Step 7: Start langflow-vis with the provisioned API key
-# =============================================================================
-info "Starting Langflow-Vis..."
-docker compose up -d langflow-vis
-
-wait_for_service "Langflow-Vis" "http://localhost:8080" 120
-
-echo ""
-
-# =============================================================================
-# Step 8: Print summary
+# Step 6: Print summary
 # =============================================================================
 echo -e "${GREEN}=============================================================================${NC}"
 echo -e "${GREEN} ATAI Demo is running!${NC}"
 echo -e "${GREEN}=============================================================================${NC}"
 echo ""
 echo -e "  ${BLUE}Langflow${NC}        http://localhost:7860"
-echo -e "  ${BLUE}Visualization${NC}   http://localhost:8080"
 echo ""
 echo -e "To stop all services: ${YELLOW}./stop.sh${NC}"
 echo -e "To stop and delete data: ${YELLOW}./stop.sh --clean${NC}"
