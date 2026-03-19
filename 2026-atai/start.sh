@@ -11,7 +11,9 @@
 #   - granite4:micro model pulled (ollama pull granite4:micro)
 #
 # Usage:
-#   ./start.sh
+#   ./start.sh <demo>
+#   ./start.sh clarification-clapnq   # General domain (ClapNQ) Query Clarification
+#   ./start.sh clarification-gov      # Government domain (DMV) Query Clarification
 # =============================================================================
 
 set -euo pipefail
@@ -30,6 +32,51 @@ info()  { echo -e "${BLUE}[INFO]${NC}  $*"; }
 ok()    { echo -e "${GREEN}[OK]${NC}    $*"; }
 warn()  { echo -e "${YELLOW}[WARN]${NC}  $*"; }
 error() { echo -e "${RED}[ERROR]${NC} $*"; }
+
+# =============================================================================
+# Parse arguments
+# =============================================================================
+DEMO="${1:-}"
+
+if [ -z "$DEMO" ]; then
+    echo "Usage: $0 <demo>"
+    echo ""
+    echo "Available demos:"
+    echo "  clarification-clapnq  - General domain (ClapNQ) Query Clarification"
+    echo "  clarification-gov     - Government domain (DMV) Query Clarification"
+    exit 1
+fi
+
+# Map demo name to source directory
+case "$DEMO" in
+    clarification-clapnq)
+        DEMO_SRC="flows/clarification_flows/demo-clapnq"
+        ;;
+    clarification-gov)
+        DEMO_SRC="flows/clarification_flows/demo-gov"
+        ;;
+    *)
+        error "Unknown demo: $DEMO"
+        echo "Available demos: clarification-clapnq, clarification-gov"
+        exit 1
+        ;;
+esac
+
+# Verify demo source exists
+if [ ! -d "$SCRIPT_DIR/$DEMO_SRC" ]; then
+    error "Demo source directory not found: $DEMO_SRC"
+    exit 1
+fi
+
+# Create temp directory and copy flows (using project dir for Docker compatibility on macOS)
+DEMO_FLOWS_DIR="$SCRIPT_DIR/.demo_flows"
+rm -rf "$DEMO_FLOWS_DIR"
+mkdir -p "$DEMO_FLOWS_DIR"
+cp "$SCRIPT_DIR/$DEMO_SRC"/*.json "$DEMO_FLOWS_DIR/"
+export DEMO_FLOWS_DIR
+
+ok "Loaded $DEMO demo flows to $DEMO_FLOWS_DIR"
+echo ""
 
 # =============================================================================
 # Step 1: Check prerequisites
@@ -101,11 +148,11 @@ echo ""
 # =============================================================================
 # Step 3: Verify flow files
 # =============================================================================
-if [ ! -d "$SCRIPT_DIR/flows" ] || ! ls "$SCRIPT_DIR/flows"/*.json &>/dev/null; then
-    error "No flow JSON files found in flows/"
+if ! ls "$DEMO_FLOWS_DIR"/*.json &>/dev/null; then
+    error "No flow JSON files found in $DEMO_FLOWS_DIR"
     exit 1
 fi
-ok "Flow files found"
+ok "Flow files verified: $(ls -1 "$DEMO_FLOWS_DIR"/*.json | wc -l | tr -d ' ') files"
 
 echo ""
 

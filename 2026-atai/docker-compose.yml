@@ -45,4 +45,4 @@ services:
       LANGFLOW_LOAD_FLOWS_PATH: /app/flows
       LANGFLOW_COMPONENTS_PATH: /app/components
     volumes:
-      - ./flows:/app/flows:ro
+      - ${DEMO_FLOWS_DIR:-./flows}:/app/flows:ro
