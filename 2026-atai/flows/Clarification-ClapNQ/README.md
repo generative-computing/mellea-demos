@@ -4,9 +4,9 @@
 
 This folder contains three Langflow flows configured for general domain documents (from ClapNQ), demonstrating different approaches to handling ambiguous queries in RAG:
 
-1. **Regular RAG with Intrinsics - ClapNQ.json**: RAG flow with intrinsics but without query clarification
-2. **Query Clarification (post-retriever) RAG - ClapNQ.json**: RAG flow enhanced with a trained Query Clarification intrinsic
-3. **RAG prompted Clarification - ClapNQ.json**: RAG flow using prompt-based clarification with a base model
+1. **RAG no Clarification - ClapNQ.json**: RAG flow with intrinsics but without query clarification
+2. **Query Clarification (Intrinsic) - ClapNQ.json**: RAG flow enhanced with a trained Query Clarification intrinsic
+3. **Query Clarification (Prompted) - ClapNQ.json**: RAG flow using prompt-based clarification with a base model
 
 ### Configuration
 

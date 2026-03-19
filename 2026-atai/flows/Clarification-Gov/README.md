@@ -4,8 +4,8 @@
 
 This folder contains two contrasting Langflow flows configured for government domain documents, with the goal of demonstrating the benefits of incorporating query clarification capabilities into RAG:
 
-1. **Regular RAG with Intrinsics - Gov.json**: RAG flow with intrinsics (including Citation) but without query clarification
-2. **Query Clarification (post-retriever) RAG - Gov.json**: RAG flow enhanced with the Query Clarification intrinsic
+1. **RAG no Clarification - Gov.json**: RAG flow with intrinsics (including Citation) but without query clarification
+2. **Query Clarification (Intrinsic) - Gov.json**: RAG flow enhanced with the Query Clarification intrinsic
 
 ### Configuration
 
