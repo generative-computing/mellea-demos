@@ -7,7 +7,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "ChatInput",
-            "id": "ChatInput-FiTD6",
+            "id": "ChatInput-HyQgc",
             "name": "message",
             "output_types": [
               "Message"
@@ -15,19 +15,19 @@
           },
           "targetHandle": {
             "fieldName": "chat_input",
-            "id": "QueryRewritePrompt-q5yHI",
+            "id": "QueryRewritePrompt-SVXwV",
             "inputTypes": [
               "Message"
             ],
             "type": "str"
           }
         },
-        "id": "reactflow__edge-ChatInput-FiTD6{œdataTypeœ:œChatInputœ,œidœ:œChatInput-FiTD6œ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-QueryRewritePrompt-q5yHI{œfieldNameœ:œchat_inputœ,œidœ:œQueryRewritePrompt-q5yHIœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-ChatInput-HyQgc{œdataTypeœ:œChatInputœ,œidœ:œChatInput-HyQgcœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-QueryRewritePrompt-SVXwV{œfieldNameœ:œchat_inputœ,œidœ:œQueryRewritePrompt-SVXwVœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
         "selected": false,
-        "source": "ChatInput-FiTD6",
-        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-FiTD6œ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "QueryRewritePrompt-q5yHI",
-        "targetHandle": "{œfieldNameœ:œchat_inputœ,œidœ:œQueryRewritePrompt-q5yHIœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+        "source": "ChatInput-HyQgc",
+        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-HyQgcœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "QueryRewritePrompt-SVXwV",
+        "targetHandle": "{œfieldNameœ:œchat_inputœ,œidœ:œQueryRewritePrompt-SVXwVœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
       },
       {
         "animated": false,
@@ -35,7 +35,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "ConditionalRouter",
-            "id": "ConditionalRouter-iTXDc",
+            "id": "ConditionalRouter-2ekWo",
             "name": "true_result",
             "output_types": [
               "Message"
@@ -43,19 +43,19 @@
           },
           "targetHandle": {
             "fieldName": "chat_input",
-            "id": "GraniteBaseModel-3x2SX",
+            "id": "GraniteBaseModel-QVPKa",
             "inputTypes": [
               "Message"
             ],
             "type": "str"
           }
         },
-        "id": "reactflow__edge-ConditionalRouter-iTXDc{œdataTypeœ:œConditionalRouterœ,œidœ:œConditionalRouter-iTXDcœ,œnameœ:œtrue_resultœ,œoutput_typesœ:[œMessageœ]}-GraniteBaseModel-3x2SX{œfieldNameœ:œchat_inputœ,œidœ:œGraniteBaseModel-3x2SXœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-ConditionalRouter-2ekWo{œdataTypeœ:œConditionalRouterœ,œidœ:œConditionalRouter-2ekWoœ,œnameœ:œtrue_resultœ,œoutput_typesœ:[œMessageœ]}-GraniteBaseModel-QVPKa{œfieldNameœ:œchat_inputœ,œidœ:œGraniteBaseModel-QVPKaœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
         "selected": false,
-        "source": "ConditionalRouter-iTXDc",
-        "sourceHandle": "{œdataTypeœ:œConditionalRouterœ,œidœ:œConditionalRouter-iTXDcœ,œnameœ:œtrue_resultœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "GraniteBaseModel-3x2SX",
-        "targetHandle": "{œfieldNameœ:œchat_inputœ,œidœ:œGraniteBaseModel-3x2SXœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+        "source": "ConditionalRouter-2ekWo",
+        "sourceHandle": "{œdataTypeœ:œConditionalRouterœ,œidœ:œConditionalRouter-2ekWoœ,œnameœ:œtrue_resultœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "GraniteBaseModel-QVPKa",
+        "targetHandle": "{œfieldNameœ:œchat_inputœ,œidœ:œGraniteBaseModel-QVPKaœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
       },
       {
         "animated": false,
@@ -63,7 +63,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "ChatInput",
-            "id": "ChatInput-FiTD6",
+            "id": "ChatInput-HyQgc",
             "name": "message",
             "output_types": [
               "Message"
@@ -71,19 +71,19 @@
           },
           "targetHandle": {
             "fieldName": "true_case_message",
-            "id": "ConditionalRouter-iTXDc",
+            "id": "ConditionalRouter-2ekWo",
             "inputTypes": [
               "Message"
             ],
             "type": "str"
           }
         },
-        "id": "reactflow__edge-ChatInput-FiTD6{œdataTypeœ:œChatInputœ,œidœ:œChatInput-FiTD6œ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-ConditionalRouter-iTXDc{œfieldNameœ:œtrue_case_messageœ,œidœ:œConditionalRouter-iTXDcœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-ChatInput-HyQgc{œdataTypeœ:œChatInputœ,œidœ:œChatInput-HyQgcœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-ConditionalRouter-2ekWo{œfieldNameœ:œtrue_case_messageœ,œidœ:œConditionalRouter-2ekWoœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
         "selected": false,
-        "source": "ChatInput-FiTD6",
-        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-FiTD6œ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "ConditionalRouter-iTXDc",
-        "targetHandle": "{œfieldNameœ:œtrue_case_messageœ,œidœ:œConditionalRouter-iTXDcœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+        "source": "ChatInput-HyQgc",
+        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-HyQgcœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "ConditionalRouter-2ekWo",
+        "targetHandle": "{œfieldNameœ:œtrue_case_messageœ,œidœ:œConditionalRouter-2ekWoœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
       },
       {
         "animated": false,
@@ -91,7 +91,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "GraniteBaseModel",
-            "id": "GraniteBaseModel-3x2SX",
+            "id": "GraniteBaseModel-QVPKa",
             "name": "response",
             "output_types": [
               "Message"
@@ -99,7 +99,7 @@
           },
           "targetHandle": {
             "fieldName": "input_value",
-            "id": "ChatOutput-uesu7",
+            "id": "ChatOutput-Xa8Ko",
             "inputTypes": [
               "Data",
               "DataFrame",
@@ -108,12 +108,12 @@
             "type": "other"
           }
         },
-        "id": "reactflow__edge-GraniteBaseModel-3x2SX{œdataTypeœ:œGraniteBaseModelœ,œidœ:œGraniteBaseModel-3x2SXœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}-ChatOutput-uesu7{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-uesu7œ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}",
+        "id": "reactflow__edge-GraniteBaseModel-QVPKa{œdataTypeœ:œGraniteBaseModelœ,œidœ:œGraniteBaseModel-QVPKaœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}-ChatOutput-Xa8Ko{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-Xa8Koœ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}",
         "selected": false,
-        "source": "GraniteBaseModel-3x2SX",
-        "sourceHandle": "{œdataTypeœ:œGraniteBaseModelœ,œidœ:œGraniteBaseModel-3x2SXœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "ChatOutput-uesu7",
-        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-uesu7œ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}"
+        "source": "GraniteBaseModel-QVPKa",
+        "sourceHandle": "{œdataTypeœ:œGraniteBaseModelœ,œidœ:œGraniteBaseModel-QVPKaœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "ChatOutput-Xa8Ko",
+        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-Xa8Koœ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}"
       },
       {
         "animated": false,
@@ -121,7 +121,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "ConditionalRouter",
-            "id": "ConditionalRouter-iTXDc",
+            "id": "ConditionalRouter-2ekWo",
             "name": "false_result",
             "output_types": [
               "Message"
@@ -129,7 +129,7 @@
           },
           "targetHandle": {
             "fieldName": "input_value",
-            "id": "ChatOutput-m9OLo",
+            "id": "ChatOutput-M7UbV",
             "inputTypes": [
               "Data",
               "DataFrame",
@@ -138,12 +138,12 @@
             "type": "other"
           }
         },
-        "id": "reactflow__edge-ConditionalRouter-iTXDc{œdataTypeœ:œConditionalRouterœ,œidœ:œConditionalRouter-iTXDcœ,œnameœ:œfalse_resultœ,œoutput_typesœ:[œMessageœ]}-ChatOutput-m9OLo{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-m9OLoœ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}",
+        "id": "reactflow__edge-ConditionalRouter-2ekWo{œdataTypeœ:œConditionalRouterœ,œidœ:œConditionalRouter-2ekWoœ,œnameœ:œfalse_resultœ,œoutput_typesœ:[œMessageœ]}-ChatOutput-M7UbV{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-M7UbVœ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}",
         "selected": false,
-        "source": "ConditionalRouter-iTXDc",
-        "sourceHandle": "{œdataTypeœ:œConditionalRouterœ,œidœ:œConditionalRouter-iTXDcœ,œnameœ:œfalse_resultœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "ChatOutput-m9OLo",
-        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-m9OLoœ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}"
+        "source": "ConditionalRouter-2ekWo",
+        "sourceHandle": "{œdataTypeœ:œConditionalRouterœ,œidœ:œConditionalRouter-2ekWoœ,œnameœ:œfalse_resultœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "ChatOutput-M7UbV",
+        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-M7UbVœ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}"
       },
       {
         "animated": false,
@@ -151,7 +151,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "Memory",
-            "id": "Memory-3SWIO",
+            "id": "Memory-A04yO",
             "name": "dataframe",
             "output_types": [
               "DataFrame"
@@ -159,19 +159,19 @@
           },
           "targetHandle": {
             "fieldName": "message_history",
-            "id": "QueryRewritePrompt-q5yHI",
+            "id": "QueryRewritePrompt-SVXwV",
             "inputTypes": [
               "DataFrame"
             ],
             "type": "other"
           }
         },
-        "id": "reactflow__edge-Memory-3SWIO{œdataTypeœ:œMemoryœ,œidœ:œMemory-3SWIOœ,œnameœ:œdataframeœ,œoutput_typesœ:[œDataFrameœ]}-QueryRewritePrompt-q5yHI{œfieldNameœ:œmessage_historyœ,œidœ:œQueryRewritePrompt-q5yHIœ,œinputTypesœ:[œDataFrameœ],œtypeœ:œotherœ}",
+        "id": "reactflow__edge-Memory-A04yO{œdataTypeœ:œMemoryœ,œidœ:œMemory-A04yOœ,œnameœ:œdataframeœ,œoutput_typesœ:[œDataFrameœ]}-QueryRewritePrompt-SVXwV{œfieldNameœ:œmessage_historyœ,œidœ:œQueryRewritePrompt-SVXwVœ,œinputTypesœ:[œDataFrameœ],œtypeœ:œotherœ}",
         "selected": false,
-        "source": "Memory-3SWIO",
-        "sourceHandle": "{œdataTypeœ:œMemoryœ,œidœ:œMemory-3SWIOœ,œnameœ:œdataframeœ,œoutput_typesœ:[œDataFrameœ]}",
-        "target": "QueryRewritePrompt-q5yHI",
-        "targetHandle": "{œfieldNameœ:œmessage_historyœ,œidœ:œQueryRewritePrompt-q5yHIœ,œinputTypesœ:[œDataFrameœ],œtypeœ:œotherœ}"
+        "source": "Memory-A04yO",
+        "sourceHandle": "{œdataTypeœ:œMemoryœ,œidœ:œMemory-A04yOœ,œnameœ:œdataframeœ,œoutput_typesœ:[œDataFrameœ]}",
+        "target": "QueryRewritePrompt-SVXwV",
+        "targetHandle": "{œfieldNameœ:œmessage_historyœ,œidœ:œQueryRewritePrompt-SVXwVœ,œinputTypesœ:[œDataFrameœ],œtypeœ:œotherœ}"
       },
       {
         "animated": false,
@@ -179,7 +179,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "Memory",
-            "id": "Memory-3SWIO",
+            "id": "Memory-A04yO",
             "name": "dataframe",
             "output_types": [
               "DataFrame"
@@ -187,19 +187,19 @@
           },
           "targetHandle": {
             "fieldName": "message_history",
-            "id": "GraniteBaseModel-3x2SX",
+            "id": "GraniteBaseModel-QVPKa",
             "inputTypes": [
               "DataFrame"
             ],
             "type": "other"
           }
         },
-        "id": "reactflow__edge-Memory-3SWIO{œdataTypeœ:œMemoryœ,œidœ:œMemory-3SWIOœ,œnameœ:œdataframeœ,œoutput_typesœ:[œDataFrameœ]}-GraniteBaseModel-3x2SX{œfieldNameœ:œmessage_historyœ,œidœ:œGraniteBaseModel-3x2SXœ,œinputTypesœ:[œDataFrameœ],œtypeœ:œotherœ}",
+        "id": "reactflow__edge-Memory-A04yO{œdataTypeœ:œMemoryœ,œidœ:œMemory-A04yOœ,œnameœ:œdataframeœ,œoutput_typesœ:[œDataFrameœ]}-GraniteBaseModel-QVPKa{œfieldNameœ:œmessage_historyœ,œidœ:œGraniteBaseModel-QVPKaœ,œinputTypesœ:[œDataFrameœ],œtypeœ:œotherœ}",
         "selected": false,
-        "source": "Memory-3SWIO",
-        "sourceHandle": "{œdataTypeœ:œMemoryœ,œidœ:œMemory-3SWIOœ,œnameœ:œdataframeœ,œoutput_typesœ:[œDataFrameœ]}",
-        "target": "GraniteBaseModel-3x2SX",
-        "targetHandle": "{œfieldNameœ:œmessage_historyœ,œidœ:œGraniteBaseModel-3x2SXœ,œinputTypesœ:[œDataFrameœ],œtypeœ:œotherœ}"
+        "source": "Memory-A04yO",
+        "sourceHandle": "{œdataTypeœ:œMemoryœ,œidœ:œMemory-A04yOœ,œnameœ:œdataframeœ,œoutput_typesœ:[œDataFrameœ]}",
+        "target": "GraniteBaseModel-QVPKa",
+        "targetHandle": "{œfieldNameœ:œmessage_historyœ,œidœ:œGraniteBaseModel-QVPKaœ,œinputTypesœ:[œDataFrameœ],œtypeœ:œotherœ}"
       },
       {
         "animated": false,
@@ -207,7 +207,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "ChatInput",
-            "id": "ChatInput-FiTD6",
+            "id": "ChatInput-HyQgc",
             "name": "message",
             "output_types": [
               "Message"
@@ -215,19 +215,19 @@
           },
           "targetHandle": {
             "fieldName": "chat_input",
-            "id": "GradeDocuments-jt8Oq",
+            "id": "GradeDocuments-a3kiw",
             "inputTypes": [
               "Message"
             ],
             "type": "str"
           }
         },
-        "id": "reactflow__edge-ChatInput-FiTD6{œdataTypeœ:œChatInputœ,œidœ:œChatInput-FiTD6œ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-GradeDocuments-jt8Oq{œfieldNameœ:œchat_inputœ,œidœ:œGradeDocuments-jt8Oqœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-ChatInput-HyQgc{œdataTypeœ:œChatInputœ,œidœ:œChatInput-HyQgcœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-GradeDocuments-a3kiw{œfieldNameœ:œchat_inputœ,œidœ:œGradeDocuments-a3kiwœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
         "selected": false,
-        "source": "ChatInput-FiTD6",
-        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-FiTD6œ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "GradeDocuments-jt8Oq",
-        "targetHandle": "{œfieldNameœ:œchat_inputœ,œidœ:œGradeDocuments-jt8Oqœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+        "source": "ChatInput-HyQgc",
+        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-HyQgcœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "GradeDocuments-a3kiw",
+        "targetHandle": "{œfieldNameœ:œchat_inputœ,œidœ:œGradeDocuments-a3kiwœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
       },
       {
         "animated": false,
@@ -235,7 +235,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "GradeDocuments",
-            "id": "GradeDocuments-jt8Oq",
+            "id": "GradeDocuments-a3kiw",
             "name": "response",
             "output_types": [
               "Message"
@@ -243,19 +243,19 @@
           },
           "targetHandle": {
             "fieldName": "input_text",
-            "id": "ConditionalRouter-iTXDc",
+            "id": "ConditionalRouter-2ekWo",
             "inputTypes": [
               "Message"
             ],
             "type": "str"
           }
         },
-        "id": "reactflow__edge-GradeDocuments-jt8Oq{œdataTypeœ:œGradeDocumentsœ,œidœ:œGradeDocuments-jt8Oqœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}-ConditionalRouter-iTXDc{œfieldNameœ:œinput_textœ,œidœ:œConditionalRouter-iTXDcœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-GradeDocuments-a3kiw{œdataTypeœ:œGradeDocumentsœ,œidœ:œGradeDocuments-a3kiwœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}-ConditionalRouter-2ekWo{œfieldNameœ:œinput_textœ,œidœ:œConditionalRouter-2ekWoœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
         "selected": false,
-        "source": "GradeDocuments-jt8Oq",
-        "sourceHandle": "{œdataTypeœ:œGradeDocumentsœ,œidœ:œGradeDocuments-jt8Oqœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "ConditionalRouter-iTXDc",
-        "targetHandle": "{œfieldNameœ:œinput_textœ,œidœ:œConditionalRouter-iTXDcœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+        "source": "GradeDocuments-a3kiw",
+        "sourceHandle": "{œdataTypeœ:œGradeDocumentsœ,œidœ:œGradeDocuments-a3kiwœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "ConditionalRouter-2ekWo",
+        "targetHandle": "{œfieldNameœ:œinput_textœ,œidœ:œConditionalRouter-2ekWoœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
       },
       {
         "animated": false,
@@ -263,7 +263,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "Memory",
-            "id": "Memory-3SWIO",
+            "id": "Memory-A04yO",
             "name": "dataframe",
             "output_types": [
               "DataFrame"
@@ -271,19 +271,19 @@
           },
           "targetHandle": {
             "fieldName": "message_history",
-            "id": "GradeDocuments-jt8Oq",
+            "id": "GradeDocuments-a3kiw",
             "inputTypes": [
               "DataFrame"
             ],
             "type": "other"
           }
         },
-        "id": "reactflow__edge-Memory-3SWIO{œdataTypeœ:œMemoryœ,œidœ:œMemory-3SWIOœ,œnameœ:œdataframeœ,œoutput_typesœ:[œDataFrameœ]}-GradeDocuments-jt8Oq{œfieldNameœ:œmessage_historyœ,œidœ:œGradeDocuments-jt8Oqœ,œinputTypesœ:[œDataFrameœ],œtypeœ:œotherœ}",
+        "id": "reactflow__edge-Memory-A04yO{œdataTypeœ:œMemoryœ,œidœ:œMemory-A04yOœ,œnameœ:œdataframeœ,œoutput_typesœ:[œDataFrameœ]}-GradeDocuments-a3kiw{œfieldNameœ:œmessage_historyœ,œidœ:œGradeDocuments-a3kiwœ,œinputTypesœ:[œDataFrameœ],œtypeœ:œotherœ}",
         "selected": false,
-        "source": "Memory-3SWIO",
-        "sourceHandle": "{œdataTypeœ:œMemoryœ,œidœ:œMemory-3SWIOœ,œnameœ:œdataframeœ,œoutput_typesœ:[œDataFrameœ]}",
-        "target": "GradeDocuments-jt8Oq",
-        "targetHandle": "{œfieldNameœ:œmessage_historyœ,œidœ:œGradeDocuments-jt8Oqœ,œinputTypesœ:[œDataFrameœ],œtypeœ:œotherœ}"
+        "source": "Memory-A04yO",
+        "sourceHandle": "{œdataTypeœ:œMemoryœ,œidœ:œMemory-A04yOœ,œnameœ:œdataframeœ,œoutput_typesœ:[œDataFrameœ]}",
+        "target": "GradeDocuments-a3kiw",
+        "targetHandle": "{œfieldNameœ:œmessage_historyœ,œidœ:œGradeDocuments-a3kiwœ,œinputTypesœ:[œDataFrameœ],œtypeœ:œotherœ}"
       },
       {
         "animated": false,
@@ -291,7 +291,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "LocalEmbeddingsComponent",
-            "id": "LocalEmbeddingsComponent-ce2x6",
+            "id": "LocalEmbeddingsComponent-0pcy8",
             "name": "embeddings",
             "output_types": [
               "Embeddings"
@@ -299,19 +299,19 @@
           },
           "targetHandle": {
             "fieldName": "embedding",
-            "id": "ChromaDBSearch-hffgO",
+            "id": "ChromaDBSearch-Jmk9c",
             "inputTypes": [
               "Embeddings"
             ],
             "type": "other"
           }
         },
-        "id": "reactflow__edge-LocalEmbeddingsComponent-ce2x6{œdataTypeœ:œLocalEmbeddingsComponentœ,œidœ:œLocalEmbeddingsComponent-ce2x6œ,œnameœ:œembeddingsœ,œoutput_typesœ:[œEmbeddingsœ]}-ChromaDBSearch-hffgO{œfieldNameœ:œembeddingœ,œidœ:œChromaDBSearch-hffgOœ,œinputTypesœ:[œEmbeddingsœ],œtypeœ:œotherœ}",
+        "id": "reactflow__edge-LocalEmbeddingsComponent-0pcy8{œdataTypeœ:œLocalEmbeddingsComponentœ,œidœ:œLocalEmbeddingsComponent-0pcy8œ,œnameœ:œembeddingsœ,œoutput_typesœ:[œEmbeddingsœ]}-ChromaDBSearch-Jmk9c{œfieldNameœ:œembeddingœ,œidœ:œChromaDBSearch-Jmk9cœ,œinputTypesœ:[œEmbeddingsœ],œtypeœ:œotherœ}",
         "selected": false,
-        "source": "LocalEmbeddingsComponent-ce2x6",
-        "sourceHandle": "{œdataTypeœ:œLocalEmbeddingsComponentœ,œidœ:œLocalEmbeddingsComponent-ce2x6œ,œnameœ:œembeddingsœ,œoutput_typesœ:[œEmbeddingsœ]}",
-        "target": "ChromaDBSearch-hffgO",
-        "targetHandle": "{œfieldNameœ:œembeddingœ,œidœ:œChromaDBSearch-hffgOœ,œinputTypesœ:[œEmbeddingsœ],œtypeœ:œotherœ}"
+        "source": "LocalEmbeddingsComponent-0pcy8",
+        "sourceHandle": "{œdataTypeœ:œLocalEmbeddingsComponentœ,œidœ:œLocalEmbeddingsComponent-0pcy8œ,œnameœ:œembeddingsœ,œoutput_typesœ:[œEmbeddingsœ]}",
+        "target": "ChromaDBSearch-Jmk9c",
+        "targetHandle": "{œfieldNameœ:œembeddingœ,œidœ:œChromaDBSearch-Jmk9cœ,œinputTypesœ:[œEmbeddingsœ],œtypeœ:œotherœ}"
       },
       {
         "animated": false,
@@ -319,7 +319,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "QueryRewritePrompt",
-            "id": "QueryRewritePrompt-q5yHI",
+            "id": "QueryRewritePrompt-SVXwV",
             "name": "rewritten_query",
             "output_types": [
               "Message"
@@ -327,19 +327,19 @@
           },
           "targetHandle": {
             "fieldName": "search_query",
-            "id": "ChromaDBSearch-hffgO",
+            "id": "ChromaDBSearch-Jmk9c",
             "inputTypes": [
               "Message"
             ],
             "type": "str"
           }
         },
-        "id": "reactflow__edge-QueryRewritePrompt-q5yHI{œdataTypeœ:œQueryRewritePromptœ,œidœ:œQueryRewritePrompt-q5yHIœ,œnameœ:œrewritten_queryœ,œoutput_typesœ:[œMessageœ]}-ChromaDBSearch-hffgO{œfieldNameœ:œsearch_queryœ,œidœ:œChromaDBSearch-hffgOœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-QueryRewritePrompt-SVXwV{œdataTypeœ:œQueryRewritePromptœ,œidœ:œQueryRewritePrompt-SVXwVœ,œnameœ:œrewritten_queryœ,œoutput_typesœ:[œMessageœ]}-ChromaDBSearch-Jmk9c{œfieldNameœ:œsearch_queryœ,œidœ:œChromaDBSearch-Jmk9cœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
         "selected": false,
-        "source": "QueryRewritePrompt-q5yHI",
-        "sourceHandle": "{œdataTypeœ:œQueryRewritePromptœ,œidœ:œQueryRewritePrompt-q5yHIœ,œnameœ:œrewritten_queryœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "ChromaDBSearch-hffgO",
-        "targetHandle": "{œfieldNameœ:œsearch_queryœ,œidœ:œChromaDBSearch-hffgOœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+        "source": "QueryRewritePrompt-SVXwV",
+        "sourceHandle": "{œdataTypeœ:œQueryRewritePromptœ,œidœ:œQueryRewritePrompt-SVXwVœ,œnameœ:œrewritten_queryœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "ChromaDBSearch-Jmk9c",
+        "targetHandle": "{œfieldNameœ:œsearch_queryœ,œidœ:œChromaDBSearch-Jmk9cœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
       },
       {
         "animated": false,
@@ -347,7 +347,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "ChromaDBSearch",
-            "id": "ChromaDBSearch-hffgO",
+            "id": "ChromaDBSearch-Jmk9c",
             "name": "search_results",
             "output_types": [
               "Data"
@@ -355,7 +355,7 @@
           },
           "targetHandle": {
             "fieldName": "documents",
-            "id": "GradeDocuments-jt8Oq",
+            "id": "GradeDocuments-a3kiw",
             "inputTypes": [
               "Data",
               "Search Results"
@@ -363,12 +363,12 @@
             "type": "other"
           }
         },
-        "id": "reactflow__edge-ChromaDBSearch-hffgO{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-hffgOœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}-GradeDocuments-jt8Oq{œfieldNameœ:œdocumentsœ,œidœ:œGradeDocuments-jt8Oqœ,œinputTypesœ:[œDataœ,œSearch Resultsœ],œtypeœ:œotherœ}",
+        "id": "reactflow__edge-ChromaDBSearch-Jmk9c{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-Jmk9cœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}-GradeDocuments-a3kiw{œfieldNameœ:œdocumentsœ,œidœ:œGradeDocuments-a3kiwœ,œinputTypesœ:[œDataœ,œSearch Resultsœ],œtypeœ:œotherœ}",
         "selected": false,
-        "source": "ChromaDBSearch-hffgO",
-        "sourceHandle": "{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-hffgOœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}",
-        "target": "GradeDocuments-jt8Oq",
-        "targetHandle": "{œfieldNameœ:œdocumentsœ,œidœ:œGradeDocuments-jt8Oqœ,œinputTypesœ:[œDataœ,œSearch Resultsœ],œtypeœ:œotherœ}"
+        "source": "ChromaDBSearch-Jmk9c",
+        "sourceHandle": "{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-Jmk9cœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}",
+        "target": "GradeDocuments-a3kiw",
+        "targetHandle": "{œfieldNameœ:œdocumentsœ,œidœ:œGradeDocuments-a3kiwœ,œinputTypesœ:[œDataœ,œSearch Resultsœ],œtypeœ:œotherœ}"
       },
       {
         "animated": false,
@@ -376,7 +376,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "ChromaDBSearch",
-            "id": "ChromaDBSearch-hffgO",
+            "id": "ChromaDBSearch-Jmk9c",
             "name": "search_results",
             "output_types": [
               "Data"
@@ -384,7 +384,7 @@
           },
           "targetHandle": {
             "fieldName": "documents",
-            "id": "GraniteBaseModel-3x2SX",
+            "id": "GraniteBaseModel-QVPKa",
             "inputTypes": [
               "Data",
               "Search Results"
@@ -392,18 +392,18 @@
             "type": "other"
           }
         },
-        "id": "reactflow__edge-ChromaDBSearch-hffgO{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-hffgOœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}-GraniteBaseModel-3x2SX{œfieldNameœ:œdocumentsœ,œidœ:œGraniteBaseModel-3x2SXœ,œinputTypesœ:[œDataœ,œSearch Resultsœ],œtypeœ:œotherœ}",
+        "id": "reactflow__edge-ChromaDBSearch-Jmk9c{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-Jmk9cœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}-GraniteBaseModel-QVPKa{œfieldNameœ:œdocumentsœ,œidœ:œGraniteBaseModel-QVPKaœ,œinputTypesœ:[œDataœ,œSearch Resultsœ],œtypeœ:œotherœ}",
         "selected": false,
-        "source": "ChromaDBSearch-hffgO",
-        "sourceHandle": "{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-hffgOœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}",
-        "target": "GraniteBaseModel-3x2SX",
-        "targetHandle": "{œfieldNameœ:œdocumentsœ,œidœ:œGraniteBaseModel-3x2SXœ,œinputTypesœ:[œDataœ,œSearch Resultsœ],œtypeœ:œotherœ}"
+        "source": "ChromaDBSearch-Jmk9c",
+        "sourceHandle": "{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-Jmk9cœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}",
+        "target": "GraniteBaseModel-QVPKa",
+        "targetHandle": "{œfieldNameœ:œdocumentsœ,œidœ:œGraniteBaseModel-QVPKaœ,œinputTypesœ:[œDataœ,œSearch Resultsœ],œtypeœ:œotherœ}"
       }
     ],
     "nodes": [
       {
         "data": {
-          "id": "ChatInput-FiTD6",
+          "id": "ChatInput-HyQgc",
           "node": {
             "base_classes": [
               "Message"
@@ -682,7 +682,7 @@
           "type": "ChatInput"
         },
         "dragging": false,
-        "id": "ChatInput-FiTD6",
+        "id": "ChatInput-HyQgc",
         "measured": {
           "height": 48,
           "width": 192
@@ -696,7 +696,7 @@
       },
       {
         "data": {
-          "id": "ChatOutput-uesu7",
+          "id": "ChatOutput-Xa8Ko",
           "node": {
             "base_classes": [
               "Message"
@@ -980,7 +980,7 @@
           "type": "ChatOutput"
         },
         "dragging": false,
-        "id": "ChatOutput-uesu7",
+        "id": "ChatOutput-Xa8Ko",
         "measured": {
           "height": 48,
           "width": 192
@@ -994,7 +994,7 @@
       },
       {
         "data": {
-          "id": "Memory-3SWIO",
+          "id": "Memory-A04yO",
           "node": {
             "base_classes": [
               "DataFrame",
@@ -1373,9 +1373,9 @@
           "type": "Memory"
         },
         "dragging": false,
-        "id": "Memory-3SWIO",
+        "id": "Memory-A04yO",
         "measured": {
-          "height": 217,
+          "height": 218,
           "width": 320
         },
         "position": {
@@ -1387,7 +1387,7 @@
       },
       {
         "data": {
-          "id": "QueryRewritePrompt-q5yHI",
+          "id": "QueryRewritePrompt-SVXwV",
           "node": {
             "base_classes": [
               "Message",
@@ -1411,7 +1411,7 @@
             ],
             "frozen": false,
             "icon": "message-square",
-            "last_updated": "2026-03-18T17:18:38.234Z",
+            "last_updated": "2026-03-19T02:47:43.101Z",
             "legacy": false,
             "metadata": {
               "code_hash": "1e774844ff99",
@@ -1483,10 +1483,10 @@
             "pinned": false,
             "template": {
               "_frontend_node_flow_id": {
-                "value": "b847f622-7cd3-4c31-821c-4dd0a3b5d6c0"
+                "value": "2ef1c339-114a-4ef2-88d3-78b702936ec5"
               },
               "_frontend_node_folder_id": {
-                "value": "1358c168-f607-475e-b002-f5ac2cac8815"
+                "value": "999dba2e-ed71-453f-9a15-71c2315a845f"
               },
               "_type": "Component",
               "api_key": {
@@ -1682,7 +1682,7 @@
                 "trace_as_metadata": true,
                 "track_in_telemetry": false,
                 "type": "str",
-                "value": "host.docker.internal"
+                "value": "http://host.docker.internal:11434"
               }
             },
             "tool_mode": false
@@ -1692,21 +1692,21 @@
           "type": "QueryRewritePrompt"
         },
         "dragging": false,
-        "id": "QueryRewritePrompt-q5yHI",
+        "id": "QueryRewritePrompt-SVXwV",
         "measured": {
-          "height": 591,
+          "height": 594,
           "width": 320
         },
         "position": {
           "x": 256.72695056626327,
           "y": 8.17160005179355
         },
-        "selected": false,
+        "selected": true,
         "type": "genericNode"
       },
       {
         "data": {
-          "id": "ConditionalRouter-iTXDc",
+          "id": "ConditionalRouter-2ekWo",
           "node": {
             "base_classes": [
               "Message"
@@ -2011,9 +2011,9 @@
           "type": "ConditionalRouter"
         },
         "dragging": false,
-        "id": "ConditionalRouter-iTXDc",
+        "id": "ConditionalRouter-2ekWo",
         "measured": {
-          "height": 591,
+          "height": 594,
           "width": 320
         },
         "position": {
@@ -2027,7 +2027,7 @@
         "data": {
           "description": "Call Granite base models for text generation",
           "display_name": "Granite Base Model",
-          "id": "GraniteBaseModel-3x2SX",
+          "id": "GraniteBaseModel-QVPKa",
           "node": {
             "base_classes": [
               "Message",
@@ -2052,7 +2052,7 @@
             ],
             "frozen": false,
             "icon": "sparkles",
-            "last_updated": "2026-03-18T17:18:46.143Z",
+            "last_updated": "2026-03-19T02:48:00.269Z",
             "legacy": false,
             "metadata": {
               "code_hash": "cb04af5826db",
@@ -2132,10 +2132,10 @@
             "pinned": false,
             "template": {
               "_frontend_node_flow_id": {
-                "value": "b847f622-7cd3-4c31-821c-4dd0a3b5d6c0"
+                "value": "2ef1c339-114a-4ef2-88d3-78b702936ec5"
               },
               "_frontend_node_folder_id": {
-                "value": "1358c168-f607-475e-b002-f5ac2cac8815"
+                "value": "999dba2e-ed71-453f-9a15-71c2315a845f"
               },
               "_type": "Component",
               "api_key": {
@@ -2357,7 +2357,7 @@
                 "trace_as_metadata": true,
                 "track_in_telemetry": false,
                 "type": "str",
-                "value": "host.docker.internal"
+                "value": "http://host.docker.internal:11434"
               }
             },
             "tool_mode": false
@@ -2367,9 +2367,9 @@
           "type": "GraniteBaseModel"
         },
         "dragging": false,
-        "id": "GraniteBaseModel-3x2SX",
+        "id": "GraniteBaseModel-QVPKa",
         "measured": {
-          "height": 619,
+          "height": 623,
           "width": 320
         },
         "position": {
@@ -2381,7 +2381,7 @@
       },
       {
         "data": {
-          "id": "ChatOutput-m9OLo",
+          "id": "ChatOutput-M7UbV",
           "node": {
             "base_classes": [
               "Message"
@@ -2665,7 +2665,7 @@
           "type": "ChatOutput"
         },
         "dragging": false,
-        "id": "ChatOutput-m9OLo",
+        "id": "ChatOutput-M7UbV",
         "measured": {
           "height": 48,
           "width": 192
@@ -2681,7 +2681,7 @@
         "data": {
           "description": "Assess relevance of retrieved documents using local Granite model",
           "display_name": "Grade Documents",
-          "id": "GradeDocuments-jt8Oq",
+          "id": "GradeDocuments-a3kiw",
           "node": {
             "base_classes": [
               "Message"
@@ -2705,7 +2705,7 @@
             ],
             "frozen": false,
             "icon": "check-circle",
-            "last_updated": "2026-03-18T17:18:43.160Z",
+            "last_updated": "2026-03-19T02:47:53.733Z",
             "legacy": false,
             "metadata": {
               "code_hash": "f904ee0e0152",
@@ -2764,10 +2764,10 @@
             "pinned": false,
             "template": {
               "_frontend_node_flow_id": {
-                "value": "b847f622-7cd3-4c31-821c-4dd0a3b5d6c0"
+                "value": "2ef1c339-114a-4ef2-88d3-78b702936ec5"
               },
               "_frontend_node_folder_id": {
-                "value": "1358c168-f607-475e-b002-f5ac2cac8815"
+                "value": "999dba2e-ed71-453f-9a15-71c2315a845f"
               },
               "_type": "Component",
               "api_key": {
@@ -2986,7 +2986,7 @@
                 "trace_as_metadata": true,
                 "track_in_telemetry": false,
                 "type": "str",
-                "value": "host.docker.internal"
+                "value": "http://host.docker.internal:11434"
               }
             },
             "tool_mode": false
@@ -2995,9 +2995,9 @@
           "type": "GradeDocuments"
         },
         "dragging": false,
-        "id": "GradeDocuments-jt8Oq",
+        "id": "GradeDocuments-a3kiw",
         "measured": {
-          "height": 635,
+          "height": 639,
           "width": 320
         },
         "position": {
@@ -3009,7 +3009,7 @@
       },
       {
         "data": {
-          "id": "ChromaDBSearch-hffgO",
+          "id": "ChromaDBSearch-Jmk9c",
           "node": {
             "base_classes": [
               "Data"
@@ -3032,7 +3032,7 @@
             ],
             "frozen": false,
             "icon": "Chroma",
-            "last_updated": "2026-03-18T17:21:00.796Z",
+            "last_updated": "2026-03-19T02:54:51.705Z",
             "legacy": false,
             "lf_version": "1.7.3",
             "metadata": {
@@ -3080,10 +3080,10 @@
             "pinned": false,
             "template": {
               "_frontend_node_flow_id": {
-                "value": "b847f622-7cd3-4c31-821c-4dd0a3b5d6c0"
+                "value": "2ef1c339-114a-4ef2-88d3-78b702936ec5"
               },
               "_frontend_node_folder_id": {
-                "value": "1358c168-f607-475e-b002-f5ac2cac8815"
+                "value": "999dba2e-ed71-453f-9a15-71c2315a845f"
               },
               "_type": "Component",
               "code": {
@@ -3280,9 +3280,9 @@
           "type": "ChromaDBSearch"
         },
         "dragging": false,
-        "id": "ChromaDBSearch-hffgO",
+        "id": "ChromaDBSearch-Jmk9c",
         "measured": {
-          "height": 591,
+          "height": 594,
           "width": 320
         },
         "position": {
@@ -3294,7 +3294,7 @@
       },
       {
         "data": {
-          "id": "LocalEmbeddingsComponent-ce2x6",
+          "id": "LocalEmbeddingsComponent-0pcy8",
           "node": {
             "base_classes": [
               "Embeddings"
@@ -3397,9 +3397,9 @@
           "type": "LocalEmbeddingsComponent"
         },
         "dragging": false,
-        "id": "LocalEmbeddingsComponent-ce2x6",
+        "id": "LocalEmbeddingsComponent-0pcy8",
         "measured": {
-          "height": 219,
+          "height": 220,
           "width": 320
         },
         "position": {
@@ -3411,16 +3411,16 @@
       }
     ],
     "viewport": {
-      "x": 130.98046064609957,
-      "y": 283.2719347431863,
-      "zoom": 0.43016439330744227
+      "x": 116.54553303373632,
+      "y": 248.7379925366874,
+      "zoom": 0.38044690061361724
     }
   },
   "description": "",
   "endpoint_name": null,
-  "id": "b847f622-7cd3-4c31-821c-4dd0a3b5d6c0",
+  "id": "2ef1c339-114a-4ef2-88d3-78b702936ec5",
   "is_component": false,
   "last_tested_version": "1.7.3",
-  "name": "QR_AD_flows-demo_gov-Prompt_LangChainTutorial",
+  "name": "Prompt_QR_AD (LangChain Tutorial)",
   "tags": []
 }

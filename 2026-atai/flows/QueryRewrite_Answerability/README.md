@@ -91,12 +91,12 @@ This implementation uses specialized trained models for QR and AD.
 **Models used**: `granite-4.0-micro`, `granite-4.0-h-small`
 
 **Conversation**:
-- **Turn 1**: "Which county did the Midway Fire occur in?"
-- **Turn 2**: "what role does FEMA play? and does it cover san diego county?"
+- **Turn 1**: `Which county did the Midway Fire occur in?`
+- **Turn 2**: `what role does FEMA play? and does it cover san diego county?`
 
 **What Happened**:
 
-Both flows successfully answered Turn 1 with "The Midway Fire occurred in Kern County." This establishes the wildfire context for the conversation.
+Both flows successfully answered Turn 1 with `The Midway Fire occurred in Kern County.` This establishes the wildfire context for the conversation.
 
 However, in Turn 2, the approaches diverged:
 
@@ -132,14 +132,12 @@ The prompt-based approach's tendency to over-incorporate conversational context 
 **Models used**: `granite-4.0-micro`, `granite-4.0-h-small`
 
 **Conversation**:
-- **Turn 1**: "Which county did the Midway Fire occur in?"
-- **Turn 2**: "was it the same place as avocado fire?"
+- **Turn 1**: `Which county did the Midway Fire occur in?`
+- **Turn 2**: `was it the same place as avocado fire?`
 
 **What Happened**:
 
-Both flows successfully answered Turn 1 with "The Midway Fire occurred in Kern County."
-
-However, in Turn 2, the approaches diverged:
+Both flows successfully answered Turn 1 with `The Midway Fire occurred in Kern County.` However, in Turn 2, the approaches diverged:
 
 **Prompt-Based Flow (Turn 2)**:
 - **Retrieval Result**: Relevant documents about both Midway Fire and Avocado Fire were retrieved
@@ -169,14 +167,12 @@ Prompt-based answerability detection often fails when a question requires synthe
 **Models used**: `granite-4.0-micro`, `granite-4.0-h-small`
 
 **Conversation**:
-- **Turn 1**: "When did the Midway Fire start?"
-- **Turn 2**: "When did the Midway Fire NOT start?"
+- **Turn 1**: `When did the Midway Fire start?`
+- **Turn 2**: `When did the Midway Fire NOT start?`
 
 **What Happened**:
 
-Both flows successfully answered Turn 1 with "The Midway Fire started on November 12, 2023."
-
-However, in Turn 2, the approaches diverged:
+Both flows successfully answered Turn 1 with `The Midway Fire started on November 12, 2023.` However, in Turn 2, the approaches diverged:
 
 **Prompt-Based Flow (Turn 2)**:
 - **Retrieval Result**: Documents containing the Midway Fire start date were retrieved
@@ -186,10 +182,7 @@ However, in Turn 2, the approaches diverged:
 **Intrinsic Flow (Turn 2)**:
 - **Retrieval Result**: Documents containing the Midway Fire start date were retrieved
 - **Answerability Determination**: Recognized that the affirmative statement allows answering the negation through logical inference. Successfully uses logical inference to answer the negation question
-- **Answer** (with `granite-4.0-micro`):
-```
-The Midway Fire did not start on any date other than November 12, 2023.
-```
+- **Answer** (with `granite-4.0-micro`): `The Midway Fire did not start on any date other than November 12, 2023.`
 
 *Note: This example was tested with both `granite-4.0-micro` and `granite-4.0-h-small`. The prompt-based flow returned "I don't know the answer to the question" with both models, while the intrinsic flow successfully inferred the answer with both models.*
 
@@ -205,7 +198,7 @@ The prompt-based answerability detection is strictly literal—it only determine
 
 **Models used**: `openai/gpt-oss-20b`
 
-**Query**: "How often do large dust storms cover the entire planet on Mars?"
+**Query**: `How often do large dust storms cover the entire planet on Mars?`
 
 **What's in Corpus**: A NASA document mentioning "Mars" large storms sometimes cover the entire planet" - but NO information about storm frequency or timing
 

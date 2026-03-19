@@ -93,7 +93,9 @@ This implementation uses specialized trained models for query rewriting and hall
 
 **Scenario**: When documents are topically relevant but lack specific details requested in the question, models may generate answers using their internal parametric knowledge rather than the corpus. The LangChain tutorial's approach produced such a hallucinated answer. The intrinsic flow's hallucination detection checks the answer against retrieved documents and abstains when content is unsupported, while the prompt-based hallucination removal attempts to strip fabrications but may still leave unsupported content.
 
-**Question**: "How often do large dust storms cover the entire planet on Mars?"
+**Models used**: `openai/gpt-oss-20b`
+
+**Question**: `How often do large dust storms cover the entire planet on Mars?`
 
 **What's in Corpus**: A NASA document mentioning "Mars' large storms sometimes cover the entire planet" - but NO information about storm frequency or timing
 
@@ -180,7 +182,7 @@ The intrinsic-based flow provides a way of removing hallucination post-generatio
 
 **Models used**: `openai/gpt-oss-20b`
 
-**Question**: "What are Mars' moon called, and how far are they from the planet?"
+**Question**: `What are Mars' moon called, and how far are they from the planet?`
 
 **What's in Corpus**: A NASA document listing Mars' moons (Phobos and Deimos) - but NO information about their distances from Mars
 
