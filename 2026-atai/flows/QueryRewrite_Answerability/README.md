@@ -34,7 +34,7 @@ Answerability Check
 ## Methods
 
 ### 1. Prompt-Based
-**File**: `Prompt_QR_AD(LangChain Tutorial).json`
+**File**: `QueryRewrite_Answerability (Prompted with LangChain Tutorial).json`
 
 The [LangChain Agentic RAG tutorial](https://docs.langchain.com/oss/python/langgraph/agentic-rag) goes into cycle of deciding, whether to rewrite the question and re-query or to simply generate based on the already retrieved context  with the help of a context grader. This cycle goes into an infinite loop whenever it encounters an unanswerable question for the corpus. We break this cycle with the model abstaining to respond if the grader deemed the retrieved context to be not relevant for the query. This implementation uses prompt-based approaches for QR and AD using the same prompts as the LangChain tutorial.
 
@@ -70,7 +70,7 @@ Give a binary score 'yes' or 'no' score to indicate whether the document is rele
 
 
 ### 2. Our Intrinsic Models
-**File**: `Intrinsic_QR_AD.json`
+**File**: `QueryRewrite_Answerability (Intrinsic).json`
 
 This implementation uses specialized trained models for QR and AD.
 
