@@ -38,7 +38,7 @@ Corrected Response
 We provide two implementations of this RAG pattern:
 
 ### 1. Prompt-Based
-**File**: `Prompt_QR_HD.json`
+**File**: `QueryRewrite_HallucinationDetection (Prompted).json`
 
 This implementation uses prompt-based approaches for both query rewriting (From the LangChain tutorial page [LangChain Agentic RAG tutorial](https://docs.langchain.com/oss/python/langgraph/agentic-rag)) and hallucination removal.
 
@@ -74,7 +74,7 @@ Return ONLY the corrected assistant response without any explanation, preamble, 
 
 
 ### 2. Our Intrinsic Models
-**File**: `Intrinsic_QR_HD.json`
+**File**: `QueryRewrite_HallucinationDetection (Intrinsic).json`
 
 This implementation uses specialized trained models for query rewriting and hallucination detection with a feedback-based correction mechanism.
 

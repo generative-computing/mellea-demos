@@ -2796,11 +2796,11 @@
       "zoom": 0.42201655373981356
     }
   },
-  "description": "Navigate the Linguistic Landscape, Discover Opportunities.",
+  "description": "",
   "endpoint_name": null,
   "id": "858415a2-d085-428f-a0d9-e1ea94831930",
   "is_component": false,
   "last_tested_version": "1.7.3",
-  "name": "Prompt_QR_HD",
+  "name": "QueryRewrite_HallucinationDetection (Prompted)",
   "tags": []
 }

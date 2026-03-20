@@ -2122,6 +2122,6 @@
   "id": "b63b063b-e1c5-4cb1-96a9-68ee688241a7",
   "is_component": false,
   "last_tested_version": "1.7.3",
-  "name": "RAG prompted Clarification - ClapNQ (March)",
+  "name": "Query Clarification (Prompted) - ClapNQ",
   "tags": []
 }
