@@ -728,7 +728,7 @@
           "x": 86.8941297141699,
           "y": 330.23329025934277
         },
-        "selected": true,
+        "selected": false,
         "type": "genericNode"
       },
       {
@@ -1922,9 +1922,9 @@
       }
     ],
     "viewport": {
-      "x": 179.7227032688853,
-      "y": 86.72769001595839,
-      "zoom": 0.6794082055171619
+      "x": 180.53326478622705,
+      "y": 70.70373459879846,
+      "zoom": 0.6843819112676536
     }
   },
   "description": "Generate citations by prompting out-of-the-box model",
@@ -1932,6 +1932,6 @@
   "id": "e0ad56a8-c3a8-4d66-a5ea-0216613007c4",
   "is_component": false,
   "last_tested_version": "1.7.3",
-  "name": "Citation Generation (Prompted)",
+  "name": "Citation Generation (Prompted) - RITS",
   "tags": []
 }

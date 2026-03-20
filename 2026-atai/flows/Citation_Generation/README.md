@@ -30,9 +30,9 @@ Retriever -> Response Generation -> Citation Generation (Intrinsic)
 
 Both flows are configured as follows:
 
-- **Retriever**: `Elser`
-- **Collection**: `mt-rag-govt-elser-512-100-20240611`
-- **Model Backend**: `Intrinsics API (mellea + RITS)`
+- **Retriever**: `sentence-transformers/multi-qa-mpnet-base-dot-v1` embeddings
+- **Collection**: `mt-rag-govt`
+- **Model Backend**: `Ollama`
 - **Model for Response Generation + Prompting:** `ibm-granite/granite-4.0-h-small`
 - **Intrinsics:** Trained over `ibm-granite/granite-4.0-micro` 
 

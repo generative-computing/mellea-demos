@@ -2477,9 +2477,9 @@
       }
     ],
     "viewport": {
-      "x": 298.80282790487337,
-      "y": -57.36857295724582,
-      "zoom": 0.5996067675039587
+      "x": 295.73816496304937,
+      "y": -58.087248143744546,
+      "zoom": 0.6103003913830103
     }
   },
   "description": "Generate citations through citation generation intrinsic",
@@ -2487,6 +2487,6 @@
   "id": "8f39d420-2b61-400a-96f7-2421e5fe465c",
   "is_component": false,
   "last_tested_version": "1.7.3",
-  "name": "Citation Generation (Intrinsic)",
+  "name": "Citation Generation (Intrinsic) - RITS",
   "tags": []
 }
