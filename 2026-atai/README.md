@@ -89,9 +89,10 @@ When done:
 ## Running a Flow
 
 1. Open **Langflow** at http://localhost:7860 (auto-login enabled)
-2. Click on a flow (e.g., "Intrinsic_QR_AD")
-3. Click the **Playground** button (bottom right)
-4. Enter a query and run it
+2. Click on the project in the left sidebar to reveal its flows
+3. Click on a flow (e.g., "Intrinsic_QR_AD")
+4. Click the **Playground** button (bottom right)
+5. Enter a query and run it
 
 The flow calls Ollama for inference using the Granite base model and intrinsic LoRA adapters, and retrieves context from ChromaDB (pre-loaded with embeddings).
 
