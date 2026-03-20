@@ -119,32 +119,155 @@ fi
 # =============================================================================
 info "Checking prerequisites..."
 
-# Docker
+# Detect OS for install hints
+OS="$(uname -s)"
+case "$OS" in
+    Darwin) PKG_HINT="brew install" ;;
+    Linux)  PKG_HINT="sudo apt-get install -y  # or your distro's package manager" ;;
+    *)      PKG_HINT="your package manager" ;;
+esac
+
+# Docker — fall back to Colima on macOS/Linux if docker CLI is absent
 if ! command -v docker &>/dev/null; then
-    error "Docker is not installed. Please install Docker: https://docs.docker.com/get-docker/"
-    exit 1
+    warn "docker not found — checking for Colima..."
+    if command -v colima &>/dev/null; then
+        info "Colima found. Starting Colima..."
+        colima start --cpu 4 --memory 8 || {
+            error "Failed to start Colima. Please start it manually: colima start"
+            exit 1
+        }
+        ok "Colima started"
+    else
+        # Try to install Colima via Homebrew on macOS
+        if [ "$OS" = "Darwin" ] && command -v brew &>/dev/null; then
+            info "Installing Colima and docker CLI via Homebrew..."
+            brew install colima docker
+            info "Starting Colima..."
+            colima start --cpu 4 --memory 8 || {
+                error "Failed to start Colima. Please start it manually: colima start"
+                exit 1
+            }
+            ok "Colima installed and started"
+        else
+            error "Docker is not installed and Colima is not available."
+            echo ""
+            echo "  Install options:"
+            echo "    macOS (recommended): brew install colima docker"
+            echo "    macOS (Docker Desktop): https://docs.docker.com/desktop/install/mac-install/"
+            echo "    Linux: https://docs.docker.com/engine/install/"
+            exit 1
+        fi
+    fi
+else
+    # Docker CLI present — make sure the daemon is actually reachable
+    if ! docker info &>/dev/null; then
+        warn "Docker CLI found but daemon is not running — checking for Colima..."
+        if command -v colima &>/dev/null; then
+            info "Starting Colima..."
+            colima start --cpu 4 --memory 8 || {
+                error "Failed to start Colima. Start it manually: colima start"
+                exit 1
+            }
+            ok "Colima started"
+        else
+            error "Docker daemon is not running."
+            echo ""
+            echo "  Start options:"
+            echo "    Docker Desktop: open the Docker Desktop application"
+            echo "    Colima (macOS/Linux): colima start"
+            exit 1
+        fi
+    fi
+    ok "Docker found"
 fi
-ok "Docker found"
 
 # Docker Compose
 if ! docker compose version &>/dev/null; then
-    error "Docker Compose is not available. Please install Docker Compose v2."
+    error "Docker Compose v2 is not available."
+    echo ""
+    echo "  Install options:"
+    echo "    macOS:  brew install docker-compose  (or update Docker Desktop)"
+    echo "    Linux:  https://docs.docker.com/compose/install/"
     exit 1
 fi
 ok "Docker Compose found"
 
+# jq (required for flow loading)
+if ! command -v jq &>/dev/null; then
+    if [ "$OS" = "Darwin" ] && command -v brew &>/dev/null; then
+        info "Installing jq via Homebrew..."
+        brew install jq
+    else
+        error "jq is required. Please install it:"
+        echo "    macOS:  brew install jq"
+        echo "    Linux:  sudo apt-get install -y jq  (or equivalent)"
+        echo "    Other:  https://jqlang.github.io/jq/download/"
+        exit 1
+    fi
+fi
+ok "jq found"
+
+# python3 (required by load-flows.sh for JSON manipulation)
+if ! command -v python3 &>/dev/null; then
+    error "python3 is required."
+    echo ""
+    echo "  Install options:"
+    echo "    macOS:  brew install python"
+    echo "    Linux:  sudo apt-get install -y python3"
+    echo "    Other:  https://www.python.org/downloads/"
+    exit 1
+fi
+ok "python3 found"
+
+# git-lfs (required to clone LoRA adapters from Hugging Face)
+if ! command -v git-lfs &>/dev/null && ! git lfs version &>/dev/null 2>&1; then
+    if [ "$OS" = "Darwin" ] && command -v brew &>/dev/null; then
+        info "Installing git-lfs via Homebrew..."
+        brew install git-lfs
+        git lfs install
+    else
+        error "git-lfs is required to download the LoRA adapter weights."
+        echo ""
+        echo "  Install options:"
+        echo "    macOS:  brew install git-lfs && git lfs install"
+        echo "    Linux:  sudo apt-get install -y git-lfs && git lfs install"
+        echo "    Other:  https://git-lfs.com"
+        exit 1
+    fi
+fi
+ok "git-lfs found"
+
 # Ollama (skip if --no-ollama)
 if [ "$SKIP_OLLAMA" = false ]; then
     if ! command -v ollama &>/dev/null; then
-        error "Ollama is not installed. Please install Ollama: https://ollama.com"
+        error "Ollama is not installed."
+        echo ""
+        echo "  Install options:"
+        echo "    macOS/Linux: curl -fsSL https://ollama.com/install.sh | sh"
+        echo "    macOS (Homebrew): brew install ollama"
+        echo "    Other: https://ollama.com/download"
         exit 1
     fi
     ok "Ollama found"
 
     # Ollama running
     if ! curl -sf http://localhost:11434/api/tags &>/dev/null; then
-        error "Ollama is not running. Please start it with: ollama serve"
-        exit 1
+        info "Ollama is not running — starting it in the background..."
+        ollama serve &>/dev/null &
+        # Wait up to 10s for it to start
+        OLLAMA_WAIT=0
+        while [ $OLLAMA_WAIT -lt 10 ]; do
+            if curl -sf http://localhost:11434/api/tags &>/dev/null; then
+                break
+            fi
+            sleep 1
+            OLLAMA_WAIT=$((OLLAMA_WAIT + 1))
+        done
+        if ! curl -sf http://localhost:11434/api/tags &>/dev/null; then
+            error "Ollama failed to start. Please start it manually: ollama serve"
+            exit 1
+        fi
+        ok "Ollama started"
     fi
     ok "Ollama is running"
 
@@ -156,15 +279,6 @@ if [ "$SKIP_OLLAMA" = false ]; then
     ok "granite4:micro model available"
 else
     warn "Skipping Ollama checks (--no-ollama)"
-fi
-
-# jq (required for API-based flow loading)
-if [ "$LOAD_ALL" = true ]; then
-    if ! command -v jq &>/dev/null; then
-        error "jq is required for --all mode. Please install jq: https://jqlang.github.io/jq/download/"
-        exit 1
-    fi
-    ok "jq found"
 fi
 
 echo ""

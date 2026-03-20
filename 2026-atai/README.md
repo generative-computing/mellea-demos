@@ -4,35 +4,72 @@ A demo of IBM Granite Libraries + Mellea using Langflow.
 
 ## Prerequisites
 
-- [Docker](https://docs.docker.com/get-docker/) (8+ GB memory recommended)
-- [Docker Compose](https://docs.docker.com/compose/install/) (v2)
-- [Ollama](https://ollama.com) (must be running)
-- [Git](https://git-scm.com/) with [Git LFS](https://git-lfs.com/)
-- Python 3 (for the start script)
+| Tool | Purpose | Required |
+|------|---------|----------|
+| Docker or [Colima](https://github.com/abiosoft/colima) | Run containers (8 GB RAM recommended) | Yes |
+| Docker Compose v2 | Orchestrate services | Yes |
+| [Ollama](https://ollama.com) | Local LLM inference | Yes (unless `--no-ollama`) |
+| Git + [Git LFS](https://git-lfs.com/) | Clone LoRA adapter weights | Yes |
+| Python 3 | JSON manipulation in load script | Yes |
+| [jq](https://jqlang.github.io/jq/) | JSON parsing in shell scripts | Yes |
+
+> **Note:** `start.sh` will auto-install missing tools on macOS via Homebrew and attempt to
+> start Docker/Colima if the daemon is not running. On Linux you may need to install missing
+> tools manually (instructions printed on failure).
+
+### macOS — install everything at once
+
+```bash
+# Homebrew (https://brew.sh) required
+brew install colima docker docker-compose ollama jq python git-lfs
+git lfs install
+colima start --cpu 4 --memory 8   # starts the Docker daemon via Colima
+```
+
+Or use [Docker Desktop](https://docs.docker.com/desktop/install/mac-install/) instead of Colima
+(requires a free account for personal use).
+
+### Linux (Debian/Ubuntu)
+
+```bash
+# Docker Engine
+curl -fsSL https://get.docker.com | sh
+sudo usermod -aG docker "$USER" && newgrp docker
+
+# Ollama
+curl -fsSL https://ollama.com/install.sh | sh
+
+# Other tools
+sudo apt-get update
+sudo apt-get install -y jq python3 git git-lfs
+git lfs install
+```
+
+### Windows
+
+Use [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install) with the Ubuntu instructions
+above, or install [Docker Desktop](https://docs.docker.com/desktop/install/windows-install/) and
+run `start.sh` from Git Bash or WSL2.
+
+---
 
 ## Quick Start
-
-1. Pull the base model:
-
-```bash
-ollama pull granite4:micro
-```
-
-2. Clone the LoRA adapters from Hugging Face (requires [Git LFS](https://git-lfs.com/)):
-
-```bash
-git clone https://huggingface.co/ibm-granite/granite-lib-rag-r1.0
-```
-
-3. Start the demo:
 
 ```bash
 ./start.sh
 ```
 
-The start script verifies prerequisites, loads the LoRA adapters into Ollama, starts all containers, waits for health checks, and provisions API keys. First run takes ~2-3 minutes.
+`start.sh` handles everything automatically:
+- Verifies (and where possible installs) all prerequisites
+- Starts Colima/Docker if the daemon is not running
+- Pulls `granite4:micro` from Ollama if not present
+- Clones LoRA adapters from Hugging Face if not present
+- Starts all containers and waits for health checks
+- Loads all demo flows into Langflow via the API
 
-4. When done, stop the demo:
+First run takes ~3–5 minutes (model pull + container image download).
+
+When done:
 
 ```bash
 ./stop.sh              # stops everything (data preserved)
