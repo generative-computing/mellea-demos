@@ -1,0 +1,2806 @@
+{
+  "data": {
+    "edges": [
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "Memory",
+            "id": "Memory-Wmu0B",
+            "name": "dataframe",
+            "output_types": [
+              "DataFrame"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "message_history",
+            "id": "GraniteBaseModel-mULWL",
+            "inputTypes": [
+              "DataFrame"
+            ],
+            "type": "other"
+          }
+        },
+        "id": "reactflow__edge-Memory-Wmu0B{œdataTypeœ:œMemoryœ,œidœ:œMemory-Wmu0Bœ,œnameœ:œdataframeœ,œoutput_typesœ:[œDataFrameœ]}-GraniteBaseModel-mULWL{œfieldNameœ:œmessage_historyœ,œidœ:œGraniteBaseModel-mULWLœ,œinputTypesœ:[œDataFrameœ],œtypeœ:œotherœ}",
+        "selected": false,
+        "source": "Memory-Wmu0B",
+        "sourceHandle": "{œdataTypeœ:œMemoryœ,œidœ:œMemory-Wmu0Bœ,œnameœ:œdataframeœ,œoutput_typesœ:[œDataFrameœ]}",
+        "target": "GraniteBaseModel-mULWL",
+        "targetHandle": "{œfieldNameœ:œmessage_historyœ,œidœ:œGraniteBaseModel-mULWLœ,œinputTypesœ:[œDataFrameœ],œtypeœ:œotherœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "ChatInput",
+            "id": "ChatInput-KgmLn",
+            "name": "message",
+            "output_types": [
+              "Message"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "chat_input",
+            "id": "GraniteBaseModel-mULWL",
+            "inputTypes": [
+              "Message"
+            ],
+            "type": "str"
+          }
+        },
+        "id": "reactflow__edge-ChatInput-KgmLn{œdataTypeœ:œChatInputœ,œidœ:œChatInput-KgmLnœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-GraniteBaseModel-mULWL{œfieldNameœ:œchat_inputœ,œidœ:œGraniteBaseModel-mULWLœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "selected": false,
+        "source": "ChatInput-KgmLn",
+        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-KgmLnœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "GraniteBaseModel-mULWL",
+        "targetHandle": "{œfieldNameœ:œchat_inputœ,œidœ:œGraniteBaseModel-mULWLœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "ChatInput",
+            "id": "ChatInput-KgmLn",
+            "name": "message",
+            "output_types": [
+              "Message"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "chat_input",
+            "id": "QueryRewritePrompt-hWars",
+            "inputTypes": [
+              "Message"
+            ],
+            "type": "str"
+          }
+        },
+        "id": "reactflow__edge-ChatInput-KgmLn{œdataTypeœ:œChatInputœ,œidœ:œChatInput-KgmLnœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-QueryRewritePrompt-hWars{œfieldNameœ:œchat_inputœ,œidœ:œQueryRewritePrompt-hWarsœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "selected": false,
+        "source": "ChatInput-KgmLn",
+        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-KgmLnœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "QueryRewritePrompt-hWars",
+        "targetHandle": "{œfieldNameœ:œchat_inputœ,œidœ:œQueryRewritePrompt-hWarsœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "GraniteBaseModel",
+            "id": "GraniteBaseModel-mULWL",
+            "name": "response",
+            "output_types": [
+              "Message"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "agent_response",
+            "id": "HallucinationRemovalPrompt-9GKZ8",
+            "inputTypes": [
+              "Message"
+            ],
+            "type": "str"
+          }
+        },
+        "id": "reactflow__edge-GraniteBaseModel-mULWL{œdataTypeœ:œGraniteBaseModelœ,œidœ:œGraniteBaseModel-mULWLœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}-HallucinationRemovalPrompt-9GKZ8{œfieldNameœ:œagent_responseœ,œidœ:œHallucinationRemovalPrompt-9GKZ8œ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "selected": false,
+        "source": "GraniteBaseModel-mULWL",
+        "sourceHandle": "{œdataTypeœ:œGraniteBaseModelœ,œidœ:œGraniteBaseModel-mULWLœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "HallucinationRemovalPrompt-9GKZ8",
+        "targetHandle": "{œfieldNameœ:œagent_responseœ,œidœ:œHallucinationRemovalPrompt-9GKZ8œ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "ChatInput",
+            "id": "ChatInput-KgmLn",
+            "name": "message",
+            "output_types": [
+              "Message"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "chat_input",
+            "id": "HallucinationRemovalPrompt-9GKZ8",
+            "inputTypes": [
+              "Message"
+            ],
+            "type": "str"
+          }
+        },
+        "id": "reactflow__edge-ChatInput-KgmLn{œdataTypeœ:œChatInputœ,œidœ:œChatInput-KgmLnœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-HallucinationRemovalPrompt-9GKZ8{œfieldNameœ:œchat_inputœ,œidœ:œHallucinationRemovalPrompt-9GKZ8œ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "selected": false,
+        "source": "ChatInput-KgmLn",
+        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-KgmLnœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "HallucinationRemovalPrompt-9GKZ8",
+        "targetHandle": "{œfieldNameœ:œchat_inputœ,œidœ:œHallucinationRemovalPrompt-9GKZ8œ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "Memory",
+            "id": "Memory-Wmu0B",
+            "name": "dataframe",
+            "output_types": [
+              "DataFrame"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "message_history",
+            "id": "HallucinationRemovalPrompt-9GKZ8",
+            "inputTypes": [
+              "DataFrame"
+            ],
+            "type": "other"
+          }
+        },
+        "id": "reactflow__edge-Memory-Wmu0B{œdataTypeœ:œMemoryœ,œidœ:œMemory-Wmu0Bœ,œnameœ:œdataframeœ,œoutput_typesœ:[œDataFrameœ]}-HallucinationRemovalPrompt-9GKZ8{œfieldNameœ:œmessage_historyœ,œidœ:œHallucinationRemovalPrompt-9GKZ8œ,œinputTypesœ:[œDataFrameœ],œtypeœ:œotherœ}",
+        "selected": false,
+        "source": "Memory-Wmu0B",
+        "sourceHandle": "{œdataTypeœ:œMemoryœ,œidœ:œMemory-Wmu0Bœ,œnameœ:œdataframeœ,œoutput_typesœ:[œDataFrameœ]}",
+        "target": "HallucinationRemovalPrompt-9GKZ8",
+        "targetHandle": "{œfieldNameœ:œmessage_historyœ,œidœ:œHallucinationRemovalPrompt-9GKZ8œ,œinputTypesœ:[œDataFrameœ],œtypeœ:œotherœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "HallucinationRemovalPrompt",
+            "id": "HallucinationRemovalPrompt-9GKZ8",
+            "name": "corrected_response",
+            "output_types": [
+              "Message"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "input_value",
+            "id": "ChatOutput-vNusy",
+            "inputTypes": [
+              "Data",
+              "DataFrame",
+              "Message"
+            ],
+            "type": "other"
+          }
+        },
+        "id": "reactflow__edge-HallucinationRemovalPrompt-9GKZ8{œdataTypeœ:œHallucinationRemovalPromptœ,œidœ:œHallucinationRemovalPrompt-9GKZ8œ,œnameœ:œcorrected_responseœ,œoutput_typesœ:[œMessageœ]}-ChatOutput-vNusy{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-vNusyœ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}",
+        "selected": false,
+        "source": "HallucinationRemovalPrompt-9GKZ8",
+        "sourceHandle": "{œdataTypeœ:œHallucinationRemovalPromptœ,œidœ:œHallucinationRemovalPrompt-9GKZ8œ,œnameœ:œcorrected_responseœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "ChatOutput-vNusy",
+        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-vNusyœ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "Memory",
+            "id": "Memory-Wmu0B",
+            "name": "dataframe",
+            "output_types": [
+              "DataFrame"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "message_history",
+            "id": "QueryRewritePrompt-hWars",
+            "inputTypes": [
+              "DataFrame"
+            ],
+            "type": "other"
+          }
+        },
+        "id": "reactflow__edge-Memory-Wmu0B{œdataTypeœ:œMemoryœ,œidœ:œMemory-Wmu0Bœ,œnameœ:œdataframeœ,œoutput_typesœ:[œDataFrameœ]}-QueryRewritePrompt-hWars{œfieldNameœ:œmessage_historyœ,œidœ:œQueryRewritePrompt-hWarsœ,œinputTypesœ:[œDataFrameœ],œtypeœ:œotherœ}",
+        "selected": false,
+        "source": "Memory-Wmu0B",
+        "sourceHandle": "{œdataTypeœ:œMemoryœ,œidœ:œMemory-Wmu0Bœ,œnameœ:œdataframeœ,œoutput_typesœ:[œDataFrameœ]}",
+        "target": "QueryRewritePrompt-hWars",
+        "targetHandle": "{œfieldNameœ:œmessage_historyœ,œidœ:œQueryRewritePrompt-hWarsœ,œinputTypesœ:[œDataFrameœ],œtypeœ:œotherœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "LocalEmbeddingsComponent",
+            "id": "LocalEmbeddingsComponent-Ph683",
+            "name": "embeddings",
+            "output_types": [
+              "Embeddings"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "embedding",
+            "id": "ChromaDBSearch-nFO8B",
+            "inputTypes": [
+              "Embeddings"
+            ],
+            "type": "other"
+          }
+        },
+        "id": "reactflow__edge-LocalEmbeddingsComponent-Ph683{œdataTypeœ:œLocalEmbeddingsComponentœ,œidœ:œLocalEmbeddingsComponent-Ph683œ,œnameœ:œembeddingsœ,œoutput_typesœ:[œEmbeddingsœ]}-ChromaDBSearch-nFO8B{œfieldNameœ:œembeddingœ,œidœ:œChromaDBSearch-nFO8Bœ,œinputTypesœ:[œEmbeddingsœ],œtypeœ:œotherœ}",
+        "selected": false,
+        "source": "LocalEmbeddingsComponent-Ph683",
+        "sourceHandle": "{œdataTypeœ:œLocalEmbeddingsComponentœ,œidœ:œLocalEmbeddingsComponent-Ph683œ,œnameœ:œembeddingsœ,œoutput_typesœ:[œEmbeddingsœ]}",
+        "target": "ChromaDBSearch-nFO8B",
+        "targetHandle": "{œfieldNameœ:œembeddingœ,œidœ:œChromaDBSearch-nFO8Bœ,œinputTypesœ:[œEmbeddingsœ],œtypeœ:œotherœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "QueryRewritePrompt",
+            "id": "QueryRewritePrompt-hWars",
+            "name": "rewritten_query",
+            "output_types": [
+              "Message"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "search_query",
+            "id": "ChromaDBSearch-nFO8B",
+            "inputTypes": [
+              "Message"
+            ],
+            "type": "str"
+          }
+        },
+        "id": "reactflow__edge-QueryRewritePrompt-hWars{œdataTypeœ:œQueryRewritePromptœ,œidœ:œQueryRewritePrompt-hWarsœ,œnameœ:œrewritten_queryœ,œoutput_typesœ:[œMessageœ]}-ChromaDBSearch-nFO8B{œfieldNameœ:œsearch_queryœ,œidœ:œChromaDBSearch-nFO8Bœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "selected": false,
+        "source": "QueryRewritePrompt-hWars",
+        "sourceHandle": "{œdataTypeœ:œQueryRewritePromptœ,œidœ:œQueryRewritePrompt-hWarsœ,œnameœ:œrewritten_queryœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "ChromaDBSearch-nFO8B",
+        "targetHandle": "{œfieldNameœ:œsearch_queryœ,œidœ:œChromaDBSearch-nFO8Bœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "ChromaDBSearch",
+            "id": "ChromaDBSearch-nFO8B",
+            "name": "search_results",
+            "output_types": [
+              "Data"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "documents",
+            "id": "GraniteBaseModel-mULWL",
+            "inputTypes": [
+              "Data",
+              "Search Results"
+            ],
+            "type": "other"
+          }
+        },
+        "id": "reactflow__edge-ChromaDBSearch-nFO8B{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-nFO8Bœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}-GraniteBaseModel-mULWL{œfieldNameœ:œdocumentsœ,œidœ:œGraniteBaseModel-mULWLœ,œinputTypesœ:[œDataœ,œSearch Resultsœ],œtypeœ:œotherœ}",
+        "selected": false,
+        "source": "ChromaDBSearch-nFO8B",
+        "sourceHandle": "{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-nFO8Bœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}",
+        "target": "GraniteBaseModel-mULWL",
+        "targetHandle": "{œfieldNameœ:œdocumentsœ,œidœ:œGraniteBaseModel-mULWLœ,œinputTypesœ:[œDataœ,œSearch Resultsœ],œtypeœ:œotherœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "ChromaDBSearch",
+            "id": "ChromaDBSearch-nFO8B",
+            "name": "search_results",
+            "output_types": [
+              "Data"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "documents",
+            "id": "HallucinationRemovalPrompt-9GKZ8",
+            "inputTypes": [
+              "Data"
+            ],
+            "type": "other"
+          }
+        },
+        "id": "reactflow__edge-ChromaDBSearch-nFO8B{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-nFO8Bœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}-HallucinationRemovalPrompt-9GKZ8{œfieldNameœ:œdocumentsœ,œidœ:œHallucinationRemovalPrompt-9GKZ8œ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}",
+        "selected": false,
+        "source": "ChromaDBSearch-nFO8B",
+        "sourceHandle": "{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-nFO8Bœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}",
+        "target": "HallucinationRemovalPrompt-9GKZ8",
+        "targetHandle": "{œfieldNameœ:œdocumentsœ,œidœ:œHallucinationRemovalPrompt-9GKZ8œ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}"
+      }
+    ],
+    "nodes": [
+      {
+        "data": {
+          "id": "ChatInput-KgmLn",
+          "node": {
+            "base_classes": [
+              "Message"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Get chat inputs from the Playground.",
+            "display_name": "Chat Input",
+            "documentation": "https://docs.langflow.org/chat-input-and-output",
+            "edited": false,
+            "field_order": [
+              "input_value",
+              "should_store_message",
+              "sender",
+              "sender_name",
+              "session_id",
+              "context_id",
+              "files"
+            ],
+            "frozen": false,
+            "icon": "MessagesSquare",
+            "legacy": false,
+            "lf_version": "1.7.3",
+            "metadata": {
+              "code_hash": "7a26c54d89ed",
+              "dependencies": {
+                "dependencies": [
+                  {
+                    "name": "lfx",
+                    "version": "0.2.2"
+                  }
+                ],
+                "total_dependencies": 1
+              },
+              "module": "lfx.components.input_output.chat.ChatInput"
+            },
+            "minimized": true,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Chat Message",
+                "group_outputs": false,
+                "method": "message_response",
+                "name": "message",
+                "selected": "Message",
+                "tool_mode": true,
+                "types": [
+                  "Message"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_type": "Component",
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from lfx.base.data.utils import IMG_FILE_TYPES, TEXT_FILE_TYPES\nfrom lfx.base.io.chat import ChatComponent\nfrom lfx.inputs.inputs import BoolInput\nfrom lfx.io import (\n    DropdownInput,\n    FileInput,\n    MessageTextInput,\n    MultilineInput,\n    Output,\n)\nfrom lfx.schema.message import Message\nfrom lfx.utils.constants import (\n    MESSAGE_SENDER_AI,\n    MESSAGE_SENDER_NAME_USER,\n    MESSAGE_SENDER_USER,\n)\n\n\nclass ChatInput(ChatComponent):\n    display_name = \"Chat Input\"\n    description = \"Get chat inputs from the Playground.\"\n    documentation: str = \"https://docs.langflow.org/chat-input-and-output\"\n    icon = \"MessagesSquare\"\n    name = \"ChatInput\"\n    minimized = True\n\n    inputs = [\n        MultilineInput(\n            name=\"input_value\",\n            display_name=\"Input Text\",\n            value=\"\",\n            info=\"Message to be passed as input.\",\n            input_types=[],\n        ),\n        BoolInput(\n            name=\"should_store_message\",\n            display_name=\"Store Messages\",\n            info=\"Store the message in the history.\",\n            value=True,\n            advanced=True,\n        ),\n        DropdownInput(\n            name=\"sender\",\n            display_name=\"Sender Type\",\n            options=[MESSAGE_SENDER_AI, MESSAGE_SENDER_USER],\n            value=MESSAGE_SENDER_USER,\n            info=\"Type of sender.\",\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"sender_name\",\n            display_name=\"Sender Name\",\n            info=\"Name of the sender.\",\n            value=MESSAGE_SENDER_NAME_USER,\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"session_id\",\n            display_name=\"Session ID\",\n            info=\"The session ID of the chat. If empty, the current session ID parameter will be used.\",\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"context_id\",\n            display_name=\"Context ID\",\n            info=\"The context ID of the chat. Adds an extra layer to the local memory.\",\n            value=\"\",\n            advanced=True,\n        ),\n        FileInput(\n            name=\"files\",\n            display_name=\"Files\",\n            file_types=TEXT_FILE_TYPES + IMG_FILE_TYPES,\n            info=\"Files to be sent with the message.\",\n            advanced=True,\n            is_list=True,\n            temp_file=True,\n        ),\n    ]\n    outputs = [\n        Output(display_name=\"Chat Message\", name=\"message\", method=\"message_response\"),\n    ]\n\n    async def message_response(self) -> Message:\n        # Ensure files is a list and filter out empty/None values\n        files = self.files if self.files else []\n        if files and not isinstance(files, list):\n            files = [files]\n        # Filter out None/empty values\n        files = [f for f in files if f is not None and f != \"\"]\n\n        session_id = self.session_id or self.graph.session_id or \"\"\n        message = await Message.create(\n            text=self.input_value,\n            sender=self.sender,\n            sender_name=self.sender_name,\n            session_id=session_id,\n            context_id=self.context_id,\n            files=files,\n        )\n        if session_id and isinstance(message, Message) and self.should_store_message:\n            stored_message = await self.send_message(\n                message,\n            )\n            self.message.value = stored_message\n            message = stored_message\n\n        self.status = message\n        return message\n"
+              },
+              "context_id": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Context ID",
+                "dynamic": false,
+                "info": "The context ID of the chat. Adds an extra layer to the local memory.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "context_id",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "str",
+                "value": ""
+              },
+              "files": {
+                "_input_type": "FileInput",
+                "advanced": true,
+                "display_name": "Files",
+                "dynamic": false,
+                "fileTypes": [
+                  "csv",
+                  "json",
+                  "pdf",
+                  "txt",
+                  "md",
+                  "mdx",
+                  "yaml",
+                  "yml",
+                  "xml",
+                  "html",
+                  "htm",
+                  "docx",
+                  "py",
+                  "sh",
+                  "sql",
+                  "js",
+                  "ts",
+                  "tsx",
+                  "jpg",
+                  "jpeg",
+                  "png",
+                  "bmp",
+                  "image"
+                ],
+                "file_path": "",
+                "info": "Files to be sent with the message.",
+                "list": true,
+                "list_add_label": "Add More",
+                "name": "files",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "temp_file": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "file",
+                "value": ""
+              },
+              "input_value": {
+                "_input_type": "MultilineInput",
+                "advanced": false,
+                "ai_enabled": false,
+                "copy_field": false,
+                "display_name": "Input Text",
+                "dynamic": false,
+                "info": "Message to be passed as input.",
+                "input_types": [],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "multiline": true,
+                "name": "input_value",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "str",
+                "value": ""
+              },
+              "sender": {
+                "_input_type": "DropdownInput",
+                "advanced": true,
+                "combobox": false,
+                "dialog_inputs": {},
+                "display_name": "Sender Type",
+                "dynamic": false,
+                "external_options": {},
+                "info": "Type of sender.",
+                "name": "sender",
+                "options": [
+                  "Machine",
+                  "User"
+                ],
+                "options_metadata": [],
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "toggle": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "track_in_telemetry": true,
+                "type": "str",
+                "value": "User"
+              },
+              "sender_name": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Sender Name",
+                "dynamic": false,
+                "info": "Name of the sender.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "sender_name",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "str",
+                "value": "User"
+              },
+              "session_id": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Session ID",
+                "dynamic": false,
+                "info": "The session ID of the chat. If empty, the current session ID parameter will be used.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "session_id",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "str",
+                "value": ""
+              },
+              "should_store_message": {
+                "_input_type": "BoolInput",
+                "advanced": true,
+                "display_name": "Store Messages",
+                "dynamic": false,
+                "info": "Store the message in the history.",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "should_store_message",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "track_in_telemetry": true,
+                "type": "bool",
+                "value": true
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": false,
+          "type": "ChatInput"
+        },
+        "dragging": false,
+        "id": "ChatInput-KgmLn",
+        "measured": {
+          "height": 48,
+          "width": 192
+        },
+        "position": {
+          "x": -104.10885398097275,
+          "y": 529.4970511686902
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "Memory-Wmu0B",
+          "node": {
+            "base_classes": [
+              "DataFrame",
+              "Message"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Stores or retrieves stored chat messages from Langflow tables or an external memory.",
+            "display_name": "Message History",
+            "documentation": "https://docs.langflow.org/message-history",
+            "edited": false,
+            "field_order": [
+              "mode",
+              "message",
+              "memory",
+              "sender_type",
+              "sender",
+              "sender_name",
+              "n_messages",
+              "session_id",
+              "context_id",
+              "order",
+              "template"
+            ],
+            "frozen": false,
+            "icon": "message-square-more",
+            "last_updated": "2026-02-10T19:13:47.470Z",
+            "legacy": false,
+            "lf_version": "1.7.3",
+            "metadata": {
+              "code_hash": "efd064ef48ff",
+              "dependencies": {
+                "dependencies": [
+                  {
+                    "name": "lfx",
+                    "version": "0.2.2"
+                  }
+                ],
+                "total_dependencies": 1
+              },
+              "module": "lfx.components.models_and_agents.memory.MemoryComponent"
+            },
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Messages",
+                "group_outputs": false,
+                "hidden": null,
+                "loop_types": null,
+                "method": "retrieve_messages_as_text",
+                "name": "messages_text",
+                "options": null,
+                "required_inputs": null,
+                "tool_mode": true,
+                "types": [
+                  "Message"
+                ],
+                "value": "__UNDEFINED__"
+              },
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Dataframe",
+                "group_outputs": false,
+                "hidden": null,
+                "loop_types": null,
+                "method": "retrieve_messages_dataframe",
+                "name": "dataframe",
+                "options": null,
+                "required_inputs": null,
+                "selected": "DataFrame",
+                "tool_mode": true,
+                "types": [
+                  "DataFrame"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_frontend_node_flow_id": {
+                "value": "ba730979-95bc-48c7-92fa-d0ee25e84f5e"
+              },
+              "_frontend_node_folder_id": {
+                "value": "ec036e2e-88fb-4108-970e-f25ff4ecafd4"
+              },
+              "_type": "Component",
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from typing import Any, cast\n\nfrom lfx.custom.custom_component.component import Component\nfrom lfx.helpers.data import data_to_text\nfrom lfx.inputs.inputs import DropdownInput, HandleInput, IntInput, MessageTextInput, MultilineInput, TabInput\nfrom lfx.memory import aget_messages, astore_message\nfrom lfx.schema.data import Data\nfrom lfx.schema.dataframe import DataFrame\nfrom lfx.schema.dotdict import dotdict\nfrom lfx.schema.message import Message\nfrom lfx.template.field.base import Output\nfrom lfx.utils.component_utils import set_current_fields, set_field_display\nfrom lfx.utils.constants import MESSAGE_SENDER_AI, MESSAGE_SENDER_NAME_AI, MESSAGE_SENDER_USER\n\n\nclass MemoryComponent(Component):\n    display_name = \"Message History\"\n    description = \"Stores or retrieves stored chat messages from Langflow tables or an external memory.\"\n    documentation: str = \"https://docs.langflow.org/message-history\"\n    icon = \"message-square-more\"\n    name = \"Memory\"\n    default_keys = [\"mode\", \"memory\", \"session_id\", \"context_id\"]\n    mode_config = {\n        \"Store\": [\"message\", \"memory\", \"sender\", \"sender_name\", \"session_id\", \"context_id\"],\n        \"Retrieve\": [\"n_messages\", \"order\", \"template\", \"memory\", \"session_id\", \"context_id\"],\n    }\n\n    inputs = [\n        TabInput(\n            name=\"mode\",\n            display_name=\"Mode\",\n            options=[\"Retrieve\", \"Store\"],\n            value=\"Retrieve\",\n            info=\"Operation mode: Store messages or Retrieve messages.\",\n            real_time_refresh=True,\n        ),\n        MessageTextInput(\n            name=\"message\",\n            display_name=\"Message\",\n            info=\"The chat message to be stored.\",\n            tool_mode=True,\n            dynamic=True,\n            show=False,\n        ),\n        HandleInput(\n            name=\"memory\",\n            display_name=\"External Memory\",\n            input_types=[\"Memory\"],\n            info=\"Retrieve messages from an external memory. If empty, it will use the Langflow tables.\",\n            advanced=True,\n        ),\n        DropdownInput(\n            name=\"sender_type\",\n            display_name=\"Sender Type\",\n            options=[MESSAGE_SENDER_AI, MESSAGE_SENDER_USER, \"Machine and User\"],\n            value=\"Machine and User\",\n            info=\"Filter by sender type.\",\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"sender\",\n            display_name=\"Sender\",\n            info=\"The sender of the message. Might be Machine or User. \"\n            \"If empty, the current sender parameter will be used.\",\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"sender_name\",\n            display_name=\"Sender Name\",\n            info=\"Filter by sender name.\",\n            advanced=True,\n            show=False,\n        ),\n        IntInput(\n            name=\"n_messages\",\n            display_name=\"Number of Messages\",\n            value=100,\n            info=\"Number of messages to retrieve.\",\n            advanced=True,\n            show=True,\n        ),\n        MessageTextInput(\n            name=\"session_id\",\n            display_name=\"Session ID\",\n            info=\"The session ID of the chat. If empty, the current session ID parameter will be used.\",\n            value=\"\",\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"context_id\",\n            display_name=\"Context ID\",\n            info=\"The context ID of the chat. Adds an extra layer to the local memory.\",\n            value=\"\",\n            advanced=True,\n        ),\n        DropdownInput(\n            name=\"order\",\n            display_name=\"Order\",\n            options=[\"Ascending\", \"Descending\"],\n            value=\"Ascending\",\n            info=\"Order of the messages.\",\n            advanced=True,\n            tool_mode=True,\n            required=True,\n        ),\n        MultilineInput(\n            name=\"template\",\n            display_name=\"Template\",\n            info=\"The template to use for formatting the data. \"\n            \"It can contain the keys {text}, {sender} or any other key in the message data.\",\n            value=\"{sender_name}: {text}\",\n            advanced=True,\n            show=False,\n        ),\n    ]\n\n    outputs = [\n        Output(display_name=\"Message\", name=\"messages_text\", method=\"retrieve_messages_as_text\", dynamic=True),\n        Output(display_name=\"Dataframe\", name=\"dataframe\", method=\"retrieve_messages_dataframe\", dynamic=True),\n    ]\n\n    def update_outputs(self, frontend_node: dict, field_name: str, field_value: Any) -> dict:\n        \"\"\"Dynamically show only the relevant output based on the selected output type.\"\"\"\n        if field_name == \"mode\":\n            # Start with empty outputs\n            frontend_node[\"outputs\"] = []\n            if field_value == \"Store\":\n                frontend_node[\"outputs\"] = [\n                    Output(\n                        display_name=\"Stored Messages\",\n                        name=\"stored_messages\",\n                        method=\"store_message\",\n                        hidden=True,\n                        dynamic=True,\n                    )\n                ]\n            if field_value == \"Retrieve\":\n                frontend_node[\"outputs\"] = [\n                    Output(\n                        display_name=\"Messages\", name=\"messages_text\", method=\"retrieve_messages_as_text\", dynamic=True\n                    ),\n                    Output(\n                        display_name=\"Dataframe\", name=\"dataframe\", method=\"retrieve_messages_dataframe\", dynamic=True\n                    ),\n                ]\n        return frontend_node\n\n    async def store_message(self) -> Message:\n        message = Message(text=self.message) if isinstance(self.message, str) else self.message\n\n        message.context_id = self.context_id or message.context_id\n        message.session_id = self.session_id or message.session_id\n        message.sender = self.sender or message.sender or MESSAGE_SENDER_AI\n        message.sender_name = self.sender_name or message.sender_name or MESSAGE_SENDER_NAME_AI\n\n        stored_messages: list[Message] = []\n\n        if self.memory:\n            self.memory.context_id = message.context_id\n            self.memory.session_id = message.session_id\n            lc_message = message.to_lc_message()\n            await self.memory.aadd_messages([lc_message])\n\n            stored_messages = await self.memory.aget_messages() or []\n\n            stored_messages = [Message.from_lc_message(m) for m in stored_messages] if stored_messages else []\n\n            if message.sender:\n                stored_messages = [m for m in stored_messages if m.sender == message.sender]\n        else:\n            await astore_message(message, flow_id=self.graph.flow_id)\n            stored_messages = (\n                await aget_messages(\n                    session_id=message.session_id,\n                    context_id=message.context_id,\n                    sender_name=message.sender_name,\n                    sender=message.sender,\n                )\n                or []\n            )\n\n        if not stored_messages:\n            msg = \"No messages were stored. Please ensure that the session ID and sender are properly set.\"\n            raise ValueError(msg)\n\n        stored_message = stored_messages[0]\n        self.status = stored_message\n        return stored_message\n\n    async def retrieve_messages(self) -> Data:\n        sender_type = self.sender_type\n        sender_name = self.sender_name\n        session_id = self.session_id\n        context_id = self.context_id\n        n_messages = self.n_messages\n        order = \"DESC\" if self.order == \"Descending\" else \"ASC\"\n\n        if sender_type == \"Machine and User\":\n            sender_type = None\n\n        if self.memory and not hasattr(self.memory, \"aget_messages\"):\n            memory_name = type(self.memory).__name__\n            err_msg = f\"External Memory object ({memory_name}) must have 'aget_messages' method.\"\n            raise AttributeError(err_msg)\n        # Check if n_messages is None or 0\n        if n_messages == 0:\n            stored = []\n        elif self.memory:\n            # override session_id\n            self.memory.session_id = session_id\n            self.memory.context_id = context_id\n\n            stored = await self.memory.aget_messages()\n            # langchain memories are supposed to return messages in ascending order\n\n            if n_messages:\n                stored = stored[-n_messages:]  # Get last N messages first\n\n            if order == \"DESC\":\n                stored = stored[::-1]  # Then reverse if needed\n\n            stored = [Message.from_lc_message(m) for m in stored]\n            if sender_type:\n                expected_type = MESSAGE_SENDER_AI if sender_type == MESSAGE_SENDER_AI else MESSAGE_SENDER_USER\n                stored = [m for m in stored if m.type == expected_type]\n        else:\n            # For internal memory, we always fetch the last N messages by ordering by DESC\n            stored = await aget_messages(\n                sender=sender_type,\n                sender_name=sender_name,\n                session_id=session_id,\n                context_id=context_id,\n                limit=10000,\n                order=order,\n            )\n            if n_messages:\n                stored = stored[-n_messages:]  # Get last N messages\n\n        # self.status = stored\n        return cast(\"Data\", stored)\n\n    async def retrieve_messages_as_text(self) -> Message:\n        stored_text = data_to_text(self.template, await self.retrieve_messages())\n        # self.status = stored_text\n        return Message(text=stored_text)\n\n    async def retrieve_messages_dataframe(self) -> DataFrame:\n        \"\"\"Convert the retrieved messages into a DataFrame.\n\n        Returns:\n            DataFrame: A DataFrame containing the message data.\n        \"\"\"\n        messages = await self.retrieve_messages()\n        return DataFrame(messages)\n\n    def update_build_config(\n        self,\n        build_config: dotdict,\n        field_value: Any,  # noqa: ARG002\n        field_name: str | None = None,  # noqa: ARG002\n    ) -> dotdict:\n        return set_current_fields(\n            build_config=build_config,\n            action_fields=self.mode_config,\n            selected_action=build_config[\"mode\"][\"value\"],\n            default_fields=self.default_keys,\n            func=set_field_display,\n        )\n"
+              },
+              "context_id": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Context ID",
+                "dynamic": false,
+                "info": "The context ID of the chat. Adds an extra layer to the local memory.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "context_id",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "str",
+                "value": ""
+              },
+              "is_refresh": false,
+              "memory": {
+                "_input_type": "HandleInput",
+                "advanced": true,
+                "display_name": "External Memory",
+                "dynamic": false,
+                "info": "Retrieve messages from an external memory. If empty, it will use the Langflow tables.",
+                "input_types": [
+                  "Memory"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "memory",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "other",
+                "value": ""
+              },
+              "message": {
+                "_input_type": "MessageTextInput",
+                "advanced": false,
+                "display_name": "Message",
+                "dynamic": true,
+                "info": "The chat message to be stored.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "message",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": false,
+                "title_case": false,
+                "tool_mode": true,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "str",
+                "value": ""
+              },
+              "mode": {
+                "_input_type": "TabInput",
+                "advanced": false,
+                "display_name": "Mode",
+                "dynamic": false,
+                "info": "Operation mode: Store messages or Retrieve messages.",
+                "name": "mode",
+                "options": [
+                  "Retrieve",
+                  "Store"
+                ],
+                "override_skip": false,
+                "placeholder": "",
+                "real_time_refresh": true,
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "track_in_telemetry": true,
+                "type": "tab",
+                "value": "Retrieve"
+              },
+              "n_messages": {
+                "_input_type": "IntInput",
+                "advanced": true,
+                "display_name": "Number of Messages",
+                "dynamic": false,
+                "info": "Number of messages to retrieve.",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "n_messages",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "track_in_telemetry": true,
+                "type": "int",
+                "value": 100
+              },
+              "order": {
+                "_input_type": "DropdownInput",
+                "advanced": true,
+                "combobox": false,
+                "dialog_inputs": {},
+                "display_name": "Order",
+                "dynamic": false,
+                "external_options": {},
+                "info": "Order of the messages.",
+                "name": "order",
+                "options": [
+                  "Ascending",
+                  "Descending"
+                ],
+                "options_metadata": [],
+                "override_skip": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "toggle": false,
+                "tool_mode": true,
+                "trace_as_metadata": true,
+                "track_in_telemetry": true,
+                "type": "str",
+                "value": "Ascending"
+              },
+              "sender": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Sender",
+                "dynamic": false,
+                "info": "The sender of the message. Might be Machine or User. If empty, the current sender parameter will be used.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "sender",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": false,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "str",
+                "value": ""
+              },
+              "sender_name": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Sender Name",
+                "dynamic": false,
+                "info": "Filter by sender name.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "sender_name",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": false,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "str",
+                "value": ""
+              },
+              "sender_type": {
+                "_input_type": "DropdownInput",
+                "advanced": true,
+                "combobox": false,
+                "dialog_inputs": {},
+                "display_name": "Sender Type",
+                "dynamic": false,
+                "external_options": {},
+                "info": "Filter by sender type.",
+                "name": "sender_type",
+                "options": [
+                  "Machine",
+                  "User",
+                  "Machine and User"
+                ],
+                "options_metadata": [],
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "toggle": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "track_in_telemetry": true,
+                "type": "str",
+                "value": "Machine and User"
+              },
+              "session_id": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Session ID",
+                "dynamic": false,
+                "info": "The session ID of the chat. If empty, the current session ID parameter will be used.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "session_id",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "str",
+                "value": ""
+              },
+              "template": {
+                "_input_type": "MultilineInput",
+                "advanced": true,
+                "ai_enabled": false,
+                "copy_field": false,
+                "display_name": "Template",
+                "dynamic": false,
+                "info": "The template to use for formatting the data. It can contain the keys {text}, {sender} or any other key in the message data.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "multiline": true,
+                "name": "template",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "str",
+                "value": "{sender_name}: {text}"
+              }
+            },
+            "tool_mode": false
+          },
+          "selected_output": "dataframe",
+          "showNode": true,
+          "type": "Memory"
+        },
+        "dragging": false,
+        "id": "Memory-Wmu0B",
+        "measured": {
+          "height": 218,
+          "width": 320
+        },
+        "position": {
+          "x": -179.94113324740573,
+          "y": 678.4344940661882
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "description": "Call Granite base models for text generation",
+          "display_name": "Base Model Chat",
+          "id": "GraniteBaseModel-mULWL",
+          "node": {
+            "base_classes": [
+              "Message",
+              "Text"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Call Granite base models for text generation",
+            "display_name": "Base Model Chat",
+            "documentation": "",
+            "edited": false,
+            "field_order": [
+              "model_backend",
+              "model_name",
+              "url",
+              "api_key",
+              "temperature",
+              "chat_input",
+              "message_history",
+              "documents"
+            ],
+            "frozen": false,
+            "icon": "sparkles",
+            "last_updated": "2026-03-19T03:01:26.237Z",
+            "legacy": false,
+            "metadata": {
+              "code_hash": "cb04af5826db",
+              "dependencies": {
+                "dependencies": [
+                  {
+                    "name": "langflow",
+                    "version": "1.7.3"
+                  },
+                  {
+                    "name": "httpx",
+                    "version": "0.28.1"
+                  },
+                  {
+                    "name": "pandas",
+                    "version": "2.2.3"
+                  },
+                  {
+                    "name": "torch",
+                    "version": "2.10.0"
+                  },
+                  {
+                    "name": "transformers",
+                    "version": "4.57.6"
+                  },
+                  {
+                    "name": "openai",
+                    "version": "1.109.1"
+                  },
+                  {
+                    "name": "mellea",
+                    "version": "0.3.2"
+                  }
+                ],
+                "total_dependencies": 7
+              },
+              "module": "custom_components.base_model_chat"
+            },
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Response",
+                "group_outputs": false,
+                "loop_types": null,
+                "method": "get_response",
+                "name": "response",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Message",
+                "tool_mode": true,
+                "types": [
+                  "Message"
+                ],
+                "value": "__UNDEFINED__"
+              },
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Full Response",
+                "group_outputs": false,
+                "loop_types": null,
+                "method": "get_full_response",
+                "name": "full_response",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Text",
+                "tool_mode": true,
+                "types": [
+                  "Text"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_frontend_node_flow_id": {
+                "value": "858415a2-d085-428f-a0d9-e1ea94831930"
+              },
+              "_frontend_node_folder_id": {
+                "value": "999dba2e-ed71-453f-9a15-71c2315a845f"
+              },
+              "_type": "Component",
+              "api_key": {
+                "_input_type": "SecretStrInput",
+                "advanced": false,
+                "display_name": "API Key",
+                "dynamic": false,
+                "info": "API key for authentication",
+                "input_types": [],
+                "load_from_db": false,
+                "name": "api_key",
+                "override_skip": false,
+                "password": true,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "track_in_telemetry": false,
+                "type": "str",
+                "value": ""
+              },
+              "chat_input": {
+                "_input_type": "MessageInput",
+                "advanced": false,
+                "display_name": "Chat Input",
+                "dynamic": false,
+                "info": "User message to process",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "chat_input",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "str",
+                "value": ""
+              },
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "\"\"\"\nGranite Base Model Component for Langflow\n\nCalls the Granite base model via multiple backends (vLLM, Ollama, IntrinsicsAPI).\nTakes chat input and returns model-generated responses.\n\"\"\"\n\nfrom langflow.custom import Component\nfrom langflow.io import (\n    SecretStrInput,\n    StrInput,\n    Output,\n    DropdownInput,\n    MessageInput,\n    HandleInput,\n    DataFrameInput,\n    SliderInput,\n)\nfrom langflow.schema import Message, Data\nfrom langflow.field_typing.range_spec import RangeSpec\nimport httpx\nimport json\nimport pandas as pd\nimport torch\nfrom transformers import AutoTokenizer, AutoModelForCausalLM\n\nfrom openai import OpenAI\nfrom mellea.formatters.granite.intrinsics.input import move_documents_to_message\n\n# Global model cache for LocalHF backend\n_localhf_model_cache = {}\n\n# Model name mapping to HuggingFace identifiers\n_MODEL_NAME_MAPPING = {\n    \"granite-4.0-micro\": \"ibm-granite/granite-4.0-micro\",\n    \"ibm-granite/granite-4.0-micro\": \"ibm-granite/granite-4.0-micro\",\n    \"granite4:micro\": \"ibm-granite/granite-4.0-micro\",\n}\n\n\nclass GraniteBaseModel(Component):\n    display_name = \"Base Model Chat\"\n    description = \"Call Granite base models for text generation\"\n    category = \"llm\"\n    icon = \"sparkles\"\n\n    BACKEND_CONFIG = {\n        \"LocalHF\": {\n            \"models\": [\"granite-4.0-micro\"],\n            \"default_model\": \"granite-4.0-micro\",\n            \"default_url\": \"local\",\n            \"url_editable\": False,\n        },\n        \"vLLM\": {\n            \"models\": [\"granite-4.0-micro\", \"granite-4.0-h-small\", \"gpt-oss-20b\"],\n            \"default_model\": \"granite-4.0-micro\",\n            \"default_url\": \"http://localhost:8000\",\n            \"url_editable\": True,\n        },\n        \"Ollama\": {\n            \"models\": [\"granite4:micro\", \"granite4:small-h\", \"gpt-oss:20b\"],\n            \"default_model\": \"granite4:micro\",\n            \"default_url\": \"http://localhost:11434\",\n            \"url_editable\": True,\n        },\n        \"IntrinsicsAPI (mellea + RITS)\": {\n            \"models\": [\"granite-4.0-micro\", \"granite-4.0-h-small\", \"gpt-oss-20b\"],\n            \"default_model\": \"granite-4.0-micro\",\n            \"default_url\": \"https://intrinsics-api.intrinsics.vpc-int.res.ibm.com\",\n            \"url_editable\": False,\n        },\n    }\n\n    CHAT_COMPLETIONS_ENDPOINT = \"/v1/chat/completions\"\n\n    inputs = [\n        DropdownInput(\n            name=\"model_backend\",\n            display_name=\"Model Backend\",\n            info=\"Backend service for Granite model\",\n            options=[\"IntrinsicsAPI (mellea + RITS)\", \"vLLM\", \"Ollama\", \"LocalHF\"],\n            value=\"IntrinsicsAPI (mellea + RITS)\",\n            real_time_refresh=True,\n        ),\n        DropdownInput(\n            name=\"model_name\",\n            display_name=\"Model Name\",\n            info=\"Model name (options change based on backend)\",\n            options=[\"granite-4.0-micro\", \"granite-4.0-h-small\", \"gpt-oss-20b\"],\n            value=\"granite-4.0-micro\",\n        ),\n        StrInput(\n            name=\"url\",\n            display_name=\"API URL\",\n            info=\"Base URL for the model backend (e.g., http://localhost:8000)\",\n            value=\"https://intrinsics-api.intrinsics.vpc-int.res.ibm.com\",\n            required=True,\n            show=False,\n        ),\n        SecretStrInput(\n            name=\"api_key\",\n            display_name=\"RITS API Key\",\n            info=\"API key for authentication\",\n            required=False,\n            load_from_db=False,\n        ),\n        SliderInput(\n            name=\"temperature\",\n            display_name=\"Temperature\",\n            info=\"Controls randomness in responses\",\n            value=0.0,\n            range_spec=RangeSpec(min=0, max=2, step=0.01),\n            advanced=True,\n        ),\n        MessageInput(\n            name=\"chat_input\",\n            display_name=\"Chat Input\",\n            info=\"User message to process\",\n            required=False,\n        ),\n        DataFrameInput(\n            name=\"message_history\",\n            display_name=\"Message History\",\n            info=\"Previous conversation messages as a DataFrame with 'role' (user/assistant) and 'content' columns\",\n            required=False,\n        ),\n        HandleInput(\n            name=\"documents\",\n            display_name=\"Documents\",\n            info=\"Documents to include in the request (accepts Data from vector stores)\",\n            input_types=[\"Data\", \"Search Results\"],\n            required=False,\n            is_list=True,\n        ),\n    ]\n\n    outputs = [\n        Output(\n            name=\"response\",\n            display_name=\"Response\",\n            method=\"get_response\",\n        ),\n        Output(\n            name=\"full_response\",\n            display_name=\"Full Response\",\n            method=\"get_full_response\",\n        ),\n    ]\n\n    def _extract_message_text(self, message: Message) -> str:\n        if message is None:\n            return \"\"\n        # Handle DataFrame case - should not happen but safety check\n        import pandas as pd\n        if isinstance(message, pd.DataFrame):\n            return \"\"\n        if hasattr(message, 'text'):\n            return message.text\n        if hasattr(message, 'content'):\n            return message.content\n        return str(message)\n\n    def _build_chat_messages(self) -> list:\n        messages = []\n        # Check if message_history exists - handle both pandas and Langflow DataFrames\n        if hasattr(self, 'message_history'):\n            # Don't use isinstance check or boolean evaluation as it could be lfx.schema.dataframe.DataFrame\n            try:\n                df = self.message_history\n                # Try to iterate - if it's None or invalid, this will fail\n                for _, row in df.iterrows():\n                    sender = row.get(\"sender\", \"\")\n                    role = \"user\" if sender == \"User\" else \"assistant\"\n                    content = row.get(\"text\", \"\")\n                    if content and str(content).strip():\n                        messages.append({\"role\": role, \"content\": str(content)})\n            except (TypeError, AttributeError, ValueError) as e:\n                # None, invalid type, or DataFrame boolean evaluation error - skip silently\n                pass\n            except Exception as e:\n                self.log(f\"Error processing message_history: {e}\", name=\"message_history warning\")\n        # Check if chat_input exists\n        if hasattr(self, 'chat_input'):\n            try:\n                user_message = self._extract_message_text(self.chat_input)\n                if user_message and user_message.strip():\n                    messages.append({\"role\": \"user\", \"content\": user_message})\n            except (TypeError, AttributeError, ValueError):\n                # None, invalid type, or DataFrame boolean evaluation error - skip silently\n                pass\n\n        return messages\n\n    def _build_request(self) -> dict:\n        messages = self._build_chat_messages()\n        if not messages:\n            raise ValueError(\"No messages to send\")\n        request_body = {\n            \"messages\": messages,\n            \"model\": self.model_name,\n        }\n        # Add temperature if provided\n        if hasattr(self, 'temperature') and self.temperature is not None:\n            request_body[\"temperature\"] = self.temperature\n        document_texts = self._extract_documents()\n        if document_texts:\n            if \"extra_body\" not in request_body:\n                request_body[\"extra_body\"] = {}\n            request_body[\"extra_body\"][\"documents\"] = [{\"text\": t} for t in document_texts]\n            if self.model_backend != \"IntrinsicsAPI (mellea + RITS)\":\n                # For vLLM/Ollama/LocalHF, move documents into the message\n                # (IntrinsicsAPI handles this server-side for non-Granite models)\n                request_body = move_documents_to_message(request_body, how=\"string\")\n        self.log(json.dumps(request_body, indent=2), name=\"request body\")\n        return request_body\n\n    def _extract_documents(self) -> list:\n        \"\"\"Extract document texts from the documents input.\n\n        Supports:\n        - list[Data] from vector store search results (each Data has text/page_content)\n        - Single Data with data[\"documents\"] list\n        - dict with \"documents\" key\n        \"\"\"\n        document_texts = []\n        if not hasattr(self, 'documents') or not self.documents:\n            return []\n\n        docs_input = self.documents\n        if not isinstance(docs_input, list):\n            docs_input = [docs_input]\n\n        for item in docs_input:\n            if isinstance(item, Data):\n                if hasattr(item, 'text') and item.text:\n                    document_texts.append(item.text)\n                elif hasattr(item, 'data') and isinstance(item.data, dict):\n                    nested = item.data.get(\"documents\")\n                    if nested and isinstance(nested, list):\n                        for doc in nested:\n                            if isinstance(doc, dict):\n                                text = doc.get(\"text\") or doc.get(\"content\") or doc.get(\"page_content\") or str(doc)\n                            else:\n                                text = str(doc)\n                            document_texts.append(text)\n            elif isinstance(item, dict):\n                nested = item.get(\"documents\")\n                if nested and isinstance(nested, list):\n                    for doc in nested:\n                        if isinstance(doc, dict):\n                            text = doc.get(\"text\") or doc.get(\"content\") or doc.get(\"page_content\") or str(doc)\n                        else:\n                            text = str(doc)\n                        document_texts.append(text)\n                else:\n                    text = item.get(\"text\") or item.get(\"content\") or item.get(\"page_content\") or str(item)\n                    document_texts.append(text)\n            else:\n                document_texts.append(str(item))\n\n        return document_texts\n\n    def _get_api_url(self) -> str:\n        if self.model_backend == \"IntrinsicsAPI (mellea + RITS)\":\n            return f\"{self.url.rstrip('/')}/{self.model_name}\"\n        else:\n            base_url = self.url.rstrip('/')\n            return f\"{base_url}{self.CHAT_COMPLETIONS_ENDPOINT}\"\n\n    def _call_api(self) -> dict:\n        if self.model_backend == \"LocalHF\":\n            return self._call_with_localhf()\n        if not self.url or not self.url.strip():\n            raise ValueError(\"API URL is required\")\n        if self.model_backend in [\"vLLM\", \"Ollama\"]:\n            return self._call_openai()\n        else:\n            return self._call_intrinsics_api()\n\n    def _call_with_localhf(self) -> dict:\n        \"\"\"Call local HuggingFace model directly using transformers.\"\"\"\n        messages = self._build_chat_messages()\n        if not messages:\n            raise ValueError(\"No messages to send\")\n\n        hf_model_id = _MODEL_NAME_MAPPING.get(self.model_name, self.model_name)\n        self.log(json.dumps({\"model\": hf_model_id, \"messages\": messages}, indent=2), name=\"LocalHF request\")\n\n        if hf_model_id in _localhf_model_cache:\n            tokenizer, model = _localhf_model_cache[hf_model_id]\n        else:\n            tokenizer = AutoTokenizer.from_pretrained(hf_model_id)\n            model = AutoModelForCausalLM.from_pretrained(\n                hf_model_id, torch_dtype=torch.bfloat16, device_map=\"auto\"\n            )\n            model.eval()\n            _localhf_model_cache[hf_model_id] = (tokenizer, model)\n\n        prompt = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)\n        inputs = tokenizer(prompt, return_tensors=\"pt\", padding=True).to(model.device)\n        input_length = inputs[\"input_ids\"].shape[1]\n\n        temperature = self.temperature if hasattr(self, \"temperature\") and self.temperature is not None else 0.0\n        with torch.no_grad():\n            outputs = model.generate(\n                **inputs,\n                max_new_tokens=512,\n                temperature=temperature,\n                do_sample=temperature > 0,\n                pad_token_id=tokenizer.pad_token_id,\n                eos_token_id=tokenizer.eos_token_id,\n            )\n\n        response_text = tokenizer.decode(outputs[0][input_length:], skip_special_tokens=True).strip()\n        self.log(response_text, name=\"LocalHF response\")\n\n        return {\n            \"choices\": [{\"message\": {\"role\": \"assistant\", \"content\": response_text}}],\n            \"model\": self.model_name,\n            \"backend\": \"LocalHF\",\n        }\n\n    def _call_openai(self) -> dict:\n        try:\n            request_body = self._build_request()\n\n            self.log(json.dumps(request_body, indent=2), name=\"vLLM/Ollama request\")\n            api_url = self._get_api_url()\n            client = OpenAI(\n                base_url=api_url.replace(\"/chat/completions\", \"\"),\n                api_key=self.api_key or \"no-key\",\n            )\n            completion = client.chat.completions.create(**request_body)\n            response_data = json.loads(completion.model_dump_json())\n            self.log(json.dumps(response_data, indent=2), name=\"vLLM/Ollama response\")\n            return response_data\n        except Exception as e:\n            raise ValueError(f\"vLLM/Ollama call failed: {e}\")\n\n    def _call_intrinsics_api(self) -> dict:\n        request_body = self._build_request()\n\n        self.log(json.dumps(request_body, indent=2), name=\"Intrinsics API request\")\n        api_url = self._get_api_url()\n        headers = {\"Content-Type\": \"application/json\"}\n        if self.model_backend == \"IntrinsicsAPI (mellea + RITS)\":\n            if self.api_key and self.api_key.strip():\n                headers[\"RITS_API_KEY\"] = self.api_key\n        self._last_request = request_body\n        try:\n            with httpx.Client() as client:\n                response = client.post(\n                    api_url, json=request_body, headers=headers, timeout=300.0,\n                )\n                response.raise_for_status()\n        except httpx.HTTPStatusError as e:\n            error_detail = e.response.text\n            try:\n                error_detail = e.response.json()\n            except:\n                pass\n            raise ValueError(f\"API error {e.response.status_code}: {error_detail}\")\n        except httpx.ConnectError:\n            raise ValueError(f\"Could not connect to API at {api_url}\")\n        except httpx.RequestError as e:\n            raise ValueError(f\"Request failed: {e}\")\n        except Exception as e:\n            raise ValueError(f\"Unexpected error: {e}\")\n        try:\n            response_data = response.json()\n        except Exception as e:\n            raise ValueError(f\"Failed to parse API response as JSON: {e}\")\n        self.log(json.dumps(response_data, indent=2), name=\"Intrinsics API response\")\n        return response_data\n\n    def _extract_content_from_response(self, response_data: dict) -> str:\n        \"\"\"Extract text content from API response (full response already printed in _call_* methods)\"\"\"\n        if \"choices\" in response_data and response_data[\"choices\"]:\n            choice = response_data[\"choices\"][0]\n            if \"message\" in choice:\n                message = choice[\"message\"]\n                if isinstance(message, dict):\n                    return message.get(\"content\", \"\")\n                return str(message)\n        return \"\"\n\n    async def update_build_config(self, build_config, field_value=None, field_name=None):\n        if field_name == \"model_backend\":\n            if field_value and field_value in self.BACKEND_CONFIG:\n                backend_config = self.BACKEND_CONFIG[field_value]\n                build_config[\"model_name\"][\"options\"] = backend_config[\"models\"]\n                build_config[\"model_name\"][\"value\"] = backend_config[\"default_model\"]\n                build_config[\"url\"][\"value\"] = backend_config[\"default_url\"]\n                build_config[\"url\"][\"show\"] = backend_config.get(\"url_editable\", True)\n                if field_value == \"IntrinsicsAPI (mellea + RITS)\":\n                    build_config[\"api_key\"][\"display_name\"] = \"RITS API Key\"\n                    build_config[\"api_key\"][\"show\"] = True\n                elif field_value == \"LocalHF\":\n                    build_config[\"url\"][\"show\"] = False\n                    build_config[\"api_key\"][\"show\"] = False\n                    build_config[\"api_key\"][\"required\"] = False\n                else:\n                    build_config[\"api_key\"][\"display_name\"] = \"API Key\"\n                    build_config[\"api_key\"][\"show\"] = True\n        return build_config\n\n    def get_response(self) -> Message:\n        response_data = self._call_api()\n        content = self._extract_content_from_response(response_data)\n        return Message(text=content)\n\n    def get_full_response(self) -> str:\n        response_data = self._call_api()\n        return json.dumps(response_data, indent=2)\n"
+              },
+              "documents": {
+                "_input_type": "HandleInput",
+                "advanced": false,
+                "display_name": "Documents",
+                "dynamic": false,
+                "info": "Documents to include in the request (accepts Data from vector stores)",
+                "input_types": [
+                  "Data",
+                  "Search Results"
+                ],
+                "list": true,
+                "list_add_label": "Add More",
+                "name": "documents",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "other",
+                "value": ""
+              },
+              "is_refresh": false,
+              "message_history": {
+                "_input_type": "DataFrameInput",
+                "advanced": false,
+                "display_name": "Message History",
+                "dynamic": false,
+                "info": "Previous conversation messages as a DataFrame with 'role' (user/assistant) and 'content' columns",
+                "input_types": [
+                  "DataFrame"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "message_history",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "other",
+                "value": ""
+              },
+              "model_backend": {
+                "_input_type": "DropdownInput",
+                "advanced": false,
+                "combobox": false,
+                "dialog_inputs": {},
+                "display_name": "Model Backend",
+                "dynamic": false,
+                "external_options": {},
+                "info": "Backend service for Granite model",
+                "name": "model_backend",
+                "options": [
+                  "IntrinsicsAPI (mellea + RITS)",
+                  "vLLM",
+                  "Ollama",
+                  "LocalHF"
+                ],
+                "options_metadata": [],
+                "override_skip": false,
+                "placeholder": "",
+                "real_time_refresh": true,
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "toggle": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "track_in_telemetry": true,
+                "type": "str",
+                "value": "Ollama"
+              },
+              "model_name": {
+                "_input_type": "DropdownInput",
+                "advanced": false,
+                "combobox": false,
+                "dialog_inputs": {},
+                "display_name": "Model Name",
+                "dynamic": false,
+                "external_options": {},
+                "info": "Model name (options change based on backend)",
+                "name": "model_name",
+                "options": [
+                  "granite4:micro",
+                  "granite4:small-h",
+                  "gpt-oss:20b"
+                ],
+                "options_metadata": [],
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "toggle": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "track_in_telemetry": true,
+                "type": "str",
+                "value": "granite4:micro"
+              },
+              "temperature": {
+                "_input_type": "SliderInput",
+                "advanced": true,
+                "display_name": "Temperature",
+                "dynamic": false,
+                "info": "Controls randomness in responses",
+                "max_label": "",
+                "max_label_icon": "",
+                "min_label": "",
+                "min_label_icon": "",
+                "name": "temperature",
+                "override_skip": false,
+                "placeholder": "",
+                "range_spec": {
+                  "max": 2,
+                  "min": 0,
+                  "step": 0.01,
+                  "step_type": "float"
+                },
+                "required": false,
+                "show": true,
+                "slider_buttons": false,
+                "slider_buttons_options": [],
+                "slider_input": false,
+                "title_case": false,
+                "tool_mode": false,
+                "track_in_telemetry": false,
+                "type": "slider",
+                "value": 0
+              },
+              "url": {
+                "_input_type": "StrInput",
+                "advanced": false,
+                "display_name": "API URL",
+                "dynamic": false,
+                "info": "Base URL for the model backend (e.g., http://localhost:8000)",
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "url",
+                "override_skip": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "str",
+                "value": "http://host.docker.internal:11434"
+              }
+            },
+            "tool_mode": false
+          },
+          "selected_output": "response",
+          "showNode": true,
+          "type": "GraniteBaseModel"
+        },
+        "dragging": false,
+        "id": "GraniteBaseModel-mULWL",
+        "measured": {
+          "height": 623,
+          "width": 320
+        },
+        "position": {
+          "x": 1192.7188190772226,
+          "y": -172.79406870822817
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "ChatOutput-vNusy",
+          "node": {
+            "base_classes": [
+              "Message"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Display a chat message in the Playground.",
+            "display_name": "Chat Output",
+            "documentation": "https://docs.langflow.org/chat-input-and-output",
+            "edited": false,
+            "field_order": [
+              "input_value",
+              "should_store_message",
+              "sender",
+              "sender_name",
+              "session_id",
+              "context_id",
+              "data_template",
+              "clean_data"
+            ],
+            "frozen": false,
+            "icon": "MessagesSquare",
+            "legacy": false,
+            "lf_version": "1.7.3",
+            "metadata": {
+              "code_hash": "8c87e536cca4",
+              "dependencies": {
+                "dependencies": [
+                  {
+                    "name": "orjson",
+                    "version": "3.10.15"
+                  },
+                  {
+                    "name": "fastapi",
+                    "version": "0.128.6"
+                  },
+                  {
+                    "name": "lfx",
+                    "version": "0.2.2"
+                  }
+                ],
+                "total_dependencies": 3
+              },
+              "module": "lfx.components.input_output.chat_output.ChatOutput"
+            },
+            "minimized": true,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Output Message",
+                "group_outputs": false,
+                "method": "message_response",
+                "name": "message",
+                "selected": "Message",
+                "tool_mode": true,
+                "types": [
+                  "Message"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_type": "Component",
+              "clean_data": {
+                "_input_type": "BoolInput",
+                "advanced": true,
+                "display_name": "Basic Clean Data",
+                "dynamic": false,
+                "info": "Whether to clean data before converting to string.",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "clean_data",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "track_in_telemetry": true,
+                "type": "bool",
+                "value": true
+              },
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from collections.abc import Generator\nfrom typing import Any\n\nimport orjson\nfrom fastapi.encoders import jsonable_encoder\n\nfrom lfx.base.io.chat import ChatComponent\nfrom lfx.helpers.data import safe_convert\nfrom lfx.inputs.inputs import BoolInput, DropdownInput, HandleInput, MessageTextInput\nfrom lfx.schema.data import Data\nfrom lfx.schema.dataframe import DataFrame\nfrom lfx.schema.message import Message\nfrom lfx.schema.properties import Source\nfrom lfx.template.field.base import Output\nfrom lfx.utils.constants import (\n    MESSAGE_SENDER_AI,\n    MESSAGE_SENDER_NAME_AI,\n    MESSAGE_SENDER_USER,\n)\n\n\nclass ChatOutput(ChatComponent):\n    display_name = \"Chat Output\"\n    description = \"Display a chat message in the Playground.\"\n    documentation: str = \"https://docs.langflow.org/chat-input-and-output\"\n    icon = \"MessagesSquare\"\n    name = \"ChatOutput\"\n    minimized = True\n\n    inputs = [\n        HandleInput(\n            name=\"input_value\",\n            display_name=\"Inputs\",\n            info=\"Message to be passed as output.\",\n            input_types=[\"Data\", \"DataFrame\", \"Message\"],\n            required=True,\n        ),\n        BoolInput(\n            name=\"should_store_message\",\n            display_name=\"Store Messages\",\n            info=\"Store the message in the history.\",\n            value=True,\n            advanced=True,\n        ),\n        DropdownInput(\n            name=\"sender\",\n            display_name=\"Sender Type\",\n            options=[MESSAGE_SENDER_AI, MESSAGE_SENDER_USER],\n            value=MESSAGE_SENDER_AI,\n            advanced=True,\n            info=\"Type of sender.\",\n        ),\n        MessageTextInput(\n            name=\"sender_name\",\n            display_name=\"Sender Name\",\n            info=\"Name of the sender.\",\n            value=MESSAGE_SENDER_NAME_AI,\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"session_id\",\n            display_name=\"Session ID\",\n            info=\"The session ID of the chat. If empty, the current session ID parameter will be used.\",\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"context_id\",\n            display_name=\"Context ID\",\n            info=\"The context ID of the chat. Adds an extra layer to the local memory.\",\n            value=\"\",\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"data_template\",\n            display_name=\"Data Template\",\n            value=\"{text}\",\n            advanced=True,\n            info=\"Template to convert Data to Text. If left empty, it will be dynamically set to the Data's text key.\",\n        ),\n        BoolInput(\n            name=\"clean_data\",\n            display_name=\"Basic Clean Data\",\n            value=True,\n            advanced=True,\n            info=\"Whether to clean data before converting to string.\",\n        ),\n    ]\n    outputs = [\n        Output(\n            display_name=\"Output Message\",\n            name=\"message\",\n            method=\"message_response\",\n        ),\n    ]\n\n    def _build_source(self, id_: str | None, display_name: str | None, source: str | None) -> Source:\n        source_dict = {}\n        if id_:\n            source_dict[\"id\"] = id_\n        if display_name:\n            source_dict[\"display_name\"] = display_name\n        if source:\n            # Handle case where source is a ChatOpenAI object\n            if hasattr(source, \"model_name\"):\n                source_dict[\"source\"] = source.model_name\n            elif hasattr(source, \"model\"):\n                source_dict[\"source\"] = str(source.model)\n            else:\n                source_dict[\"source\"] = str(source)\n        return Source(**source_dict)\n\n    async def message_response(self) -> Message:\n        # First convert the input to string if needed\n        text = self.convert_to_string()\n\n        # Get source properties\n        source, _, display_name, source_id = self.get_properties_from_source_component()\n\n        # Create or use existing Message object\n        if isinstance(self.input_value, Message) and not self.is_connected_to_chat_input():\n            message = self.input_value\n            # Update message properties\n            message.text = text\n            # Preserve existing session_id from the incoming message if it exists\n            existing_session_id = message.session_id\n        else:\n            message = Message(text=text)\n            existing_session_id = None\n\n        # Set message properties\n        message.sender = self.sender\n        message.sender_name = self.sender_name\n        # Preserve session_id from incoming message, or use component/graph session_id\n        message.session_id = (\n            self.session_id or existing_session_id or (self.graph.session_id if hasattr(self, \"graph\") else None) or \"\"\n        )\n        message.context_id = self.context_id\n        message.flow_id = self.graph.flow_id if hasattr(self, \"graph\") else None\n        message.properties.source = self._build_source(source_id, display_name, source)\n\n        # Store message if needed\n        if message.session_id and self.should_store_message:\n            stored_message = await self.send_message(message)\n            self.message.value = stored_message\n            message = stored_message\n\n        self.status = message\n        return message\n\n    def _serialize_data(self, data: Data) -> str:\n        \"\"\"Serialize Data object to JSON string.\"\"\"\n        # Convert data.data to JSON-serializable format\n        serializable_data = jsonable_encoder(data.data)\n        # Serialize with orjson, enabling pretty printing with indentation\n        json_bytes = orjson.dumps(serializable_data, option=orjson.OPT_INDENT_2)\n        # Convert bytes to string and wrap in Markdown code blocks\n        return \"```json\\n\" + json_bytes.decode(\"utf-8\") + \"\\n```\"\n\n    def _validate_input(self) -> None:\n        \"\"\"Validate the input data and raise ValueError if invalid.\"\"\"\n        if self.input_value is None:\n            msg = \"Input data cannot be None\"\n            raise ValueError(msg)\n        if isinstance(self.input_value, list) and not all(\n            isinstance(item, Message | Data | DataFrame | str) for item in self.input_value\n        ):\n            invalid_types = [\n                type(item).__name__\n                for item in self.input_value\n                if not isinstance(item, Message | Data | DataFrame | str)\n            ]\n            msg = f\"Expected Data or DataFrame or Message or str, got {invalid_types}\"\n            raise TypeError(msg)\n        if not isinstance(\n            self.input_value,\n            Message | Data | DataFrame | str | list | Generator | type(None),\n        ):\n            type_name = type(self.input_value).__name__\n            msg = f\"Expected Data or DataFrame or Message or str, Generator or None, got {type_name}\"\n            raise TypeError(msg)\n\n    def convert_to_string(self) -> str | Generator[Any, None, None]:\n        \"\"\"Convert input data to string with proper error handling.\"\"\"\n        self._validate_input()\n        if isinstance(self.input_value, list):\n            clean_data: bool = getattr(self, \"clean_data\", False)\n            return \"\\n\".join([safe_convert(item, clean_data=clean_data) for item in self.input_value])\n        if isinstance(self.input_value, Generator):\n            return self.input_value\n        return safe_convert(self.input_value)\n"
+              },
+              "context_id": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Context ID",
+                "dynamic": false,
+                "info": "The context ID of the chat. Adds an extra layer to the local memory.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "context_id",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "str",
+                "value": ""
+              },
+              "data_template": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Data Template",
+                "dynamic": false,
+                "info": "Template to convert Data to Text. If left empty, it will be dynamically set to the Data's text key.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "data_template",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "str",
+                "value": "{text}"
+              },
+              "input_value": {
+                "_input_type": "HandleInput",
+                "advanced": false,
+                "display_name": "Inputs",
+                "dynamic": false,
+                "info": "Message to be passed as output.",
+                "input_types": [
+                  "Data",
+                  "DataFrame",
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "input_value",
+                "override_skip": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "other",
+                "value": ""
+              },
+              "sender": {
+                "_input_type": "DropdownInput",
+                "advanced": true,
+                "combobox": false,
+                "dialog_inputs": {},
+                "display_name": "Sender Type",
+                "dynamic": false,
+                "external_options": {},
+                "info": "Type of sender.",
+                "name": "sender",
+                "options": [
+                  "Machine",
+                  "User"
+                ],
+                "options_metadata": [],
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "toggle": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "track_in_telemetry": true,
+                "type": "str",
+                "value": "Machine"
+              },
+              "sender_name": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Sender Name",
+                "dynamic": false,
+                "info": "Name of the sender.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "sender_name",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "str",
+                "value": "AI"
+              },
+              "session_id": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Session ID",
+                "dynamic": false,
+                "info": "The session ID of the chat. If empty, the current session ID parameter will be used.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "session_id",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "str",
+                "value": ""
+              },
+              "should_store_message": {
+                "_input_type": "BoolInput",
+                "advanced": true,
+                "display_name": "Store Messages",
+                "dynamic": false,
+                "info": "Store the message in the history.",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "should_store_message",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "track_in_telemetry": true,
+                "type": "bool",
+                "value": true
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": false,
+          "type": "ChatOutput"
+        },
+        "dragging": false,
+        "id": "ChatOutput-vNusy",
+        "measured": {
+          "height": 48,
+          "width": 192
+        },
+        "position": {
+          "x": 2130.3303787157415,
+          "y": 590.0854064184233
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "QueryRewritePrompt-hWars",
+          "node": {
+            "base_classes": [
+              "Message",
+              "Text"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Rewrite a query using a default prompt template for improved retrieval",
+            "display_name": "Query Rewrite (Prompt)",
+            "documentation": "",
+            "edited": false,
+            "field_order": [
+              "model_backend",
+              "model_name",
+              "url",
+              "api_key",
+              "temperature",
+              "chat_input",
+              "message_history"
+            ],
+            "frozen": false,
+            "icon": "message-square",
+            "last_updated": "2026-03-19T03:01:03.149Z",
+            "legacy": false,
+            "lf_version": "1.7.3",
+            "metadata": {
+              "code_hash": "1e774844ff99",
+              "dependencies": {
+                "dependencies": [
+                  {
+                    "name": "langflow",
+                    "version": "1.7.3"
+                  },
+                  {
+                    "name": "torch",
+                    "version": "2.10.0"
+                  },
+                  {
+                    "name": "transformers",
+                    "version": "4.57.6"
+                  },
+                  {
+                    "name": "httpx",
+                    "version": "0.28.1"
+                  },
+                  {
+                    "name": "openai",
+                    "version": "1.109.1"
+                  }
+                ],
+                "total_dependencies": 5
+              },
+              "module": "custom_components.query_rewrite_prompt"
+            },
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Rewritten Query",
+                "group_outputs": false,
+                "loop_types": null,
+                "method": "rewrite_query",
+                "name": "rewritten_query",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Message",
+                "tool_mode": true,
+                "types": [
+                  "Message"
+                ],
+                "value": "__UNDEFINED__"
+              },
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Full Response",
+                "group_outputs": false,
+                "loop_types": null,
+                "method": "get_full_response",
+                "name": "full_response",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Text",
+                "tool_mode": true,
+                "types": [
+                  "Text"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_frontend_node_flow_id": {
+                "value": "858415a2-d085-428f-a0d9-e1ea94831930"
+              },
+              "_frontend_node_folder_id": {
+                "value": "999dba2e-ed71-453f-9a15-71c2315a845f"
+              },
+              "_type": "Component",
+              "api_key": {
+                "_input_type": "SecretStrInput",
+                "advanced": false,
+                "display_name": "API Key",
+                "dynamic": false,
+                "info": "API key for authentication",
+                "input_types": [],
+                "load_from_db": false,
+                "name": "api_key",
+                "override_skip": false,
+                "password": true,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "track_in_telemetry": false,
+                "type": "str",
+                "value": ""
+              },
+              "chat_input": {
+                "_input_type": "MessageInput",
+                "advanced": false,
+                "display_name": "Chat Input",
+                "dynamic": false,
+                "info": "User message/query to rewrite",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "chat_input",
+                "override_skip": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "str",
+                "value": ""
+              },
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "\"\"\"\nQuery Rewrite with Prompt Component for Langflow\n\nRewrite a query using a default prompt template for improved retrieval performance.\n\"\"\"\n\nfrom langflow.custom import Component\nfrom langflow.io import (\n    SecretStrInput,\n    StrInput,\n    Output,\n    DropdownInput,\n    MessageInput,\n    DataFrameInput,\n    SliderInput,\n)\nfrom langflow.schema import Message\nfrom langflow.field_typing.range_spec import RangeSpec\nimport json\nimport torch\nfrom transformers import AutoTokenizer, AutoModelForCausalLM\nimport httpx\nfrom openai import OpenAI\n\n\nclass QueryRewritePrompt(Component):\n    display_name = \"Query Rewrite (Prompt)\"\n    description = \"Rewrite a query using a default prompt template for improved retrieval\"\n    category = \"tools\"\n    icon = \"message-square\"\n\n    intrinsic_name = \"query_rewrite\"\n\n    BACKEND_CONFIG = {\n        \"LocalHF\": {\n            \"models\": [\"granite-4.0-micro\"],\n            \"default_model\": \"granite-4.0-micro\",\n            \"default_url\": \"\",\n            \"url_editable\": False,\n        },\n        \"Ollama\": {\n            \"models\": [\"granite4:micro\"],\n            \"default_model\": \"granite4:micro\",\n            \"default_url\": \"http://localhost:11434\",\n            \"url_editable\": True,\n        },\n        \"IntrinsicsAPI (mellea + RITS)\": {\n            \"models\": [\"granite-4.0-micro\", \"gpt-oss-20b\"],\n            \"default_model\": \"granite-4.0-micro\",\n            \"default_url\": \"https://intrinsics-api.intrinsics.vpc-int.res.ibm.com\",\n            \"url_editable\": False,\n        },\n    }\n\n    # Model name mapping to HuggingFace identifiers\n    MODEL_NAME_MAPPING = {\n        \"granite-4.0-micro\": \"ibm-granite/granite-4.0-micro\",\n        \"ibm-granite/granite-4.0-micro\": \"ibm-granite/granite-4.0-micro\",\n        \"granite4:micro\": \"ibm-granite/granite-4.0-micro\",\n    }\n\n    # Default prompt template for query rewriting\n    REWRITE_PROMPT = (\n        \"Look at the input and try to reason about the underlying semantic intent / meaning.\\n\"\n        \"Here is the initial question:\"\n        \"\\n ------- \\n\"\n        \"{question}\"\n        \"\\n ------- \\n\"\n        \"Formulate an improved last-turn question. \"\n        \"Return ONLY the improved question without any explanation, preamble, or additional text.\"\n    )\n\n    def __init__(self, *args, **kwargs):\n        super().__init__(*args, **kwargs)\n        self._model = None\n        self._tokenizer = None\n\n    inputs = [\n        DropdownInput(\n            name=\"model_backend\",\n            display_name=\"Model Backend\",\n            info=\"Backend service for Granite model\",\n            options=[\"IntrinsicsAPI (mellea + RITS)\", \"Ollama\", \"LocalHF\"],\n            value=\"IntrinsicsAPI (mellea + RITS)\",\n            real_time_refresh=True,\n        ),\n        DropdownInput(\n            name=\"model_name\",\n            display_name=\"Model Name\",\n            info=\"Model name (options change based on backend)\",\n            options=[\"granite-4.0-micro\", \"gpt-oss-20b\"],\n            value=\"granite-4.0-micro\",\n        ),\n        StrInput(\n            name=\"url\",\n            display_name=\"API URL\",\n            info=\"Base URL for the model backend\",\n            value=\"https://intrinsics-api.intrinsics.vpc-int.res.ibm.com\",\n            required=False,\n            show=False,\n        ),\n        SecretStrInput(\n            name=\"api_key\",\n            display_name=\"RITS API Key\",\n            info=\"API key for authentication\",\n            required=False,\n            load_from_db=False,\n        ),\n        SliderInput(\n            name=\"temperature\",\n            display_name=\"Temperature\",\n            info=\"Controls randomness in responses\",\n            value=0.0,\n            range_spec=RangeSpec(min=0, max=2, step=0.01),\n            advanced=True,\n        ),\n        MessageInput(\n            name=\"chat_input\",\n            display_name=\"Chat Input\",\n            info=\"User message/query to rewrite\",\n            required=True,\n        ),\n        DataFrameInput(\n            name=\"message_history\",\n            display_name=\"Message History\",\n            info=\"Previous conversation messages as a DataFrame with 'sender' (User/AI) and 'text' columns\",\n            required=False,\n        ),\n    ]\n\n    outputs = [\n        Output(\n            name=\"rewritten_query\",\n            display_name=\"Rewritten Query\",\n            method=\"rewrite_query\",\n        ),\n        Output(\n            name=\"full_response\",\n            display_name=\"Full Response\",\n            method=\"get_full_response\",\n        ),\n    ]\n\n    def _extract_message_text(self, message) -> str:\n        \"\"\"Extract text content from a Message object or other input types\"\"\"\n        # Handle Message objects\n        if hasattr(message, 'text'):\n            return message.text\n        if hasattr(message, 'content'):\n            return message.content\n\n        # Handle Data objects that might come from If-Else\n        if hasattr(message, 'data'):\n            data = message.data\n            if isinstance(data, dict):\n                # Try common text fields\n                return data.get('text', data.get('content', data.get('message', str(data))))\n            return str(data)\n\n        # Handle plain strings\n        if isinstance(message, str):\n            return message\n\n        # Fallback to string representation\n        return str(message)\n\n    def _build_conversation_text(self) -> str:\n        \"\"\"Build conversation text with alternating user/assistant messages from DataFrame\"\"\"\n        conversation_lines = []\n\n        # Get current user input first to filter it from history\n        # Handle build phase where chat_input might not be set\n        if not hasattr(self, 'chat_input') or self.chat_input is None:\n            raise ValueError(\"Chat input (current query) is required\")\n\n        current_query = self._extract_message_text(self.chat_input)\n        if not current_query or not current_query.strip():\n            raise ValueError(\"Chat input (current query) is required\")\n        current_query_text = current_query.strip()\n\n        # Add chat history from DataFrame (excluding current message to avoid duplicates)\n        if hasattr(self, 'message_history') and self.message_history is not None:\n            df = self.message_history\n            print(\"history DataFrame shape:\", df.shape if hasattr(df, 'shape') else \"unknown\")\n\n            # Iterate over DataFrame rows\n            for _, row in df.iterrows():\n                sender = row.get(\"sender\", \"\")\n                content = row.get(\"text\", \"\")\n                content_str = str(content).strip() if content else \"\"\n\n                # Skip if this is the current message (avoid duplicates from Memory component)\n                if content_str and content_str != current_query_text:\n                    # Format as \"User:\" or \"AI:\" based on sender\n                    role_label = \"User\" if sender == \"User\" else \"AI\"\n                    conversation_lines.append(f\"{role_label}: {content_str}\")\n\n        # Add current user input as the last turn (must be user role)\n        conversation_lines.append(f\"User: {current_query_text}\")\n\n        return \"\\n\".join(conversation_lines)\n\n    def _build_prompt(self) -> str:\n        \"\"\"Build the full prompt with the conversation\"\"\"\n        conversation_text = self._build_conversation_text()\n        print(\"Conversation Text for Prompt:\", conversation_text)\n\n        prompt = self.REWRITE_PROMPT.format(question=conversation_text)\n        return prompt\n\n    def _load_model(self):\n        \"\"\"Lazy load the model and tokenizer\"\"\"\n        if self._model is None or self._tokenizer is None:\n            # Map model name to HuggingFace identifier\n            hf_model_name = self.MODEL_NAME_MAPPING.get(self.model_name, self.model_name)\n            print(f\"Loading model: {self.model_name} -> {hf_model_name}\")\n\n            self._tokenizer = AutoTokenizer.from_pretrained(hf_model_name)\n            self._model = AutoModelForCausalLM.from_pretrained(\n                hf_model_name,\n                torch_dtype=torch.bfloat16,\n                device_map=\"auto\"\n            )\n            self._model.eval()\n            print(f\"Model loaded on device: {self._model.device}\")\n\n    def _invoke_with_string_prompt(self, prompt: str) -> str:\n        \"\"\"Invoke model with a string prompt\"\"\"\n        self._load_model()\n\n        # Tokenize input\n        inputs = self._tokenizer(prompt, return_tensors=\"pt\", padding=True).to(self._model.device)\n\n        # Generate response\n        # Use temperature if provided, otherwise use 0.0 for deterministic output\n        temperature = self.temperature if hasattr(self, 'temperature') and self.temperature is not None else 0.0\n        with torch.no_grad():\n            outputs = self._model.generate(\n                **inputs,\n                max_new_tokens=512,\n                temperature=temperature,\n                do_sample=False,\n                pad_token_id=self._tokenizer.pad_token_id,\n                eos_token_id=self._tokenizer.eos_token_id,\n            )\n\n        # Decode response (only the new tokens)\n        response_text = self._tokenizer.decode(\n            outputs[0][inputs['input_ids'].shape[1]:],\n            skip_special_tokens=True\n        )\n\n        return response_text.strip()\n\n    def _invoke_with_chat_messages(self, messages: list) -> str:\n        \"\"\"Invoke model with chat messages using chat template\n\n        Args:\n            messages: List of dicts with 'role' and 'content' keys\n                     e.g., [{\"role\": \"user\", \"content\": \"...\"}]\n        \"\"\"\n        self._load_model()\n\n        # Apply chat template to convert messages to string\n        prompt = self._tokenizer.apply_chat_template(\n            messages,\n            tokenize=False,\n            add_generation_prompt=True\n        )\n\n        # Tokenize input\n        inputs = self._tokenizer(prompt, return_tensors=\"pt\", padding=True).to(self._model.device)\n        input_length = inputs['input_ids'].shape[1]\n\n        # Generate response\n        # Use temperature if provided, otherwise use 0.0 for deterministic output\n        temperature = self.temperature if hasattr(self, 'temperature') and self.temperature is not None else 0.0\n        with torch.no_grad():\n            outputs = self._model.generate(\n                **inputs,\n                max_new_tokens=512,\n                temperature=temperature,\n                do_sample=False,\n                pad_token_id=self._tokenizer.pad_token_id,\n                eos_token_id=self._tokenizer.eos_token_id,\n            )\n\n        # Decode response (only the new tokens)\n        response_text = self._tokenizer.decode(\n            outputs[0][input_length:],\n            skip_special_tokens=True\n        )\n\n        return response_text.strip()\n\n    def _build_chat_messages_for_api(self) -> list:\n        \"\"\"Build chat messages for API call from conversation\"\"\"\n        messages = []\n\n        # Build conversation text with history and current input\n        conversation_text = self._build_conversation_text()\n\n        # Apply the rewrite prompt template\n        prompt = self.REWRITE_PROMPT.format(question=conversation_text)\n\n        # Create a single user message with the formatted prompt\n        messages.append({\"role\": \"user\", \"content\": prompt})\n\n        return messages\n\n    def _build_request(self) -> dict:\n        \"\"\"Build request body for IntrinsicsAPI\"\"\"\n        messages = self._build_chat_messages_for_api()\n        if not messages:\n            raise ValueError(\"No messages to send\")\n        request_body = {\n            \"messages\": messages,\n            \"model\": self.model_name,  # Use model_name, not intrinsic_name\n        }\n        # Add temperature if provided\n        if hasattr(self, 'temperature') and self.temperature is not None:\n            request_body[\"temperature\"] = self.temperature\n        return request_body\n\n    def _get_api_url(self) -> str:\n        \"\"\"Construct API URL based on backend\"\"\"\n        if self.model_backend == \"IntrinsicsAPI (mellea + RITS)\":\n            # Call the model endpoint directly (not the intrinsic endpoint)\n            # This sends the REWRITE_PROMPT to the base model\n            return f\"{self.url.rstrip('/')}/{self.model_name}\"\n        elif self.model_backend == \"Ollama\":\n            base_url = self.url.rstrip('/')\n            return f\"{base_url}/v1/chat/completions\"\n        else:\n            raise ValueError(f\"Unsupported backend for API URL: {self.model_backend}\")\n\n    def _call_intrinsics_api(self) -> dict:\n        \"\"\"Call the IntrinsicsAPI endpoint\"\"\"\n        if not self.url or not self.url.strip():\n            raise ValueError(\"API URL is required for IntrinsicsAPI backend\")\n\n        request_body = self._build_request()\n        self.log(json.dumps(request_body, indent=2), name=\"Intrinsics API request body\")\n        api_url = self._get_api_url()\n\n        headers = {\"Content-Type\": \"application/json\"}\n        # Only include RITS_API_KEY header if provided\n        if self.model_backend == \"IntrinsicsAPI (mellea + RITS)\":\n            if hasattr(self, 'api_key') and self.api_key and self.api_key.strip():\n                headers[\"RITS_API_KEY\"] = self.api_key.strip()\n\n        try:\n            with httpx.Client() as client:\n                response = client.post(\n                    api_url, json=request_body, headers=headers, timeout=120.0,\n                )\n                response.raise_for_status()\n        except httpx.HTTPStatusError as e:\n            error_detail = e.response.text\n            try:\n                error_detail = e.response.json()\n            except:\n                pass\n            raise ValueError(f\"API error {e.response.status_code}: {error_detail}\")\n        except httpx.ConnectError:\n            raise ValueError(f\"Could not connect to API at {api_url}\")\n        except httpx.RequestError as e:\n            raise ValueError(f\"Request failed: {e}\")\n        except Exception as e:\n            raise ValueError(f\"Unexpected error: {e}\")\n\n        try:\n            response_data = response.json()\n        except Exception as e:\n            raise ValueError(f\"Failed to parse API response as JSON: {e}\")\n\n        return response_data\n\n    def _call_ollama_api(self) -> dict:\n        \"\"\"Call Ollama API using OpenAI-compatible endpoint\"\"\"\n        try:\n            request_body = self._build_request()\n\n            # Print model input\n            print(f\"\\n{'='*80}\")\n            print(f\"[Query Rewrite Prompt - Ollama] MODEL INPUT:\")\n            print(f\"{'='*80}\")\n            print(json.dumps(request_body, indent=2))\n            print(f\"{'='*80}\\n\")\n\n            self.log(json.dumps(request_body, indent=2), name=\"Ollama request body\")\n            api_url = self._get_api_url()\n            client = OpenAI(\n                base_url=api_url.replace(\"/chat/completions\", \"\"),\n                api_key=self.api_key or \"no-key\",\n            )\n            completion = client.chat.completions.create(**request_body)\n            response_data = json.loads(completion.model_dump_json())\n\n            # Print model output\n            print(f\"\\n{'='*80}\")\n            print(f\"[Query Rewrite Prompt - Ollama] MODEL OUTPUT:\")\n            print(f\"{'='*80}\")\n            print(json.dumps(response_data, indent=2))\n            print(f\"{'='*80}\\n\")\n\n            return response_data\n        except Exception as e:\n            raise ValueError(f\"Ollama call failed: {e}\")\n\n    def _extract_content_from_response(self, response_data: dict) -> str:\n        \"\"\"Extract content from API response\"\"\"\n        if \"choices\" in response_data and response_data[\"choices\"]:\n            choice = response_data[\"choices\"][0]\n            if \"message\" in choice:\n                message = choice[\"message\"]\n                if isinstance(message, dict):\n                    return message.get(\"content\", \"\")\n                return str(message)\n        return \"\"\n\n    def _call_backend(self) -> str:\n        \"\"\"Call the appropriate backend (LocalHF, Ollama, or IntrinsicsAPI)\"\"\"\n        if self.model_backend == \"LocalHF\":\n            return self._call_localhf_backend()\n        elif self.model_backend == \"Ollama\":\n            return self._call_ollama_backend()\n        elif self.model_backend == \"IntrinsicsAPI (mellea + RITS)\":\n            return self._call_intrinsics_backend()\n        else:\n            raise ValueError(f\"Unsupported backend: {self.model_backend}\")\n\n    def _call_localhf_backend(self) -> str:\n        \"\"\"Call local HuggingFace model with the constructed prompt\"\"\"\n        prompt = self._build_prompt()\n\n        print(\"\\n\" + \"=\" * 80)\n        print(\"INPUT PROMPT:\")\n        print(prompt)\n        print(\"=\" * 80)\n\n        # Use chat messages format with chat template (Granite models expect this)\n        messages = [{\"role\": \"user\", \"content\": prompt}]\n        response_text = self._invoke_with_chat_messages(messages)\n\n        # Alternative: Use string prompt directly (uncomment to test)\n        # response_text = self._invoke_with_string_prompt(prompt)\n\n        print(\"=\" * 80)\n        print(\"OUTPUT:\")\n        print(response_text)\n        print(\"=\" * 80 + \"\\n\")\n\n        return response_text\n\n    def _call_ollama_backend(self) -> str:\n        \"\"\"Call Ollama endpoint\"\"\"\n        response_data = self._call_ollama_api()\n        content = self._extract_content_from_response(response_data)\n\n        if not content:\n            raise ValueError(\"No content received from Ollama\")\n\n        print(\"\\n\" + \"=\" * 80)\n        print(\"OLLAMA API RESPONSE:\")\n        print(content)\n        print(\"=\" * 80 + \"\\n\")\n\n        return content\n\n    def _call_intrinsics_backend(self) -> str:\n        \"\"\"Call IntrinsicsAPI endpoint\"\"\"\n        response_data = self._call_intrinsics_api()\n        content = self._extract_content_from_response(response_data)\n\n        if not content:\n            raise ValueError(\"No content received from IntrinsicsAPI\")\n\n        print(\"\\n\" + \"=\" * 80)\n        print(\"INTRINSICS API RESPONSE:\")\n        print(content)\n        print(\"=\" * 80 + \"\\n\")\n\n        return content\n\n    async def update_build_config(self, build_config, field_value=None, field_name=None):\n        \"\"\"Update build config when model_backend changes\"\"\"\n        if field_name == \"model_backend\":\n            if field_value and field_value in self.BACKEND_CONFIG:\n                backend_config = self.BACKEND_CONFIG[field_value]\n                build_config[\"model_name\"][\"options\"] = backend_config[\"models\"]\n                build_config[\"model_name\"][\"value\"] = backend_config[\"default_model\"]\n                build_config[\"url\"][\"value\"] = backend_config[\"default_url\"]\n                build_config[\"url\"][\"show\"] = backend_config.get(\"url_editable\", False)\n                if field_value == \"IntrinsicsAPI (mellea + RITS)\":\n                    build_config[\"api_key\"][\"display_name\"] = \"RITS API Key\"\n                    build_config[\"api_key\"][\"show\"] = True\n                    build_config[\"api_key\"][\"required\"] = False\n                elif field_value == \"LocalHF\":\n                    build_config[\"api_key\"][\"show\"] = False\n                    build_config[\"api_key\"][\"required\"] = False\n                else:\n                    build_config[\"api_key\"][\"display_name\"] = \"API Key\"\n                    build_config[\"api_key\"][\"show\"] = True\n                    build_config[\"api_key\"][\"required\"] = False\n        return build_config\n\n    def rewrite_query(self) -> Message:\n        \"\"\"Main method that returns the rewritten query as a Message\"\"\"\n        print(\"\\n\" + \"🔄\" * 40)\n        print(\">>> STAGE 1: QUERY REWRITE COMPONENT EXECUTED\")\n        print(\"🔄\" * 40)\n\n        # Handle case where chat_input is not yet connected (build phase)\n        if not hasattr(self, 'chat_input') or self.chat_input is None:\n            print(\"⚠️  No chat_input - returning empty\")\n            return Message(text=\"\")\n\n        # Check if chat_input has valid content\n        try:\n            current_query = self._extract_message_text(self.chat_input)\n            if not current_query or not current_query.strip():\n                print(\"⚠️  Empty chat_input - returning empty\")\n                return Message(text=\"\")\n            print(f\"📥 Input Query: '{current_query}'\")\n        except Exception:\n            print(\"⚠️  Exception extracting chat_input - returning empty\")\n            return Message(text=\"\")\n\n        rewritten = self._call_backend()\n\n        if not rewritten:\n            raise ValueError(\"No rewritten query received from model\")\n\n        # Post-process: Try to extract \"rewritten_question\" from JSON response\n        try:\n            parsed = json.loads(rewritten)\n            rewritten = parsed.get(\"rewritten_question\", rewritten)\n        except (json.JSONDecodeError, TypeError):\n            # If not JSON or doesn't have the field, use the raw response\n            pass\n\n        print(f\"📤 Rewritten Query: '{rewritten}'\")\n        print(\"🔄\" * 40 + \"\\n\")\n        return Message(text=rewritten)\n\n    def get_full_response(self) -> str:\n        \"\"\"Return the full response as JSON\"\"\"\n        # Handle case where chat_input is not yet connected (build phase)\n        if not hasattr(self, 'chat_input') or self.chat_input is None:\n            return json.dumps({\"error\": \"chat_input not connected\"}, indent=2)\n\n        # Check if chat_input has valid content\n        try:\n            current_query = self._extract_message_text(self.chat_input)\n            if not current_query or not current_query.strip():\n                return json.dumps({\"error\": \"chat_input is empty\"}, indent=2)\n        except Exception as e:\n            return json.dumps({\"error\": f\"failed to extract text: {e}\"}, indent=2)\n\n        rewritten = self._call_backend()\n\n        # Format as JSON for compatibility\n        response_data = {\n            \"rewritten_query\": rewritten,\n            \"model\": self.model_name,\n            \"backend\": self.model_backend\n        }\n        return json.dumps(response_data, indent=2)\n"
+              },
+              "is_refresh": false,
+              "message_history": {
+                "_input_type": "DataFrameInput",
+                "advanced": false,
+                "display_name": "Message History",
+                "dynamic": false,
+                "info": "Previous conversation messages as a DataFrame with 'sender' (User/AI) and 'text' columns",
+                "input_types": [
+                  "DataFrame"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "message_history",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "other",
+                "value": ""
+              },
+              "model_backend": {
+                "_input_type": "DropdownInput",
+                "advanced": false,
+                "combobox": false,
+                "dialog_inputs": {},
+                "display_name": "Model Backend",
+                "dynamic": false,
+                "external_options": {},
+                "info": "Backend service for Granite model",
+                "load_from_db": false,
+                "name": "model_backend",
+                "options": [
+                  "IntrinsicsAPI (mellea + RITS)",
+                  "Ollama",
+                  "LocalHF"
+                ],
+                "options_metadata": [],
+                "override_skip": false,
+                "placeholder": "",
+                "real_time_refresh": true,
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "toggle": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "track_in_telemetry": true,
+                "type": "str",
+                "value": "Ollama"
+              },
+              "model_name": {
+                "_input_type": "DropdownInput",
+                "advanced": false,
+                "combobox": false,
+                "dialog_inputs": {},
+                "display_name": "Model Name",
+                "dynamic": false,
+                "external_options": {},
+                "info": "Model name (options change based on backend)",
+                "load_from_db": false,
+                "name": "model_name",
+                "options": [
+                  "granite4:micro"
+                ],
+                "options_metadata": [],
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "toggle": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "track_in_telemetry": true,
+                "type": "str",
+                "value": "granite4:micro"
+              },
+              "temperature": {
+                "_input_type": "SliderInput",
+                "advanced": true,
+                "display_name": "Temperature",
+                "dynamic": false,
+                "info": "Controls randomness in responses",
+                "max_label": "",
+                "max_label_icon": "",
+                "min_label": "",
+                "min_label_icon": "",
+                "name": "temperature",
+                "override_skip": false,
+                "placeholder": "",
+                "range_spec": {
+                  "max": 2,
+                  "min": 0,
+                  "step": 0.01,
+                  "step_type": "float"
+                },
+                "required": false,
+                "show": true,
+                "slider_buttons": false,
+                "slider_buttons_options": [],
+                "slider_input": false,
+                "title_case": false,
+                "tool_mode": false,
+                "track_in_telemetry": false,
+                "type": "slider",
+                "value": 0
+              },
+              "url": {
+                "_input_type": "StrInput",
+                "advanced": false,
+                "display_name": "API URL",
+                "dynamic": false,
+                "info": "Base URL for the model backend",
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "url",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "str",
+                "value": "http://host.docker.internal:11434"
+              }
+            },
+            "tool_mode": false
+          },
+          "selected_output": "rewritten_query",
+          "showNode": true,
+          "type": "QueryRewritePrompt"
+        },
+        "dragging": false,
+        "id": "QueryRewritePrompt-hWars",
+        "measured": {
+          "height": 594,
+          "width": 320
+        },
+        "position": {
+          "x": 249.4453362437858,
+          "y": 194.57024741234895
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "description": "Remove hallucinated claims from the last agent response by checking against retrieved documents",
+          "display_name": "Hallucination Removal (Prompt)",
+          "id": "HallucinationRemovalPrompt-9GKZ8",
+          "node": {
+            "base_classes": [
+              "Message",
+              "Text"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Remove hallucinated claims from the last agent response by checking against retrieved documents",
+            "display_name": "Hallucination Removal (Prompt)",
+            "documentation": "",
+            "edited": true,
+            "field_order": [
+              "model_backend",
+              "model_name",
+              "url",
+              "api_key",
+              "temperature",
+              "chat_input",
+              "message_history",
+              "agent_response",
+              "documents"
+            ],
+            "frozen": false,
+            "icon": "shield-check",
+            "last_updated": "2026-03-19T03:01:30.600Z",
+            "legacy": false,
+            "lf_version": "1.7.3",
+            "metadata": {
+              "code_hash": "6cd4a2993855",
+              "dependencies": {
+                "dependencies": [
+                  {
+                    "name": "langflow",
+                    "version": null
+                  },
+                  {
+                    "name": "torch",
+                    "version": "2.9.0"
+                  },
+                  {
+                    "name": "transformers",
+                    "version": "5.2.0"
+                  },
+                  {
+                    "name": "httpx",
+                    "version": null
+                  },
+                  {
+                    "name": "openai",
+                    "version": null
+                  }
+                ],
+                "total_dependencies": 5
+              },
+              "module": "custom_components.hallucination_removal_prompt"
+            },
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Corrected Response",
+                "group_outputs": false,
+                "hidden": null,
+                "loop_types": null,
+                "method": "remove_hallucinations",
+                "name": "corrected_response",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Message",
+                "tool_mode": true,
+                "types": [
+                  "Message"
+                ],
+                "value": "__UNDEFINED__"
+              },
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Full Response",
+                "group_outputs": false,
+                "hidden": null,
+                "loop_types": null,
+                "method": "get_full_response",
+                "name": "full_response",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Text",
+                "tool_mode": true,
+                "types": [
+                  "Text"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_frontend_node_flow_id": {
+                "value": "858415a2-d085-428f-a0d9-e1ea94831930"
+              },
+              "_frontend_node_folder_id": {
+                "value": "999dba2e-ed71-453f-9a15-71c2315a845f"
+              },
+              "_type": "Component",
+              "agent_response": {
+                "_input_type": "MessageInput",
+                "advanced": false,
+                "display_name": "Agent Response",
+                "dynamic": false,
+                "info": "The agent's response to check for hallucinations (this will be the last turn)",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "agent_response",
+                "override_skip": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "str",
+                "value": ""
+              },
+              "api_key": {
+                "_input_type": "SecretStrInput",
+                "advanced": false,
+                "display_name": "API Key",
+                "dynamic": false,
+                "info": "API key for authentication",
+                "input_types": [],
+                "load_from_db": false,
+                "name": "api_key",
+                "override_skip": false,
+                "password": true,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "track_in_telemetry": false,
+                "type": "str",
+                "value": ""
+              },
+              "chat_input": {
+                "_input_type": "MessageInput",
+                "advanced": false,
+                "display_name": "Chat Input",
+                "dynamic": false,
+                "info": "Current user query",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "chat_input",
+                "override_skip": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "str",
+                "value": ""
+              },
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "\"\"\"\nHallucination Removal with Prompt Component for Langflow\n\nRemove hallucinated claims from agent responses using a prompt-based approach.\n\"\"\"\n\nfrom langflow.custom import Component\nfrom langflow.io import (\n    SecretStrInput,\n    StrInput,\n    Output,\n    DropdownInput,\n    MessageInput,\n    DataInput,\n    DataFrameInput,\n    SliderInput,\n)\nfrom langflow.schema import Message, Data\nfrom langflow.field_typing.range_spec import RangeSpec\nimport json\nimport torch\nfrom transformers import AutoTokenizer, AutoModelForCausalLM\nimport httpx\nfrom openai import OpenAI\n\n\nclass HallucinationRemovalPrompt(Component):\n    display_name = \"Hallucination Removal (Prompt)\"\n    description = \"Remove hallucinated claims from the last agent response by checking against retrieved documents\"\n    category = \"tools\"\n    icon = \"shield-check\"\n\n    intrinsic_name = \"hallucination_removal\"\n\n    BACKEND_CONFIG = {\n        \"LocalHF\": {\n            \"models\": [\"granite-4.0-micro\"],\n            \"default_model\": \"granite-4.0-micro\",\n            \"default_url\": \"\",\n            \"url_editable\": False,\n        },\n        \"Ollama\": {\n            \"models\": [\"granite4:micro\"],\n            \"default_model\": \"granite4:micro\",\n            \"default_url\": \"http://localhost:11434\",\n            \"url_editable\": True,\n        },\n        \"IntrinsicsAPI (granite-common + RITS)\": {\n            \"models\": [\"granite-4.0-micro\", \"gpt-oss-20b\"],\n            \"default_model\": \"granite-4.0-micro\",\n            \"default_url\": \"https://intrinsics-api.intrinsics.vpc-int.res.ibm.com\",\n            \"url_editable\": False,\n        },\n    }\n\n    # Model name mapping to HuggingFace identifiers\n    MODEL_NAME_MAPPING = {\n        \"granite-4.0-micro\": \"ibm-granite/granite-4.0-micro\",\n        \"ibm-granite/granite-4.0-micro\": \"ibm-granite/granite-4.0-micro\",\n        \"granite4:micro\": \"ibm-granite/granite-4.0-micro\",\n    }\n\n    # Default prompt template for hallucination removal\n    HALLUCINATION_PROMPT = (\n        \"Documents:\\n{documents}\\n\\n\"\n        \"Conversation:\\n{conversation}\\n\\n\"\n        \"Rewrite the last assistant response to only include claims supported by the documents. \"\n        \"Rephrase partially supported claims to match what the documents say. \"\n        \"If nothing is supported, respond only with: \\\"I don't know the answer to the question.\\\"\\n\"\n        \"Return ONLY the corrected assistant response without any explanation, preamble, or meta-commentary.\"\n    )\n\n    def __init__(self, *args, **kwargs):\n        super().__init__(*args, **kwargs)\n        self._model = None\n        self._tokenizer = None\n\n    inputs = [\n        DropdownInput(\n            name=\"model_backend\",\n            display_name=\"Model Backend\",\n            info=\"Backend service for Granite model\",\n            options=[\"IntrinsicsAPI (granite-common + RITS)\", \"Ollama\", \"LocalHF\"],\n            value=\"IntrinsicsAPI (granite-common + RITS)\",\n            real_time_refresh=True,\n        ),\n        DropdownInput(\n            name=\"model_name\",\n            display_name=\"Model Name\",\n            info=\"Model name (options change based on backend)\",\n            options=[\"granite-4.0-micro\", \"gpt-oss-20b\"],\n            value=\"granite-4.0-micro\",\n        ),\n        StrInput(\n            name=\"url\",\n            display_name=\"API URL\",\n            info=\"Base URL for the model backend\",\n            value=\"https://intrinsics-api.intrinsics.vpc-int.res.ibm.com\",\n            required=False,\n            show=False,\n        ),\n        SecretStrInput(\n            name=\"api_key\",\n            display_name=\"RITS API Key\",\n            info=\"API key for authentication\",\n            required=False,\n            load_from_db=False,\n        ),\n        SliderInput(\n            name=\"temperature\",\n            display_name=\"Temperature\",\n            info=\"Controls randomness in responses\",\n            value=0.0,\n            range_spec=RangeSpec(min=0, max=2, step=0.01),\n            advanced=True,\n        ),\n        MessageInput(\n            name=\"chat_input\",\n            display_name=\"Chat Input\",\n            info=\"Current user query\",\n            required=True,\n        ),\n        DataFrameInput(\n            name=\"message_history\",\n            display_name=\"Message History\",\n            info=\"Previous conversation messages as a DataFrame with 'sender' (User/AI) and 'text' columns\",\n            required=False,\n        ),\n        MessageInput(\n            name=\"agent_response\",\n            display_name=\"Agent Response\",\n            info=\"The agent's response to check for hallucinations (this will be the last turn)\",\n            required=True,\n        ),\n        DataInput(\n            name=\"documents\",\n            display_name=\"Documents\",\n            info=\"Retrieved documents to verify claims against\",\n            required=True,\n        ),\n    ]\n\n    outputs = [\n        Output(\n            name=\"corrected_response\",\n            display_name=\"Corrected Response\",\n            method=\"remove_hallucinations\",\n        ),\n        Output(\n            name=\"full_response\",\n            display_name=\"Full Response\",\n            method=\"get_full_response\",\n        ),\n    ]\n\n    def _extract_message_text(self, message) -> str:\n        \"\"\"Extract text content from a Message object or other input types\"\"\"\n        # Handle Message objects\n        if hasattr(message, 'text'):\n            return message.text\n        if hasattr(message, 'content'):\n            return message.content\n\n        # Handle Data objects that might come from If-Else\n        if hasattr(message, 'data'):\n            data = message.data\n            if isinstance(data, dict):\n                # Try common text fields\n                return data.get('text', data.get('content', data.get('message', str(data))))\n            return str(data)\n\n        # Handle plain strings\n        if isinstance(message, str):\n            return message\n\n        # Fallback to string representation\n        return str(message)\n\n    def _build_conversation_text(self) -> str:\n        \"\"\"Build conversation text including history and current turn\"\"\"\n        conversation_lines = []\n\n        # Get current user input first\n        if hasattr(self, 'chat_input') and self.chat_input is not None:\n            current_query = self._extract_message_text(self.chat_input)\n            current_query_text = current_query.strip() if current_query else \"\"\n        else:\n            current_query_text = \"\"\n\n        # Get agent response\n        if hasattr(self, 'agent_response') and self.agent_response is not None:\n            agent_text = self._extract_message_text(self.agent_response)\n            agent_response_text = agent_text.strip() if agent_text else \"\"\n        else:\n            agent_response_text = \"\"\n\n        # Add chat history from DataFrame (excluding current message to avoid duplicates)\n        if hasattr(self, 'message_history') and self.message_history is not None:\n            df = self.message_history\n            for _, row in df.iterrows():\n                sender = row.get(\"sender\", \"\")\n                content = row.get(\"text\", \"\")\n                content_str = str(content).strip() if content else \"\"\n\n                # Skip if this is the current message (avoid duplicates from Memory component)\n                if content_str and content_str not in [current_query_text, agent_response_text]:\n                    # Format as \"User:\" or \"Agent:\" based on sender\n                    role_label = \"User\" if sender == \"User\" else \"Agent\"\n                    conversation_lines.append(f\"{role_label}: {content_str}\")\n\n        # Add current user input\n        if current_query_text:\n            conversation_lines.append(f\"User: {current_query_text}\")\n\n        # Add agent response as the last turn\n        if agent_response_text:\n            conversation_lines.append(f\"Agent: {agent_response_text}\")\n\n        return \"\\n\".join(conversation_lines)\n\n    def _extract_documents(self) -> list:\n        \"\"\"Extract document texts from documents input\"\"\"\n        documents = []\n        if hasattr(self, 'documents') and self.documents:\n            if isinstance(self.documents, Data):\n                data_dict = self.documents.data if hasattr(self.documents, 'data') else self.documents\n                if isinstance(data_dict, dict):\n                    docs = data_dict.get(\"documents\")\n                    if docs and isinstance(docs, list):\n                        documents = docs\n            elif isinstance(self.documents, dict):\n                docs = self.documents.get(\"documents\")\n                if docs and isinstance(docs, list):\n                    documents = docs\n            elif isinstance(self.documents, list):\n                documents = self.documents\n\n        # During build phase, return empty list instead of raising error\n        if not documents:\n            return []\n\n        # Extract text from documents\n        document_texts = []\n        for doc in documents:\n            if isinstance(doc, dict):\n                text = doc.get(\"text\") or doc.get(\"content\") or doc.get(\"page_content\") or str(doc)\n            else:\n                text = str(doc)\n            document_texts.append(text)\n\n        return document_texts\n\n    def _build_prompt(self, conversation: str, documents: str) -> str:\n        \"\"\"Build the full prompt with the conversation and documents\"\"\"\n        prompt = self.HALLUCINATION_PROMPT.format(conversation=conversation, documents=documents)\n        return prompt\n\n    def _load_model(self):\n        \"\"\"Lazy load the model and tokenizer\"\"\"\n        if self._model is None or self._tokenizer is None:\n            # Map model name to HuggingFace identifier\n            hf_model_name = self.MODEL_NAME_MAPPING.get(self.model_name, self.model_name)\n            self.log(f\"Loading model: {self.model_name} -> {hf_model_name}\", name=\"model loading\")\n\n            self._tokenizer = AutoTokenizer.from_pretrained(hf_model_name)\n            self._model = AutoModelForCausalLM.from_pretrained(\n                hf_model_name,\n                torch_dtype=torch.bfloat16,\n                device_map=\"auto\"\n            )\n            self._model.eval()\n            self.log(f\"Model loaded on device: {self._model.device}\", name=\"model loading\")\n\n    def _invoke_with_chat_messages(self, messages: list) -> str:\n        \"\"\"Invoke model with chat messages using chat template\n\n        Args:\n            messages: List of dicts with 'role' and 'content' keys\n                     e.g., [{\"role\": \"user\", \"content\": \"...\"}]\n        \"\"\"\n        self._load_model()\n\n        # Apply chat template to convert messages to string\n        prompt = self._tokenizer.apply_chat_template(\n            messages,\n            tokenize=False,\n            add_generation_prompt=True\n        )\n\n        # Tokenize input\n        inputs = self._tokenizer(prompt, return_tensors=\"pt\", padding=True).to(self._model.device)\n        input_length = inputs['input_ids'].shape[1]\n\n        # Generate response\n        # Use temperature if provided, otherwise use 0.0 for deterministic output\n        temperature = self.temperature if hasattr(self, 'temperature') and self.temperature is not None else 0.0\n        with torch.no_grad():\n            outputs = self._model.generate(\n                **inputs,\n                max_new_tokens=512,\n                temperature=temperature,\n                do_sample=False,\n                pad_token_id=self._tokenizer.pad_token_id,\n                eos_token_id=self._tokenizer.eos_token_id,\n            )\n\n        # Decode response (only the new tokens)\n        response_text = self._tokenizer.decode(\n            outputs[0][input_length:],\n            skip_special_tokens=True\n        )\n\n        return response_text.strip()\n\n    def _build_chat_messages_for_api(self, conversation: str, documents: str) -> list:\n        \"\"\"Build chat messages for API call\"\"\"\n        messages = []\n\n        # Apply the hallucination removal prompt template\n        prompt = self.HALLUCINATION_PROMPT.format(conversation=conversation, documents=documents)\n\n        # Create a single user message with the formatted prompt\n        messages.append({\"role\": \"user\", \"content\": prompt})\n\n        return messages\n\n    def _build_request(self, conversation: str, documents: str) -> dict:\n        \"\"\"Build request body for API\"\"\"\n        messages = self._build_chat_messages_for_api(conversation, documents)\n        if not messages:\n            raise ValueError(\"No messages to send\")\n        request_body = {\n            \"messages\": messages,\n            \"model\": self.model_name,\n        }\n        # Add temperature if provided\n        if hasattr(self, 'temperature') and self.temperature is not None:\n            request_body[\"temperature\"] = self.temperature\n        return request_body\n\n    def _get_api_url(self) -> str:\n        \"\"\"Construct API URL based on backend\"\"\"\n        if self.model_backend == \"IntrinsicsAPI (granite-common + RITS)\":\n            # Call the model endpoint directly (not the intrinsic endpoint)\n            return f\"{self.url.rstrip('/')}/{self.model_name}\"\n        elif self.model_backend == \"Ollama\":\n            base_url = self.url.rstrip('/')\n            return f\"{base_url}/v1/chat/completions\"\n        else:\n            raise ValueError(f\"Unsupported backend for API URL: {self.model_backend}\")\n\n    def _call_intrinsics_api(self, conversation: str, documents: str) -> dict:\n        \"\"\"Call the IntrinsicsAPI endpoint\"\"\"\n        if not self.url or not self.url.strip():\n            raise ValueError(\"API URL is required for IntrinsicsAPI backend\")\n\n        request_body = self._build_request(conversation, documents)\n\n        self.log(json.dumps(request_body, indent=2), name=\"Intrinsics API request\")\n        api_url = self._get_api_url()\n\n        headers = {\"Content-Type\": \"application/json\"}\n        # Only include RITS_API_KEY header if provided\n        if self.model_backend == \"IntrinsicsAPI (granite-common + RITS)\":\n            if hasattr(self, 'api_key') and self.api_key and self.api_key.strip():\n                headers[\"RITS_API_KEY\"] = self.api_key.strip()\n\n        try:\n            with httpx.Client() as client:\n                response = client.post(\n                    api_url, json=request_body, headers=headers, timeout=120.0,\n                )\n                response.raise_for_status()\n        except httpx.HTTPStatusError as e:\n            error_detail = e.response.text\n            try:\n                error_detail = e.response.json()\n            except:\n                pass\n            raise ValueError(f\"API error {e.response.status_code}: {error_detail}\")\n        except httpx.ConnectError:\n            raise ValueError(f\"Could not connect to API at {api_url}\")\n        except httpx.RequestError as e:\n            raise ValueError(f\"Request failed: {e}\")\n        except Exception as e:\n            raise ValueError(f\"Unexpected error: {e}\")\n\n        try:\n            response_data = response.json()\n        except Exception as e:\n            raise ValueError(f\"Failed to parse API response as JSON: {e}\")\n        self.log(json.dumps(response_data, indent=2), name=\"Intrinsics API response\")\n        return response_data\n\n    def _call_ollama_api(self, conversation: str, documents: str) -> dict:\n        \"\"\"Call Ollama API using OpenAI-compatible endpoint\"\"\"\n        try:\n            request_body = self._build_request(conversation, documents)\n\n            self.log(json.dumps(request_body, indent=2), name=\"Ollama request\")\n            api_url = self._get_api_url()\n            client = OpenAI(\n                base_url=api_url.replace(\"/chat/completions\", \"\"),\n                api_key=self.api_key or \"no-key\",\n            )\n            completion = client.chat.completions.create(**request_body)\n            response_data = json.loads(completion.model_dump_json())\n            self.log(json.dumps(response_data, indent=2), name=\"Ollama response\")\n            return response_data\n        except Exception as e:\n            raise ValueError(f\"Ollama call failed: {e}\")\n\n    def _extract_content_from_response(self, response_data: dict) -> str:\n        \"\"\"Extract content from API response\"\"\"\n        if \"choices\" in response_data and response_data[\"choices\"]:\n            choice = response_data[\"choices\"][0]\n            if \"message\" in choice:\n                message = choice[\"message\"]\n                if isinstance(message, dict):\n                    return message.get(\"content\", \"\")\n                return str(message)\n        return \"\"\n\n    def _call_backend(self, conversation: str, documents: str) -> str:\n        \"\"\"Call the appropriate backend (LocalHF, Ollama, or IntrinsicsAPI)\"\"\"\n        if self.model_backend == \"LocalHF\":\n            return self._call_localhf_backend(conversation, documents)\n        elif self.model_backend == \"Ollama\":\n            return self._call_ollama_backend(conversation, documents)\n        elif self.model_backend == \"IntrinsicsAPI (granite-common + RITS)\":\n            return self._call_intrinsics_backend(conversation, documents)\n        else:\n            raise ValueError(f\"Unsupported backend: {self.model_backend}\")\n\n    def _call_localhf_backend(self, conversation: str, documents: str) -> str:\n        \"\"\"Call local HuggingFace model with the constructed prompt\"\"\"\n        prompt = self._build_prompt(conversation, documents)\n\n        self.log(prompt, name=\"LocalHF input prompt\")\n\n        # Use chat messages format with chat template (Granite models expect this)\n        messages = [{\"role\": \"user\", \"content\": prompt}]\n        response_text = self._invoke_with_chat_messages(messages)\n\n        self.log(response_text, name=\"LocalHF output\")\n        return response_text\n\n    def _call_ollama_backend(self, conversation: str, documents: str) -> str:\n        \"\"\"Call Ollama endpoint\"\"\"\n        response_data = self._call_ollama_api(conversation, documents)\n        content = self._extract_content_from_response(response_data)\n\n        if not content:\n            raise ValueError(\"No content received from Ollama\")\n\n        self.log(content, name=\"Ollama corrected response\")\n        return content\n\n    def _call_intrinsics_backend(self, conversation: str, documents: str) -> str:\n        \"\"\"Call IntrinsicsAPI endpoint\"\"\"\n        response_data = self._call_intrinsics_api(conversation, documents)\n        content = self._extract_content_from_response(response_data)\n\n        if not content:\n            raise ValueError(\"No content received from IntrinsicsAPI\")\n\n        self.log(content, name=\"Intrinsics API corrected response\")\n        return content\n\n    async def update_build_config(self, build_config, field_value=None, field_name=None):\n        \"\"\"Update build config when model_backend changes\"\"\"\n        if field_name == \"model_backend\":\n            if field_value and field_value in self.BACKEND_CONFIG:\n                backend_config = self.BACKEND_CONFIG[field_value]\n                build_config[\"model_name\"][\"options\"] = backend_config[\"models\"]\n                build_config[\"model_name\"][\"value\"] = backend_config[\"default_model\"]\n                build_config[\"url\"][\"value\"] = backend_config[\"default_url\"]\n                build_config[\"url\"][\"show\"] = backend_config.get(\"url_editable\", False)\n                if field_value == \"IntrinsicsAPI (granite-common + RITS)\":\n                    build_config[\"api_key\"][\"display_name\"] = \"RITS API Key\"\n                    build_config[\"api_key\"][\"required\"] = False\n                elif field_value == \"Ollama\":\n                    build_config[\"api_key\"][\"display_name\"] = \"API Key\"\n                    build_config[\"api_key\"][\"required\"] = False\n                else:\n                    build_config[\"api_key\"][\"display_name\"] = \"API Key\"\n                    build_config[\"api_key\"][\"required\"] = False\n        return build_config\n\n    def remove_hallucinations(self) -> Message:\n        \"\"\"Main method that returns the corrected response with hallucinations removed\"\"\"\n        # Handle case where inputs are not yet connected (build phase)\n        if not hasattr(self, 'agent_response') or self.agent_response is None:\n            self.log(\"No agent_response - returning empty\", name=\"hallucination removal\")\n            return Message(text=\"\")\n\n        if not hasattr(self, 'documents') or self.documents is None:\n            self.log(\"No documents - returning empty\", name=\"hallucination removal\")\n            return Message(text=\"\")\n\n        # Build conversation text\n        conversation_text = self._build_conversation_text()\n        if not conversation_text:\n            self.log(\"Empty conversation - returning empty\", name=\"hallucination removal\")\n            return Message(text=\"\")\n\n        self.log(f\"Conversation:\\n{conversation_text[:200]}...\", name=\"hallucination removal input\")\n\n        # Extract documents\n        document_texts = self._extract_documents()\n        if not document_texts:\n            self.log(\"No documents extracted - returning original response\", name=\"hallucination removal\")\n            agent_text = self._extract_message_text(self.agent_response)\n            return Message(text=agent_text if agent_text else \"\")\n\n        # Format documents as context\n        documents_str = \"\\n\\n\".join(document_texts)\n\n        # Call backend to remove hallucinations (will print MODEL INPUT)\n        corrected = self._call_backend(conversation_text, documents_str)\n\n        if not corrected:\n            raise ValueError(\"No corrected response received from model\")\n\n        self.log(f\"Corrected Response: '{corrected[:100]}...'\", name=\"hallucination removal output\")\n        return Message(text=corrected)\n\n    def get_full_response(self) -> str:\n        \"\"\"Return the full response as JSON\"\"\"\n        # Handle case where inputs are not yet connected (build phase)\n        if not hasattr(self, 'agent_response') or self.agent_response is None:\n            return json.dumps({\"error\": \"agent_response not connected\"}, indent=2)\n\n        if not hasattr(self, 'documents') or self.documents is None:\n            return json.dumps({\"error\": \"documents not connected\"}, indent=2)\n\n        # Build conversation text\n        conversation_text = self._build_conversation_text()\n        if not conversation_text:\n            return json.dumps({\"error\": \"conversation is empty\"}, indent=2)\n\n        # Extract documents\n        document_texts = self._extract_documents()\n        if not document_texts:\n            return json.dumps({\"error\": \"no documents available\"}, indent=2)\n\n        # Format documents as context\n        documents_str = \"\\n\\n\".join(document_texts)\n\n        # Call backend to remove hallucinations\n        corrected = self._call_backend(conversation_text, documents_str)\n\n        # Get original response\n        original = self._extract_message_text(self.agent_response)\n\n        # Format as JSON for compatibility\n        response_data = {\n            \"original_response\": original,\n            \"corrected_response\": corrected,\n            \"model\": self.model_name,\n            \"backend\": self.model_backend\n        }\n        return json.dumps(response_data, indent=2)\n"
+              },
+              "documents": {
+                "_input_type": "DataInput",
+                "advanced": false,
+                "display_name": "Documents",
+                "dynamic": false,
+                "info": "Retrieved documents to verify claims against",
+                "input_types": [
+                  "Data"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "documents",
+                "override_skip": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "other",
+                "value": ""
+              },
+              "is_refresh": false,
+              "message_history": {
+                "_input_type": "DataFrameInput",
+                "advanced": false,
+                "display_name": "Message History",
+                "dynamic": false,
+                "info": "Previous conversation messages as a DataFrame with 'sender' (User/AI) and 'text' columns",
+                "input_types": [
+                  "DataFrame"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "message_history",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "other",
+                "value": ""
+              },
+              "model_backend": {
+                "_input_type": "DropdownInput",
+                "advanced": false,
+                "combobox": false,
+                "dialog_inputs": {},
+                "display_name": "Model Backend",
+                "dynamic": false,
+                "external_options": {},
+                "info": "Backend service for Granite model",
+                "load_from_db": false,
+                "name": "model_backend",
+                "options": [
+                  "IntrinsicsAPI (granite-common + RITS)",
+                  "Ollama",
+                  "LocalHF"
+                ],
+                "options_metadata": [],
+                "override_skip": false,
+                "placeholder": "",
+                "real_time_refresh": true,
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "toggle": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "track_in_telemetry": true,
+                "type": "str",
+                "value": "Ollama"
+              },
+              "model_name": {
+                "_input_type": "DropdownInput",
+                "advanced": false,
+                "combobox": false,
+                "dialog_inputs": {},
+                "display_name": "Model Name",
+                "dynamic": false,
+                "external_options": {},
+                "info": "Model name (options change based on backend)",
+                "load_from_db": false,
+                "name": "model_name",
+                "options": [
+                  "granite4:micro"
+                ],
+                "options_metadata": [],
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "toggle": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "track_in_telemetry": true,
+                "type": "str",
+                "value": "granite4:micro"
+              },
+              "temperature": {
+                "_input_type": "SliderInput",
+                "advanced": true,
+                "display_name": "Temperature",
+                "dynamic": false,
+                "info": "Controls randomness in responses",
+                "max_label": "",
+                "max_label_icon": "",
+                "min_label": "",
+                "min_label_icon": "",
+                "name": "temperature",
+                "override_skip": false,
+                "placeholder": "",
+                "range_spec": {
+                  "max": 2,
+                  "min": 0,
+                  "step": 0.01,
+                  "step_type": "float"
+                },
+                "required": false,
+                "show": true,
+                "slider_buttons": false,
+                "slider_buttons_options": [],
+                "slider_input": false,
+                "title_case": false,
+                "tool_mode": false,
+                "track_in_telemetry": false,
+                "type": "slider",
+                "value": 0
+              },
+              "url": {
+                "_input_type": "StrInput",
+                "advanced": false,
+                "display_name": "API URL",
+                "dynamic": false,
+                "info": "Base URL for the model backend",
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "url",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "str",
+                "value": "http://host.docker.internal:11434"
+              }
+            },
+            "tool_mode": false
+          },
+          "selected_output": "corrected_response",
+          "showNode": true,
+          "type": "HallucinationRemovalPrompt"
+        },
+        "dragging": false,
+        "id": "HallucinationRemovalPrompt-9GKZ8",
+        "measured": {
+          "height": 737,
+          "width": 320
+        },
+        "position": {
+          "x": 1648.2868806366725,
+          "y": -2.6669025800333372
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "ChromaDBSearch-nFO8B",
+          "node": {
+            "base_classes": [
+              "Data"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Search a ChromaDB server collection with precomputed embeddings",
+            "display_name": "ChromaDB Search",
+            "documentation": "",
+            "edited": false,
+            "field_order": [
+              "host",
+              "port",
+              "collection_name",
+              "search_query",
+              "embedding",
+              "number_of_results",
+              "search_type"
+            ],
+            "frozen": false,
+            "icon": "Chroma",
+            "last_updated": "2026-03-19T02:59:06.058Z",
+            "legacy": false,
+            "lf_version": "1.7.3",
+            "metadata": {
+              "code_hash": "d45cb7ba7c00",
+              "dependencies": {
+                "dependencies": [
+                  {
+                    "name": "langflow",
+                    "version": null
+                  },
+                  {
+                    "name": "chromadb",
+                    "version": null
+                  },
+                  {
+                    "name": "langchain_chroma",
+                    "version": null
+                  }
+                ],
+                "total_dependencies": 3
+              },
+              "module": "custom_components.chromadb_search"
+            },
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Search Results",
+                "group_outputs": false,
+                "loop_types": null,
+                "method": "search_documents",
+                "name": "search_results",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Data",
+                "tool_mode": true,
+                "types": [
+                  "Data"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_frontend_node_flow_id": {
+                "value": "858415a2-d085-428f-a0d9-e1ea94831930"
+              },
+              "_frontend_node_folder_id": {
+                "value": "999dba2e-ed71-453f-9a15-71c2315a845f"
+              },
+              "_type": "Component",
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "\"\"\"\nChromaDB Search Component for Langflow\n\nConnects to a ChromaDB server, lists available collections,\nand performs similarity search with precomputed embeddings.\n\"\"\"\n\nfrom langflow.custom import Component\nfrom langflow.io import (\n    Output,\n    StrInput,\n    IntInput,\n    DropdownInput,\n    HandleInput,\n    MessageInput,\n)\nfrom langflow.schema import Data\n\n\nclass ChromaDBSearch(Component):\n    display_name = \"ChromaDB Search\"\n    description = \"Search a ChromaDB server collection with precomputed embeddings\"\n    icon = \"Chroma\"\n\n    inputs = [\n        StrInput(\n            name=\"host\",\n            display_name=\"Server Host\",\n            value=\"localhost\",\n            info=\"ChromaDB server hostname\",\n            real_time_refresh=True,\n        ),\n        IntInput(\n            name=\"port\",\n            display_name=\"Server Port\",\n            value=8100,\n            info=\"ChromaDB server HTTP port\",\n            real_time_refresh=True,\n        ),\n        DropdownInput(\n            name=\"collection_name\",\n            display_name=\"Collection\",\n            options=[],\n            value=\"\",\n            info=\"ChromaDB collection to search\",\n            refresh_button=True,\n            real_time_refresh=True,\n        ),\n        MessageInput(\n            name=\"search_query\",\n            display_name=\"Search Query\",\n            info=\"Text query for similarity search\",\n        ),\n        HandleInput(\n            name=\"embedding\",\n            display_name=\"Embedding\",\n            input_types=[\"Embeddings\"],\n            info=\"Embedding model for query vectorization\",\n        ),\n        IntInput(\n            name=\"number_of_results\",\n            display_name=\"Number of Results\",\n            value=5,\n            info=\"Number of documents to return\",\n        ),\n        DropdownInput(\n            name=\"search_type\",\n            display_name=\"Search Type\",\n            options=[\"Similarity\", \"MMR\"],\n            value=\"Similarity\",\n            advanced=True,\n        ),\n    ]\n\n    outputs = [\n        Output(\n            display_name=\"Search Results\",\n            name=\"search_results\",\n            method=\"search_documents\",\n        ),\n    ]\n\n    def _fetch_collection_names(self, host, port):\n        import chromadb\n        client = chromadb.HttpClient(host=host, port=int(port))\n        return sorted(c.name for c in client.list_collections())\n\n    async def update_build_config(self, build_config, field_value=None, field_name=None):\n        try:\n            host = build_config[\"host\"][\"value\"]\n            port = build_config[\"port\"][\"value\"]\n            names = self._fetch_collection_names(host, port)\n            build_config[\"collection_name\"][\"options\"] = names\n            current = build_config[\"collection_name\"][\"value\"]\n            if not current or current not in names:\n                build_config[\"collection_name\"][\"value\"] = names[0] if names else \"\"\n        except Exception:\n            build_config[\"collection_name\"][\"options\"] = []\n            build_config[\"collection_name\"][\"value\"] = \"\"\n        return build_config\n\n    def _extract_query_text(self) -> str:\n        if self.search_query is None:\n            return \"\"\n        if hasattr(self.search_query, 'text'):\n            return self.search_query.text\n        if hasattr(self.search_query, 'content'):\n            return self.search_query.content\n        return str(self.search_query)\n\n    def search_documents(self) -> list[Data]:\n        from langchain_chroma import Chroma\n        import chromadb\n\n        query = self._extract_query_text()\n        if not query or not query.strip():\n            self.status = \"No search query provided\"\n            return []\n\n        client = chromadb.HttpClient(host=self.host, port=int(self.port))\n\n        vector_store = Chroma(\n            client=client,\n            collection_name=self.collection_name,\n            embedding_function=self.embedding,\n        )\n\n        self.log(f\"Query: {query}\", name=\"search input\")\n        self.log(f\"Collection: {self.collection_name}, Results: {self.number_of_results}\", name=\"search params\")\n\n        docs = vector_store.search(\n            query=query,\n            search_type=self.search_type.lower(),\n            k=self.number_of_results,\n        )\n\n        results = []\n        for doc in docs:\n            data = Data(\n                text=doc.page_content,\n                data={\n                    \"text\": doc.page_content,\n                    **doc.metadata,\n                },\n            )\n            results.append(data)\n\n        self.log(f\"Returned {len(results)} results\", name=\"search output\")\n        self.status = results\n        return results\n"
+              },
+              "collection_name": {
+                "_input_type": "DropdownInput",
+                "advanced": false,
+                "combobox": false,
+                "dialog_inputs": {},
+                "display_name": "Collection",
+                "dynamic": false,
+                "external_options": {},
+                "info": "ChromaDB collection to search",
+                "name": "collection_name",
+                "options": [
+                  "clapnq",
+                  "cloud",
+                  "fiqa",
+                  "govt"
+                ],
+                "options_metadata": [],
+                "override_skip": false,
+                "placeholder": "",
+                "real_time_refresh": true,
+                "refresh_button": true,
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "toggle": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "track_in_telemetry": true,
+                "type": "str",
+                "value": "govt"
+              },
+              "embedding": {
+                "_input_type": "HandleInput",
+                "advanced": false,
+                "display_name": "Embedding",
+                "dynamic": false,
+                "info": "Embedding model for query vectorization",
+                "input_types": [
+                  "Embeddings"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "embedding",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "other",
+                "value": ""
+              },
+              "host": {
+                "_input_type": "StrInput",
+                "advanced": false,
+                "display_name": "Server Host",
+                "dynamic": false,
+                "info": "ChromaDB server hostname",
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "host",
+                "override_skip": false,
+                "placeholder": "",
+                "real_time_refresh": true,
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "str",
+                "value": "localhost"
+              },
+              "is_refresh": false,
+              "number_of_results": {
+                "_input_type": "IntInput",
+                "advanced": false,
+                "display_name": "Number of Results",
+                "dynamic": false,
+                "info": "Number of documents to return",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "number_of_results",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "track_in_telemetry": true,
+                "type": "int",
+                "value": 5
+              },
+              "port": {
+                "_input_type": "IntInput",
+                "advanced": false,
+                "display_name": "Server Port",
+                "dynamic": false,
+                "info": "ChromaDB server HTTP port",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "port",
+                "override_skip": false,
+                "placeholder": "",
+                "real_time_refresh": true,
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "track_in_telemetry": true,
+                "type": "int",
+                "value": 8100
+              },
+              "search_query": {
+                "_input_type": "MessageInput",
+                "advanced": false,
+                "display_name": "Search Query",
+                "dynamic": false,
+                "info": "Text query for similarity search",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "search_query",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "str",
+                "value": ""
+              },
+              "search_type": {
+                "_input_type": "DropdownInput",
+                "advanced": true,
+                "combobox": false,
+                "dialog_inputs": {},
+                "display_name": "Search Type",
+                "dynamic": false,
+                "external_options": {},
+                "info": "",
+                "name": "search_type",
+                "options": [
+                  "Similarity",
+                  "MMR"
+                ],
+                "options_metadata": [],
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "toggle": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "track_in_telemetry": true,
+                "type": "str",
+                "value": "Similarity"
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": true,
+          "type": "ChromaDBSearch"
+        },
+        "dragging": false,
+        "id": "ChromaDBSearch-nFO8B",
+        "measured": {
+          "height": 594,
+          "width": 320
+        },
+        "position": {
+          "x": 751.3019578525153,
+          "y": 40.57881229869919
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "LocalEmbeddingsComponent-Ph683",
+          "node": {
+            "base_classes": [
+              "Embeddings"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Generate embeddings locally using sentence-transformers models",
+            "display_name": "Local Embeddings",
+            "documentation": "",
+            "edited": false,
+            "field_order": [
+              "model_name"
+            ],
+            "frozen": false,
+            "icon": "binary",
+            "legacy": false,
+            "lf_version": "1.7.3",
+            "metadata": {
+              "code_hash": "da6275c40857",
+              "dependencies": {
+                "dependencies": [
+                  {
+                    "name": "langflow",
+                    "version": null
+                  },
+                  {
+                    "name": "langchain_huggingface",
+                    "version": null
+                  }
+                ],
+                "total_dependencies": 2
+              },
+              "module": "custom_components.local_embeddings"
+            },
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Embeddings",
+                "group_outputs": false,
+                "method": "build_embeddings",
+                "name": "embeddings",
+                "selected": "Embeddings",
+                "tool_mode": true,
+                "types": [
+                  "Embeddings"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_type": "Component",
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "\"\"\"\nLocal Embeddings Component for Langflow\n\nRuns sentence-transformers models locally using PyTorch.\nProduces embeddings compatible with LangChain's Embeddings interface.\n\"\"\"\n\nfrom langflow.custom import Component\nfrom langflow.io import Output, StrInput\n\n\nclass LocalEmbeddingsComponent(Component):\n    display_name = \"Local Embeddings\"\n    description = \"Generate embeddings locally using sentence-transformers models\"\n    icon = \"binary\"\n\n    inputs = [\n        StrInput(\n            name=\"model_name\",\n            display_name=\"Model Name\",\n            value=\"sentence-transformers/multi-qa-mpnet-base-dot-v1\",\n            info=\"HuggingFace model name. Downloaded once and cached locally.\",\n        ),\n    ]\n\n    outputs = [\n        Output(\n            display_name=\"Embeddings\",\n            name=\"embeddings\",\n            method=\"build_embeddings\",\n            types=[\"Embeddings\"],\n        ),\n    ]\n\n    def build_embeddings(self):\n        from langchain_huggingface import HuggingFaceEmbeddings\n\n        embeddings = HuggingFaceEmbeddings(model_name=self.model_name)\n        self.status = f\"Loaded {self.model_name}\"\n        return embeddings\n"
+              },
+              "model_name": {
+                "_input_type": "StrInput",
+                "advanced": false,
+                "display_name": "Model Name",
+                "dynamic": false,
+                "info": "HuggingFace model name. Downloaded once and cached locally.",
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "model_name",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "str",
+                "value": "sentence-transformers/multi-qa-mpnet-base-dot-v1"
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": true,
+          "type": "LocalEmbeddingsComponent"
+        },
+        "id": "LocalEmbeddingsComponent-Ph683",
+        "measured": {
+          "height": 220,
+          "width": 320
+        },
+        "position": {
+          "x": 291.6043505411039,
+          "y": -220.074470197462
+        },
+        "selected": false,
+        "type": "genericNode"
+      }
+    ],
+    "viewport": {
+      "x": 127.9381369291068,
+      "y": 182.28243681977105,
+      "zoom": 0.42201655373981356
+    }
+  },
+  "description": "",
+  "endpoint_name": null,
+  "id": "858415a2-d085-428f-a0d9-e1ea94831930",
+  "is_component": false,
+  "last_tested_version": "1.7.3",
+  "name": "QueryRewrite_HallucinationDetection (Prompted)",
+  "tags": []
+}
