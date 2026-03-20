@@ -11,7 +11,7 @@ This folder contains two contrasting Langflow flows configured for government do
 
 - **Retriever**: ELSER (Elastic Learned Sparse Encoder Retrieval)
 - **Collection**: `mt-rag-gov`
-- **Model Backend**: Ollama (default), using `http://host.docker.internal:11434`
+- **Models**: IBM internal RITS deployment
 
 ### Key Difference
 

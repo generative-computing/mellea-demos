@@ -12,7 +12,7 @@ This folder contains three Langflow flows configured for general domain document
 
 - **Retriever**: ELSER (Elastic Learned Sparse Encoder Retrieval)
 - **Collection**: `mt-rag-clapnq`
-- **Model Backend**: Ollama (default), using `http://host.docker.internal:11434`
+- **Models**: IBM internal RITS deployment
 
 ### Key Differences
 

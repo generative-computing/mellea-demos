@@ -9,9 +9,9 @@ This folder contains two contrasting Langflow flows configured for government do
 
 ### Configuration
 
-- **Retriever**: ELSER (Elastic Learned Sparse Encoder Retrieval)
+- **Retriever**: ChromaDB
 - **Collection**: `mt-rag-gov`
-- **Model Backend**: Ollama (default), using `http://host.docker.internal:11434`
+- **Models**: Ollama (default), using `http://host.docker.internal:11434`
 
 ### Key Difference
 

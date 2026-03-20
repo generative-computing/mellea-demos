@@ -1316,8 +1316,9 @@
             ],
             "frozen": false,
             "icon": "message-square",
-            "last_updated": "2026-03-18T19:36:23.443Z",
+            "last_updated": "2026-03-20T03:27:27.805Z",
             "legacy": false,
+            "lf_version": "1.7.3",
             "metadata": {
               "code_hash": "549086e9ee85",
               "dependencies": {
@@ -1402,16 +1403,16 @@
             "pinned": false,
             "template": {
               "_frontend_node_flow_id": {
-                "value": "86d91c3a-ff6c-4474-b67a-a594f7386d4c"
+                "value": "e256fa6b-c459-4c35-bcb0-53f706a57be7"
               },
               "_frontend_node_folder_id": {
-                "value": "ea8f5ef0-8ca7-4d0f-b4d3-d01e62dab071"
+                "value": "30f977c6-d5f8-4129-8544-665733d07960"
               },
               "_type": "Component",
               "api_key": {
                 "_input_type": "SecretStrInput",
                 "advanced": false,
-                "display_name": "API Key",
+                "display_name": "RITS API Key",
                 "dynamic": false,
                 "info": "API key for authentication",
                 "input_types": [],
@@ -1575,7 +1576,7 @@
                 "trace_as_metadata": true,
                 "track_in_telemetry": true,
                 "type": "str",
-                "value": "Ollama"
+                "value": "IntrinsicsAPI (mellea + RITS)"
               },
               "model_name": {
                 "_input_type": "DropdownInput",
@@ -1588,7 +1589,7 @@
                 "info": "Model name (options change based on backend)",
                 "name": "model_name",
                 "options": [
-                  "granite4:micro"
+                  "granite-4.0-micro"
                 ],
                 "options_metadata": [],
                 "override_skip": false,
@@ -1601,7 +1602,7 @@
                 "trace_as_metadata": true,
                 "track_in_telemetry": true,
                 "type": "str",
-                "value": "granite4:micro"
+                "value": "granite-4.0-micro"
               },
               "temperature": {
                 "_input_type": "SliderInput",
@@ -1646,13 +1647,13 @@
                 "override_skip": false,
                 "placeholder": "",
                 "required": true,
-                "show": true,
+                "show": false,
                 "title_case": false,
                 "tool_mode": false,
                 "trace_as_metadata": true,
                 "track_in_telemetry": false,
                 "type": "str",
-                "value": "http://host.docker.internal:11434"
+                "value": "https://intrinsics-api.intrinsics.vpc-int.res.ibm.com"
               }
             },
             "tool_mode": false
@@ -1664,7 +1665,7 @@
         "dragging": false,
         "id": "QueryClarification-XD2Dw",
         "measured": {
-          "height": 639,
+          "height": 556,
           "width": 320
         },
         "position": {
@@ -1702,8 +1703,9 @@
             ],
             "frozen": false,
             "icon": "message-square",
-            "last_updated": "2026-03-18T19:36:10.506Z",
+            "last_updated": "2026-03-20T03:27:10.594Z",
             "legacy": false,
+            "lf_version": "1.7.3",
             "metadata": {
               "code_hash": "6aa6cdd21a5c",
               "dependencies": {
@@ -1788,16 +1790,16 @@
             "pinned": false,
             "template": {
               "_frontend_node_flow_id": {
-                "value": "86d91c3a-ff6c-4474-b67a-a594f7386d4c"
+                "value": "e256fa6b-c459-4c35-bcb0-53f706a57be7"
               },
               "_frontend_node_folder_id": {
-                "value": "ea8f5ef0-8ca7-4d0f-b4d3-d01e62dab071"
+                "value": "30f977c6-d5f8-4129-8544-665733d07960"
               },
               "_type": "Component",
               "api_key": {
                 "_input_type": "SecretStrInput",
                 "advanced": false,
-                "display_name": "API Key",
+                "display_name": "RITS API Key",
                 "dynamic": false,
                 "info": "API key for authentication",
                 "input_types": [],
@@ -1909,7 +1911,7 @@
                 "trace_as_metadata": true,
                 "track_in_telemetry": true,
                 "type": "str",
-                "value": "Ollama"
+                "value": "IntrinsicsAPI (mellea + RITS)"
               },
               "model_name": {
                 "_input_type": "DropdownInput",
@@ -1922,7 +1924,8 @@
                 "info": "Model name (options change based on backend)",
                 "name": "model_name",
                 "options": [
-                  "granite4:micro"
+                  "granite-4.0-micro",
+                  "gpt-oss-20b"
                 ],
                 "options_metadata": [],
                 "override_skip": false,
@@ -1935,7 +1938,7 @@
                 "trace_as_metadata": true,
                 "track_in_telemetry": true,
                 "type": "str",
-                "value": "granite4:micro"
+                "value": "granite-4.0-micro"
               },
               "temperature": {
                 "_input_type": "SliderInput",
@@ -1980,13 +1983,13 @@
                 "override_skip": false,
                 "placeholder": "",
                 "required": true,
-                "show": true,
+                "show": false,
                 "title_case": false,
                 "tool_mode": false,
                 "trace_as_metadata": true,
                 "track_in_telemetry": false,
                 "type": "str",
-                "value": "http://host.docker.internal:11434"
+                "value": "https://intrinsics-api.intrinsics.vpc-int.res.ibm.com"
               }
             },
             "tool_mode": false
@@ -1998,7 +2001,7 @@
         "dragging": false,
         "id": "QueryRewrite-9zAML",
         "measured": {
-          "height": 594,
+          "height": 512,
           "width": 320
         },
         "position": {
@@ -2663,7 +2666,7 @@
             ],
             "frozen": false,
             "icon": "sparkles",
-            "last_updated": "2026-03-18T19:36:39.674Z",
+            "last_updated": "2026-03-20T03:27:49.946Z",
             "legacy": false,
             "lf_version": "1.7.3",
             "metadata": {
@@ -2744,16 +2747,16 @@
             "pinned": false,
             "template": {
               "_frontend_node_flow_id": {
-                "value": "86d91c3a-ff6c-4474-b67a-a594f7386d4c"
+                "value": "e256fa6b-c459-4c35-bcb0-53f706a57be7"
               },
               "_frontend_node_folder_id": {
-                "value": "ea8f5ef0-8ca7-4d0f-b4d3-d01e62dab071"
+                "value": "30f977c6-d5f8-4129-8544-665733d07960"
               },
               "_type": "Component",
               "api_key": {
                 "_input_type": "SecretStrInput",
                 "advanced": false,
-                "display_name": "API Key",
+                "display_name": "RITS API Key",
                 "dynamic": false,
                 "info": "API key for authentication",
                 "input_types": [],
@@ -2888,7 +2891,7 @@
                 "trace_as_metadata": true,
                 "track_in_telemetry": true,
                 "type": "str",
-                "value": "Ollama"
+                "value": "IntrinsicsAPI (mellea + RITS)"
               },
               "model_name": {
                 "_input_type": "DropdownInput",
@@ -2901,9 +2904,9 @@
                 "info": "Model name (options change based on backend)",
                 "name": "model_name",
                 "options": [
-                  "granite4:micro",
-                  "granite4:small-h",
-                  "gpt-oss:20b"
+                  "granite-4.0-micro",
+                  "granite-4.0-h-small",
+                  "gpt-oss-20b"
                 ],
                 "options_metadata": [],
                 "override_skip": false,
@@ -2916,7 +2919,7 @@
                 "trace_as_metadata": true,
                 "track_in_telemetry": true,
                 "type": "str",
-                "value": "granite4:micro"
+                "value": "granite-4.0-micro"
               },
               "temperature": {
                 "_input_type": "SliderInput",
@@ -2961,13 +2964,13 @@
                 "override_skip": false,
                 "placeholder": "",
                 "required": true,
-                "show": true,
+                "show": false,
                 "title_case": false,
                 "tool_mode": false,
                 "trace_as_metadata": true,
                 "track_in_telemetry": false,
                 "type": "str",
-                "value": "http://host.docker.internal:11434"
+                "value": "https://intrinsics-api.intrinsics.vpc-int.res.ibm.com"
               }
             },
             "tool_mode": false
@@ -2979,7 +2982,7 @@
         "dragging": false,
         "id": "GraniteBaseModel-XhpAy",
         "measured": {
-          "height": 623,
+          "height": 540,
           "width": 320
         },
         "position": {
@@ -3407,8 +3410,9 @@
             ],
             "frozen": false,
             "icon": "message-square",
-            "last_updated": "2026-03-18T19:36:50.377Z",
+            "last_updated": "2026-03-20T03:27:57.226Z",
             "legacy": false,
+            "lf_version": "1.7.3",
             "metadata": {
               "code_hash": "6eb83d50a89b",
               "dependencies": {
@@ -3492,16 +3496,16 @@
             "pinned": false,
             "template": {
               "_frontend_node_flow_id": {
-                "value": "86d91c3a-ff6c-4474-b67a-a594f7386d4c"
+                "value": "e256fa6b-c459-4c35-bcb0-53f706a57be7"
               },
               "_frontend_node_folder_id": {
-                "value": "ea8f5ef0-8ca7-4d0f-b4d3-d01e62dab071"
+                "value": "30f977c6-d5f8-4129-8544-665733d07960"
               },
               "_type": "Component",
               "api_key": {
                 "_input_type": "SecretStrInput",
                 "advanced": false,
-                "display_name": "API Key",
+                "display_name": "RITS API Key",
                 "dynamic": false,
                 "info": "API key for authentication",
                 "input_types": [],
@@ -3636,7 +3640,7 @@
                 "trace_as_metadata": true,
                 "track_in_telemetry": true,
                 "type": "str",
-                "value": "Ollama"
+                "value": "IntrinsicsAPI (mellea + RITS)"
               },
               "model_name": {
                 "_input_type": "DropdownInput",
@@ -3649,7 +3653,8 @@
                 "info": "Model name (options change based on backend)",
                 "name": "model_name",
                 "options": [
-                  "granite4:micro"
+                  "granite-4.0-micro",
+                  "gpt-oss-20b"
                 ],
                 "options_metadata": [],
                 "override_skip": false,
@@ -3662,7 +3667,7 @@
                 "trace_as_metadata": true,
                 "track_in_telemetry": true,
                 "type": "str",
-                "value": "granite4:micro"
+                "value": "granite-4.0-micro"
               },
               "temperature": {
                 "_input_type": "SliderInput",
@@ -3707,13 +3712,13 @@
                 "override_skip": false,
                 "placeholder": "",
                 "required": true,
-                "show": true,
+                "show": false,
                 "title_case": false,
                 "tool_mode": false,
                 "trace_as_metadata": true,
                 "track_in_telemetry": false,
                 "type": "str",
-                "value": "http://host.docker.internal:11434"
+                "value": "https://intrinsics-api.intrinsics.vpc-int.res.ibm.com"
               },
               "user_message": {
                 "_input_type": "MessageInput",
@@ -3750,7 +3755,7 @@
         "dragging": false,
         "id": "Citations-8TGdC",
         "measured": {
-          "height": 721,
+          "height": 639,
           "width": 320
         },
         "position": {
@@ -3762,14 +3767,14 @@
       }
     ],
     "viewport": {
-      "x": 278.8836252295973,
-      "y": 406.2138117049398,
-      "zoom": 0.42178568852337767
+      "x": 278.08496545112365,
+      "y": 409.246976846498,
+      "zoom": 0.4221667054055126
     }
   },
   "description": "A RAG flow that includes: Query Rewrite + ELSER Retriever + Query Clarification (post-retrieval) + Granite Base for Answer Generation ",
   "endpoint_name": null,
-  "id": "86d91c3a-ff6c-4474-b67a-a594f7386d4c",
+  "id": "e256fa6b-c459-4c35-bcb0-53f706a57be7",
   "is_component": false,
   "last_tested_version": "1.7.3",
   "name": "Query Clarification (Intrinsic) - Gov",

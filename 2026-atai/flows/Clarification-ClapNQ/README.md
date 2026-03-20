@@ -10,9 +10,9 @@ This folder contains three Langflow flows configured for general domain document
 
 ### Configuration
 
-- **Retriever**: ELSER (Elastic Learned Sparse Encoder Retrieval)
+- **Retriever**: ChromaDB
 - **Collection**: `mt-rag-clapnq`
-- **Model Backend**: Ollama (default), using `http://host.docker.internal:11434`
+- **Models**: Ollama (default), using `http://host.docker.internal:11434`
 
 ### Key Differences
 
