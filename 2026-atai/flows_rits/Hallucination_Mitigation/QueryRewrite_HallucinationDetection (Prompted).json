@@ -7,7 +7,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "Memory",
-            "id": "Memory-Wmu0B",
+            "id": "Memory-IqBIU",
             "name": "dataframe",
             "output_types": [
               "DataFrame"
@@ -15,19 +15,19 @@
           },
           "targetHandle": {
             "fieldName": "message_history",
-            "id": "GraniteBaseModel-mULWL",
+            "id": "GraniteBaseModel-XacSa",
             "inputTypes": [
               "DataFrame"
             ],
             "type": "other"
           }
         },
-        "id": "reactflow__edge-Memory-Wmu0B{œdataTypeœ:œMemoryœ,œidœ:œMemory-Wmu0Bœ,œnameœ:œdataframeœ,œoutput_typesœ:[œDataFrameœ]}-GraniteBaseModel-mULWL{œfieldNameœ:œmessage_historyœ,œidœ:œGraniteBaseModel-mULWLœ,œinputTypesœ:[œDataFrameœ],œtypeœ:œotherœ}",
+        "id": "reactflow__edge-Memory-IqBIU{œdataTypeœ:œMemoryœ,œidœ:œMemory-IqBIUœ,œnameœ:œdataframeœ,œoutput_typesœ:[œDataFrameœ]}-GraniteBaseModel-XacSa{œfieldNameœ:œmessage_historyœ,œidœ:œGraniteBaseModel-XacSaœ,œinputTypesœ:[œDataFrameœ],œtypeœ:œotherœ}",
         "selected": false,
-        "source": "Memory-Wmu0B",
-        "sourceHandle": "{œdataTypeœ:œMemoryœ,œidœ:œMemory-Wmu0Bœ,œnameœ:œdataframeœ,œoutput_typesœ:[œDataFrameœ]}",
-        "target": "GraniteBaseModel-mULWL",
-        "targetHandle": "{œfieldNameœ:œmessage_historyœ,œidœ:œGraniteBaseModel-mULWLœ,œinputTypesœ:[œDataFrameœ],œtypeœ:œotherœ}"
+        "source": "Memory-IqBIU",
+        "sourceHandle": "{œdataTypeœ:œMemoryœ,œidœ:œMemory-IqBIUœ,œnameœ:œdataframeœ,œoutput_typesœ:[œDataFrameœ]}",
+        "target": "GraniteBaseModel-XacSa",
+        "targetHandle": "{œfieldNameœ:œmessage_historyœ,œidœ:œGraniteBaseModel-XacSaœ,œinputTypesœ:[œDataFrameœ],œtypeœ:œotherœ}"
       },
       {
         "animated": false,
@@ -35,7 +35,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "ChatInput",
-            "id": "ChatInput-KgmLn",
+            "id": "ChatInput-PkzBs",
             "name": "message",
             "output_types": [
               "Message"
@@ -43,19 +43,19 @@
           },
           "targetHandle": {
             "fieldName": "chat_input",
-            "id": "GraniteBaseModel-mULWL",
+            "id": "GraniteBaseModel-XacSa",
             "inputTypes": [
               "Message"
             ],
             "type": "str"
           }
         },
-        "id": "reactflow__edge-ChatInput-KgmLn{œdataTypeœ:œChatInputœ,œidœ:œChatInput-KgmLnœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-GraniteBaseModel-mULWL{œfieldNameœ:œchat_inputœ,œidœ:œGraniteBaseModel-mULWLœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-ChatInput-PkzBs{œdataTypeœ:œChatInputœ,œidœ:œChatInput-PkzBsœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-GraniteBaseModel-XacSa{œfieldNameœ:œchat_inputœ,œidœ:œGraniteBaseModel-XacSaœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
         "selected": false,
-        "source": "ChatInput-KgmLn",
-        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-KgmLnœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "GraniteBaseModel-mULWL",
-        "targetHandle": "{œfieldNameœ:œchat_inputœ,œidœ:œGraniteBaseModel-mULWLœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+        "source": "ChatInput-PkzBs",
+        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-PkzBsœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "GraniteBaseModel-XacSa",
+        "targetHandle": "{œfieldNameœ:œchat_inputœ,œidœ:œGraniteBaseModel-XacSaœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
       },
       {
         "animated": false,
@@ -63,7 +63,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "ChatInput",
-            "id": "ChatInput-KgmLn",
+            "id": "ChatInput-PkzBs",
             "name": "message",
             "output_types": [
               "Message"
@@ -71,19 +71,19 @@
           },
           "targetHandle": {
             "fieldName": "chat_input",
-            "id": "QueryRewritePrompt-hWars",
+            "id": "QueryRewritePrompt-W8ZD2",
             "inputTypes": [
               "Message"
             ],
             "type": "str"
           }
         },
-        "id": "reactflow__edge-ChatInput-KgmLn{œdataTypeœ:œChatInputœ,œidœ:œChatInput-KgmLnœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-QueryRewritePrompt-hWars{œfieldNameœ:œchat_inputœ,œidœ:œQueryRewritePrompt-hWarsœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-ChatInput-PkzBs{œdataTypeœ:œChatInputœ,œidœ:œChatInput-PkzBsœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-QueryRewritePrompt-W8ZD2{œfieldNameœ:œchat_inputœ,œidœ:œQueryRewritePrompt-W8ZD2œ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
         "selected": false,
-        "source": "ChatInput-KgmLn",
-        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-KgmLnœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "QueryRewritePrompt-hWars",
-        "targetHandle": "{œfieldNameœ:œchat_inputœ,œidœ:œQueryRewritePrompt-hWarsœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+        "source": "ChatInput-PkzBs",
+        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-PkzBsœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "QueryRewritePrompt-W8ZD2",
+        "targetHandle": "{œfieldNameœ:œchat_inputœ,œidœ:œQueryRewritePrompt-W8ZD2œ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
       },
       {
         "animated": false,
@@ -91,7 +91,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "GraniteBaseModel",
-            "id": "GraniteBaseModel-mULWL",
+            "id": "GraniteBaseModel-XacSa",
             "name": "response",
             "output_types": [
               "Message"
@@ -99,19 +99,19 @@
           },
           "targetHandle": {
             "fieldName": "agent_response",
-            "id": "HallucinationRemovalPrompt-9GKZ8",
+            "id": "HallucinationRemovalPrompt-MVzBT",
             "inputTypes": [
               "Message"
             ],
             "type": "str"
           }
         },
-        "id": "reactflow__edge-GraniteBaseModel-mULWL{œdataTypeœ:œGraniteBaseModelœ,œidœ:œGraniteBaseModel-mULWLœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}-HallucinationRemovalPrompt-9GKZ8{œfieldNameœ:œagent_responseœ,œidœ:œHallucinationRemovalPrompt-9GKZ8œ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-GraniteBaseModel-XacSa{œdataTypeœ:œGraniteBaseModelœ,œidœ:œGraniteBaseModel-XacSaœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}-HallucinationRemovalPrompt-MVzBT{œfieldNameœ:œagent_responseœ,œidœ:œHallucinationRemovalPrompt-MVzBTœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
         "selected": false,
-        "source": "GraniteBaseModel-mULWL",
-        "sourceHandle": "{œdataTypeœ:œGraniteBaseModelœ,œidœ:œGraniteBaseModel-mULWLœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "HallucinationRemovalPrompt-9GKZ8",
-        "targetHandle": "{œfieldNameœ:œagent_responseœ,œidœ:œHallucinationRemovalPrompt-9GKZ8œ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+        "source": "GraniteBaseModel-XacSa",
+        "sourceHandle": "{œdataTypeœ:œGraniteBaseModelœ,œidœ:œGraniteBaseModel-XacSaœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "HallucinationRemovalPrompt-MVzBT",
+        "targetHandle": "{œfieldNameœ:œagent_responseœ,œidœ:œHallucinationRemovalPrompt-MVzBTœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
       },
       {
         "animated": false,
@@ -119,7 +119,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "ChatInput",
-            "id": "ChatInput-KgmLn",
+            "id": "ChatInput-PkzBs",
             "name": "message",
             "output_types": [
               "Message"
@@ -127,19 +127,19 @@
           },
           "targetHandle": {
             "fieldName": "chat_input",
-            "id": "HallucinationRemovalPrompt-9GKZ8",
+            "id": "HallucinationRemovalPrompt-MVzBT",
             "inputTypes": [
               "Message"
             ],
             "type": "str"
           }
         },
-        "id": "reactflow__edge-ChatInput-KgmLn{œdataTypeœ:œChatInputœ,œidœ:œChatInput-KgmLnœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-HallucinationRemovalPrompt-9GKZ8{œfieldNameœ:œchat_inputœ,œidœ:œHallucinationRemovalPrompt-9GKZ8œ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-ChatInput-PkzBs{œdataTypeœ:œChatInputœ,œidœ:œChatInput-PkzBsœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-HallucinationRemovalPrompt-MVzBT{œfieldNameœ:œchat_inputœ,œidœ:œHallucinationRemovalPrompt-MVzBTœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
         "selected": false,
-        "source": "ChatInput-KgmLn",
-        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-KgmLnœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "HallucinationRemovalPrompt-9GKZ8",
-        "targetHandle": "{œfieldNameœ:œchat_inputœ,œidœ:œHallucinationRemovalPrompt-9GKZ8œ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+        "source": "ChatInput-PkzBs",
+        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-PkzBsœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "HallucinationRemovalPrompt-MVzBT",
+        "targetHandle": "{œfieldNameœ:œchat_inputœ,œidœ:œHallucinationRemovalPrompt-MVzBTœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
       },
       {
         "animated": false,
@@ -147,7 +147,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "Memory",
-            "id": "Memory-Wmu0B",
+            "id": "Memory-IqBIU",
             "name": "dataframe",
             "output_types": [
               "DataFrame"
@@ -155,19 +155,19 @@
           },
           "targetHandle": {
             "fieldName": "message_history",
-            "id": "HallucinationRemovalPrompt-9GKZ8",
+            "id": "HallucinationRemovalPrompt-MVzBT",
             "inputTypes": [
               "DataFrame"
             ],
             "type": "other"
           }
         },
-        "id": "reactflow__edge-Memory-Wmu0B{œdataTypeœ:œMemoryœ,œidœ:œMemory-Wmu0Bœ,œnameœ:œdataframeœ,œoutput_typesœ:[œDataFrameœ]}-HallucinationRemovalPrompt-9GKZ8{œfieldNameœ:œmessage_historyœ,œidœ:œHallucinationRemovalPrompt-9GKZ8œ,œinputTypesœ:[œDataFrameœ],œtypeœ:œotherœ}",
+        "id": "reactflow__edge-Memory-IqBIU{œdataTypeœ:œMemoryœ,œidœ:œMemory-IqBIUœ,œnameœ:œdataframeœ,œoutput_typesœ:[œDataFrameœ]}-HallucinationRemovalPrompt-MVzBT{œfieldNameœ:œmessage_historyœ,œidœ:œHallucinationRemovalPrompt-MVzBTœ,œinputTypesœ:[œDataFrameœ],œtypeœ:œotherœ}",
         "selected": false,
-        "source": "Memory-Wmu0B",
-        "sourceHandle": "{œdataTypeœ:œMemoryœ,œidœ:œMemory-Wmu0Bœ,œnameœ:œdataframeœ,œoutput_typesœ:[œDataFrameœ]}",
-        "target": "HallucinationRemovalPrompt-9GKZ8",
-        "targetHandle": "{œfieldNameœ:œmessage_historyœ,œidœ:œHallucinationRemovalPrompt-9GKZ8œ,œinputTypesœ:[œDataFrameœ],œtypeœ:œotherœ}"
+        "source": "Memory-IqBIU",
+        "sourceHandle": "{œdataTypeœ:œMemoryœ,œidœ:œMemory-IqBIUœ,œnameœ:œdataframeœ,œoutput_typesœ:[œDataFrameœ]}",
+        "target": "HallucinationRemovalPrompt-MVzBT",
+        "targetHandle": "{œfieldNameœ:œmessage_historyœ,œidœ:œHallucinationRemovalPrompt-MVzBTœ,œinputTypesœ:[œDataFrameœ],œtypeœ:œotherœ}"
       },
       {
         "animated": false,
@@ -175,7 +175,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "HallucinationRemovalPrompt",
-            "id": "HallucinationRemovalPrompt-9GKZ8",
+            "id": "HallucinationRemovalPrompt-MVzBT",
             "name": "corrected_response",
             "output_types": [
               "Message"
@@ -183,7 +183,7 @@
           },
           "targetHandle": {
             "fieldName": "input_value",
-            "id": "ChatOutput-vNusy",
+            "id": "ChatOutput-61ipf",
             "inputTypes": [
               "Data",
               "DataFrame",
@@ -192,12 +192,12 @@
             "type": "other"
           }
         },
-        "id": "reactflow__edge-HallucinationRemovalPrompt-9GKZ8{œdataTypeœ:œHallucinationRemovalPromptœ,œidœ:œHallucinationRemovalPrompt-9GKZ8œ,œnameœ:œcorrected_responseœ,œoutput_typesœ:[œMessageœ]}-ChatOutput-vNusy{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-vNusyœ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}",
+        "id": "reactflow__edge-HallucinationRemovalPrompt-MVzBT{œdataTypeœ:œHallucinationRemovalPromptœ,œidœ:œHallucinationRemovalPrompt-MVzBTœ,œnameœ:œcorrected_responseœ,œoutput_typesœ:[œMessageœ]}-ChatOutput-61ipf{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-61ipfœ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}",
         "selected": false,
-        "source": "HallucinationRemovalPrompt-9GKZ8",
-        "sourceHandle": "{œdataTypeœ:œHallucinationRemovalPromptœ,œidœ:œHallucinationRemovalPrompt-9GKZ8œ,œnameœ:œcorrected_responseœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "ChatOutput-vNusy",
-        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-vNusyœ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}"
+        "source": "HallucinationRemovalPrompt-MVzBT",
+        "sourceHandle": "{œdataTypeœ:œHallucinationRemovalPromptœ,œidœ:œHallucinationRemovalPrompt-MVzBTœ,œnameœ:œcorrected_responseœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "ChatOutput-61ipf",
+        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-61ipfœ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}"
       },
       {
         "animated": false,
@@ -205,7 +205,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "Memory",
-            "id": "Memory-Wmu0B",
+            "id": "Memory-IqBIU",
             "name": "dataframe",
             "output_types": [
               "DataFrame"
@@ -213,19 +213,19 @@
           },
           "targetHandle": {
             "fieldName": "message_history",
-            "id": "QueryRewritePrompt-hWars",
+            "id": "QueryRewritePrompt-W8ZD2",
             "inputTypes": [
               "DataFrame"
             ],
             "type": "other"
           }
         },
-        "id": "reactflow__edge-Memory-Wmu0B{œdataTypeœ:œMemoryœ,œidœ:œMemory-Wmu0Bœ,œnameœ:œdataframeœ,œoutput_typesœ:[œDataFrameœ]}-QueryRewritePrompt-hWars{œfieldNameœ:œmessage_historyœ,œidœ:œQueryRewritePrompt-hWarsœ,œinputTypesœ:[œDataFrameœ],œtypeœ:œotherœ}",
+        "id": "reactflow__edge-Memory-IqBIU{œdataTypeœ:œMemoryœ,œidœ:œMemory-IqBIUœ,œnameœ:œdataframeœ,œoutput_typesœ:[œDataFrameœ]}-QueryRewritePrompt-W8ZD2{œfieldNameœ:œmessage_historyœ,œidœ:œQueryRewritePrompt-W8ZD2œ,œinputTypesœ:[œDataFrameœ],œtypeœ:œotherœ}",
         "selected": false,
-        "source": "Memory-Wmu0B",
-        "sourceHandle": "{œdataTypeœ:œMemoryœ,œidœ:œMemory-Wmu0Bœ,œnameœ:œdataframeœ,œoutput_typesœ:[œDataFrameœ]}",
-        "target": "QueryRewritePrompt-hWars",
-        "targetHandle": "{œfieldNameœ:œmessage_historyœ,œidœ:œQueryRewritePrompt-hWarsœ,œinputTypesœ:[œDataFrameœ],œtypeœ:œotherœ}"
+        "source": "Memory-IqBIU",
+        "sourceHandle": "{œdataTypeœ:œMemoryœ,œidœ:œMemory-IqBIUœ,œnameœ:œdataframeœ,œoutput_typesœ:[œDataFrameœ]}",
+        "target": "QueryRewritePrompt-W8ZD2",
+        "targetHandle": "{œfieldNameœ:œmessage_historyœ,œidœ:œQueryRewritePrompt-W8ZD2œ,œinputTypesœ:[œDataFrameœ],œtypeœ:œotherœ}"
       },
       {
         "animated": false,
@@ -233,7 +233,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "LocalEmbeddingsComponent",
-            "id": "LocalEmbeddingsComponent-Ph683",
+            "id": "LocalEmbeddingsComponent-pbsyS",
             "name": "embeddings",
             "output_types": [
               "Embeddings"
@@ -241,19 +241,19 @@
           },
           "targetHandle": {
             "fieldName": "embedding",
-            "id": "ChromaDBSearch-nFO8B",
+            "id": "ChromaDBSearch-dwJ4s",
             "inputTypes": [
               "Embeddings"
             ],
             "type": "other"
           }
         },
-        "id": "reactflow__edge-LocalEmbeddingsComponent-Ph683{œdataTypeœ:œLocalEmbeddingsComponentœ,œidœ:œLocalEmbeddingsComponent-Ph683œ,œnameœ:œembeddingsœ,œoutput_typesœ:[œEmbeddingsœ]}-ChromaDBSearch-nFO8B{œfieldNameœ:œembeddingœ,œidœ:œChromaDBSearch-nFO8Bœ,œinputTypesœ:[œEmbeddingsœ],œtypeœ:œotherœ}",
+        "id": "reactflow__edge-LocalEmbeddingsComponent-pbsyS{œdataTypeœ:œLocalEmbeddingsComponentœ,œidœ:œLocalEmbeddingsComponent-pbsySœ,œnameœ:œembeddingsœ,œoutput_typesœ:[œEmbeddingsœ]}-ChromaDBSearch-dwJ4s{œfieldNameœ:œembeddingœ,œidœ:œChromaDBSearch-dwJ4sœ,œinputTypesœ:[œEmbeddingsœ],œtypeœ:œotherœ}",
         "selected": false,
-        "source": "LocalEmbeddingsComponent-Ph683",
-        "sourceHandle": "{œdataTypeœ:œLocalEmbeddingsComponentœ,œidœ:œLocalEmbeddingsComponent-Ph683œ,œnameœ:œembeddingsœ,œoutput_typesœ:[œEmbeddingsœ]}",
-        "target": "ChromaDBSearch-nFO8B",
-        "targetHandle": "{œfieldNameœ:œembeddingœ,œidœ:œChromaDBSearch-nFO8Bœ,œinputTypesœ:[œEmbeddingsœ],œtypeœ:œotherœ}"
+        "source": "LocalEmbeddingsComponent-pbsyS",
+        "sourceHandle": "{œdataTypeœ:œLocalEmbeddingsComponentœ,œidœ:œLocalEmbeddingsComponent-pbsySœ,œnameœ:œembeddingsœ,œoutput_typesœ:[œEmbeddingsœ]}",
+        "target": "ChromaDBSearch-dwJ4s",
+        "targetHandle": "{œfieldNameœ:œembeddingœ,œidœ:œChromaDBSearch-dwJ4sœ,œinputTypesœ:[œEmbeddingsœ],œtypeœ:œotherœ}"
       },
       {
         "animated": false,
@@ -261,7 +261,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "QueryRewritePrompt",
-            "id": "QueryRewritePrompt-hWars",
+            "id": "QueryRewritePrompt-W8ZD2",
             "name": "rewritten_query",
             "output_types": [
               "Message"
@@ -269,19 +269,19 @@
           },
           "targetHandle": {
             "fieldName": "search_query",
-            "id": "ChromaDBSearch-nFO8B",
+            "id": "ChromaDBSearch-dwJ4s",
             "inputTypes": [
               "Message"
             ],
             "type": "str"
           }
         },
-        "id": "reactflow__edge-QueryRewritePrompt-hWars{œdataTypeœ:œQueryRewritePromptœ,œidœ:œQueryRewritePrompt-hWarsœ,œnameœ:œrewritten_queryœ,œoutput_typesœ:[œMessageœ]}-ChromaDBSearch-nFO8B{œfieldNameœ:œsearch_queryœ,œidœ:œChromaDBSearch-nFO8Bœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-QueryRewritePrompt-W8ZD2{œdataTypeœ:œQueryRewritePromptœ,œidœ:œQueryRewritePrompt-W8ZD2œ,œnameœ:œrewritten_queryœ,œoutput_typesœ:[œMessageœ]}-ChromaDBSearch-dwJ4s{œfieldNameœ:œsearch_queryœ,œidœ:œChromaDBSearch-dwJ4sœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
         "selected": false,
-        "source": "QueryRewritePrompt-hWars",
-        "sourceHandle": "{œdataTypeœ:œQueryRewritePromptœ,œidœ:œQueryRewritePrompt-hWarsœ,œnameœ:œrewritten_queryœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "ChromaDBSearch-nFO8B",
-        "targetHandle": "{œfieldNameœ:œsearch_queryœ,œidœ:œChromaDBSearch-nFO8Bœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+        "source": "QueryRewritePrompt-W8ZD2",
+        "sourceHandle": "{œdataTypeœ:œQueryRewritePromptœ,œidœ:œQueryRewritePrompt-W8ZD2œ,œnameœ:œrewritten_queryœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "ChromaDBSearch-dwJ4s",
+        "targetHandle": "{œfieldNameœ:œsearch_queryœ,œidœ:œChromaDBSearch-dwJ4sœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
       },
       {
         "animated": false,
@@ -289,7 +289,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "ChromaDBSearch",
-            "id": "ChromaDBSearch-nFO8B",
+            "id": "ChromaDBSearch-dwJ4s",
             "name": "search_results",
             "output_types": [
               "Data"
@@ -297,7 +297,7 @@
           },
           "targetHandle": {
             "fieldName": "documents",
-            "id": "GraniteBaseModel-mULWL",
+            "id": "GraniteBaseModel-XacSa",
             "inputTypes": [
               "Data",
               "Search Results"
@@ -305,12 +305,12 @@
             "type": "other"
           }
         },
-        "id": "reactflow__edge-ChromaDBSearch-nFO8B{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-nFO8Bœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}-GraniteBaseModel-mULWL{œfieldNameœ:œdocumentsœ,œidœ:œGraniteBaseModel-mULWLœ,œinputTypesœ:[œDataœ,œSearch Resultsœ],œtypeœ:œotherœ}",
+        "id": "reactflow__edge-ChromaDBSearch-dwJ4s{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-dwJ4sœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}-GraniteBaseModel-XacSa{œfieldNameœ:œdocumentsœ,œidœ:œGraniteBaseModel-XacSaœ,œinputTypesœ:[œDataœ,œSearch Resultsœ],œtypeœ:œotherœ}",
         "selected": false,
-        "source": "ChromaDBSearch-nFO8B",
-        "sourceHandle": "{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-nFO8Bœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}",
-        "target": "GraniteBaseModel-mULWL",
-        "targetHandle": "{œfieldNameœ:œdocumentsœ,œidœ:œGraniteBaseModel-mULWLœ,œinputTypesœ:[œDataœ,œSearch Resultsœ],œtypeœ:œotherœ}"
+        "source": "ChromaDBSearch-dwJ4s",
+        "sourceHandle": "{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-dwJ4sœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}",
+        "target": "GraniteBaseModel-XacSa",
+        "targetHandle": "{œfieldNameœ:œdocumentsœ,œidœ:œGraniteBaseModel-XacSaœ,œinputTypesœ:[œDataœ,œSearch Resultsœ],œtypeœ:œotherœ}"
       },
       {
         "animated": false,
@@ -318,7 +318,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "ChromaDBSearch",
-            "id": "ChromaDBSearch-nFO8B",
+            "id": "ChromaDBSearch-dwJ4s",
             "name": "search_results",
             "output_types": [
               "Data"
@@ -326,25 +326,25 @@
           },
           "targetHandle": {
             "fieldName": "documents",
-            "id": "HallucinationRemovalPrompt-9GKZ8",
+            "id": "HallucinationRemovalPrompt-MVzBT",
             "inputTypes": [
               "Data"
             ],
             "type": "other"
           }
         },
-        "id": "reactflow__edge-ChromaDBSearch-nFO8B{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-nFO8Bœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}-HallucinationRemovalPrompt-9GKZ8{œfieldNameœ:œdocumentsœ,œidœ:œHallucinationRemovalPrompt-9GKZ8œ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}",
+        "id": "reactflow__edge-ChromaDBSearch-dwJ4s{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-dwJ4sœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}-HallucinationRemovalPrompt-MVzBT{œfieldNameœ:œdocumentsœ,œidœ:œHallucinationRemovalPrompt-MVzBTœ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}",
         "selected": false,
-        "source": "ChromaDBSearch-nFO8B",
-        "sourceHandle": "{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-nFO8Bœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}",
-        "target": "HallucinationRemovalPrompt-9GKZ8",
-        "targetHandle": "{œfieldNameœ:œdocumentsœ,œidœ:œHallucinationRemovalPrompt-9GKZ8œ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}"
+        "source": "ChromaDBSearch-dwJ4s",
+        "sourceHandle": "{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-dwJ4sœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}",
+        "target": "HallucinationRemovalPrompt-MVzBT",
+        "targetHandle": "{œfieldNameœ:œdocumentsœ,œidœ:œHallucinationRemovalPrompt-MVzBTœ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}"
       }
     ],
     "nodes": [
       {
         "data": {
-          "id": "ChatInput-KgmLn",
+          "id": "ChatInput-PkzBs",
           "node": {
             "base_classes": [
               "Message"
@@ -623,7 +623,7 @@
           "type": "ChatInput"
         },
         "dragging": false,
-        "id": "ChatInput-KgmLn",
+        "id": "ChatInput-PkzBs",
         "measured": {
           "height": 48,
           "width": 192
@@ -637,7 +637,7 @@
       },
       {
         "data": {
-          "id": "Memory-Wmu0B",
+          "id": "Memory-IqBIU",
           "node": {
             "base_classes": [
               "DataFrame",
@@ -1029,7 +1029,7 @@
           "type": "Memory"
         },
         "dragging": false,
-        "id": "Memory-Wmu0B",
+        "id": "Memory-IqBIU",
         "measured": {
           "height": 218,
           "width": 320
@@ -1045,7 +1045,7 @@
         "data": {
           "description": "Call Granite base models for text generation",
           "display_name": "Base Model Chat",
-          "id": "GraniteBaseModel-mULWL",
+          "id": "GraniteBaseModel-XacSa",
           "node": {
             "base_classes": [
               "Message",
@@ -1070,7 +1070,7 @@
             ],
             "frozen": false,
             "icon": "sparkles",
-            "last_updated": "2026-03-19T03:01:26.237Z",
+            "last_updated": "2026-03-20T20:26:49.483Z",
             "legacy": false,
             "metadata": {
               "code_hash": "cb04af5826db",
@@ -1150,16 +1150,16 @@
             "pinned": false,
             "template": {
               "_frontend_node_flow_id": {
-                "value": "858415a2-d085-428f-a0d9-e1ea94831930"
+                "value": "10b55aa0-e84e-4e76-ab98-083d5ada420d"
               },
               "_frontend_node_folder_id": {
-                "value": "999dba2e-ed71-453f-9a15-71c2315a845f"
+                "value": "607edb20-debd-47d6-a1ed-ec1d35d70e81"
               },
               "_type": "Component",
               "api_key": {
                 "_input_type": "SecretStrInput",
                 "advanced": false,
-                "display_name": "API Key",
+                "display_name": "RITS API Key",
                 "dynamic": false,
                 "info": "API key for authentication",
                 "input_types": [],
@@ -1294,7 +1294,7 @@
                 "trace_as_metadata": true,
                 "track_in_telemetry": true,
                 "type": "str",
-                "value": "Ollama"
+                "value": "IntrinsicsAPI (mellea + RITS)"
               },
               "model_name": {
                 "_input_type": "DropdownInput",
@@ -1307,9 +1307,9 @@
                 "info": "Model name (options change based on backend)",
                 "name": "model_name",
                 "options": [
-                  "granite4:micro",
-                  "granite4:small-h",
-                  "gpt-oss:20b"
+                  "granite-4.0-micro",
+                  "granite-4.0-h-small",
+                  "gpt-oss-20b"
                 ],
                 "options_metadata": [],
                 "override_skip": false,
@@ -1322,7 +1322,7 @@
                 "trace_as_metadata": true,
                 "track_in_telemetry": true,
                 "type": "str",
-                "value": "granite4:micro"
+                "value": "gpt-oss-20b"
               },
               "temperature": {
                 "_input_type": "SliderInput",
@@ -1367,13 +1367,13 @@
                 "override_skip": false,
                 "placeholder": "",
                 "required": true,
-                "show": true,
+                "show": false,
                 "title_case": false,
                 "tool_mode": false,
                 "trace_as_metadata": true,
                 "track_in_telemetry": false,
                 "type": "str",
-                "value": "http://host.docker.internal:11434"
+                "value": "https://intrinsics-api.intrinsics.vpc-int.res.ibm.com"
               }
             },
             "tool_mode": false
@@ -1383,9 +1383,9 @@
           "type": "GraniteBaseModel"
         },
         "dragging": false,
-        "id": "GraniteBaseModel-mULWL",
+        "id": "GraniteBaseModel-XacSa",
         "measured": {
-          "height": 623,
+          "height": 540,
           "width": 320
         },
         "position": {
@@ -1397,7 +1397,7 @@
       },
       {
         "data": {
-          "id": "ChatOutput-vNusy",
+          "id": "ChatOutput-61ipf",
           "node": {
             "base_classes": [
               "Message"
@@ -1681,7 +1681,7 @@
           "type": "ChatOutput"
         },
         "dragging": false,
-        "id": "ChatOutput-vNusy",
+        "id": "ChatOutput-61ipf",
         "measured": {
           "height": 48,
           "width": 192
@@ -1695,7 +1695,7 @@
       },
       {
         "data": {
-          "id": "QueryRewritePrompt-hWars",
+          "id": "QueryRewritePrompt-W8ZD2",
           "node": {
             "base_classes": [
               "Message",
@@ -1719,7 +1719,7 @@
             ],
             "frozen": false,
             "icon": "message-square",
-            "last_updated": "2026-03-19T03:01:03.149Z",
+            "last_updated": "2026-03-20T20:26:40.451Z",
             "legacy": false,
             "lf_version": "1.7.3",
             "metadata": {
@@ -1792,16 +1792,16 @@
             "pinned": false,
             "template": {
               "_frontend_node_flow_id": {
-                "value": "858415a2-d085-428f-a0d9-e1ea94831930"
+                "value": "10b55aa0-e84e-4e76-ab98-083d5ada420d"
               },
               "_frontend_node_folder_id": {
-                "value": "999dba2e-ed71-453f-9a15-71c2315a845f"
+                "value": "607edb20-debd-47d6-a1ed-ec1d35d70e81"
               },
               "_type": "Component",
               "api_key": {
                 "_input_type": "SecretStrInput",
                 "advanced": false,
-                "display_name": "API Key",
+                "display_name": "RITS API Key",
                 "dynamic": false,
                 "info": "API key for authentication",
                 "input_types": [],
@@ -1913,7 +1913,7 @@
                 "trace_as_metadata": true,
                 "track_in_telemetry": true,
                 "type": "str",
-                "value": "Ollama"
+                "value": "IntrinsicsAPI (mellea + RITS)"
               },
               "model_name": {
                 "_input_type": "DropdownInput",
@@ -1927,7 +1927,8 @@
                 "load_from_db": false,
                 "name": "model_name",
                 "options": [
-                  "granite4:micro"
+                  "granite-4.0-micro",
+                  "gpt-oss-20b"
                 ],
                 "options_metadata": [],
                 "override_skip": false,
@@ -1940,7 +1941,7 @@
                 "trace_as_metadata": true,
                 "track_in_telemetry": true,
                 "type": "str",
-                "value": "granite4:micro"
+                "value": "gpt-oss-20b"
               },
               "temperature": {
                 "_input_type": "SliderInput",
@@ -1985,13 +1986,13 @@
                 "override_skip": false,
                 "placeholder": "",
                 "required": false,
-                "show": true,
+                "show": false,
                 "title_case": false,
                 "tool_mode": false,
                 "trace_as_metadata": true,
                 "track_in_telemetry": false,
                 "type": "str",
-                "value": "http://host.docker.internal:11434"
+                "value": "https://intrinsics-api.intrinsics.vpc-int.res.ibm.com"
               }
             },
             "tool_mode": false
@@ -2001,9 +2002,9 @@
           "type": "QueryRewritePrompt"
         },
         "dragging": false,
-        "id": "QueryRewritePrompt-hWars",
+        "id": "QueryRewritePrompt-W8ZD2",
         "measured": {
-          "height": 594,
+          "height": 512,
           "width": 320
         },
         "position": {
@@ -2017,7 +2018,7 @@
         "data": {
           "description": "Remove hallucinated claims from the last agent response by checking against retrieved documents",
           "display_name": "Hallucination Removal (Prompt)",
-          "id": "HallucinationRemovalPrompt-9GKZ8",
+          "id": "HallucinationRemovalPrompt-MVzBT",
           "node": {
             "base_classes": [
               "Message",
@@ -2043,7 +2044,7 @@
             ],
             "frozen": false,
             "icon": "shield-check",
-            "last_updated": "2026-03-19T03:01:30.600Z",
+            "last_updated": "2026-03-20T20:26:51.257Z",
             "legacy": false,
             "lf_version": "1.7.3",
             "metadata": {
@@ -2118,10 +2119,10 @@
             "pinned": false,
             "template": {
               "_frontend_node_flow_id": {
-                "value": "858415a2-d085-428f-a0d9-e1ea94831930"
+                "value": "10b55aa0-e84e-4e76-ab98-083d5ada420d"
               },
               "_frontend_node_folder_id": {
-                "value": "999dba2e-ed71-453f-9a15-71c2315a845f"
+                "value": "607edb20-debd-47d6-a1ed-ec1d35d70e81"
               },
               "_type": "Component",
               "agent_response": {
@@ -2152,7 +2153,7 @@
               "api_key": {
                 "_input_type": "SecretStrInput",
                 "advanced": false,
-                "display_name": "API Key",
+                "display_name": "RITS API Key",
                 "dynamic": false,
                 "info": "API key for authentication",
                 "input_types": [],
@@ -2288,7 +2289,7 @@
                 "trace_as_metadata": true,
                 "track_in_telemetry": true,
                 "type": "str",
-                "value": "Ollama"
+                "value": "IntrinsicsAPI (granite-common + RITS)"
               },
               "model_name": {
                 "_input_type": "DropdownInput",
@@ -2302,7 +2303,8 @@
                 "load_from_db": false,
                 "name": "model_name",
                 "options": [
-                  "granite4:micro"
+                  "granite-4.0-micro",
+                  "gpt-oss-20b"
                 ],
                 "options_metadata": [],
                 "override_skip": false,
@@ -2315,7 +2317,7 @@
                 "trace_as_metadata": true,
                 "track_in_telemetry": true,
                 "type": "str",
-                "value": "granite4:micro"
+                "value": "gpt-oss-20b"
               },
               "temperature": {
                 "_input_type": "SliderInput",
@@ -2360,13 +2362,13 @@
                 "override_skip": false,
                 "placeholder": "",
                 "required": false,
-                "show": true,
+                "show": false,
                 "title_case": false,
                 "tool_mode": false,
                 "trace_as_metadata": true,
                 "track_in_telemetry": false,
                 "type": "str",
-                "value": "http://host.docker.internal:11434"
+                "value": "https://intrinsics-api.intrinsics.vpc-int.res.ibm.com"
               }
             },
             "tool_mode": false
@@ -2376,9 +2378,9 @@
           "type": "HallucinationRemovalPrompt"
         },
         "dragging": false,
-        "id": "HallucinationRemovalPrompt-9GKZ8",
+        "id": "HallucinationRemovalPrompt-MVzBT",
         "measured": {
-          "height": 737,
+          "height": 655,
           "width": 320
         },
         "position": {
@@ -2390,7 +2392,7 @@
       },
       {
         "data": {
-          "id": "ChromaDBSearch-nFO8B",
+          "id": "ChromaDBSearch-dwJ4s",
           "node": {
             "base_classes": [
               "Data"
@@ -2413,7 +2415,7 @@
             ],
             "frozen": false,
             "icon": "Chroma",
-            "last_updated": "2026-03-19T02:59:06.058Z",
+            "last_updated": "2026-03-20T20:29:14.918Z",
             "legacy": false,
             "lf_version": "1.7.3",
             "metadata": {
@@ -2461,10 +2463,10 @@
             "pinned": false,
             "template": {
               "_frontend_node_flow_id": {
-                "value": "858415a2-d085-428f-a0d9-e1ea94831930"
+                "value": "10b55aa0-e84e-4e76-ab98-083d5ada420d"
               },
               "_frontend_node_folder_id": {
-                "value": "999dba2e-ed71-453f-9a15-71c2315a845f"
+                "value": "607edb20-debd-47d6-a1ed-ec1d35d70e81"
               },
               "_type": "Component",
               "code": {
@@ -2514,7 +2516,7 @@
                 "trace_as_metadata": true,
                 "track_in_telemetry": true,
                 "type": "str",
-                "value": "govt"
+                "value": "clapnq"
               },
               "embedding": {
                 "_input_type": "HandleInput",
@@ -2558,7 +2560,7 @@
                 "trace_as_metadata": true,
                 "track_in_telemetry": false,
                 "type": "str",
-                "value": "localhost"
+                "value": "chromadb"
               },
               "is_refresh": false,
               "number_of_results": {
@@ -2661,7 +2663,7 @@
           "type": "ChromaDBSearch"
         },
         "dragging": false,
-        "id": "ChromaDBSearch-nFO8B",
+        "id": "ChromaDBSearch-dwJ4s",
         "measured": {
           "height": 594,
           "width": 320
@@ -2670,12 +2672,12 @@
           "x": 751.3019578525153,
           "y": 40.57881229869919
         },
-        "selected": false,
+        "selected": true,
         "type": "genericNode"
       },
       {
         "data": {
-          "id": "LocalEmbeddingsComponent-Ph683",
+          "id": "LocalEmbeddingsComponent-pbsyS",
           "node": {
             "base_classes": [
               "Embeddings"
@@ -2777,7 +2779,7 @@
           "showNode": true,
           "type": "LocalEmbeddingsComponent"
         },
-        "id": "LocalEmbeddingsComponent-Ph683",
+        "id": "LocalEmbeddingsComponent-pbsyS",
         "measured": {
           "height": 220,
           "width": 320
@@ -2798,7 +2800,7 @@
   },
   "description": "",
   "endpoint_name": null,
-  "id": "858415a2-d085-428f-a0d9-e1ea94831930",
+  "id": "10b55aa0-e84e-4e76-ab98-083d5ada420d",
   "is_component": false,
   "last_tested_version": "1.7.3",
   "name": "QueryRewrite_HallucinationDetection (Prompted)",
