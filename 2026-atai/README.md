@@ -78,7 +78,13 @@ When done:
 
 ## Demo Flows
 
-(document when added)
+| Title | Description |
+|-------|-------------|
+| [Citation Generation](https://github.com/generative-computing/mellea-demos/tree/main/2026-atai/flows/Citation_Generation) | Demonstrates citation generation and hallucination detection intrinsics to help users verify RAG responses and identify unsupported claims. |
+| [Query Clarification — ClapNQ](https://github.com/generative-computing/mellea-demos/tree/main/2026-atai/flows/Clarification-ClapNQ) | Shows how a trained query clarification intrinsic asks follow-up questions for ambiguous queries (e.g. "when did the war end?") over a general-domain corpus, where prompt-based approaches fail to do so. |
+| [Query Clarification — Gov](https://github.com/generative-computing/mellea-demos/tree/main/2026-atai/flows/Clarification-Gov) | Demonstrates query clarification over government documents, where missing context (e.g. the user's state for DMV queries) causes the system to ask before answering. |
+| [Hallucination Mitigation](https://github.com/generative-computing/mellea-demos/tree/main/2026-atai/flows/Hallucination_Mitigation) | Uses query rewriting and post-generation hallucination detection to identify and remove fabricated content not grounded in the retrieved corpus. |
+| [Query Rewrite + Answerability](https://github.com/generative-computing/mellea-demos/tree/main/2026-atai/flows/QueryRewrite_Answerability) | Compares prompt-based vs. intrinsic query rewriting and answerability detection, showing how intrinsics more reliably avoid hallucination and handle multi-turn conversations. |
 
 ## Running a Flow
 
