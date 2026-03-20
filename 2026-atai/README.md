@@ -18,20 +18,13 @@ A demo of IBM Granite Libraries + Mellea using Langflow.
 ollama pull granite4:micro
 ```
 
-2. Download the pre-computed ChromaDB embeddings:
-
-```bash
-curl -L -o containers/chromadb/chromadb_data.tar.gz \
-  [some-github-url]/chromadb-data-v1/chromadb_data.tar.gz
-```
-
-3. Clone the LoRA adapters from Hugging Face (requires [Git LFS](https://git-lfs.com/)):
+2. Clone the LoRA adapters from Hugging Face (requires [Git LFS](https://git-lfs.com/)):
 
 ```bash
 git clone https://huggingface.co/ibm-granite/granite-lib-rag-r1.0
 ```
 
-4. Start the demo:
+3. Start the demo:
 
 ```bash
 ./start.sh
@@ -39,7 +32,7 @@ git clone https://huggingface.co/ibm-granite/granite-lib-rag-r1.0
 
 The start script verifies prerequisites, loads the LoRA adapters into Ollama, starts all containers, waits for health checks, and provisions API keys. First run takes ~2-3 minutes.
 
-5. When done, stop the demo:
+4. When done, stop the demo:
 
 ```bash
 ./stop.sh              # stops everything (data preserved)
