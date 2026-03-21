@@ -343,11 +343,12 @@ echo ""
 # Step 4: Start Docker Compose
 # =============================================================================
 info "Starting Docker Compose services..."
+# We don't start langflow-vis yet because we need to set the langflow api key first
 if [ "$SKIP_CHROMADB" = true ]; then
     # Use --no-deps to skip chromadb dependency
-    docker compose up -d --no-deps langflow-intrinsics
+    docker compose up -d --no-deps langflow-intrinsics --scale langflow-vis=0
 else
-    docker compose up -d
+    docker compose up -d --scale langflow-vis=0
 fi
 
 echo ""
@@ -382,6 +383,9 @@ else
     warn "Skipping ChromaDB (--no-chromadb)"
 fi
 
+# Langfuse (needs DB migrations on first run)
+wait_for_service "Langfuse" "http://localhost:3000" 90
+
 # Langflow (needs migrations + component loading)
 wait_for_service "Langflow" "http://localhost:7860/health" 180
 
@@ -396,13 +400,81 @@ if [ "$LOAD_ALL" = true ]; then
 fi
 
 # =============================================================================
-# Step 7: Print summary
+# Step 7: Provision Langflow API key for the visualization service
+# =============================================================================
+provision_langflow_api_key() {
+    local langflow_url="http://localhost:7860"
+
+    # Auto-login to get access token (works with LANGFLOW_AUTO_LOGIN=true)
+    local login_response
+    login_response=$(curl -sf "$langflow_url/api/v1/auto_login") || {
+        warn "auto_login request failed" >&2
+        return 1
+    }
+
+    local token
+    token=$(echo "$login_response" \
+        | python3 -c "import json,sys; d=json.loads(sys.stdin.read()); print(d['access_token'])" 2>/dev/null) || {
+        warn "Could not parse access_token from auto_login response" >&2
+        warn "Response was: $login_response" >&2
+        return 1
+    }
+
+    # Create API key
+    local key_response
+    key_response=$(curl -sf -X POST "$langflow_url/api/v1/api_key/" \
+        -H "Authorization: Bearer $token" \
+        -H "Content-Type: application/json" \
+        -d '{"name":"langflow-vis"}') || {
+        warn "API key creation request failed" >&2
+        return 1
+    }
+
+    local api_key
+    api_key=$(echo "$key_response" \
+        | python3 -c "import json,sys; d=json.loads(sys.stdin.read()); print(d['api_key'])" 2>/dev/null) || {
+        warn "Could not parse api_key from response" >&2
+        warn "Response was: $key_response" >&2
+        return 1
+    }
+
+    echo "$api_key"
+}
+
+if [ -z "${LANGFLOW_API_KEY:-}" ]; then
+    info "Provisioning Langflow API key..."
+    LANGFLOW_API_KEY=$(provision_langflow_api_key) || true
+    if [ -z "$LANGFLOW_API_KEY" ]; then
+        warn "Failed to provision Langflow API key — langflow-vis may not be able to call Langflow"
+    else
+        export LANGFLOW_API_KEY
+        ok "Langflow API key provisioned"
+    fi
+else
+    ok "Using existing LANGFLOW_API_KEY from environment"
+fi
+
+echo ""
+
+# =============================================================================
+# Step 8: Start langflow-vis with the provisioned API key
+# =============================================================================
+info "Starting Langflow-Vis..."
+docker compose up -d --force-recreate langflow-vis
+
+wait_for_service "Langflow-Vis" "http://localhost:8080" 120
+
+echo ""
+
+# =============================================================================
+# Step 9: Print summary
 # =============================================================================
 echo -e "${GREEN}=============================================================================${NC}"
 echo -e "${GREEN} ATAI Demo is running!${NC}"
 echo -e "${GREEN}=============================================================================${NC}"
 echo ""
 echo -e "  ${BLUE}Langflow${NC}        http://localhost:7860"
+echo -e "  ${BLUE}Visualization${NC}   http://localhost:8080"
 echo ""
 if [ "$LOAD_ALL" = true ]; then
     echo -e "  Loaded projects:"
