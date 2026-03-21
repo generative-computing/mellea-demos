@@ -33,7 +33,7 @@ Both flows are configured as follows:
 - **Retriever**: `sentence-transformers/multi-qa-mpnet-base-dot-v1` embeddings
 - **Collection**: `mt-rag-govt`
 - **Model Backend**: `Ollama`
-- **Model for Response Generation + Prompting:** `ibm-granite/granite-4.0-h-small`
+- **Model for Response Generation + Prompting:** `ibm-granite/granite-4.0-micro`
 - **Intrinsics:** Trained over `ibm-granite/granite-4.0-micro` 
 
 
@@ -43,7 +43,7 @@ We demonstrate a use case where the user is a property owner in California who w
 
 ### Step 1: Prompting out-of-the-box model to generate citations
 
-The user starts by interacting with a RAG system, which in addition to the retrieve and generate components, also contains a citation generation component to help users verify the response and spot hallucinations. This component has been created by prompting the `granite-4.0-h-small` model out of the box to generate citations.
+The user starts by interacting with a RAG system, which in addition to the retrieve and generate components, also contains a citation generation component to help users verify the response and spot hallucinations. This component has been created by prompting the `granite-4.0-micro` model out of the box to generate citations.
 
 ---
 **Question 1 (Successful citation generation):**
