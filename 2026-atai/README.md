@@ -101,6 +101,7 @@ The flow calls Ollama for inference using the Granite base model and intrinsic L
 | Service | URL | Description |
 |---------|-----|-------------|
 | Langflow | http://localhost:7860 | Flow design and execution UI |
+| Langflow-Vis | http://localhost:8080 | Trace visualization for Langflow flows |
 | ChromaDB | http://localhost:8100 | Vector database with pre-computed embeddings |
 
 ## Project Structure
@@ -110,4 +111,7 @@ The flow calls Ollama for inference using the Granite base model and intrinsic L
 ├── docker-compose.yml         # All service definitions
 ├── .env                       # Environment configuration
 ├── flows/                     # Langflow flow definitions (mounted read-only)
+├── containers/                # Custom container configurations (e.g. ChromaDB)
+├── scripts/                   # Helper scripts (e.g. load-flows.sh)
+├── granite-lib-rag-r1.0/     # LoRA adapter weights (cloned from Hugging Face)
 ```
