@@ -7,7 +7,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "ChatInput",
-            "id": "ChatInput-A8EhJ",
+            "id": "ChatInput-JTcRr",
             "name": "message",
             "output_types": [
               "Message"
@@ -15,19 +15,19 @@
           },
           "targetHandle": {
             "fieldName": "user_question",
-            "id": "Prompt Template-AQn6j",
+            "id": "Prompt Template-kIygy",
             "inputTypes": [
               "Message"
             ],
             "type": "str"
           }
         },
-        "id": "reactflow__edge-ChatInput-A8EhJ{œdataTypeœ:œChatInputœ,œidœ:œChatInput-A8EhJœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-Prompt Template-AQn6j{œfieldNameœ:œuser_questionœ,œidœ:œPrompt Template-AQn6jœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-ChatInput-JTcRr{œdataTypeœ:œChatInputœ,œidœ:œChatInput-JTcRrœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-Prompt Template-kIygy{œfieldNameœ:œuser_questionœ,œidœ:œPrompt Template-kIygyœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
         "selected": false,
-        "source": "ChatInput-A8EhJ",
-        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-A8EhJœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "Prompt Template-AQn6j",
-        "targetHandle": "{œfieldNameœ:œuser_questionœ,œidœ:œPrompt Template-AQn6jœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+        "source": "ChatInput-JTcRr",
+        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-JTcRrœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "Prompt Template-kIygy",
+        "targetHandle": "{œfieldNameœ:œuser_questionœ,œidœ:œPrompt Template-kIygyœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
       },
       {
         "animated": false,
@@ -35,7 +35,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "ChatInput",
-            "id": "ChatInput-A8EhJ",
+            "id": "ChatInput-JTcRr",
             "name": "message",
             "output_types": [
               "Message"
@@ -43,19 +43,19 @@
           },
           "targetHandle": {
             "fieldName": "chat_input",
-            "id": "GraniteBaseModel-cI0x6",
+            "id": "GraniteBaseModel-rAS4G",
             "inputTypes": [
               "Message"
             ],
             "type": "str"
           }
         },
-        "id": "reactflow__edge-ChatInput-A8EhJ{œdataTypeœ:œChatInputœ,œidœ:œChatInput-A8EhJœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-GraniteBaseModel-cI0x6{œfieldNameœ:œchat_inputœ,œidœ:œGraniteBaseModel-cI0x6œ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-ChatInput-JTcRr{œdataTypeœ:œChatInputœ,œidœ:œChatInput-JTcRrœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-GraniteBaseModel-rAS4G{œfieldNameœ:œchat_inputœ,œidœ:œGraniteBaseModel-rAS4Gœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
         "selected": false,
-        "source": "ChatInput-A8EhJ",
-        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-A8EhJœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "GraniteBaseModel-cI0x6",
-        "targetHandle": "{œfieldNameœ:œchat_inputœ,œidœ:œGraniteBaseModel-cI0x6œ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+        "source": "ChatInput-JTcRr",
+        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-JTcRrœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "GraniteBaseModel-rAS4G",
+        "targetHandle": "{œfieldNameœ:œchat_inputœ,œidœ:œGraniteBaseModel-rAS4Gœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
       },
       {
         "animated": false,
@@ -63,7 +63,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "GraniteBaseModel",
-            "id": "GraniteBaseModel-cI0x6",
+            "id": "GraniteBaseModel-rAS4G",
             "name": "response",
             "output_types": [
               "Message"
@@ -71,19 +71,19 @@
           },
           "targetHandle": {
             "fieldName": "agent_response",
-            "id": "Prompt Template-AQn6j",
+            "id": "Prompt Template-kIygy",
             "inputTypes": [
               "Message"
             ],
             "type": "str"
           }
         },
-        "id": "reactflow__edge-GraniteBaseModel-cI0x6{œdataTypeœ:œGraniteBaseModelœ,œidœ:œGraniteBaseModel-cI0x6œ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}-Prompt Template-AQn6j{œfieldNameœ:œagent_responseœ,œidœ:œPrompt Template-AQn6jœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-GraniteBaseModel-rAS4G{œdataTypeœ:œGraniteBaseModelœ,œidœ:œGraniteBaseModel-rAS4Gœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}-Prompt Template-kIygy{œfieldNameœ:œagent_responseœ,œidœ:œPrompt Template-kIygyœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
         "selected": false,
-        "source": "GraniteBaseModel-cI0x6",
-        "sourceHandle": "{œdataTypeœ:œGraniteBaseModelœ,œidœ:œGraniteBaseModel-cI0x6œ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "Prompt Template-AQn6j",
-        "targetHandle": "{œfieldNameœ:œagent_responseœ,œidœ:œPrompt Template-AQn6jœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+        "source": "GraniteBaseModel-rAS4G",
+        "sourceHandle": "{œdataTypeœ:œGraniteBaseModelœ,œidœ:œGraniteBaseModel-rAS4Gœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "Prompt Template-kIygy",
+        "targetHandle": "{œfieldNameœ:œagent_responseœ,œidœ:œPrompt Template-kIygyœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
       },
       {
         "animated": false,
@@ -91,7 +91,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "Prompt Template",
-            "id": "Prompt Template-AQn6j",
+            "id": "Prompt Template-kIygy",
             "name": "prompt",
             "output_types": [
               "Message"
@@ -99,19 +99,19 @@
           },
           "targetHandle": {
             "fieldName": "chat_input",
-            "id": "GraniteBaseModel-OH7VT",
+            "id": "GraniteBaseModel-dt96H",
             "inputTypes": [
               "Message"
             ],
             "type": "str"
           }
         },
-        "id": "reactflow__edge-Prompt Template-AQn6j{œdataTypeœ:œPrompt Templateœ,œidœ:œPrompt Template-AQn6jœ,œnameœ:œpromptœ,œoutput_typesœ:[œMessageœ]}-GraniteBaseModel-OH7VT{œfieldNameœ:œchat_inputœ,œidœ:œGraniteBaseModel-OH7VTœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-Prompt Template-kIygy{œdataTypeœ:œPrompt Templateœ,œidœ:œPrompt Template-kIygyœ,œnameœ:œpromptœ,œoutput_typesœ:[œMessageœ]}-GraniteBaseModel-dt96H{œfieldNameœ:œchat_inputœ,œidœ:œGraniteBaseModel-dt96Hœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
         "selected": false,
-        "source": "Prompt Template-AQn6j",
-        "sourceHandle": "{œdataTypeœ:œPrompt Templateœ,œidœ:œPrompt Template-AQn6jœ,œnameœ:œpromptœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "GraniteBaseModel-OH7VT",
-        "targetHandle": "{œfieldNameœ:œchat_inputœ,œidœ:œGraniteBaseModel-OH7VTœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+        "source": "Prompt Template-kIygy",
+        "sourceHandle": "{œdataTypeœ:œPrompt Templateœ,œidœ:œPrompt Template-kIygyœ,œnameœ:œpromptœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "GraniteBaseModel-dt96H",
+        "targetHandle": "{œfieldNameœ:œchat_inputœ,œidœ:œGraniteBaseModel-dt96Hœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
       },
       {
         "animated": false,
@@ -119,7 +119,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "GraniteBaseModel",
-            "id": "GraniteBaseModel-OH7VT",
+            "id": "GraniteBaseModel-dt96H",
             "name": "response",
             "output_types": [
               "Message"
@@ -127,7 +127,7 @@
           },
           "targetHandle": {
             "fieldName": "input_value",
-            "id": "ChatOutput-P1tNZ",
+            "id": "ChatOutput-2m6mu",
             "inputTypes": [
               "Data",
               "DataFrame",
@@ -136,12 +136,12 @@
             "type": "other"
           }
         },
-        "id": "reactflow__edge-GraniteBaseModel-OH7VT{œdataTypeœ:œGraniteBaseModelœ,œidœ:œGraniteBaseModel-OH7VTœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}-ChatOutput-P1tNZ{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-P1tNZœ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}",
+        "id": "reactflow__edge-GraniteBaseModel-dt96H{œdataTypeœ:œGraniteBaseModelœ,œidœ:œGraniteBaseModel-dt96Hœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}-ChatOutput-2m6mu{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-2m6muœ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}",
         "selected": false,
-        "source": "GraniteBaseModel-OH7VT",
-        "sourceHandle": "{œdataTypeœ:œGraniteBaseModelœ,œidœ:œGraniteBaseModel-OH7VTœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "ChatOutput-P1tNZ",
-        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-P1tNZœ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}"
+        "source": "GraniteBaseModel-dt96H",
+        "sourceHandle": "{œdataTypeœ:œGraniteBaseModelœ,œidœ:œGraniteBaseModel-dt96Hœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "ChatOutput-2m6mu",
+        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-2m6muœ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}"
       },
       {
         "animated": false,
@@ -149,7 +149,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "LocalEmbeddingsComponent",
-            "id": "LocalEmbeddingsComponent-zP866",
+            "id": "LocalEmbeddingsComponent-VWJ9z",
             "name": "embeddings",
             "output_types": [
               "Embeddings"
@@ -157,19 +157,19 @@
           },
           "targetHandle": {
             "fieldName": "embedding",
-            "id": "ChromaDBSearch-MjvPY",
+            "id": "ChromaDBSearch-pHuZm",
             "inputTypes": [
               "Embeddings"
             ],
             "type": "other"
           }
         },
-        "id": "xy-edge__LocalEmbeddingsComponent-zP866{œdataTypeœ:œLocalEmbeddingsComponentœ,œidœ:œLocalEmbeddingsComponent-zP866œ,œnameœ:œembeddingsœ,œoutput_typesœ:[œEmbeddingsœ]}-ChromaDBSearch-MjvPY{œfieldNameœ:œembeddingœ,œidœ:œChromaDBSearch-MjvPYœ,œinputTypesœ:[œEmbeddingsœ],œtypeœ:œotherœ}",
+        "id": "reactflow__edge-LocalEmbeddingsComponent-VWJ9z{œdataTypeœ:œLocalEmbeddingsComponentœ,œidœ:œLocalEmbeddingsComponent-VWJ9zœ,œnameœ:œembeddingsœ,œoutput_typesœ:[œEmbeddingsœ]}-ChromaDBSearch-pHuZm{œfieldNameœ:œembeddingœ,œidœ:œChromaDBSearch-pHuZmœ,œinputTypesœ:[œEmbeddingsœ],œtypeœ:œotherœ}",
         "selected": false,
-        "source": "LocalEmbeddingsComponent-zP866",
-        "sourceHandle": "{œdataTypeœ:œLocalEmbeddingsComponentœ,œidœ:œLocalEmbeddingsComponent-zP866œ,œnameœ:œembeddingsœ,œoutput_typesœ:[œEmbeddingsœ]}",
-        "target": "ChromaDBSearch-MjvPY",
-        "targetHandle": "{œfieldNameœ:œembeddingœ,œidœ:œChromaDBSearch-MjvPYœ,œinputTypesœ:[œEmbeddingsœ],œtypeœ:œotherœ}"
+        "source": "LocalEmbeddingsComponent-VWJ9z",
+        "sourceHandle": "{œdataTypeœ:œLocalEmbeddingsComponentœ,œidœ:œLocalEmbeddingsComponent-VWJ9zœ,œnameœ:œembeddingsœ,œoutput_typesœ:[œEmbeddingsœ]}",
+        "target": "ChromaDBSearch-pHuZm",
+        "targetHandle": "{œfieldNameœ:œembeddingœ,œidœ:œChromaDBSearch-pHuZmœ,œinputTypesœ:[œEmbeddingsœ],œtypeœ:œotherœ}"
       },
       {
         "animated": false,
@@ -177,7 +177,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "ChatInput",
-            "id": "ChatInput-A8EhJ",
+            "id": "ChatInput-JTcRr",
             "name": "message",
             "output_types": [
               "Message"
@@ -185,19 +185,19 @@
           },
           "targetHandle": {
             "fieldName": "search_query",
-            "id": "ChromaDBSearch-MjvPY",
+            "id": "ChromaDBSearch-pHuZm",
             "inputTypes": [
               "Message"
             ],
             "type": "str"
           }
         },
-        "id": "xy-edge__ChatInput-A8EhJ{œdataTypeœ:œChatInputœ,œidœ:œChatInput-A8EhJœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-ChromaDBSearch-MjvPY{œfieldNameœ:œsearch_queryœ,œidœ:œChromaDBSearch-MjvPYœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-ChatInput-JTcRr{œdataTypeœ:œChatInputœ,œidœ:œChatInput-JTcRrœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-ChromaDBSearch-pHuZm{œfieldNameœ:œsearch_queryœ,œidœ:œChromaDBSearch-pHuZmœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
         "selected": false,
-        "source": "ChatInput-A8EhJ",
-        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-A8EhJœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "ChromaDBSearch-MjvPY",
-        "targetHandle": "{œfieldNameœ:œsearch_queryœ,œidœ:œChromaDBSearch-MjvPYœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+        "source": "ChatInput-JTcRr",
+        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-JTcRrœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "ChromaDBSearch-pHuZm",
+        "targetHandle": "{œfieldNameœ:œsearch_queryœ,œidœ:œChromaDBSearch-pHuZmœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
       },
       {
         "animated": false,
@@ -205,7 +205,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "ChromaDBSearch",
-            "id": "ChromaDBSearch-MjvPY",
+            "id": "ChromaDBSearch-pHuZm",
             "name": "search_results",
             "output_types": [
               "Data"
@@ -213,7 +213,7 @@
           },
           "targetHandle": {
             "fieldName": "documents",
-            "id": "GraniteBaseModel-cI0x6",
+            "id": "GraniteBaseModel-rAS4G",
             "inputTypes": [
               "Data",
               "Search Results"
@@ -221,12 +221,12 @@
             "type": "other"
           }
         },
-        "id": "xy-edge__ChromaDBSearch-MjvPY{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-MjvPYœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}-GraniteBaseModel-cI0x6{œfieldNameœ:œdocumentsœ,œidœ:œGraniteBaseModel-cI0x6œ,œinputTypesœ:[œDataœ,œSearch Resultsœ],œtypeœ:œotherœ}",
+        "id": "reactflow__edge-ChromaDBSearch-pHuZm{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-pHuZmœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}-GraniteBaseModel-rAS4G{œfieldNameœ:œdocumentsœ,œidœ:œGraniteBaseModel-rAS4Gœ,œinputTypesœ:[œDataœ,œSearch Resultsœ],œtypeœ:œotherœ}",
         "selected": false,
-        "source": "ChromaDBSearch-MjvPY",
-        "sourceHandle": "{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-MjvPYœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}",
-        "target": "GraniteBaseModel-cI0x6",
-        "targetHandle": "{œfieldNameœ:œdocumentsœ,œidœ:œGraniteBaseModel-cI0x6œ,œinputTypesœ:[œDataœ,œSearch Resultsœ],œtypeœ:œotherœ}"
+        "source": "ChromaDBSearch-pHuZm",
+        "sourceHandle": "{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-pHuZmœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}",
+        "target": "GraniteBaseModel-rAS4G",
+        "targetHandle": "{œfieldNameœ:œdocumentsœ,œidœ:œGraniteBaseModel-rAS4Gœ,œinputTypesœ:[œDataœ,œSearch Resultsœ],œtypeœ:œotherœ}"
       },
       {
         "animated": false,
@@ -234,7 +234,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "ChromaDBSearch",
-            "id": "ChromaDBSearch-MjvPY",
+            "id": "ChromaDBSearch-pHuZm",
             "name": "search_results",
             "output_types": [
               "Data"
@@ -242,7 +242,7 @@
           },
           "targetHandle": {
             "fieldName": "documents",
-            "id": "GraniteBaseModel-OH7VT",
+            "id": "GraniteBaseModel-dt96H",
             "inputTypes": [
               "Data",
               "Search Results"
@@ -250,18 +250,18 @@
             "type": "other"
           }
         },
-        "id": "xy-edge__ChromaDBSearch-MjvPY{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-MjvPYœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}-GraniteBaseModel-OH7VT{œfieldNameœ:œdocumentsœ,œidœ:œGraniteBaseModel-OH7VTœ,œinputTypesœ:[œDataœ,œSearch Resultsœ],œtypeœ:œotherœ}",
+        "id": "reactflow__edge-ChromaDBSearch-pHuZm{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-pHuZmœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}-GraniteBaseModel-dt96H{œfieldNameœ:œdocumentsœ,œidœ:œGraniteBaseModel-dt96Hœ,œinputTypesœ:[œDataœ,œSearch Resultsœ],œtypeœ:œotherœ}",
         "selected": false,
-        "source": "ChromaDBSearch-MjvPY",
-        "sourceHandle": "{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-MjvPYœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}",
-        "target": "GraniteBaseModel-OH7VT",
-        "targetHandle": "{œfieldNameœ:œdocumentsœ,œidœ:œGraniteBaseModel-OH7VTœ,œinputTypesœ:[œDataœ,œSearch Resultsœ],œtypeœ:œotherœ}"
+        "source": "ChromaDBSearch-pHuZm",
+        "sourceHandle": "{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-pHuZmœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}",
+        "target": "GraniteBaseModel-dt96H",
+        "targetHandle": "{œfieldNameœ:œdocumentsœ,œidœ:œGraniteBaseModel-dt96Hœ,œinputTypesœ:[œDataœ,œSearch Resultsœ],œtypeœ:œotherœ}"
       }
     ],
     "nodes": [
       {
         "data": {
-          "id": "ChatInput-A8EhJ",
+          "id": "ChatInput-JTcRr",
           "node": {
             "base_classes": [
               "Message"
@@ -540,7 +540,7 @@
           "type": "ChatInput"
         },
         "dragging": false,
-        "id": "ChatInput-A8EhJ",
+        "id": "ChatInput-JTcRr",
         "measured": {
           "height": 48,
           "width": 192
@@ -554,7 +554,7 @@
       },
       {
         "data": {
-          "id": "Prompt Template-AQn6j",
+          "id": "Prompt Template-kIygy",
           "node": {
             "base_classes": [
               "Message"
@@ -739,9 +739,9 @@
           "type": "Prompt Template"
         },
         "dragging": false,
-        "id": "Prompt Template-AQn6j",
+        "id": "Prompt Template-kIygy",
         "measured": {
-          "height": 441,
+          "height": 449,
           "width": 320
         },
         "position": {
@@ -753,7 +753,7 @@
       },
       {
         "data": {
-          "id": "ChatOutput-P1tNZ",
+          "id": "ChatOutput-2m6mu",
           "node": {
             "base_classes": [
               "Message"
@@ -1037,7 +1037,7 @@
           "type": "ChatOutput"
         },
         "dragging": false,
-        "id": "ChatOutput-P1tNZ",
+        "id": "ChatOutput-2m6mu",
         "measured": {
           "height": 48,
           "width": 192
@@ -1051,7 +1051,9 @@
       },
       {
         "data": {
-          "id": "GraniteBaseModel-cI0x6",
+          "description": "Call Granite base models for text generation",
+          "display_name": "Base Model Chat",
+          "id": "GraniteBaseModel-rAS4G",
           "node": {
             "base_classes": [
               "Message",
@@ -1076,11 +1078,11 @@
             ],
             "frozen": false,
             "icon": "sparkles",
-            "last_updated": "2026-03-20T20:17:10.097Z",
+            "last_updated": "2026-03-21T05:23:02.608Z",
             "legacy": false,
             "lf_version": "1.7.3",
             "metadata": {
-              "code_hash": "cb04af5826db",
+              "code_hash": "e5b7abd59b1c",
               "dependencies": {
                 "dependencies": [
                   {
@@ -1097,7 +1099,7 @@
                   },
                   {
                     "name": "torch",
-                    "version": "2.2.2"
+                    "version": "2.10.0"
                   },
                   {
                     "name": "transformers",
@@ -1105,7 +1107,7 @@
                   },
                   {
                     "name": "openai",
-                    "version": "1.109.1"
+                    "version": "1.82.1"
                   },
                   {
                     "name": "mellea",
@@ -1157,10 +1159,10 @@
             "pinned": false,
             "template": {
               "_frontend_node_flow_id": {
-                "value": "b04385f2-9bb7-4d88-a950-97260ca7d111"
+                "value": "fd020ad1-aa2a-464d-b3dc-d7ea8d49ad3a"
               },
               "_frontend_node_folder_id": {
-                "value": "5800d4be-9a7d-4fac-b30c-f46fd327ed8b"
+                "value": "4b0b4ae8-eeef-4d87-96e8-8abb8a0b232e"
               },
               "_type": "Component",
               "api_key": {
@@ -1223,7 +1225,7 @@
                 "show": true,
                 "title_case": false,
                 "type": "code",
-                "value": "\"\"\"\nGranite Base Model Component for Langflow\n\nCalls the Granite base model via multiple backends (vLLM, Ollama, IntrinsicsAPI).\nTakes chat input and returns model-generated responses.\n\"\"\"\n\nfrom langflow.custom import Component\nfrom langflow.io import (\n    SecretStrInput,\n    StrInput,\n    Output,\n    DropdownInput,\n    MessageInput,\n    HandleInput,\n    DataFrameInput,\n    SliderInput,\n)\nfrom langflow.schema import Message, Data\nfrom langflow.field_typing.range_spec import RangeSpec\nimport httpx\nimport json\nimport pandas as pd\nimport torch\nfrom transformers import AutoTokenizer, AutoModelForCausalLM\n\nfrom openai import OpenAI\nfrom mellea.formatters.granite.intrinsics.input import move_documents_to_message\n\n# Global model cache for LocalHF backend\n_localhf_model_cache = {}\n\n# Model name mapping to HuggingFace identifiers\n_MODEL_NAME_MAPPING = {\n    \"granite-4.0-micro\": \"ibm-granite/granite-4.0-micro\",\n    \"ibm-granite/granite-4.0-micro\": \"ibm-granite/granite-4.0-micro\",\n    \"granite4:micro\": \"ibm-granite/granite-4.0-micro\",\n}\n\n\nclass GraniteBaseModel(Component):\n    display_name = \"Base Model Chat\"\n    description = \"Call Granite base models for text generation\"\n    category = \"llm\"\n    icon = \"sparkles\"\n\n    BACKEND_CONFIG = {\n        \"LocalHF\": {\n            \"models\": [\"granite-4.0-micro\"],\n            \"default_model\": \"granite-4.0-micro\",\n            \"default_url\": \"local\",\n            \"url_editable\": False,\n        },\n        \"vLLM\": {\n            \"models\": [\"granite-4.0-micro\", \"granite-4.0-h-small\", \"gpt-oss-20b\"],\n            \"default_model\": \"granite-4.0-micro\",\n            \"default_url\": \"http://localhost:8000\",\n            \"url_editable\": True,\n        },\n        \"Ollama\": {\n            \"models\": [\"granite4:micro\", \"granite4:small-h\", \"gpt-oss:20b\"],\n            \"default_model\": \"granite4:micro\",\n            \"default_url\": \"http://localhost:11434\",\n            \"url_editable\": True,\n        },\n        \"IntrinsicsAPI (mellea + RITS)\": {\n            \"models\": [\"granite-4.0-micro\", \"granite-4.0-h-small\", \"gpt-oss-20b\"],\n            \"default_model\": \"granite-4.0-micro\",\n            \"default_url\": \"https://intrinsics-api.intrinsics.vpc-int.res.ibm.com\",\n            \"url_editable\": False,\n        },\n    }\n\n    CHAT_COMPLETIONS_ENDPOINT = \"/v1/chat/completions\"\n\n    inputs = [\n        DropdownInput(\n            name=\"model_backend\",\n            display_name=\"Model Backend\",\n            info=\"Backend service for Granite model\",\n            options=[\"IntrinsicsAPI (mellea + RITS)\", \"vLLM\", \"Ollama\", \"LocalHF\"],\n            value=\"IntrinsicsAPI (mellea + RITS)\",\n            real_time_refresh=True,\n        ),\n        DropdownInput(\n            name=\"model_name\",\n            display_name=\"Model Name\",\n            info=\"Model name (options change based on backend)\",\n            options=[\"granite-4.0-micro\", \"granite-4.0-h-small\", \"gpt-oss-20b\"],\n            value=\"granite-4.0-micro\",\n        ),\n        StrInput(\n            name=\"url\",\n            display_name=\"API URL\",\n            info=\"Base URL for the model backend (e.g., http://localhost:8000)\",\n            value=\"https://intrinsics-api.intrinsics.vpc-int.res.ibm.com\",\n            required=True,\n            show=False,\n        ),\n        SecretStrInput(\n            name=\"api_key\",\n            display_name=\"RITS API Key\",\n            info=\"API key for authentication\",\n            required=False,\n            load_from_db=False,\n        ),\n        SliderInput(\n            name=\"temperature\",\n            display_name=\"Temperature\",\n            info=\"Controls randomness in responses\",\n            value=0.0,\n            range_spec=RangeSpec(min=0, max=2, step=0.01),\n            advanced=True,\n        ),\n        MessageInput(\n            name=\"chat_input\",\n            display_name=\"Chat Input\",\n            info=\"User message to process\",\n            required=False,\n        ),\n        DataFrameInput(\n            name=\"message_history\",\n            display_name=\"Message History\",\n            info=\"Previous conversation messages as a DataFrame with 'role' (user/assistant) and 'content' columns\",\n            required=False,\n        ),\n        HandleInput(\n            name=\"documents\",\n            display_name=\"Documents\",\n            info=\"Documents to include in the request (accepts Data from vector stores)\",\n            input_types=[\"Data\", \"Search Results\"],\n            required=False,\n            is_list=True,\n        ),\n    ]\n\n    outputs = [\n        Output(\n            name=\"response\",\n            display_name=\"Response\",\n            method=\"get_response\",\n        ),\n        Output(\n            name=\"full_response\",\n            display_name=\"Full Response\",\n            method=\"get_full_response\",\n        ),\n    ]\n\n    def _extract_message_text(self, message: Message) -> str:\n        if message is None:\n            return \"\"\n        # Handle DataFrame case - should not happen but safety check\n        import pandas as pd\n        if isinstance(message, pd.DataFrame):\n            return \"\"\n        if hasattr(message, 'text'):\n            return message.text\n        if hasattr(message, 'content'):\n            return message.content\n        return str(message)\n\n    def _build_chat_messages(self) -> list:\n        messages = []\n        # Check if message_history exists - handle both pandas and Langflow DataFrames\n        if hasattr(self, 'message_history'):\n            # Don't use isinstance check or boolean evaluation as it could be lfx.schema.dataframe.DataFrame\n            try:\n                df = self.message_history\n                # Try to iterate - if it's None or invalid, this will fail\n                for _, row in df.iterrows():\n                    sender = row.get(\"sender\", \"\")\n                    role = \"user\" if sender == \"User\" else \"assistant\"\n                    content = row.get(\"text\", \"\")\n                    if content and str(content).strip():\n                        messages.append({\"role\": role, \"content\": str(content)})\n            except (TypeError, AttributeError, ValueError) as e:\n                # None, invalid type, or DataFrame boolean evaluation error - skip silently\n                pass\n            except Exception as e:\n                self.log(f\"Error processing message_history: {e}\", name=\"message_history warning\")\n        # Check if chat_input exists\n        if hasattr(self, 'chat_input'):\n            try:\n                user_message = self._extract_message_text(self.chat_input)\n                if user_message and user_message.strip():\n                    messages.append({\"role\": \"user\", \"content\": user_message})\n            except (TypeError, AttributeError, ValueError):\n                # None, invalid type, or DataFrame boolean evaluation error - skip silently\n                pass\n\n        return messages\n\n    def _build_request(self) -> dict:\n        messages = self._build_chat_messages()\n        if not messages:\n            raise ValueError(\"No messages to send\")\n        request_body = {\n            \"messages\": messages,\n            \"model\": self.model_name,\n        }\n        # Add temperature if provided\n        if hasattr(self, 'temperature') and self.temperature is not None:\n            request_body[\"temperature\"] = self.temperature\n        document_texts = self._extract_documents()\n        if document_texts:\n            if \"extra_body\" not in request_body:\n                request_body[\"extra_body\"] = {}\n            request_body[\"extra_body\"][\"documents\"] = [{\"text\": t} for t in document_texts]\n            if self.model_backend != \"IntrinsicsAPI (mellea + RITS)\":\n                # For vLLM/Ollama/LocalHF, move documents into the message\n                # (IntrinsicsAPI handles this server-side for non-Granite models)\n                request_body = move_documents_to_message(request_body, how=\"string\")\n        self.log(json.dumps(request_body, indent=2), name=\"request body\")\n        return request_body\n\n    def _extract_documents(self) -> list:\n        \"\"\"Extract document texts from the documents input.\n\n        Supports:\n        - list[Data] from vector store search results (each Data has text/page_content)\n        - Single Data with data[\"documents\"] list\n        - dict with \"documents\" key\n        \"\"\"\n        document_texts = []\n        if not hasattr(self, 'documents') or not self.documents:\n            return []\n\n        docs_input = self.documents\n        if not isinstance(docs_input, list):\n            docs_input = [docs_input]\n\n        for item in docs_input:\n            if isinstance(item, Data):\n                if hasattr(item, 'text') and item.text:\n                    document_texts.append(item.text)\n                elif hasattr(item, 'data') and isinstance(item.data, dict):\n                    nested = item.data.get(\"documents\")\n                    if nested and isinstance(nested, list):\n                        for doc in nested:\n                            if isinstance(doc, dict):\n                                text = doc.get(\"text\") or doc.get(\"content\") or doc.get(\"page_content\") or str(doc)\n                            else:\n                                text = str(doc)\n                            document_texts.append(text)\n            elif isinstance(item, dict):\n                nested = item.get(\"documents\")\n                if nested and isinstance(nested, list):\n                    for doc in nested:\n                        if isinstance(doc, dict):\n                            text = doc.get(\"text\") or doc.get(\"content\") or doc.get(\"page_content\") or str(doc)\n                        else:\n                            text = str(doc)\n                        document_texts.append(text)\n                else:\n                    text = item.get(\"text\") or item.get(\"content\") or item.get(\"page_content\") or str(item)\n                    document_texts.append(text)\n            else:\n                document_texts.append(str(item))\n\n        return document_texts\n\n    def _get_api_url(self) -> str:\n        if self.model_backend == \"IntrinsicsAPI (mellea + RITS)\":\n            return f\"{self.url.rstrip('/')}/{self.model_name}\"\n        else:\n            base_url = self.url.rstrip('/')\n            return f\"{base_url}{self.CHAT_COMPLETIONS_ENDPOINT}\"\n\n    def _call_api(self) -> dict:\n        if self.model_backend == \"LocalHF\":\n            return self._call_with_localhf()\n        if not self.url or not self.url.strip():\n            raise ValueError(\"API URL is required\")\n        if self.model_backend in [\"vLLM\", \"Ollama\"]:\n            return self._call_openai()\n        else:\n            return self._call_intrinsics_api()\n\n    def _call_with_localhf(self) -> dict:\n        \"\"\"Call local HuggingFace model directly using transformers.\"\"\"\n        messages = self._build_chat_messages()\n        if not messages:\n            raise ValueError(\"No messages to send\")\n\n        hf_model_id = _MODEL_NAME_MAPPING.get(self.model_name, self.model_name)\n        self.log(json.dumps({\"model\": hf_model_id, \"messages\": messages}, indent=2), name=\"LocalHF request\")\n\n        if hf_model_id in _localhf_model_cache:\n            tokenizer, model = _localhf_model_cache[hf_model_id]\n        else:\n            tokenizer = AutoTokenizer.from_pretrained(hf_model_id)\n            model = AutoModelForCausalLM.from_pretrained(\n                hf_model_id, torch_dtype=torch.bfloat16, device_map=\"auto\"\n            )\n            model.eval()\n            _localhf_model_cache[hf_model_id] = (tokenizer, model)\n\n        prompt = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)\n        inputs = tokenizer(prompt, return_tensors=\"pt\", padding=True).to(model.device)\n        input_length = inputs[\"input_ids\"].shape[1]\n\n        temperature = self.temperature if hasattr(self, \"temperature\") and self.temperature is not None else 0.0\n        with torch.no_grad():\n            outputs = model.generate(\n                **inputs,\n                max_new_tokens=512,\n                temperature=temperature,\n                do_sample=temperature > 0,\n                pad_token_id=tokenizer.pad_token_id,\n                eos_token_id=tokenizer.eos_token_id,\n            )\n\n        response_text = tokenizer.decode(outputs[0][input_length:], skip_special_tokens=True).strip()\n        self.log(response_text, name=\"LocalHF response\")\n\n        return {\n            \"choices\": [{\"message\": {\"role\": \"assistant\", \"content\": response_text}}],\n            \"model\": self.model_name,\n            \"backend\": \"LocalHF\",\n        }\n\n    def _call_openai(self) -> dict:\n        try:\n            request_body = self._build_request()\n\n            self.log(json.dumps(request_body, indent=2), name=\"vLLM/Ollama request\")\n            api_url = self._get_api_url()\n            client = OpenAI(\n                base_url=api_url.replace(\"/chat/completions\", \"\"),\n                api_key=self.api_key or \"no-key\",\n            )\n            completion = client.chat.completions.create(**request_body)\n            response_data = json.loads(completion.model_dump_json())\n            self.log(json.dumps(response_data, indent=2), name=\"vLLM/Ollama response\")\n            return response_data\n        except Exception as e:\n            raise ValueError(f\"vLLM/Ollama call failed: {e}\")\n\n    def _call_intrinsics_api(self) -> dict:\n        request_body = self._build_request()\n\n        self.log(json.dumps(request_body, indent=2), name=\"Intrinsics API request\")\n        api_url = self._get_api_url()\n        headers = {\"Content-Type\": \"application/json\"}\n        if self.model_backend == \"IntrinsicsAPI (mellea + RITS)\":\n            if self.api_key and self.api_key.strip():\n                headers[\"RITS_API_KEY\"] = self.api_key\n        self._last_request = request_body\n        try:\n            with httpx.Client() as client:\n                response = client.post(\n                    api_url, json=request_body, headers=headers, timeout=300.0,\n                )\n                response.raise_for_status()\n        except httpx.HTTPStatusError as e:\n            error_detail = e.response.text\n            try:\n                error_detail = e.response.json()\n            except:\n                pass\n            raise ValueError(f\"API error {e.response.status_code}: {error_detail}\")\n        except httpx.ConnectError:\n            raise ValueError(f\"Could not connect to API at {api_url}\")\n        except httpx.RequestError as e:\n            raise ValueError(f\"Request failed: {e}\")\n        except Exception as e:\n            raise ValueError(f\"Unexpected error: {e}\")\n        try:\n            response_data = response.json()\n        except Exception as e:\n            raise ValueError(f\"Failed to parse API response as JSON: {e}\")\n        self.log(json.dumps(response_data, indent=2), name=\"Intrinsics API response\")\n        return response_data\n\n    def _extract_content_from_response(self, response_data: dict) -> str:\n        \"\"\"Extract text content from API response (full response already printed in _call_* methods)\"\"\"\n        if \"choices\" in response_data and response_data[\"choices\"]:\n            choice = response_data[\"choices\"][0]\n            if \"message\" in choice:\n                message = choice[\"message\"]\n                if isinstance(message, dict):\n                    return message.get(\"content\", \"\")\n                return str(message)\n        return \"\"\n\n    async def update_build_config(self, build_config, field_value=None, field_name=None):\n        if field_name == \"model_backend\":\n            if field_value and field_value in self.BACKEND_CONFIG:\n                backend_config = self.BACKEND_CONFIG[field_value]\n                build_config[\"model_name\"][\"options\"] = backend_config[\"models\"]\n                build_config[\"model_name\"][\"value\"] = backend_config[\"default_model\"]\n                build_config[\"url\"][\"value\"] = backend_config[\"default_url\"]\n                build_config[\"url\"][\"show\"] = backend_config.get(\"url_editable\", True)\n                if field_value == \"IntrinsicsAPI (mellea + RITS)\":\n                    build_config[\"api_key\"][\"display_name\"] = \"RITS API Key\"\n                    build_config[\"api_key\"][\"show\"] = True\n                elif field_value == \"LocalHF\":\n                    build_config[\"url\"][\"show\"] = False\n                    build_config[\"api_key\"][\"show\"] = False\n                    build_config[\"api_key\"][\"required\"] = False\n                else:\n                    build_config[\"api_key\"][\"display_name\"] = \"API Key\"\n                    build_config[\"api_key\"][\"show\"] = True\n        return build_config\n\n    def get_response(self) -> Message:\n        response_data = self._call_api()\n        content = self._extract_content_from_response(response_data)\n        return Message(text=content)\n\n    def get_full_response(self) -> str:\n        response_data = self._call_api()\n        return json.dumps(response_data, indent=2)\n"
+                "value": "\"\"\"\nGranite Base Model Component for Langflow\n\nCalls the Granite base model via multiple backends (vLLM, Ollama, LocalHF).\nTakes chat input and returns model-generated responses.\n\"\"\"\n\nfrom langflow.custom import Component\nfrom langflow.io import (\n    SecretStrInput,\n    StrInput,\n    Output,\n    DropdownInput,\n    MessageInput,\n    HandleInput,\n    DataFrameInput,\n    SliderInput,\n)\nfrom langflow.schema import Message, Data\nfrom langflow.field_typing.range_spec import RangeSpec\nimport httpx\nimport json\nimport pandas as pd\nimport torch\nfrom transformers import AutoTokenizer, AutoModelForCausalLM\n\nfrom openai import OpenAI\nfrom mellea.formatters.granite.intrinsics.input import move_documents_to_message\n\n# Global model cache for LocalHF backend\n_localhf_model_cache = {}\n\n# Model name mapping to HuggingFace identifiers\n_MODEL_NAME_MAPPING = {\n    \"granite-4.0-micro\": \"ibm-granite/granite-4.0-micro\",\n    \"ibm-granite/granite-4.0-micro\": \"ibm-granite/granite-4.0-micro\",\n    \"granite4:micro\": \"ibm-granite/granite-4.0-micro\",\n}\n\n\nclass GraniteBaseModel(Component):\n    display_name = \"Base Model Chat\"\n    description = \"Call Granite base models for text generation\"\n    category = \"llm\"\n    icon = \"sparkles\"\n\n    BACKEND_CONFIG = {\n        \"LocalHF\": {\n            \"models\": [\"granite-4.0-micro\"],\n            \"default_model\": \"granite-4.0-micro\",\n            \"default_url\": \"local\",\n            \"url_editable\": False,\n        },\n        \"vLLM\": {\n            \"models\": [\"granite-4.0-micro\", \"granite-4.0-h-small\", \"gpt-oss-20b\"],\n            \"default_model\": \"granite-4.0-micro\",\n            \"default_url\": \"http://localhost:8000\",\n            \"url_editable\": True,\n        },\n        \"Ollama\": {\n            \"models\": [\"granite4:micro\", \"granite4:small-h\", \"gpt-oss:20b\"],\n            \"default_model\": \"granite4:micro\",\n            \"default_url\": \"http://host.docker.internal:11434\",\n            \"url_editable\": True,\n        },\n    }\n\n    CHAT_COMPLETIONS_ENDPOINT = \"/v1/chat/completions\"\n\n    inputs = [\n        DropdownInput(\n            name=\"model_backend\",\n            display_name=\"Model Backend\",\n            info=\"Backend service for Granite model\",\n            options=[\"vLLM\", \"Ollama\", \"LocalHF\"],\n            value=\"Ollama\",\n            real_time_refresh=True,\n        ),\n        DropdownInput(\n            name=\"model_name\",\n            display_name=\"Model Name\",\n            info=\"Model name (options change based on backend)\",\n            options=[\"granite-4.0-micro\", \"granite-4.0-h-small\", \"gpt-oss-20b\"],\n            value=\"granite-4.0-micro\",\n        ),\n        StrInput(\n            name=\"url\",\n            display_name=\"API URL\",\n            info=\"Base URL for the model backend (e.g., http://localhost:8000)\",\n            value=\"http://host.docker.internal:11434\",\n            required=True,\n            show=True,\n        ),\n        SecretStrInput(\n            name=\"api_key\",\n            display_name=\"API Key\",\n            info=\"API key for authentication\",\n            required=False,\n            load_from_db=False,\n        ),\n        SliderInput(\n            name=\"temperature\",\n            display_name=\"Temperature\",\n            info=\"Controls randomness in responses\",\n            value=0.0,\n            range_spec=RangeSpec(min=0, max=2, step=0.01),\n            advanced=True,\n        ),\n        MessageInput(\n            name=\"chat_input\",\n            display_name=\"Chat Input\",\n            info=\"User message to process\",\n            required=False,\n        ),\n        DataFrameInput(\n            name=\"message_history\",\n            display_name=\"Message History\",\n            info=\"Previous conversation messages as a DataFrame with 'role' (user/assistant) and 'content' columns\",\n            required=False,\n        ),\n        HandleInput(\n            name=\"documents\",\n            display_name=\"Documents\",\n            info=\"Documents to include in the request (accepts Data from vector stores)\",\n            input_types=[\"Data\", \"Search Results\"],\n            required=False,\n            is_list=True,\n        ),\n    ]\n\n    outputs = [\n        Output(\n            name=\"response\",\n            display_name=\"Response\",\n            method=\"get_response\",\n        ),\n        Output(\n            name=\"full_response\",\n            display_name=\"Full Response\",\n            method=\"get_full_response\",\n        ),\n    ]\n\n    def _extract_message_text(self, message: Message) -> str:\n        if message is None:\n            return \"\"\n        # Handle DataFrame case - should not happen but safety check\n        import pandas as pd\n        if isinstance(message, pd.DataFrame):\n            return \"\"\n        if hasattr(message, 'text'):\n            return message.text\n        if hasattr(message, 'content'):\n            return message.content\n        return str(message)\n\n    def _build_chat_messages(self) -> list:\n        messages = []\n        # Check if message_history exists - handle both pandas and Langflow DataFrames\n        if hasattr(self, 'message_history'):\n            # Don't use isinstance check or boolean evaluation as it could be lfx.schema.dataframe.DataFrame\n            try:\n                df = self.message_history\n                # Try to iterate - if it's None or invalid, this will fail\n                for _, row in df.iterrows():\n                    sender = row.get(\"sender\", \"\")\n                    role = \"user\" if sender == \"User\" else \"assistant\"\n                    content = row.get(\"text\", \"\")\n                    if content and str(content).strip():\n                        messages.append({\"role\": role, \"content\": str(content)})\n            except (TypeError, AttributeError, ValueError) as e:\n                # None, invalid type, or DataFrame boolean evaluation error - skip silently\n                pass\n            except Exception as e:\n                self.log(f\"Error processing message_history: {e}\", name=\"message_history warning\")\n        # Check if chat_input exists\n        if hasattr(self, 'chat_input'):\n            try:\n                user_message = self._extract_message_text(self.chat_input)\n                if user_message and user_message.strip():\n                    messages.append({\"role\": \"user\", \"content\": user_message})\n            except (TypeError, AttributeError, ValueError):\n                # None, invalid type, or DataFrame boolean evaluation error - skip silently\n                pass\n\n        return messages\n\n    def _build_request(self) -> dict:\n        messages = self._build_chat_messages()\n        if not messages:\n            raise ValueError(\"No messages to send\")\n        request_body = {\n            \"messages\": messages,\n            \"model\": self.model_name,\n        }\n        # Add temperature if provided\n        if hasattr(self, 'temperature') and self.temperature is not None:\n            request_body[\"temperature\"] = self.temperature\n        document_texts = self._extract_documents()\n        if document_texts:\n            if \"extra_body\" not in request_body:\n                request_body[\"extra_body\"] = {}\n            request_body[\"extra_body\"][\"documents\"] = [{\"text\": t} for t in document_texts]\n            # For vLLM/Ollama/LocalHF, move documents into the message\n            request_body = move_documents_to_message(request_body, how=\"string\")\n        self.log(json.dumps(request_body, indent=2), name=\"request body\")\n        return request_body\n\n    def _extract_documents(self) -> list:\n        \"\"\"Extract document texts from the documents input.\n\n        Supports:\n        - list[Data] from vector store search results (each Data has text/page_content)\n        - Single Data with data[\"documents\"] list\n        - dict with \"documents\" key\n        \"\"\"\n        document_texts = []\n        if not hasattr(self, 'documents') or not self.documents:\n            return []\n\n        docs_input = self.documents\n        if not isinstance(docs_input, list):\n            docs_input = [docs_input]\n\n        for item in docs_input:\n            if isinstance(item, Data):\n                if hasattr(item, 'text') and item.text:\n                    document_texts.append(item.text)\n                elif hasattr(item, 'data') and isinstance(item.data, dict):\n                    nested = item.data.get(\"documents\")\n                    if nested and isinstance(nested, list):\n                        for doc in nested:\n                            if isinstance(doc, dict):\n                                text = doc.get(\"text\") or doc.get(\"content\") or doc.get(\"page_content\") or str(doc)\n                            else:\n                                text = str(doc)\n                            document_texts.append(text)\n            elif isinstance(item, dict):\n                nested = item.get(\"documents\")\n                if nested and isinstance(nested, list):\n                    for doc in nested:\n                        if isinstance(doc, dict):\n                            text = doc.get(\"text\") or doc.get(\"content\") or doc.get(\"page_content\") or str(doc)\n                        else:\n                            text = str(doc)\n                        document_texts.append(text)\n                else:\n                    text = item.get(\"text\") or item.get(\"content\") or item.get(\"page_content\") or str(item)\n                    document_texts.append(text)\n            else:\n                document_texts.append(str(item))\n\n        return document_texts\n\n    def _get_api_url(self) -> str:\n        base_url = self.url.rstrip('/')\n        return f\"{base_url}{self.CHAT_COMPLETIONS_ENDPOINT}\"\n\n    def _call_api(self) -> dict:\n        if self.model_backend == \"LocalHF\":\n            return self._call_with_localhf()\n        if not self.url or not self.url.strip():\n            raise ValueError(\"API URL is required\")\n        return self._call_openai()\n\n    def _call_with_localhf(self) -> dict:\n        \"\"\"Call local HuggingFace model directly using transformers.\"\"\"\n        messages = self._build_chat_messages()\n        if not messages:\n            raise ValueError(\"No messages to send\")\n\n        hf_model_id = _MODEL_NAME_MAPPING.get(self.model_name, self.model_name)\n        self.log(json.dumps({\"model\": hf_model_id, \"messages\": messages}, indent=2), name=\"LocalHF request\")\n\n        if hf_model_id in _localhf_model_cache:\n            tokenizer, model = _localhf_model_cache[hf_model_id]\n        else:\n            tokenizer = AutoTokenizer.from_pretrained(hf_model_id)\n            model = AutoModelForCausalLM.from_pretrained(\n                hf_model_id, torch_dtype=torch.bfloat16, device_map=\"auto\"\n            )\n            model.eval()\n            _localhf_model_cache[hf_model_id] = (tokenizer, model)\n\n        prompt = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)\n        inputs = tokenizer(prompt, return_tensors=\"pt\", padding=True).to(model.device)\n        input_length = inputs[\"input_ids\"].shape[1]\n\n        temperature = self.temperature if hasattr(self, \"temperature\") and self.temperature is not None else 0.0\n        with torch.no_grad():\n            outputs = model.generate(\n                **inputs,\n                max_new_tokens=512,\n                temperature=temperature,\n                do_sample=temperature > 0,\n                pad_token_id=tokenizer.pad_token_id,\n                eos_token_id=tokenizer.eos_token_id,\n            )\n\n        response_text = tokenizer.decode(outputs[0][input_length:], skip_special_tokens=True).strip()\n        self.log(response_text, name=\"LocalHF response\")\n\n        return {\n            \"choices\": [{\"message\": {\"role\": \"assistant\", \"content\": response_text}}],\n            \"model\": self.model_name,\n            \"backend\": \"LocalHF\",\n        }\n\n    def _call_openai(self) -> dict:\n        try:\n            request_body = self._build_request()\n\n            self.log(json.dumps(request_body, indent=2), name=\"vLLM/Ollama request\")\n            api_url = self._get_api_url()\n            client = OpenAI(\n                base_url=api_url.replace(\"/chat/completions\", \"\"),\n                api_key=self.api_key or \"no-key\",\n            )\n            completion = client.chat.completions.create(**request_body)\n            response_data = json.loads(completion.model_dump_json())\n            self.log(json.dumps(response_data, indent=2), name=\"vLLM/Ollama response\")\n            return response_data\n        except Exception as e:\n            raise ValueError(f\"vLLM/Ollama call failed: {e}\")\n\n    def _call_intrinsics_api(self) -> dict:\n        request_body = self._build_request()\n\n        self.log(json.dumps(request_body, indent=2), name=\"Intrinsics API request\")\n        api_url = self._get_api_url()\n        headers = {\"Content-Type\": \"application/json\"}\n        self._last_request = request_body\n        try:\n            with httpx.Client() as client:\n                response = client.post(\n                    api_url, json=request_body, headers=headers, timeout=300.0,\n                )\n                response.raise_for_status()\n        except httpx.HTTPStatusError as e:\n            error_detail = e.response.text\n            try:\n                error_detail = e.response.json()\n            except:\n                pass\n            raise ValueError(f\"API error {e.response.status_code}: {error_detail}\")\n        except httpx.ConnectError:\n            raise ValueError(f\"Could not connect to API at {api_url}\")\n        except httpx.RequestError as e:\n            raise ValueError(f\"Request failed: {e}\")\n        except Exception as e:\n            raise ValueError(f\"Unexpected error: {e}\")\n        try:\n            response_data = response.json()\n        except Exception as e:\n            raise ValueError(f\"Failed to parse API response as JSON: {e}\")\n        self.log(json.dumps(response_data, indent=2), name=\"Intrinsics API response\")\n        return response_data\n\n    def _extract_content_from_response(self, response_data: dict) -> str:\n        \"\"\"Extract text content from API response (full response already printed in _call_* methods)\"\"\"\n        if \"choices\" in response_data and response_data[\"choices\"]:\n            choice = response_data[\"choices\"][0]\n            if \"message\" in choice:\n                message = choice[\"message\"]\n                if isinstance(message, dict):\n                    return message.get(\"content\", \"\")\n                return str(message)\n        return \"\"\n\n    async def update_build_config(self, build_config, field_value=None, field_name=None):\n        if field_name == \"model_backend\":\n            if field_value and field_value in self.BACKEND_CONFIG:\n                backend_config = self.BACKEND_CONFIG[field_value]\n                build_config[\"model_name\"][\"options\"] = backend_config[\"models\"]\n                build_config[\"model_name\"][\"value\"] = backend_config[\"default_model\"]\n                build_config[\"url\"][\"value\"] = backend_config[\"default_url\"]\n                build_config[\"url\"][\"show\"] = backend_config.get(\"url_editable\", True)\n                if field_value == \"LocalHF\":\n                    build_config[\"url\"][\"show\"] = False\n                    build_config[\"api_key\"][\"show\"] = False\n                    build_config[\"api_key\"][\"required\"] = False\n                else:\n                    build_config[\"api_key\"][\"display_name\"] = \"API Key\"\n                    build_config[\"api_key\"][\"show\"] = True\n        return build_config\n\n    def get_response(self) -> Message:\n        response_data = self._call_api()\n        content = self._extract_content_from_response(response_data)\n        return Message(text=content)\n\n    def get_full_response(self) -> str:\n        response_data = self._call_api()\n        return json.dumps(response_data, indent=2)\n"
               },
               "documents": {
                 "_input_type": "HandleInput",
@@ -1284,7 +1286,6 @@
                 "info": "Backend service for Granite model",
                 "name": "model_backend",
                 "options": [
-                  "IntrinsicsAPI (mellea + RITS)",
                   "vLLM",
                   "Ollama",
                   "LocalHF"
@@ -1330,7 +1331,7 @@
                 "trace_as_metadata": true,
                 "track_in_telemetry": true,
                 "type": "str",
-                "value": "granite4:small-h"
+                "value": "granite4:micro"
               },
               "temperature": {
                 "_input_type": "SliderInput",
@@ -1381,7 +1382,7 @@
                 "trace_as_metadata": true,
                 "track_in_telemetry": false,
                 "type": "str",
-                "value": "http://localhost:11434"
+                "value": "http://host.docker.internal:11434"
               }
             },
             "tool_mode": false
@@ -1391,9 +1392,9 @@
           "type": "GraniteBaseModel"
         },
         "dragging": false,
-        "id": "GraniteBaseModel-cI0x6",
+        "id": "GraniteBaseModel-rAS4G",
         "measured": {
-          "height": 619,
+          "height": 623,
           "width": 320
         },
         "position": {
@@ -1405,7 +1406,9 @@
       },
       {
         "data": {
-          "id": "GraniteBaseModel-OH7VT",
+          "description": "Call Granite base models for text generation",
+          "display_name": "Base Model Chat",
+          "id": "GraniteBaseModel-dt96H",
           "node": {
             "base_classes": [
               "Message",
@@ -1430,11 +1433,10 @@
             ],
             "frozen": false,
             "icon": "sparkles",
-            "last_updated": "2026-03-20T20:17:21.040Z",
+            "last_updated": "2026-03-21T05:23:08.974Z",
             "legacy": false,
-            "lf_version": "1.7.3",
             "metadata": {
-              "code_hash": "cb04af5826db",
+              "code_hash": "e5b7abd59b1c",
               "dependencies": {
                 "dependencies": [
                   {
@@ -1451,7 +1453,7 @@
                   },
                   {
                     "name": "torch",
-                    "version": "2.2.2"
+                    "version": "2.10.0"
                   },
                   {
                     "name": "transformers",
@@ -1459,7 +1461,7 @@
                   },
                   {
                     "name": "openai",
-                    "version": "1.109.1"
+                    "version": "1.82.1"
                   },
                   {
                     "name": "mellea",
@@ -1511,10 +1513,10 @@
             "pinned": false,
             "template": {
               "_frontend_node_flow_id": {
-                "value": "b04385f2-9bb7-4d88-a950-97260ca7d111"
+                "value": "fd020ad1-aa2a-464d-b3dc-d7ea8d49ad3a"
               },
               "_frontend_node_folder_id": {
-                "value": "5800d4be-9a7d-4fac-b30c-f46fd327ed8b"
+                "value": "4b0b4ae8-eeef-4d87-96e8-8abb8a0b232e"
               },
               "_type": "Component",
               "api_key": {
@@ -1577,7 +1579,7 @@
                 "show": true,
                 "title_case": false,
                 "type": "code",
-                "value": "\"\"\"\nGranite Base Model Component for Langflow\n\nCalls the Granite base model via multiple backends (vLLM, Ollama, IntrinsicsAPI).\nTakes chat input and returns model-generated responses.\n\"\"\"\n\nfrom langflow.custom import Component\nfrom langflow.io import (\n    SecretStrInput,\n    StrInput,\n    Output,\n    DropdownInput,\n    MessageInput,\n    HandleInput,\n    DataFrameInput,\n    SliderInput,\n)\nfrom langflow.schema import Message, Data\nfrom langflow.field_typing.range_spec import RangeSpec\nimport httpx\nimport json\nimport pandas as pd\nimport torch\nfrom transformers import AutoTokenizer, AutoModelForCausalLM\n\nfrom openai import OpenAI\nfrom mellea.formatters.granite.intrinsics.input import move_documents_to_message\n\n# Global model cache for LocalHF backend\n_localhf_model_cache = {}\n\n# Model name mapping to HuggingFace identifiers\n_MODEL_NAME_MAPPING = {\n    \"granite-4.0-micro\": \"ibm-granite/granite-4.0-micro\",\n    \"ibm-granite/granite-4.0-micro\": \"ibm-granite/granite-4.0-micro\",\n    \"granite4:micro\": \"ibm-granite/granite-4.0-micro\",\n}\n\n\nclass GraniteBaseModel(Component):\n    display_name = \"Base Model Chat\"\n    description = \"Call Granite base models for text generation\"\n    category = \"llm\"\n    icon = \"sparkles\"\n\n    BACKEND_CONFIG = {\n        \"LocalHF\": {\n            \"models\": [\"granite-4.0-micro\"],\n            \"default_model\": \"granite-4.0-micro\",\n            \"default_url\": \"local\",\n            \"url_editable\": False,\n        },\n        \"vLLM\": {\n            \"models\": [\"granite-4.0-micro\", \"granite-4.0-h-small\", \"gpt-oss-20b\"],\n            \"default_model\": \"granite-4.0-micro\",\n            \"default_url\": \"http://localhost:8000\",\n            \"url_editable\": True,\n        },\n        \"Ollama\": {\n            \"models\": [\"granite4:micro\", \"granite4:small-h\", \"gpt-oss:20b\"],\n            \"default_model\": \"granite4:micro\",\n            \"default_url\": \"http://localhost:11434\",\n            \"url_editable\": True,\n        },\n        \"IntrinsicsAPI (mellea + RITS)\": {\n            \"models\": [\"granite-4.0-micro\", \"granite-4.0-h-small\", \"gpt-oss-20b\"],\n            \"default_model\": \"granite-4.0-micro\",\n            \"default_url\": \"https://intrinsics-api.intrinsics.vpc-int.res.ibm.com\",\n            \"url_editable\": False,\n        },\n    }\n\n    CHAT_COMPLETIONS_ENDPOINT = \"/v1/chat/completions\"\n\n    inputs = [\n        DropdownInput(\n            name=\"model_backend\",\n            display_name=\"Model Backend\",\n            info=\"Backend service for Granite model\",\n            options=[\"IntrinsicsAPI (mellea + RITS)\", \"vLLM\", \"Ollama\", \"LocalHF\"],\n            value=\"IntrinsicsAPI (mellea + RITS)\",\n            real_time_refresh=True,\n        ),\n        DropdownInput(\n            name=\"model_name\",\n            display_name=\"Model Name\",\n            info=\"Model name (options change based on backend)\",\n            options=[\"granite-4.0-micro\", \"granite-4.0-h-small\", \"gpt-oss-20b\"],\n            value=\"granite-4.0-micro\",\n        ),\n        StrInput(\n            name=\"url\",\n            display_name=\"API URL\",\n            info=\"Base URL for the model backend (e.g., http://localhost:8000)\",\n            value=\"https://intrinsics-api.intrinsics.vpc-int.res.ibm.com\",\n            required=True,\n            show=False,\n        ),\n        SecretStrInput(\n            name=\"api_key\",\n            display_name=\"RITS API Key\",\n            info=\"API key for authentication\",\n            required=False,\n            load_from_db=False,\n        ),\n        SliderInput(\n            name=\"temperature\",\n            display_name=\"Temperature\",\n            info=\"Controls randomness in responses\",\n            value=0.0,\n            range_spec=RangeSpec(min=0, max=2, step=0.01),\n            advanced=True,\n        ),\n        MessageInput(\n            name=\"chat_input\",\n            display_name=\"Chat Input\",\n            info=\"User message to process\",\n            required=False,\n        ),\n        DataFrameInput(\n            name=\"message_history\",\n            display_name=\"Message History\",\n            info=\"Previous conversation messages as a DataFrame with 'role' (user/assistant) and 'content' columns\",\n            required=False,\n        ),\n        HandleInput(\n            name=\"documents\",\n            display_name=\"Documents\",\n            info=\"Documents to include in the request (accepts Data from vector stores)\",\n            input_types=[\"Data\", \"Search Results\"],\n            required=False,\n            is_list=True,\n        ),\n    ]\n\n    outputs = [\n        Output(\n            name=\"response\",\n            display_name=\"Response\",\n            method=\"get_response\",\n        ),\n        Output(\n            name=\"full_response\",\n            display_name=\"Full Response\",\n            method=\"get_full_response\",\n        ),\n    ]\n\n    def _extract_message_text(self, message: Message) -> str:\n        if message is None:\n            return \"\"\n        # Handle DataFrame case - should not happen but safety check\n        import pandas as pd\n        if isinstance(message, pd.DataFrame):\n            return \"\"\n        if hasattr(message, 'text'):\n            return message.text\n        if hasattr(message, 'content'):\n            return message.content\n        return str(message)\n\n    def _build_chat_messages(self) -> list:\n        messages = []\n        # Check if message_history exists - handle both pandas and Langflow DataFrames\n        if hasattr(self, 'message_history'):\n            # Don't use isinstance check or boolean evaluation as it could be lfx.schema.dataframe.DataFrame\n            try:\n                df = self.message_history\n                # Try to iterate - if it's None or invalid, this will fail\n                for _, row in df.iterrows():\n                    sender = row.get(\"sender\", \"\")\n                    role = \"user\" if sender == \"User\" else \"assistant\"\n                    content = row.get(\"text\", \"\")\n                    if content and str(content).strip():\n                        messages.append({\"role\": role, \"content\": str(content)})\n            except (TypeError, AttributeError, ValueError) as e:\n                # None, invalid type, or DataFrame boolean evaluation error - skip silently\n                pass\n            except Exception as e:\n                self.log(f\"Error processing message_history: {e}\", name=\"message_history warning\")\n        # Check if chat_input exists\n        if hasattr(self, 'chat_input'):\n            try:\n                user_message = self._extract_message_text(self.chat_input)\n                if user_message and user_message.strip():\n                    messages.append({\"role\": \"user\", \"content\": user_message})\n            except (TypeError, AttributeError, ValueError):\n                # None, invalid type, or DataFrame boolean evaluation error - skip silently\n                pass\n\n        return messages\n\n    def _build_request(self) -> dict:\n        messages = self._build_chat_messages()\n        if not messages:\n            raise ValueError(\"No messages to send\")\n        request_body = {\n            \"messages\": messages,\n            \"model\": self.model_name,\n        }\n        # Add temperature if provided\n        if hasattr(self, 'temperature') and self.temperature is not None:\n            request_body[\"temperature\"] = self.temperature\n        document_texts = self._extract_documents()\n        if document_texts:\n            if \"extra_body\" not in request_body:\n                request_body[\"extra_body\"] = {}\n            request_body[\"extra_body\"][\"documents\"] = [{\"text\": t} for t in document_texts]\n            if self.model_backend != \"IntrinsicsAPI (mellea + RITS)\":\n                # For vLLM/Ollama/LocalHF, move documents into the message\n                # (IntrinsicsAPI handles this server-side for non-Granite models)\n                request_body = move_documents_to_message(request_body, how=\"string\")\n        self.log(json.dumps(request_body, indent=2), name=\"request body\")\n        return request_body\n\n    def _extract_documents(self) -> list:\n        \"\"\"Extract document texts from the documents input.\n\n        Supports:\n        - list[Data] from vector store search results (each Data has text/page_content)\n        - Single Data with data[\"documents\"] list\n        - dict with \"documents\" key\n        \"\"\"\n        document_texts = []\n        if not hasattr(self, 'documents') or not self.documents:\n            return []\n\n        docs_input = self.documents\n        if not isinstance(docs_input, list):\n            docs_input = [docs_input]\n\n        for item in docs_input:\n            if isinstance(item, Data):\n                if hasattr(item, 'text') and item.text:\n                    document_texts.append(item.text)\n                elif hasattr(item, 'data') and isinstance(item.data, dict):\n                    nested = item.data.get(\"documents\")\n                    if nested and isinstance(nested, list):\n                        for doc in nested:\n                            if isinstance(doc, dict):\n                                text = doc.get(\"text\") or doc.get(\"content\") or doc.get(\"page_content\") or str(doc)\n                            else:\n                                text = str(doc)\n                            document_texts.append(text)\n            elif isinstance(item, dict):\n                nested = item.get(\"documents\")\n                if nested and isinstance(nested, list):\n                    for doc in nested:\n                        if isinstance(doc, dict):\n                            text = doc.get(\"text\") or doc.get(\"content\") or doc.get(\"page_content\") or str(doc)\n                        else:\n                            text = str(doc)\n                        document_texts.append(text)\n                else:\n                    text = item.get(\"text\") or item.get(\"content\") or item.get(\"page_content\") or str(item)\n                    document_texts.append(text)\n            else:\n                document_texts.append(str(item))\n\n        return document_texts\n\n    def _get_api_url(self) -> str:\n        if self.model_backend == \"IntrinsicsAPI (mellea + RITS)\":\n            return f\"{self.url.rstrip('/')}/{self.model_name}\"\n        else:\n            base_url = self.url.rstrip('/')\n            return f\"{base_url}{self.CHAT_COMPLETIONS_ENDPOINT}\"\n\n    def _call_api(self) -> dict:\n        if self.model_backend == \"LocalHF\":\n            return self._call_with_localhf()\n        if not self.url or not self.url.strip():\n            raise ValueError(\"API URL is required\")\n        if self.model_backend in [\"vLLM\", \"Ollama\"]:\n            return self._call_openai()\n        else:\n            return self._call_intrinsics_api()\n\n    def _call_with_localhf(self) -> dict:\n        \"\"\"Call local HuggingFace model directly using transformers.\"\"\"\n        messages = self._build_chat_messages()\n        if not messages:\n            raise ValueError(\"No messages to send\")\n\n        hf_model_id = _MODEL_NAME_MAPPING.get(self.model_name, self.model_name)\n        self.log(json.dumps({\"model\": hf_model_id, \"messages\": messages}, indent=2), name=\"LocalHF request\")\n\n        if hf_model_id in _localhf_model_cache:\n            tokenizer, model = _localhf_model_cache[hf_model_id]\n        else:\n            tokenizer = AutoTokenizer.from_pretrained(hf_model_id)\n            model = AutoModelForCausalLM.from_pretrained(\n                hf_model_id, torch_dtype=torch.bfloat16, device_map=\"auto\"\n            )\n            model.eval()\n            _localhf_model_cache[hf_model_id] = (tokenizer, model)\n\n        prompt = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)\n        inputs = tokenizer(prompt, return_tensors=\"pt\", padding=True).to(model.device)\n        input_length = inputs[\"input_ids\"].shape[1]\n\n        temperature = self.temperature if hasattr(self, \"temperature\") and self.temperature is not None else 0.0\n        with torch.no_grad():\n            outputs = model.generate(\n                **inputs,\n                max_new_tokens=512,\n                temperature=temperature,\n                do_sample=temperature > 0,\n                pad_token_id=tokenizer.pad_token_id,\n                eos_token_id=tokenizer.eos_token_id,\n            )\n\n        response_text = tokenizer.decode(outputs[0][input_length:], skip_special_tokens=True).strip()\n        self.log(response_text, name=\"LocalHF response\")\n\n        return {\n            \"choices\": [{\"message\": {\"role\": \"assistant\", \"content\": response_text}}],\n            \"model\": self.model_name,\n            \"backend\": \"LocalHF\",\n        }\n\n    def _call_openai(self) -> dict:\n        try:\n            request_body = self._build_request()\n\n            self.log(json.dumps(request_body, indent=2), name=\"vLLM/Ollama request\")\n            api_url = self._get_api_url()\n            client = OpenAI(\n                base_url=api_url.replace(\"/chat/completions\", \"\"),\n                api_key=self.api_key or \"no-key\",\n            )\n            completion = client.chat.completions.create(**request_body)\n            response_data = json.loads(completion.model_dump_json())\n            self.log(json.dumps(response_data, indent=2), name=\"vLLM/Ollama response\")\n            return response_data\n        except Exception as e:\n            raise ValueError(f\"vLLM/Ollama call failed: {e}\")\n\n    def _call_intrinsics_api(self) -> dict:\n        request_body = self._build_request()\n\n        self.log(json.dumps(request_body, indent=2), name=\"Intrinsics API request\")\n        api_url = self._get_api_url()\n        headers = {\"Content-Type\": \"application/json\"}\n        if self.model_backend == \"IntrinsicsAPI (mellea + RITS)\":\n            if self.api_key and self.api_key.strip():\n                headers[\"RITS_API_KEY\"] = self.api_key\n        self._last_request = request_body\n        try:\n            with httpx.Client() as client:\n                response = client.post(\n                    api_url, json=request_body, headers=headers, timeout=300.0,\n                )\n                response.raise_for_status()\n        except httpx.HTTPStatusError as e:\n            error_detail = e.response.text\n            try:\n                error_detail = e.response.json()\n            except:\n                pass\n            raise ValueError(f\"API error {e.response.status_code}: {error_detail}\")\n        except httpx.ConnectError:\n            raise ValueError(f\"Could not connect to API at {api_url}\")\n        except httpx.RequestError as e:\n            raise ValueError(f\"Request failed: {e}\")\n        except Exception as e:\n            raise ValueError(f\"Unexpected error: {e}\")\n        try:\n            response_data = response.json()\n        except Exception as e:\n            raise ValueError(f\"Failed to parse API response as JSON: {e}\")\n        self.log(json.dumps(response_data, indent=2), name=\"Intrinsics API response\")\n        return response_data\n\n    def _extract_content_from_response(self, response_data: dict) -> str:\n        \"\"\"Extract text content from API response (full response already printed in _call_* methods)\"\"\"\n        if \"choices\" in response_data and response_data[\"choices\"]:\n            choice = response_data[\"choices\"][0]\n            if \"message\" in choice:\n                message = choice[\"message\"]\n                if isinstance(message, dict):\n                    return message.get(\"content\", \"\")\n                return str(message)\n        return \"\"\n\n    async def update_build_config(self, build_config, field_value=None, field_name=None):\n        if field_name == \"model_backend\":\n            if field_value and field_value in self.BACKEND_CONFIG:\n                backend_config = self.BACKEND_CONFIG[field_value]\n                build_config[\"model_name\"][\"options\"] = backend_config[\"models\"]\n                build_config[\"model_name\"][\"value\"] = backend_config[\"default_model\"]\n                build_config[\"url\"][\"value\"] = backend_config[\"default_url\"]\n                build_config[\"url\"][\"show\"] = backend_config.get(\"url_editable\", True)\n                if field_value == \"IntrinsicsAPI (mellea + RITS)\":\n                    build_config[\"api_key\"][\"display_name\"] = \"RITS API Key\"\n                    build_config[\"api_key\"][\"show\"] = True\n                elif field_value == \"LocalHF\":\n                    build_config[\"url\"][\"show\"] = False\n                    build_config[\"api_key\"][\"show\"] = False\n                    build_config[\"api_key\"][\"required\"] = False\n                else:\n                    build_config[\"api_key\"][\"display_name\"] = \"API Key\"\n                    build_config[\"api_key\"][\"show\"] = True\n        return build_config\n\n    def get_response(self) -> Message:\n        response_data = self._call_api()\n        content = self._extract_content_from_response(response_data)\n        return Message(text=content)\n\n    def get_full_response(self) -> str:\n        response_data = self._call_api()\n        return json.dumps(response_data, indent=2)\n"
+                "value": "\"\"\"\nGranite Base Model Component for Langflow\n\nCalls the Granite base model via multiple backends (vLLM, Ollama, LocalHF).\nTakes chat input and returns model-generated responses.\n\"\"\"\n\nfrom langflow.custom import Component\nfrom langflow.io import (\n    SecretStrInput,\n    StrInput,\n    Output,\n    DropdownInput,\n    MessageInput,\n    HandleInput,\n    DataFrameInput,\n    SliderInput,\n)\nfrom langflow.schema import Message, Data\nfrom langflow.field_typing.range_spec import RangeSpec\nimport httpx\nimport json\nimport pandas as pd\nimport torch\nfrom transformers import AutoTokenizer, AutoModelForCausalLM\n\nfrom openai import OpenAI\nfrom mellea.formatters.granite.intrinsics.input import move_documents_to_message\n\n# Global model cache for LocalHF backend\n_localhf_model_cache = {}\n\n# Model name mapping to HuggingFace identifiers\n_MODEL_NAME_MAPPING = {\n    \"granite-4.0-micro\": \"ibm-granite/granite-4.0-micro\",\n    \"ibm-granite/granite-4.0-micro\": \"ibm-granite/granite-4.0-micro\",\n    \"granite4:micro\": \"ibm-granite/granite-4.0-micro\",\n}\n\n\nclass GraniteBaseModel(Component):\n    display_name = \"Base Model Chat\"\n    description = \"Call Granite base models for text generation\"\n    category = \"llm\"\n    icon = \"sparkles\"\n\n    BACKEND_CONFIG = {\n        \"LocalHF\": {\n            \"models\": [\"granite-4.0-micro\"],\n            \"default_model\": \"granite-4.0-micro\",\n            \"default_url\": \"local\",\n            \"url_editable\": False,\n        },\n        \"vLLM\": {\n            \"models\": [\"granite-4.0-micro\", \"granite-4.0-h-small\", \"gpt-oss-20b\"],\n            \"default_model\": \"granite-4.0-micro\",\n            \"default_url\": \"http://localhost:8000\",\n            \"url_editable\": True,\n        },\n        \"Ollama\": {\n            \"models\": [\"granite4:micro\", \"granite4:small-h\", \"gpt-oss:20b\"],\n            \"default_model\": \"granite4:micro\",\n            \"default_url\": \"http://host.docker.internal:11434\",\n            \"url_editable\": True,\n        },\n    }\n\n    CHAT_COMPLETIONS_ENDPOINT = \"/v1/chat/completions\"\n\n    inputs = [\n        DropdownInput(\n            name=\"model_backend\",\n            display_name=\"Model Backend\",\n            info=\"Backend service for Granite model\",\n            options=[\"vLLM\", \"Ollama\", \"LocalHF\"],\n            value=\"Ollama\",\n            real_time_refresh=True,\n        ),\n        DropdownInput(\n            name=\"model_name\",\n            display_name=\"Model Name\",\n            info=\"Model name (options change based on backend)\",\n            options=[\"granite-4.0-micro\", \"granite-4.0-h-small\", \"gpt-oss-20b\"],\n            value=\"granite-4.0-micro\",\n        ),\n        StrInput(\n            name=\"url\",\n            display_name=\"API URL\",\n            info=\"Base URL for the model backend (e.g., http://localhost:8000)\",\n            value=\"http://host.docker.internal:11434\",\n            required=True,\n            show=True,\n        ),\n        SecretStrInput(\n            name=\"api_key\",\n            display_name=\"API Key\",\n            info=\"API key for authentication\",\n            required=False,\n            load_from_db=False,\n        ),\n        SliderInput(\n            name=\"temperature\",\n            display_name=\"Temperature\",\n            info=\"Controls randomness in responses\",\n            value=0.0,\n            range_spec=RangeSpec(min=0, max=2, step=0.01),\n            advanced=True,\n        ),\n        MessageInput(\n            name=\"chat_input\",\n            display_name=\"Chat Input\",\n            info=\"User message to process\",\n            required=False,\n        ),\n        DataFrameInput(\n            name=\"message_history\",\n            display_name=\"Message History\",\n            info=\"Previous conversation messages as a DataFrame with 'role' (user/assistant) and 'content' columns\",\n            required=False,\n        ),\n        HandleInput(\n            name=\"documents\",\n            display_name=\"Documents\",\n            info=\"Documents to include in the request (accepts Data from vector stores)\",\n            input_types=[\"Data\", \"Search Results\"],\n            required=False,\n            is_list=True,\n        ),\n    ]\n\n    outputs = [\n        Output(\n            name=\"response\",\n            display_name=\"Response\",\n            method=\"get_response\",\n        ),\n        Output(\n            name=\"full_response\",\n            display_name=\"Full Response\",\n            method=\"get_full_response\",\n        ),\n    ]\n\n    def _extract_message_text(self, message: Message) -> str:\n        if message is None:\n            return \"\"\n        # Handle DataFrame case - should not happen but safety check\n        import pandas as pd\n        if isinstance(message, pd.DataFrame):\n            return \"\"\n        if hasattr(message, 'text'):\n            return message.text\n        if hasattr(message, 'content'):\n            return message.content\n        return str(message)\n\n    def _build_chat_messages(self) -> list:\n        messages = []\n        # Check if message_history exists - handle both pandas and Langflow DataFrames\n        if hasattr(self, 'message_history'):\n            # Don't use isinstance check or boolean evaluation as it could be lfx.schema.dataframe.DataFrame\n            try:\n                df = self.message_history\n                # Try to iterate - if it's None or invalid, this will fail\n                for _, row in df.iterrows():\n                    sender = row.get(\"sender\", \"\")\n                    role = \"user\" if sender == \"User\" else \"assistant\"\n                    content = row.get(\"text\", \"\")\n                    if content and str(content).strip():\n                        messages.append({\"role\": role, \"content\": str(content)})\n            except (TypeError, AttributeError, ValueError) as e:\n                # None, invalid type, or DataFrame boolean evaluation error - skip silently\n                pass\n            except Exception as e:\n                self.log(f\"Error processing message_history: {e}\", name=\"message_history warning\")\n        # Check if chat_input exists\n        if hasattr(self, 'chat_input'):\n            try:\n                user_message = self._extract_message_text(self.chat_input)\n                if user_message and user_message.strip():\n                    messages.append({\"role\": \"user\", \"content\": user_message})\n            except (TypeError, AttributeError, ValueError):\n                # None, invalid type, or DataFrame boolean evaluation error - skip silently\n                pass\n\n        return messages\n\n    def _build_request(self) -> dict:\n        messages = self._build_chat_messages()\n        if not messages:\n            raise ValueError(\"No messages to send\")\n        request_body = {\n            \"messages\": messages,\n            \"model\": self.model_name,\n        }\n        # Add temperature if provided\n        if hasattr(self, 'temperature') and self.temperature is not None:\n            request_body[\"temperature\"] = self.temperature\n        document_texts = self._extract_documents()\n        if document_texts:\n            if \"extra_body\" not in request_body:\n                request_body[\"extra_body\"] = {}\n            request_body[\"extra_body\"][\"documents\"] = [{\"text\": t} for t in document_texts]\n            # For vLLM/Ollama/LocalHF, move documents into the message\n            request_body = move_documents_to_message(request_body, how=\"string\")\n        self.log(json.dumps(request_body, indent=2), name=\"request body\")\n        return request_body\n\n    def _extract_documents(self) -> list:\n        \"\"\"Extract document texts from the documents input.\n\n        Supports:\n        - list[Data] from vector store search results (each Data has text/page_content)\n        - Single Data with data[\"documents\"] list\n        - dict with \"documents\" key\n        \"\"\"\n        document_texts = []\n        if not hasattr(self, 'documents') or not self.documents:\n            return []\n\n        docs_input = self.documents\n        if not isinstance(docs_input, list):\n            docs_input = [docs_input]\n\n        for item in docs_input:\n            if isinstance(item, Data):\n                if hasattr(item, 'text') and item.text:\n                    document_texts.append(item.text)\n                elif hasattr(item, 'data') and isinstance(item.data, dict):\n                    nested = item.data.get(\"documents\")\n                    if nested and isinstance(nested, list):\n                        for doc in nested:\n                            if isinstance(doc, dict):\n                                text = doc.get(\"text\") or doc.get(\"content\") or doc.get(\"page_content\") or str(doc)\n                            else:\n                                text = str(doc)\n                            document_texts.append(text)\n            elif isinstance(item, dict):\n                nested = item.get(\"documents\")\n                if nested and isinstance(nested, list):\n                    for doc in nested:\n                        if isinstance(doc, dict):\n                            text = doc.get(\"text\") or doc.get(\"content\") or doc.get(\"page_content\") or str(doc)\n                        else:\n                            text = str(doc)\n                        document_texts.append(text)\n                else:\n                    text = item.get(\"text\") or item.get(\"content\") or item.get(\"page_content\") or str(item)\n                    document_texts.append(text)\n            else:\n                document_texts.append(str(item))\n\n        return document_texts\n\n    def _get_api_url(self) -> str:\n        base_url = self.url.rstrip('/')\n        return f\"{base_url}{self.CHAT_COMPLETIONS_ENDPOINT}\"\n\n    def _call_api(self) -> dict:\n        if self.model_backend == \"LocalHF\":\n            return self._call_with_localhf()\n        if not self.url or not self.url.strip():\n            raise ValueError(\"API URL is required\")\n        return self._call_openai()\n\n    def _call_with_localhf(self) -> dict:\n        \"\"\"Call local HuggingFace model directly using transformers.\"\"\"\n        messages = self._build_chat_messages()\n        if not messages:\n            raise ValueError(\"No messages to send\")\n\n        hf_model_id = _MODEL_NAME_MAPPING.get(self.model_name, self.model_name)\n        self.log(json.dumps({\"model\": hf_model_id, \"messages\": messages}, indent=2), name=\"LocalHF request\")\n\n        if hf_model_id in _localhf_model_cache:\n            tokenizer, model = _localhf_model_cache[hf_model_id]\n        else:\n            tokenizer = AutoTokenizer.from_pretrained(hf_model_id)\n            model = AutoModelForCausalLM.from_pretrained(\n                hf_model_id, torch_dtype=torch.bfloat16, device_map=\"auto\"\n            )\n            model.eval()\n            _localhf_model_cache[hf_model_id] = (tokenizer, model)\n\n        prompt = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)\n        inputs = tokenizer(prompt, return_tensors=\"pt\", padding=True).to(model.device)\n        input_length = inputs[\"input_ids\"].shape[1]\n\n        temperature = self.temperature if hasattr(self, \"temperature\") and self.temperature is not None else 0.0\n        with torch.no_grad():\n            outputs = model.generate(\n                **inputs,\n                max_new_tokens=512,\n                temperature=temperature,\n                do_sample=temperature > 0,\n                pad_token_id=tokenizer.pad_token_id,\n                eos_token_id=tokenizer.eos_token_id,\n            )\n\n        response_text = tokenizer.decode(outputs[0][input_length:], skip_special_tokens=True).strip()\n        self.log(response_text, name=\"LocalHF response\")\n\n        return {\n            \"choices\": [{\"message\": {\"role\": \"assistant\", \"content\": response_text}}],\n            \"model\": self.model_name,\n            \"backend\": \"LocalHF\",\n        }\n\n    def _call_openai(self) -> dict:\n        try:\n            request_body = self._build_request()\n\n            self.log(json.dumps(request_body, indent=2), name=\"vLLM/Ollama request\")\n            api_url = self._get_api_url()\n            client = OpenAI(\n                base_url=api_url.replace(\"/chat/completions\", \"\"),\n                api_key=self.api_key or \"no-key\",\n            )\n            completion = client.chat.completions.create(**request_body)\n            response_data = json.loads(completion.model_dump_json())\n            self.log(json.dumps(response_data, indent=2), name=\"vLLM/Ollama response\")\n            return response_data\n        except Exception as e:\n            raise ValueError(f\"vLLM/Ollama call failed: {e}\")\n\n    def _call_intrinsics_api(self) -> dict:\n        request_body = self._build_request()\n\n        self.log(json.dumps(request_body, indent=2), name=\"Intrinsics API request\")\n        api_url = self._get_api_url()\n        headers = {\"Content-Type\": \"application/json\"}\n        self._last_request = request_body\n        try:\n            with httpx.Client() as client:\n                response = client.post(\n                    api_url, json=request_body, headers=headers, timeout=300.0,\n                )\n                response.raise_for_status()\n        except httpx.HTTPStatusError as e:\n            error_detail = e.response.text\n            try:\n                error_detail = e.response.json()\n            except:\n                pass\n            raise ValueError(f\"API error {e.response.status_code}: {error_detail}\")\n        except httpx.ConnectError:\n            raise ValueError(f\"Could not connect to API at {api_url}\")\n        except httpx.RequestError as e:\n            raise ValueError(f\"Request failed: {e}\")\n        except Exception as e:\n            raise ValueError(f\"Unexpected error: {e}\")\n        try:\n            response_data = response.json()\n        except Exception as e:\n            raise ValueError(f\"Failed to parse API response as JSON: {e}\")\n        self.log(json.dumps(response_data, indent=2), name=\"Intrinsics API response\")\n        return response_data\n\n    def _extract_content_from_response(self, response_data: dict) -> str:\n        \"\"\"Extract text content from API response (full response already printed in _call_* methods)\"\"\"\n        if \"choices\" in response_data and response_data[\"choices\"]:\n            choice = response_data[\"choices\"][0]\n            if \"message\" in choice:\n                message = choice[\"message\"]\n                if isinstance(message, dict):\n                    return message.get(\"content\", \"\")\n                return str(message)\n        return \"\"\n\n    async def update_build_config(self, build_config, field_value=None, field_name=None):\n        if field_name == \"model_backend\":\n            if field_value and field_value in self.BACKEND_CONFIG:\n                backend_config = self.BACKEND_CONFIG[field_value]\n                build_config[\"model_name\"][\"options\"] = backend_config[\"models\"]\n                build_config[\"model_name\"][\"value\"] = backend_config[\"default_model\"]\n                build_config[\"url\"][\"value\"] = backend_config[\"default_url\"]\n                build_config[\"url\"][\"show\"] = backend_config.get(\"url_editable\", True)\n                if field_value == \"LocalHF\":\n                    build_config[\"url\"][\"show\"] = False\n                    build_config[\"api_key\"][\"show\"] = False\n                    build_config[\"api_key\"][\"required\"] = False\n                else:\n                    build_config[\"api_key\"][\"display_name\"] = \"API Key\"\n                    build_config[\"api_key\"][\"show\"] = True\n        return build_config\n\n    def get_response(self) -> Message:\n        response_data = self._call_api()\n        content = self._extract_content_from_response(response_data)\n        return Message(text=content)\n\n    def get_full_response(self) -> str:\n        response_data = self._call_api()\n        return json.dumps(response_data, indent=2)\n"
               },
               "documents": {
                 "_input_type": "HandleInput",
@@ -1638,7 +1640,6 @@
                 "info": "Backend service for Granite model",
                 "name": "model_backend",
                 "options": [
-                  "IntrinsicsAPI (mellea + RITS)",
                   "vLLM",
                   "Ollama",
                   "LocalHF"
@@ -1684,7 +1685,7 @@
                 "trace_as_metadata": true,
                 "track_in_telemetry": true,
                 "type": "str",
-                "value": "granite4:small-h"
+                "value": "granite4:micro"
               },
               "temperature": {
                 "_input_type": "SliderInput",
@@ -1735,7 +1736,7 @@
                 "trace_as_metadata": true,
                 "track_in_telemetry": false,
                 "type": "str",
-                "value": "http://localhost:11434"
+                "value": "http://host.docker.internal:11434"
               }
             },
             "tool_mode": false
@@ -1745,9 +1746,9 @@
           "type": "GraniteBaseModel"
         },
         "dragging": false,
-        "id": "GraniteBaseModel-OH7VT",
+        "id": "GraniteBaseModel-dt96H",
         "measured": {
-          "height": 619,
+          "height": 623,
           "width": 320
         },
         "position": {
@@ -1759,7 +1760,7 @@
       },
       {
         "data": {
-          "id": "LocalEmbeddingsComponent-zP866",
+          "id": "LocalEmbeddingsComponent-VWJ9z",
           "node": {
             "base_classes": [
               "Embeddings"
@@ -1777,6 +1778,7 @@
             "frozen": false,
             "icon": "binary",
             "legacy": false,
+            "lf_version": "1.7.3",
             "metadata": {
               "code_hash": "da6275c40857",
               "dependencies": {
@@ -1861,9 +1863,9 @@
           "type": "LocalEmbeddingsComponent"
         },
         "dragging": false,
-        "id": "LocalEmbeddingsComponent-zP866",
+        "id": "LocalEmbeddingsComponent-VWJ9z",
         "measured": {
-          "height": 219,
+          "height": 220,
           "width": 320
         },
         "position": {
@@ -1875,7 +1877,7 @@
       },
       {
         "data": {
-          "id": "ChromaDBSearch-MjvPY",
+          "id": "ChromaDBSearch-pHuZm",
           "node": {
             "base_classes": [
               "Data"
@@ -1898,8 +1900,9 @@
             ],
             "frozen": false,
             "icon": "Chroma",
-            "last_updated": "2026-03-20T20:21:41.469Z",
+            "last_updated": "2026-03-21T05:22:49.754Z",
             "legacy": false,
+            "lf_version": "1.7.3",
             "metadata": {
               "code_hash": "d45cb7ba7c00",
               "dependencies": {
@@ -1945,10 +1948,10 @@
             "pinned": false,
             "template": {
               "_frontend_node_flow_id": {
-                "value": "b04385f2-9bb7-4d88-a950-97260ca7d111"
+                "value": "fd020ad1-aa2a-464d-b3dc-d7ea8d49ad3a"
               },
               "_frontend_node_folder_id": {
-                "value": "5800d4be-9a7d-4fac-b30c-f46fd327ed8b"
+                "value": "4b0b4ae8-eeef-4d87-96e8-8abb8a0b232e"
               },
               "_type": "Component",
               "code": {
@@ -2042,7 +2045,7 @@
                 "trace_as_metadata": true,
                 "track_in_telemetry": false,
                 "type": "str",
-                "value": "localhost"
+                "value": "chromadb"
               },
               "is_refresh": false,
               "number_of_results": {
@@ -2084,7 +2087,7 @@
                 "trace_as_metadata": true,
                 "track_in_telemetry": true,
                 "type": "int",
-                "value": 8100
+                "value": 8000
               },
               "search_query": {
                 "_input_type": "MessageInput",
@@ -2145,9 +2148,9 @@
           "type": "ChromaDBSearch"
         },
         "dragging": false,
-        "id": "ChromaDBSearch-MjvPY",
+        "id": "ChromaDBSearch-pHuZm",
         "measured": {
-          "height": 591,
+          "height": 594,
           "width": 320
         },
         "position": {
@@ -2159,14 +2162,14 @@
       }
     ],
     "viewport": {
-      "x": 220.53326478622705,
-      "y": 71.57873459879846,
-      "zoom": 0.6843819112676536
+      "x": 244.6222794465658,
+      "y": 115.70813895018478,
+      "zoom": 0.637761890064135
     }
   },
   "description": "Generate citations by prompting out-of-the-box model",
   "endpoint_name": null,
-  "id": "b04385f2-9bb7-4d88-a950-97260ca7d111",
+  "id": "fd020ad1-aa2a-464d-b3dc-d7ea8d49ad3a",
   "is_component": false,
   "last_tested_version": "1.7.3",
   "name": "Citation Generation (Prompted)",
