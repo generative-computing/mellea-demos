@@ -172,6 +172,7 @@
         "targetHandle": "{œfieldNameœ:œsearch_queryœ,œidœ:œChromaDBSearch-cE6k1œ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
       },
       {
+        "animated": false,
         "className": "",
         "data": {
           "sourceHandle": {
@@ -192,10 +193,39 @@
           }
         },
         "id": "xy-edge__ChromaDBSearch-cE6k1{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-cE6k1œ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}-PromptedBaseModel-8vEQu{œfieldNameœ:œcontextœ,œidœ:œPromptedBaseModel-8vEQuœ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}",
+        "selected": false,
         "source": "ChromaDBSearch-cE6k1",
         "sourceHandle": "{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-cE6k1œ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}",
         "target": "PromptedBaseModel-8vEQu",
         "targetHandle": "{œfieldNameœ:œcontextœ,œidœ:œPromptedBaseModel-8vEQuœ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "LocalEmbeddingsComponent",
+            "id": "LocalEmbeddingsComponent-c0z2y",
+            "name": "embeddings",
+            "output_types": [
+              "Embeddings"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "embedding",
+            "id": "ChromaDBSearch-cE6k1",
+            "inputTypes": [
+              "Embeddings"
+            ],
+            "type": "other"
+          }
+        },
+        "id": "xy-edge__LocalEmbeddingsComponent-c0z2y{œdataTypeœ:œLocalEmbeddingsComponentœ,œidœ:œLocalEmbeddingsComponent-c0z2yœ,œnameœ:œembeddingsœ,œoutput_typesœ:[œEmbeddingsœ]}-ChromaDBSearch-cE6k1{œfieldNameœ:œembeddingœ,œidœ:œChromaDBSearch-cE6k1œ,œinputTypesœ:[œEmbeddingsœ],œtypeœ:œotherœ}",
+        "selected": false,
+        "source": "LocalEmbeddingsComponent-c0z2y",
+        "sourceHandle": "{œdataTypeœ:œLocalEmbeddingsComponentœ,œidœ:œLocalEmbeddingsComponent-c0z2yœ,œnameœ:œembeddingsœ,œoutput_typesœ:[œEmbeddingsœ]}",
+        "target": "ChromaDBSearch-cE6k1",
+        "targetHandle": "{œfieldNameœ:œembeddingœ,œidœ:œChromaDBSearch-cE6k1œ,œinputTypesœ:[œEmbeddingsœ],œtypeœ:œotherœ}"
       }
     ],
     "nodes": [
@@ -1222,16 +1252,16 @@
             ],
             "frozen": false,
             "icon": "message-square",
-            "last_updated": "2026-03-18T18:34:59.564Z",
+            "last_updated": "2026-03-21T00:02:24.369Z",
             "legacy": false,
             "lf_version": "1.7.3",
             "metadata": {
-              "code_hash": "6aa6cdd21a5c",
+              "code_hash": "7d6c9f3d9f2f",
               "dependencies": {
                 "dependencies": [
                   {
                     "name": "langflow",
-                    "version": "1.7.3"
+                    "version": "0.7.3"
                   },
                   {
                     "name": "httpx",
@@ -1308,10 +1338,10 @@
             "pinned": false,
             "template": {
               "_frontend_node_flow_id": {
-                "value": "b63b063b-e1c5-4cb1-96a9-68ee688241a7"
+                "value": "9bf4dfa5-0d5a-47d7-98aa-cc6580791cf4"
               },
               "_frontend_node_folder_id": {
-                "value": "ea8f5ef0-8ca7-4d0f-b4d3-d01e62dab071"
+                "value": "d571093b-9dc5-4939-8d63-cf2ac67d39a0"
               },
               "_type": "Component",
               "api_key": {
@@ -1374,7 +1404,7 @@
                 "show": true,
                 "title_case": false,
                 "type": "code",
-                "value": "\"\"\"\nQuery Rewrite Component for Langflow\n\nRewrite a query for improved retrieval performance.\n\"\"\"\n\nfrom langflow.custom import Component\nfrom langflow.io import (\n    SecretStrInput,\n    StrInput,\n    Output,\n    DropdownInput,\n    MessageInput,\n    DataFrameInput,\n    SliderInput,\n)\nfrom langflow.schema import Message\nfrom langflow.field_typing.range_spec import RangeSpec\nimport httpx\nimport json\n\nfrom openai import OpenAI\n\n# Global backend cache - stores initialized Mellea backends per model\n_mellea_backend_cache = {}\n\n# Model name mapping - maps user-facing names to actual model IDs\n_MODEL_NAME_MAPPING = {\n    \"granite-4.0-micro\": \"ibm-granite/granite-4.0-micro\",\n    \"ibm-granite/granite-4.0-micro\": \"ibm-granite/granite-4.0-micro\",\n    \"granite4:micro\": \"ibm-granite/granite-4.0-micro\",\n}\n\n_DEFAULT_MODEL = \"ibm-granite/granite-4.0-micro\"\n\n\nclass QueryRewrite(Component):\n    display_name = \"Query Rewrite\"\n    description = \"Rewrite a query for improved retrieval performance\"\n    category = \"tools\"\n    icon = \"message-square\"\n\n    intrinsic_name = \"query_rewrite\"\n\n    BACKEND_CONFIG = {\n        \"LocalHF\": {\n            \"models\": [\"ibm-granite/granite-4.0-micro\"],\n            \"default_model\": \"ibm-granite/granite-4.0-micro\",\n            \"default_url\": \"local\",\n            \"url_editable\": False,\n        },\n        \"vLLM\": {\n            \"models\": [\"granite-4.0-micro\"],\n            \"default_model\": \"granite-4.0-micro\",\n            \"default_url\": \"http://localhost:8000\",\n            \"url_editable\": True,\n        },\n        \"Ollama\": {\n            \"models\": [\"granite4:micro\"],\n            \"default_model\": \"granite4:micro\",\n            \"default_url\": \"http://localhost:11434\",\n            \"url_editable\": True,\n        },\n        \"IntrinsicsAPI (mellea + RITS)\": {\n            \"models\": [\"granite-4.0-micro\", \"gpt-oss-20b\"],\n            \"default_model\": \"granite-4.0-micro\",\n            \"default_url\": \"https://intrinsics-api.intrinsics.vpc-int.res.ibm.com\",\n            \"url_editable\": False,\n        },\n    }\n\n    CHAT_COMPLETIONS_ENDPOINT = \"/v1/chat/completions\"\n\n    inputs = [\n        DropdownInput(\n            name=\"model_backend\",\n            display_name=\"Model Backend\",\n            info=\"Backend service for Granite model\",\n            options=[\"IntrinsicsAPI (mellea + RITS)\", \"vLLM\", \"Ollama\", \"LocalHF\"],\n            value=\"IntrinsicsAPI (mellea + RITS)\",\n            real_time_refresh=True,\n        ),\n        DropdownInput(\n            name=\"model_name\",\n            display_name=\"Model Name\",\n            info=\"Model name (options change based on backend)\",\n            options=[\"granite-4.0-micro\", \"gpt-oss-20b\"],\n            value=\"granite-4.0-micro\",\n        ),\n        StrInput(\n            name=\"url\",\n            display_name=\"API URL\",\n            info=\"Base URL for the model backend (e.g., http://localhost:8000)\",\n            value=\"https://intrinsics-api.intrinsics.vpc-int.res.ibm.com\",\n            required=True,\n            show=False,\n        ),\n        SecretStrInput(\n            name=\"api_key\",\n            display_name=\"RITS API Key\",\n            info=\"API key for authentication\",\n            required=False,\n            load_from_db=False,\n        ),\n        SliderInput(\n            name=\"temperature\",\n            display_name=\"Temperature\",\n            info=\"Controls randomness in responses\",\n            value=0.0,\n            range_spec=RangeSpec(min=0, max=2, step=0.01),\n            advanced=True,\n        ),\n        MessageInput(\n            name=\"chat_input\",\n            display_name=\"Chat Input\",\n            info=\"User message to process\",\n            required=True,\n        ),\n        DataFrameInput(\n            name=\"message_history\",\n            display_name=\"Message History\",\n            info=\"Previous conversation messages as a DataFrame with 'role' (user/assistant) and 'content' columns\",\n            required=False,\n        ),\n    ]\n\n    outputs = [\n        Output(\n            name=\"rewritten_query\",\n            display_name=\"Rewritten Query\",\n            method=\"get_rewritten_query\",\n        ),\n        Output(\n            name=\"response\",\n            display_name=\"Response\",\n            method=\"get_response\",\n        ),\n        Output(\n            name=\"full_response\",\n            display_name=\"Full Response\",\n            method=\"get_full_response\",\n        ),\n    ]\n\n    def _extract_message_text(self, message: Message) -> str:\n        if hasattr(message, 'text'):\n            return message.text\n        if hasattr(message, 'content'):\n            return message.content\n        return str(message)\n\n    def _build_chat_messages(self) -> list:\n        messages = []\n        if hasattr(self, 'message_history') and self.message_history is not None:\n            df = self.message_history\n            for _, row in df.iterrows():\n                sender = row.get(\"sender\", \"\")\n                role = \"user\" if sender == \"User\" else \"assistant\"\n                content = row.get(\"text\", \"\")\n                if content and str(content).strip():\n                    messages.append({\"role\": role, \"content\": str(content)})\n        user_message = self._extract_message_text(self.chat_input)\n        if user_message and user_message.strip():\n            messages.append({\"role\": \"user\", \"content\": user_message})\n        return messages\n\n    def _build_request(self) -> dict:\n        messages = self._build_chat_messages()\n        if not messages:\n            raise ValueError(\"No messages to send\")\n        request_body = {\n            \"messages\": messages,\n            \"model\": self.intrinsic_name,\n        }\n        # Add temperature if provided\n        if hasattr(self, 'temperature') and self.temperature is not None:\n            request_body[\"temperature\"] = self.temperature\n        return request_body\n\n    def _get_api_url(self) -> str:\n        if self.model_backend == \"IntrinsicsAPI (mellea + RITS)\":\n            return f\"{self.url.rstrip('/')}/{self.model_name}/{self.intrinsic_name}\"\n        else:\n            base_url = self.url.rstrip('/')\n            return f\"{base_url}{self.CHAT_COMPLETIONS_ENDPOINT}\"\n\n    def _call_api(self) -> dict:\n        if self.model_backend == \"LocalHF\":\n            return self._call_with_mellea()\n        if not self.url or not self.url.strip():\n            raise ValueError(\"API URL is required\")\n        if self.model_backend in [\"vLLM\", \"Ollama\"]:\n            return self._call_with_granite_rewriter()\n        else:\n            return self._call_intrinsics_api()\n\n    def _call_with_mellea(self) -> dict:\n        \"\"\"Call the Mellea backend using mellea directly.\"\"\"\n        # Lazy import mellea modules to avoid heavy imports during\n        # Langflow's component loading/introspection.\n        from mellea.backends.huggingface import LocalHFBackend\n        from mellea.stdlib.context import ChatContext\n        from mellea.stdlib.components.chat import Message as MelleaMessage\n        from mellea.stdlib.components.intrinsic import rag as mellea_rag\n\n        query = self._extract_message_text(self.chat_input)\n        if not query or not query.strip():\n            raise ValueError(\"Query is required\")\n\n        # Build context from message history\n        context_messages = []\n        if hasattr(self, 'message_history') and self.message_history is not None:\n            df = self.message_history\n            for _, row in df.iterrows():\n                sender = row.get(\"sender\", \"\")\n                role = \"user\" if sender == \"User\" else \"assistant\"\n                content = row.get(\"text\", \"\")\n                if content and str(content).strip():\n                    context_messages.append({\"role\": role, \"content\": str(content)})\n\n        actual_model_id = _MODEL_NAME_MAPPING.get(self.model_name, self.model_name or _DEFAULT_MODEL)\n        self.log(json.dumps({\n            \"model\": actual_model_id,\n            \"query\": query,\n            \"context_messages\": context_messages,\n        }, indent=2), name=\"Mellea request body\")\n\n        # Get or initialize the Mellea backend\n        if actual_model_id in _mellea_backend_cache:\n            backend = _mellea_backend_cache[actual_model_id]\n        else:\n            backend = LocalHFBackend(model_id=actual_model_id)\n            _mellea_backend_cache[actual_model_id] = backend\n\n        context = ChatContext()\n        for msg in context_messages:\n            context = context.add(MelleaMessage(msg[\"role\"], msg[\"content\"]))\n\n        rewritten_query = mellea_rag.rewrite_question(query, context, backend)\n\n        return {\n            \"choices\": [\n                {\n                    \"message\": {\n                        \"role\": \"assistant\",\n                        \"content\": rewritten_query\n                    }\n                }\n            ],\n            \"model\": self.model_name,\n            \"backend\": \"LocalHF\"\n        }\n\n    def _call_with_granite_rewriter(self) -> dict:\n        try:\n            from mellea.formatters import granite as granite_common\n            request_body = self._build_request()\n            self.log(json.dumps(request_body, indent=2), name=\"mellea rewriter request body\")\n            intrinsics_repo_name = \"ibm-granite/granite-lib-rag-r1.0\"\n            use_alora = False\n            io_yaml_file = granite_common.intrinsics.obtain_io_yaml(\n                self.intrinsic_name, self.model_name, intrinsics_repo_name, alora=use_alora\n            )\n            rewriter = granite_common.IntrinsicsRewriter(config_file=io_yaml_file)\n            result_processor = granite_common.IntrinsicsResultProcessor(config_file=io_yaml_file)\n            rewritten_request = rewriter.transform(request_body)\n            api_url = self._get_api_url()\n            client = OpenAI(\n                base_url=api_url.replace(\"/chat/completions\", \"\"),\n                api_key=self.api_key or \"no-key\",\n            )\n            completion = client.chat.completions.create(**rewritten_request.model_dump())\n            processed = result_processor.transform(completion, rewritten_request)\n            return json.loads(processed.model_dump_json())\n        except Exception as e:\n            raise ValueError(f\"vLLM/Ollama call with mellea failed: {e}\")\n\n    def _call_intrinsics_api(self) -> dict:\n        request_body = self._build_request()\n        self.log(json.dumps(request_body, indent=2), name=\"Intrinsics API request body\")\n        api_url = self._get_api_url()\n        headers = {\"Content-Type\": \"application/json\"}\n        if self.model_backend == \"IntrinsicsAPI (mellea + RITS)\":\n            if self.api_key and self.api_key.strip():\n                headers[\"RITS_API_KEY\"] = self.api_key\n        try:\n            with httpx.Client() as client:\n                response = client.post(\n                    api_url, json=request_body, headers=headers, timeout=30.0,\n                )\n                response.raise_for_status()\n        except httpx.HTTPStatusError as e:\n            error_detail = e.response.text\n            try:\n                error_detail = e.response.json()\n            except:\n                pass\n            raise ValueError(f\"API error {e.response.status_code}: {error_detail}\")\n        except httpx.ConnectError:\n            raise ValueError(f\"Could not connect to API at {api_url}\")\n        except httpx.RequestError as e:\n            raise ValueError(f\"Request failed: {e}\")\n        except Exception as e:\n            raise ValueError(f\"Unexpected error: {e}\")\n        try:\n            response_data = response.json()\n        except Exception as e:\n            raise ValueError(f\"Failed to parse API response as JSON: {e}\")\n        return response_data\n\n    def _extract_content_from_response(self, response_data: dict) -> str:\n        if \"choices\" in response_data and response_data[\"choices\"]:\n            choice = response_data[\"choices\"][0]\n            if \"message\" in choice:\n                message = choice[\"message\"]\n                if isinstance(message, dict):\n                    return message.get(\"content\", \"\")\n                return str(message)\n        return \"\"\n\n    async def update_build_config(self, build_config, field_value=None, field_name=None):\n        if field_name == \"model_backend\":\n            if field_value and field_value in self.BACKEND_CONFIG:\n                backend_config = self.BACKEND_CONFIG[field_value]\n                build_config[\"model_name\"][\"options\"] = backend_config[\"models\"]\n                build_config[\"model_name\"][\"value\"] = backend_config[\"default_model\"]\n                build_config[\"url\"][\"value\"] = backend_config[\"default_url\"]\n                build_config[\"url\"][\"show\"] = backend_config.get(\"url_editable\", True)\n                if field_value == \"IntrinsicsAPI (mellea + RITS)\":\n                    build_config[\"api_key\"][\"display_name\"] = \"RITS API Key\"\n                    build_config[\"api_key\"][\"show\"] = True\n                elif field_value == \"LocalHF\":\n                    build_config[\"url\"][\"show\"] = False\n                    build_config[\"api_key\"][\"show\"] = False\n                    build_config[\"api_key\"][\"required\"] = False\n                else:\n                    build_config[\"api_key\"][\"display_name\"] = \"API Key\"\n                    build_config[\"api_key\"][\"show\"] = True\n        return build_config\n\n    def get_rewritten_query(self) -> Message:\n        response_data = self._call_api()\n        content = self._extract_content_from_response(response_data)\n        try:\n            parsed = json.loads(content)\n            rewritten = parsed.get(\"rewritten_question\", content)\n        except (json.JSONDecodeError, TypeError):\n            rewritten = content\n        return Message(text=rewritten)\n\n    def get_response(self) -> Message:\n        response_data = self._call_api()\n        content = self._extract_content_from_response(response_data)\n        return Message(text=content)\n\n    def get_full_response(self) -> str:\n        response_data = self._call_api()\n        return json.dumps(response_data, indent=2)\n"
+                "value": "\"\"\"\nQuery Rewrite Component for Langflow\n\nRewrite a query for improved retrieval performance.\n\"\"\"\n\nfrom langflow.custom import Component\nfrom langflow.io import (\n    SecretStrInput,\n    StrInput,\n    Output,\n    DropdownInput,\n    MessageInput,\n    DataFrameInput,\n    SliderInput,\n)\nfrom langflow.schema import Message\nfrom langflow.field_typing.range_spec import RangeSpec\nimport httpx\nimport json\n\nfrom openai import OpenAI\n\n# Global backend cache - stores initialized Mellea backends per model\n_mellea_backend_cache = {}\n\n# Model name mapping - maps user-facing names to actual model IDs\n_MODEL_NAME_MAPPING = {\n    \"granite-4.0-micro\": \"ibm-granite/granite-4.0-micro\",\n    \"ibm-granite/granite-4.0-micro\": \"ibm-granite/granite-4.0-micro\",\n    \"granite4:micro\": \"ibm-granite/granite-4.0-micro\",\n}\n\n_DEFAULT_MODEL = \"ibm-granite/granite-4.0-micro\"\n\n\nclass QueryRewrite(Component):\n    display_name = \"Query Rewrite\"\n    description = \"Rewrite a query for improved retrieval performance\"\n    category = \"tools\"\n    icon = \"message-square\"\n\n    intrinsic_name = \"query_rewrite\"\n\n    BACKEND_CONFIG = {\n        \"LocalHF\": {\n            \"models\": [\"ibm-granite/granite-4.0-micro\"],\n            \"default_model\": \"ibm-granite/granite-4.0-micro\",\n            \"default_url\": \"local\",\n            \"url_editable\": False,\n        },\n        \"vLLM\": {\n            \"models\": [\"granite-4.0-micro\"],\n            \"default_model\": \"granite-4.0-micro\",\n            \"default_url\": \"http://localhost:8000\",\n            \"url_editable\": True,\n        },\n        \"Ollama\": {\n            \"models\": [\"granite4:micro\"],\n            \"default_model\": \"granite4:micro\",\n            \"default_url\": \"http://host.docker.internal:11434\",\n            \"url_editable\": True,\n        },\n    }\n\n    CHAT_COMPLETIONS_ENDPOINT = \"/v1/chat/completions\"\n\n    inputs = [\n        DropdownInput(\n            name=\"model_backend\",\n            display_name=\"Model Backend\",\n            info=\"Backend service for Granite model\",\n            options=[\"vLLM\", \"Ollama\", \"LocalHF\"],\n            value=\"Ollama\",\n            real_time_refresh=True,\n        ),\n        DropdownInput(\n            name=\"model_name\",\n            display_name=\"Model Name\",\n            info=\"Model name (options change based on backend)\",\n            options=[\"granite-4.0-micro\", \"gpt-oss-20b\"],\n            value=\"granite-4.0-micro\",\n        ),\n        StrInput(\n            name=\"url\",\n            display_name=\"API URL\",\n            info=\"Base URL for the model backend (e.g., http://localhost:8000)\",\n            value=\"http://host.docker.internal:11434\",\n            required=True,\n            show=True,\n        ),\n        SecretStrInput(\n            name=\"api_key\",\n            display_name=\"API Key\",\n            info=\"API key for authentication\",\n            required=False,\n            load_from_db=False,\n        ),\n        SliderInput(\n            name=\"temperature\",\n            display_name=\"Temperature\",\n            info=\"Controls randomness in responses\",\n            value=0.0,\n            range_spec=RangeSpec(min=0, max=2, step=0.01),\n            advanced=True,\n        ),\n        MessageInput(\n            name=\"chat_input\",\n            display_name=\"Chat Input\",\n            info=\"User message to process\",\n            required=True,\n        ),\n        DataFrameInput(\n            name=\"message_history\",\n            display_name=\"Message History\",\n            info=\"Previous conversation messages as a DataFrame with 'role' (user/assistant) and 'content' columns\",\n            required=False,\n        ),\n    ]\n\n    outputs = [\n        Output(\n            name=\"rewritten_query\",\n            display_name=\"Rewritten Query\",\n            method=\"get_rewritten_query\",\n        ),\n        Output(\n            name=\"response\",\n            display_name=\"Response\",\n            method=\"get_response\",\n        ),\n        Output(\n            name=\"full_response\",\n            display_name=\"Full Response\",\n            method=\"get_full_response\",\n        ),\n    ]\n\n    def _extract_message_text(self, message: Message) -> str:\n        if hasattr(message, 'text'):\n            return message.text\n        if hasattr(message, 'content'):\n            return message.content\n        return str(message)\n\n    def _build_chat_messages(self) -> list:\n        messages = []\n        if hasattr(self, 'message_history') and self.message_history is not None:\n            df = self.message_history\n            for _, row in df.iterrows():\n                sender = row.get(\"sender\", \"\")\n                role = \"user\" if sender == \"User\" else \"assistant\"\n                content = row.get(\"text\", \"\")\n                if content and str(content).strip():\n                    messages.append({\"role\": role, \"content\": str(content)})\n        user_message = self._extract_message_text(self.chat_input)\n        if user_message and user_message.strip():\n            messages.append({\"role\": \"user\", \"content\": user_message})\n        return messages\n\n    def _build_request(self) -> dict:\n        messages = self._build_chat_messages()\n        if not messages:\n            raise ValueError(\"No messages to send\")\n        request_body = {\n            \"messages\": messages,\n            \"model\": self.intrinsic_name,\n        }\n        # Add temperature if provided\n        if hasattr(self, 'temperature') and self.temperature is not None:\n            request_body[\"temperature\"] = self.temperature\n        return request_body\n\n    def _get_api_url(self) -> str:\n        base_url = self.url.rstrip('/')\n        return f\"{base_url}{self.CHAT_COMPLETIONS_ENDPOINT}\"\n\n    def _call_api(self) -> dict:\n        if self.model_backend == \"LocalHF\":\n            return self._call_with_mellea()\n        if not self.url or not self.url.strip():\n            raise ValueError(\"API URL is required\")\n        return self._call_with_granite_rewriter()\n\n    def _call_with_mellea(self) -> dict:\n        \"\"\"Call the Mellea backend using mellea directly.\"\"\"\n        # Lazy import mellea modules to avoid heavy imports during\n        # Langflow's component loading/introspection.\n        from mellea.backends.huggingface import LocalHFBackend\n        from mellea.stdlib.context import ChatContext\n        from mellea.stdlib.components.chat import Message as MelleaMessage\n        from mellea.stdlib.components.intrinsic import rag as mellea_rag\n\n        query = self._extract_message_text(self.chat_input)\n        if not query or not query.strip():\n            raise ValueError(\"Query is required\")\n\n        # Build context from message history\n        context_messages = []\n        if hasattr(self, 'message_history') and self.message_history is not None:\n            df = self.message_history\n            for _, row in df.iterrows():\n                sender = row.get(\"sender\", \"\")\n                role = \"user\" if sender == \"User\" else \"assistant\"\n                content = row.get(\"text\", \"\")\n                if content and str(content).strip():\n                    context_messages.append({\"role\": role, \"content\": str(content)})\n\n        actual_model_id = _MODEL_NAME_MAPPING.get(self.model_name, self.model_name or _DEFAULT_MODEL)\n        self.log(json.dumps({\n            \"model\": actual_model_id,\n            \"query\": query,\n            \"context_messages\": context_messages,\n        }, indent=2), name=\"Mellea request body\")\n\n        # Get or initialize the Mellea backend\n        if actual_model_id in _mellea_backend_cache:\n            backend = _mellea_backend_cache[actual_model_id]\n        else:\n            backend = LocalHFBackend(model_id=actual_model_id)\n            _mellea_backend_cache[actual_model_id] = backend\n\n        context = ChatContext()\n        for msg in context_messages:\n            context = context.add(MelleaMessage(msg[\"role\"], msg[\"content\"]))\n\n        rewritten_query = mellea_rag.rewrite_question(query, context, backend)\n\n        return {\n            \"choices\": [\n                {\n                    \"message\": {\n                        \"role\": \"assistant\",\n                        \"content\": rewritten_query\n                    }\n                }\n            ],\n            \"model\": self.model_name,\n            \"backend\": \"LocalHF\"\n        }\n\n    def _call_with_granite_rewriter(self) -> dict:\n        try:\n            from mellea.formatters import granite as granite_common\n            request_body = self._build_request()\n            self.log(json.dumps(request_body, indent=2), name=\"mellea rewriter request body\")\n            intrinsics_repo_name = \"ibm-granite/granite-lib-rag-r1.0\"\n            use_alora = False\n            io_yaml_file = granite_common.intrinsics.obtain_io_yaml(\n                self.intrinsic_name, self.model_name, intrinsics_repo_name, alora=use_alora\n            )\n            rewriter = granite_common.IntrinsicsRewriter(config_file=io_yaml_file)\n            result_processor = granite_common.IntrinsicsResultProcessor(config_file=io_yaml_file)\n            rewritten_request = rewriter.transform(request_body)\n            api_url = self._get_api_url()\n            client = OpenAI(\n                base_url=api_url.replace(\"/chat/completions\", \"\"),\n                api_key=self.api_key or \"no-key\",\n            )\n            completion = client.chat.completions.create(**rewritten_request.model_dump())\n            processed = result_processor.transform(completion, rewritten_request)\n            return json.loads(processed.model_dump_json())\n        except Exception as e:\n            raise ValueError(f\"vLLM/Ollama call with mellea failed: {e}\")\n\n    def _call_intrinsics_api(self) -> dict:\n        request_body = self._build_request()\n        self.log(json.dumps(request_body, indent=2), name=\"Intrinsics API request body\")\n        api_url = self._get_api_url()\n        headers = {\"Content-Type\": \"application/json\"}\n        try:\n            with httpx.Client() as client:\n                response = client.post(\n                    api_url, json=request_body, headers=headers, timeout=30.0,\n                )\n                response.raise_for_status()\n        except httpx.HTTPStatusError as e:\n            error_detail = e.response.text\n            try:\n                error_detail = e.response.json()\n            except:\n                pass\n            raise ValueError(f\"API error {e.response.status_code}: {error_detail}\")\n        except httpx.ConnectError:\n            raise ValueError(f\"Could not connect to API at {api_url}\")\n        except httpx.RequestError as e:\n            raise ValueError(f\"Request failed: {e}\")\n        except Exception as e:\n            raise ValueError(f\"Unexpected error: {e}\")\n        try:\n            response_data = response.json()\n        except Exception as e:\n            raise ValueError(f\"Failed to parse API response as JSON: {e}\")\n        return response_data\n\n    def _extract_content_from_response(self, response_data: dict) -> str:\n        if \"choices\" in response_data and response_data[\"choices\"]:\n            choice = response_data[\"choices\"][0]\n            if \"message\" in choice:\n                message = choice[\"message\"]\n                if isinstance(message, dict):\n                    return message.get(\"content\", \"\")\n                return str(message)\n        return \"\"\n\n    async def update_build_config(self, build_config, field_value=None, field_name=None):\n        if field_name == \"model_backend\":\n            if field_value and field_value in self.BACKEND_CONFIG:\n                backend_config = self.BACKEND_CONFIG[field_value]\n                build_config[\"model_name\"][\"options\"] = backend_config[\"models\"]\n                build_config[\"model_name\"][\"value\"] = backend_config[\"default_model\"]\n                build_config[\"url\"][\"value\"] = backend_config[\"default_url\"]\n                build_config[\"url\"][\"show\"] = backend_config.get(\"url_editable\", True)\n                if field_value == \"LocalHF\":\n                    build_config[\"url\"][\"show\"] = False\n                    build_config[\"api_key\"][\"show\"] = False\n                    build_config[\"api_key\"][\"required\"] = False\n                else:\n                    build_config[\"api_key\"][\"display_name\"] = \"API Key\"\n                    build_config[\"api_key\"][\"show\"] = True\n        return build_config\n\n    def get_rewritten_query(self) -> Message:\n        response_data = self._call_api()\n        content = self._extract_content_from_response(response_data)\n        try:\n            parsed = json.loads(content)\n            rewritten = parsed.get(\"rewritten_question\", content)\n        except (json.JSONDecodeError, TypeError):\n            rewritten = content\n        return Message(text=rewritten)\n\n    def get_response(self) -> Message:\n        response_data = self._call_api()\n        content = self._extract_content_from_response(response_data)\n        return Message(text=content)\n\n    def get_full_response(self) -> str:\n        response_data = self._call_api()\n        return json.dumps(response_data, indent=2)\n"
               },
               "is_refresh": false,
               "message_history": {
@@ -1412,7 +1442,6 @@
                 "info": "Backend service for Granite model",
                 "name": "model_backend",
                 "options": [
-                  "IntrinsicsAPI (mellea + RITS)",
                   "vLLM",
                   "Ollama",
                   "LocalHF"
@@ -1440,6 +1469,7 @@
                 "dynamic": false,
                 "external_options": {},
                 "info": "Model name (options change based on backend)",
+                "load_from_db": false,
                 "name": "model_name",
                 "options": [
                   "granite4:micro"
@@ -1556,7 +1586,7 @@
             ],
             "frozen": false,
             "icon": "message-circle",
-            "last_updated": "2026-03-18T19:33:08.627Z",
+            "last_updated": "2026-03-21T00:03:22.910Z",
             "legacy": false,
             "lf_version": "1.7.3",
             "metadata": {
@@ -1609,10 +1639,10 @@
             "pinned": false,
             "template": {
               "_frontend_node_flow_id": {
-                "value": "b63b063b-e1c5-4cb1-96a9-68ee688241a7"
+                "value": "9bf4dfa5-0d5a-47d7-98aa-cc6580791cf4"
               },
               "_frontend_node_folder_id": {
-                "value": "ea8f5ef0-8ca7-4d0f-b4d3-d01e62dab071"
+                "value": "d571093b-9dc5-4939-8d63-cf2ac67d39a0"
               },
               "_type": "Component",
               "api_key": {
@@ -1881,7 +1911,7 @@
                 "trace_as_metadata": true,
                 "track_in_telemetry": false,
                 "type": "str",
-                "value": "http://host.docker.internal:11434"
+                "value": "http://localhost:11434"
               }
             },
             "tool_mode": false
@@ -1899,7 +1929,7 @@
           "x": 1281.0806214856275,
           "y": -72.42301843051787
         },
-        "selected": false,
+        "selected": true,
         "type": "genericNode"
       },
       {
@@ -1927,8 +1957,9 @@
             ],
             "frozen": false,
             "icon": "Chroma",
-            "last_updated": "2026-03-20T20:38:50.194Z",
+            "last_updated": "2026-03-21T00:02:37.897Z",
             "legacy": false,
+            "lf_version": "1.7.3",
             "metadata": {
               "code_hash": "d45cb7ba7c00",
               "dependencies": {
@@ -1974,10 +2005,10 @@
             "pinned": false,
             "template": {
               "_frontend_node_flow_id": {
-                "value": "1be4fd84-2c03-4778-90e0-4d0653c00d57"
+                "value": "9bf4dfa5-0d5a-47d7-98aa-cc6580791cf4"
               },
               "_frontend_node_folder_id": {
-                "value": "05d48372-654e-4664-a926-3a662565f41f"
+                "value": "d571093b-9dc5-4939-8d63-cf2ac67d39a0"
               },
               "_type": "Component",
               "code": {
@@ -2071,7 +2102,7 @@
                 "trace_as_metadata": true,
                 "track_in_telemetry": false,
                 "type": "str",
-                "value": "localhost"
+                "value": "chromadb"
               },
               "is_refresh": false,
               "number_of_results": {
@@ -2113,7 +2144,7 @@
                 "trace_as_metadata": true,
                 "track_in_telemetry": true,
                 "type": "int",
-                "value": 8100
+                "value": 8000
               },
               "search_query": {
                 "_input_type": "MessageInput",
@@ -2185,17 +2216,134 @@
         },
         "selected": false,
         "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "LocalEmbeddingsComponent-c0z2y",
+          "node": {
+            "base_classes": [
+              "Embeddings"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Generate embeddings locally using sentence-transformers models",
+            "display_name": "Local Embeddings",
+            "documentation": "",
+            "edited": false,
+            "field_order": [
+              "model_name"
+            ],
+            "frozen": false,
+            "icon": "binary",
+            "legacy": false,
+            "lf_version": "1.7.3",
+            "metadata": {
+              "code_hash": "da6275c40857",
+              "dependencies": {
+                "dependencies": [
+                  {
+                    "name": "langflow",
+                    "version": "1.7.3"
+                  },
+                  {
+                    "name": "langchain_huggingface",
+                    "version": "0.3.1"
+                  }
+                ],
+                "total_dependencies": 2
+              },
+              "module": "custom_components.local_embeddings"
+            },
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Embeddings",
+                "group_outputs": false,
+                "method": "build_embeddings",
+                "name": "embeddings",
+                "selected": "Embeddings",
+                "tool_mode": true,
+                "types": [
+                  "Embeddings"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_type": "Component",
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "\"\"\"\nLocal Embeddings Component for Langflow\n\nRuns sentence-transformers models locally using PyTorch.\nProduces embeddings compatible with LangChain's Embeddings interface.\n\"\"\"\n\nfrom langflow.custom import Component\nfrom langflow.io import Output, StrInput\n\n\nclass LocalEmbeddingsComponent(Component):\n    display_name = \"Local Embeddings\"\n    description = \"Generate embeddings locally using sentence-transformers models\"\n    icon = \"binary\"\n\n    inputs = [\n        StrInput(\n            name=\"model_name\",\n            display_name=\"Model Name\",\n            value=\"sentence-transformers/multi-qa-mpnet-base-dot-v1\",\n            info=\"HuggingFace model name. Downloaded once and cached locally.\",\n        ),\n    ]\n\n    outputs = [\n        Output(\n            display_name=\"Embeddings\",\n            name=\"embeddings\",\n            method=\"build_embeddings\",\n            types=[\"Embeddings\"],\n        ),\n    ]\n\n    def build_embeddings(self):\n        from langchain_huggingface import HuggingFaceEmbeddings\n\n        embeddings = HuggingFaceEmbeddings(model_name=self.model_name)\n        self.status = f\"Loaded {self.model_name}\"\n        return embeddings\n"
+              },
+              "model_name": {
+                "_input_type": "StrInput",
+                "advanced": false,
+                "display_name": "Model Name",
+                "dynamic": false,
+                "info": "HuggingFace model name. Downloaded once and cached locally.",
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "model_name",
+                "override_skip": false,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "track_in_telemetry": false,
+                "type": "str",
+                "value": "sentence-transformers/multi-qa-mpnet-base-dot-v1"
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": true,
+          "type": "LocalEmbeddingsComponent"
+        },
+        "dragging": false,
+        "id": "LocalEmbeddingsComponent-c0z2y",
+        "measured": {
+          "height": 220,
+          "width": 320
+        },
+        "position": {
+          "x": 495.90344337918054,
+          "y": -292.9067500420969
+        },
+        "selected": false,
+        "type": "genericNode"
       }
     ],
     "viewport": {
       "x": 30.726262792710372,
-      "y": 207.46603542902386,
+      "y": 255.5776958773361,
       "zoom": 0.5913928227819241
     }
   },
   "description": "RAG flow, with a couple intrinsics (Query Rewrite, Answerability) but without Query Clarification.",
   "endpoint_name": null,
-  "id": "1be4fd84-2c03-4778-90e0-4d0653c00d57",
+  "id": "9bf4dfa5-0d5a-47d7-98aa-cc6580791cf4",
   "is_component": false,
   "last_tested_version": "1.7.3",
   "name": "Query Clarification (Prompted) - ClapNQ",
