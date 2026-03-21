@@ -111,7 +111,5 @@ The flow calls Ollama for inference using the Granite base model and intrinsic L
 ├── docker-compose.yml         # All service definitions
 ├── .env                       # Environment configuration
 ├── flows/                     # Langflow flow definitions (mounted read-only)
-├── containers/                # Custom container configurations (e.g. ChromaDB)
-├── scripts/                   # Helper scripts (e.g. load-flows.sh)
-├── granite-lib-rag-r1.0/     # LoRA adapter weights (cloned from Hugging Face)
+└── scripts/                   # Helper scripts (e.g. load-flows.sh)
 ```
