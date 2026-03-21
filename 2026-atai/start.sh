@@ -160,7 +160,7 @@ if ! command -v docker &>/dev/null; then
     fi
 else
     # Docker CLI present — make sure the daemon is actually reachable
-    if ! docker info &>/dev/null; then
+    if ! docker info --timeout 5 &>/dev/null 2>&1; then
         warn "Docker CLI found but daemon is not running — checking for Colima..."
         if command -v colima &>/dev/null; then
             info "Starting Colima..."
