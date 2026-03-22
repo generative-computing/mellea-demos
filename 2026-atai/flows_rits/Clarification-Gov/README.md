@@ -72,7 +72,7 @@ ASSISTANT: There are many DMVs, like the California DMV, which offers online ser
 for renewing your driver's license, and the New York DMV, which also provides online
 renewal options. Which one are you referring to?
 
-USER: I am in upstate NY
+USER: I am in upstate New York
 
 ASSISTANT: If you are in upstate New York and your driver's license is about to expire,
 you can renew it online through the New York DMV's MyDMV service. You will need to
