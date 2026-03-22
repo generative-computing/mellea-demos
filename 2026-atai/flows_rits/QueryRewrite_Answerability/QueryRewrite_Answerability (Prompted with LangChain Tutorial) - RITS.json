@@ -3423,6 +3423,6 @@
   "id": "e1719bcf-1322-4f55-9e32-d240fe1b0479",
   "is_component": false,
   "last_tested_version": "1.7.3",
-  "name": "QueryRewrite_Answerability (Prompted with LangChain Tutorial)",
+  "name": "QueryRewrite_Answerability (Prompted with LangChain Tutorial) - RITS",
   "tags": []
 }

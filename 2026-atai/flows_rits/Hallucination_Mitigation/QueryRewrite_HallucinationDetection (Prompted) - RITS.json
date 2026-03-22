@@ -2803,6 +2803,6 @@
   "id": "10b55aa0-e84e-4e76-ab98-083d5ada420d",
   "is_component": false,
   "last_tested_version": "1.7.3",
-  "name": "QueryRewrite_HallucinationDetection (Prompted)",
+  "name": "QueryRewrite_HallucinationDetection (Prompted) - RITS",
   "tags": []
 }

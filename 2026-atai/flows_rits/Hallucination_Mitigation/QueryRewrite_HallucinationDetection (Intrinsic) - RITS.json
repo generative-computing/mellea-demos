@@ -3533,6 +3533,6 @@
   "id": "f80ba420-0962-405e-a60c-0a251c9b7827",
   "is_component": false,
   "last_tested_version": "1.7.3",
-  "name": "QueryRewrite_HallucinationDetection (Intrinsic)",
+  "name": "QueryRewrite_HallucinationDetection (Intrinsic) - RITS",
   "tags": []
 }

@@ -3480,6 +3480,6 @@
   "id": "6d9e5830-9d93-4e38-9a44-06b703e0758f",
   "is_component": false,
   "last_tested_version": "1.7.3",
-  "name": "QueryRewrite_Answerability (Intrinsic)",
+  "name": "QueryRewrite_Answerability (Intrinsic) - RITS",
   "tags": []
 }
