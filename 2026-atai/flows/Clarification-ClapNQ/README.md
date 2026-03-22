@@ -10,7 +10,7 @@ This folder contains three Langflow flows configured for general domain document
 
 ### Configuration
 
-- **Retriever**: ChromaDB
+- **Retriever**: [ChromaDB](https://www.trychroma.com/) with `sentence-transformers/multi-qa-mpnet-base-dot-v1` embeddings
 - **Collection**: `mt-rag-clapnq`
 - **Models**: Ollama (default), using `http://host.docker.internal:11434`
 
@@ -20,62 +20,49 @@ The Query Clarification flow applies the trained Query Clarification intrinsic *
 
 ---
 
-## Running Example: Ambiguous Query "when did the war end"
+## Running Example: Ambiguous Query "When was the university established in Washington?"
 
 ### User Query
-> "when did the war end"
+> "When was the university established in Washington?"
 
-This query is inherently ambiguous - it doesn't specify which war the user is asking about.
+This query is inherently ambiguous - it doesn't specify which university the user is asking about, as there are multiple universities in Washington. Additionally, "Washington" itself is ambiguous, as it could refer to Washington state or Washington, D.C.
 
 ### RAG Flow Behavior without Clarification
 
-The Regular RAG flow retrieves documents about various wars but arbitrarily picks one to answer about (in this case, World War II) without acknowledging the ambiguity:
+The Regular RAG flow retrieves documents about various universities but arbitrarily picks one to answer about (in this case, Howard University) without acknowledging the ambiguity:
 
 ```
-USER: when did the war end?
+USER: When was the university established in Washington?
 
-ASSISTANT: The war ended on V-E Day, 8 May 1945 in Europe and on V-J Day, 15 August
-1945 in the Pacific.
+ASSISTANT: The university established in Washington is Howard University, which was 
+founded in 1867.
 ```
 
-The system assumed the user meant World War II and provided a specific answer. If the user actually meant a different war, this response would be incorrect and unhelpful.
+The system assumed the user meant Howard University and provided a specific answer. If the user actually meant a different university, this response would be incorrect and unhelpful.
 
 ### Query Clarification Flow Behavior
 
-The Query Clarification flow, after retrieving documents about multiple wars, recognizes the ambiguity and asks the user to specify which war they mean:
+The Query Clarification flow, after retrieving documents about multiple universities, recognizes the ambiguity and asks the user to specify which university they mean:
 
 ```
-USER: when did the war end?
+USER: When was the university established in Washington?
 
-ASSISTANT: There are many wars you could be referring to, such as: 1) World War II,
-which ended with the armistice of 14 August 1945 (V-J Day) or the formal surrender
-of Japan on 2 September 1945, 2) the European Theatre of World War II, which ended
-with the German surrender to the Soviet Union and the Western Allies in late April
-and early May 1945, 3) the Second Sino-Japanese War, which ended on 9 September 1945,
-4) the Vietnam War, which ended with the French surrender at Dien Bien Phu on 7 May
-1954, and 5) World War I, which ended with the signing of the Treaty of Versailles
-on 28 June 1919. Which one are you talking about?
+ASSISTANT: There are many universities you could be referring to, such as 1) Howard
+University, which was founded in Washington, D.C., in 1867, and 2) Trinity Western
+University, which began its journey as a two-year college in 1962. Which one are you
+talking about?
 
-USER: I meant the US civil war
+USER: I meant George Washington University
 
-ASSISTANT: The American Civil War ended on May 9, 1865, when President Andrew Johnson
-officially declared the end of the insurrection. However, the last Confederate surrender
-occurred on November 6, 1865, when the Confederate warship CSS Shenandoah surrendered
-at Liverpool, England.
+ASSISTANT: George Washington University was established in 1821. It is named after the
+first President of the United States, George Washington. The university has its main
+campus on Capitol Hill in Washington, D.C., and it offers a wide range of undergraduate
+and graduate programs across various fields of study.
 ```
 
-By asking for clarification, the system engages in a meaningful conversation and provides an accurate answer about the war the user actually intended.
+By asking for clarification, the system engages in a meaningful conversation and provides an accurate answer about the university the user actually intended.
 
 ---
-
-### Note on Corpus Content
-
-The clarification response references "the Vietnam War, which ended with the French surrender at Dien Bien Phu on 7 May 1954." This refers to the First Indochina War (French colonial war), which is labeled as "Vietnam War" in the ClapNQ corpus documents - distinct from what Americans typically call "the Vietnam War" (which ended in 1975).
-
-This illustrates an important aspect of RAG systems: the responses are grounded in the retrieved documents and faithfully reflect the corpus content. The purpose of this demo is to showcase the query clarification behavior - identifying ambiguity and asking clarifying questions - rather than to validate the factual accuracy of the underlying corpus.
-
----
-
 
 ### RAG prompted Clarification Flow
 
@@ -85,9 +72,9 @@ One might consider prompting an existing base model to ask clarifying questions 
 You are an assistant for question-answering tasks.
 Use the following pieces of retrieved context to answer the question.
 If you don't know the answer, just say that you don't know.
-If the question is ambiguous with unclear or multiple interpretations, do not attempt to answer it.   
-Instead produce a clarifying request back to the user, outlining the different possible              
-interpretations based on the given context.                                                          
+If the question is ambiguous with unclear or multiple interpretations, do not attempt to answer it.
+Instead produce a clarifying request back to the user, outlining the different possible
+interpretations based on the given context.
 Keep the answer concise.
 
 Context:
@@ -102,29 +89,22 @@ Note that the prompt **explicitly tells the model** to identify ambiguous questi
 
 ### Results with Base Models
 
-Despite being **explicitly prompted to ask for clarification** and having access to documents about multiple wars, both models fail to follow the instruction and immediately assume World War II:
+Despite being **explicitly prompted to ask for clarification** and having access to documents about multiple universities, the model fails to follow the instruction and immediately assumes Howard University:
 
 **granite-4.0-micro response:**
 ```
-USER: when did the war end?
+USER: When was the university established in Washington?
 
-ASSISTANT: The war in Europe ended on V-E Day, 8 May 1945, with the German surrender.
-The war in Asia ended on V-J Day, 15 August 1945, with Japan's surrender following
-the atomic bombings of Hiroshima and Nagasaki. The formal end of World War II was
-marked by the signing of peace treaties, with the final treaty with Japan signed in 1951.
+ASSISTANT: Howard University was founded in Washington, D.C., in 1867.
 ```
 
-**gpt-oss-20b response:**
-```
-USER: when did the war end?
+Similar behavior can be observed with both `granite4:micro` and `gpt-oss-20b` - they will not reliably clarify, and answer for the wrong choice.
 
-ASSISTANT: The war ended on 15 August 1945 (V‑J Day), when Japan formally surrendered,
-marking the conclusion of World War II.
-```
+Note: `gpt-oss-20b` can only be run through internal RITS, not Ollama.
 
 ### Observations
 
-Both base models - even the larger gpt-oss-20b - pick WWII without acknowledging that the retrieved documents contain information about multiple wars. Neither model follows the explicit instruction to ask for clarification, despite the prompt clearly stating: *"If the question is ambiguous with unclear or multiple interpretations, do not attempt to answer it. Instead produce a clarifying request back to the user."*
+Base models - even larger ones like gpt-oss-20b - pick Howard University without acknowledging that the retrieved documents contain information about multiple universities. Neither model follows the explicit instruction to ask for clarification, despite the prompt clearly stating: *"If the question is ambiguous with unclear or multiple interpretations, do not attempt to answer it. Instead produce a clarifying request back to the user."*
 
 This suggests that simply prompting base models to ask clarifying questions - even with explicit instructions - does not reliably produce this behavior. The models tend to default to answering based on their training patterns rather than following the clarification directive.
 
