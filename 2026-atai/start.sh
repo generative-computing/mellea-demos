@@ -14,6 +14,7 @@
 #   ./start.sh                          # Load ALL flows into LangFlow projects (default)
 #   ./start.sh --all                    # Same as above (explicit)
 #   ./start.sh --demo <name>            # Load a single demo's flows only
+#   ./start.sh --rits                   # Load flows from flows_rits/ (RITS/ELSER)
 #   ./start.sh --no-ollama              # Skip Ollama checks and LoRA loading
 #   ./start.sh --no-chromadb            # Skip ChromaDB service
 #
@@ -47,6 +48,7 @@ error() { echo -e "${RED}[ERROR]${NC} $*"; }
 # =============================================================================
 LOAD_ALL=true
 DEMO=""
+USE_RITS=false
 SKIP_OLLAMA=false
 SKIP_CHROMADB=false
 
@@ -65,6 +67,10 @@ while [[ $# -gt 0 ]]; do
             fi
             shift 2
             ;;
+        --rits)
+            USE_RITS=true
+            shift
+            ;;
         --no-ollama)
             SKIP_OLLAMA=true
             shift
@@ -74,11 +80,12 @@ while [[ $# -gt 0 ]]; do
             shift
             ;;
         -h|--help)
-            echo "Usage: $0 [--all | --demo <name>] [--no-ollama] [--no-chromadb]"
+            echo "Usage: $0 [--all | --demo <name>] [--rits] [--no-ollama] [--no-chromadb]"
             echo ""
             echo "Options:"
             echo "  --all           Load ALL flows into LangFlow projects (default)"
             echo "  --demo <name>   Load a single demo's flows only"
+            echo "  --rits          Load flows from flows_rits/ (RITS/ELSER) instead of flows/ (Ollama/ChromaDB)"
             echo "  --no-ollama     Skip Ollama checks and LoRA adapter loading"
             echo "  --no-chromadb   Skip ChromaDB service"
             echo ""
@@ -99,15 +106,24 @@ while [[ $# -gt 0 ]]; do
 done
 
 # =============================================================================
+# Determine flows directory based on --rits flag
+# =============================================================================
+if [ "$USE_RITS" = true ]; then
+    FLOWS_BASE="flows_rits"
+else
+    FLOWS_BASE="flows"
+fi
+
+# =============================================================================
 # Validate demo mode if specified
 # =============================================================================
 if [ "$LOAD_ALL" = false ]; then
-    DEMO_SRC="flows/$DEMO"
+    DEMO_SRC="$FLOWS_BASE/$DEMO"
     if [ ! -d "$SCRIPT_DIR/$DEMO_SRC" ]; then
         error "Demo not found: $DEMO"
         echo ""
-        echo "Available demos:"
-        for dir in "$SCRIPT_DIR"/flows/*/; do
+        echo "Available demos in $FLOWS_BASE/:"
+        for dir in "$SCRIPT_DIR"/$FLOWS_BASE/*/; do
             [ -d "$dir" ] && echo "  $(basename "$dir")"
         done
         exit 1
@@ -395,8 +411,8 @@ echo ""
 # Step 6: Load flows via API (all mode only)
 # =============================================================================
 if [ "$LOAD_ALL" = true ]; then
-    info "Loading all flows into LangFlow projects..."
-    "$SCRIPT_DIR/scripts/load-flows.sh" "$SCRIPT_DIR/flows"
+    info "Loading all flows from $FLOWS_BASE/ into LangFlow projects..."
+    "$SCRIPT_DIR/scripts/load-flows.sh" "$SCRIPT_DIR/$FLOWS_BASE"
 fi
 
 # =============================================================================
@@ -477,8 +493,8 @@ echo -e "  ${BLUE}Langflow${NC}        http://localhost:7860"
 echo -e "  ${BLUE}Visualization${NC}   http://localhost:8080"
 echo ""
 if [ "$LOAD_ALL" = true ]; then
-    echo -e "  Loaded projects:"
-    for dir in "$SCRIPT_DIR"/flows/*/; do
+    echo -e "  Loaded projects from ${BLUE}$FLOWS_BASE/${NC}:"
+    for dir in "$SCRIPT_DIR"/$FLOWS_BASE/*/; do
         [ -d "$dir" ] && echo -e "    - $(basename "$dir")"
     done
     echo ""
