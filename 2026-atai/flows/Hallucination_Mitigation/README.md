@@ -13,7 +13,7 @@ This pattern addresses one of the most critical challenges in RAG systems: ensur
 
 - **Retriever**: `sentence-transformers/multi-qa-mpnet-base-dot-v1` embeddings
 - **Collection**: `mt-rag-govt`
-- **Models used**: `openai/gpt-oss-20b`
+- **Models used**: `openai/gpt-oss-20b` and `ibm-granite/granite-4.0-micro`
 
 ### Flow Architecture
 
@@ -90,6 +90,8 @@ This implementation uses specialized trained models for query rewriting and hall
 ## Examples
 
 ### Example 1: Removing Hallucinations Post-Generation
+
+**(a) Fine-Grained Analysis and Removal of Hallucinations**
 
 **Scenario**: When documents are topically relevant but lack specific details requested in the question, models may generate answers using their internal parametric knowledge rather than the corpus. The LangChain tutorial's approach produced such a hallucinated answer. The intrinsic flow's hallucination detection checks the answer against retrieved documents and abstains when content is unsupported, while the prompt-based hallucination removal attempts to strip fabrications but may still leave unsupported content.
 
@@ -173,6 +175,58 @@ The hallucination feedback component analyzed each segment of the response with 
 **Key Insight**:
 
 The intrinsic-based flow provides a way of removing hallucination post-generation. The hallucination detection checks the generated answer against retrieved documents, identifying when the model has used its internal knowledge to produce content not supported by the corpus. The intrinsic model provides fine-grained, claim-level feedback with detailed explanations for each segment of the response, revealing exactly which parts lack corpus grounding. When hallucinations are detected, the system abstains entirely - ensuring that only corpus-grounded information is returned to users.
+
+---
+
+**(b) Removal of Hallucinations with Smaller Models**
+
+**Models used**: `ibm-granite/granite-4.0-micro`
+
+**Question**: `How far are the moons of Mars away from the planet?`
+
+**What's in Corpus**: A NASA document mentioning Mars has two moons (Phobos and Deimos) - but NO information about their distances from Mars
+
+**What Happened**:
+
+**Prompt-Based Flow with Granite 4.0 Micro**:
+- **Initial Answer**:
+```
+Mars has two moons, Phobos and Deimos. Phobos orbits Mars at an average distance of about 6,000 meters (about 3.7 miles) from the planet's surface. Deimos, the smaller of the two, orbits at an average distance of about 23,000 meters (about 14.3 miles) from the planet's surface.
+```
+
+- **Final Answer**:
+```
+Mars has two moons, Phobos and Deimos. Phobos orbits Mars at an average distance of about 6,000 meters (about 3.7 miles) from the planet's surface. Deimos, the smaller of the two, orbits at an average distance of about 23,000 meters (about 14.3 miles) from the planet's surface.
+```
+
+- **Result**: The prompt-based hallucination removal failed to detect and remove the fabricated distance measurements. The final answer is identical to the initial answer, passing through completely hallucinated numeric details not present in the corpus.
+
+**Intrinsic Flow**:
+- **Initial Answer**:
+```
+The moons of Mars, Phobos and Deimos, orbit Mars at different distances. Phobos orbits at an average distance of about 6,000 meters (3.7 miles) from the surface of Mars, while Deimos orbits at an average distance of about 23,000 meters (14.3 miles).
+```
+
+- **Hallucination Feedback**:
+```json
+[
+  {
+    "response_begin": 0,
+    "response_end": 73,
+    "response_text": "The moons of Mars, Phobos and Deimos, orbit Mars at different distances. ",
+    "faithfulness_likelihood": 0.6183671606470879,
+    "explanation": "This sentence makes a factual claim about the distance of the moons of Mars from the planet. The document states 'Mars has two moons. Their names are Phobos and Deimos.' However, the document does not provide specific distances for these moons. The assistant's claim is not directly supported by the provided document."
+  }
+]
+```
+
+- **Final Answer**: `"I don't know the answer to the question."`
+
+- **Result**: The hallucination detection identified that while the corpus mentions Mars has two moons, it contains no information about distances. The model completely abstained rather than providing fabricated distance measurements.
+
+**Key Insight**:
+
+The prompt-based hallucination removal approach was not effective in this case, failing to identify and remove the fabricated distance measurements. Even with a smaller model like Granite 4.0 Micro, the intrinsic hallucination detection effectively identifies when generated content goes beyond what's supported in the corpus. The detailed explanation show that while the moon names are mentioned in the corpus, the specific distance claims are unsupported, leading the system to properly abstain.
 
 ---
 
