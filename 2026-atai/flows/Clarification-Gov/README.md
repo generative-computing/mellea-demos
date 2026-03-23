@@ -63,11 +63,11 @@ Please note that these are general steps and may vary by state. It's always best
 check with your local DMV for specific requirements and procedures.
 ```
 
-The response is generic and may not apply to the specific state where the user is located. In the absence of a specific state, the model response may mix facts from California DMV documents with facts from New York DMV documents, or even draw from its own general knowledge rather than the retrieved corpus.
+The response is generic and may not apply to the specific state where the user is located. In the absence of a specific state, the model response may mix facts from California DMV documents with facts from New York DMV documents, or even draw from its own general knowledge rather than the retrieved corpus. Thus, the response is not directly helpful.
 
 ### Query Clarification Flow Behavior
 
-The Query Clarification flow recognizes that state-specific information is required to answer accurately and asks a clarifying question:
+Based on the retrieved documents about driver's license renewal, the Query Clarification flow detects that there are multiple states that may apply to the user question, and hence the it recognizes that there is ambiguity based on the underlying content. As a result, it produces a clarification request back to the user that state-specific information is required to answer accurately:
 
 ```
 USER: My driver's license is about to expire. What do I need to renew it at the DMV?
