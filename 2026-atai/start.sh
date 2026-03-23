@@ -14,7 +14,6 @@
 #   ./start.sh                          # Load ALL flows into LangFlow projects (default)
 #   ./start.sh --all                    # Same as above (explicit)
 #   ./start.sh --demo <name>            # Load a single demo's flows only
-#   ./start.sh --rits                   # Load flows from flows_rits/ (RITS/ELSER)
 #   ./start.sh --no-ollama              # Skip Ollama checks and LoRA loading
 #   ./start.sh --no-chromadb            # Skip ChromaDB service
 #
@@ -48,7 +47,6 @@ error() { echo -e "${RED}[ERROR]${NC} $*"; }
 # =============================================================================
 LOAD_ALL=true
 DEMO=""
-USE_RITS=false
 SKIP_OLLAMA=false
 SKIP_CHROMADB=false
 
@@ -67,10 +65,6 @@ while [[ $# -gt 0 ]]; do
             fi
             shift 2
             ;;
-        --rits)
-            USE_RITS=true
-            shift
-            ;;
         --no-ollama)
             SKIP_OLLAMA=true
             shift
@@ -80,12 +74,11 @@ while [[ $# -gt 0 ]]; do
             shift
             ;;
         -h|--help)
-            echo "Usage: $0 [--all | --demo <name>] [--rits] [--no-ollama] [--no-chromadb]"
+            echo "Usage: $0 [--all | --demo <name>] [--no-ollama] [--no-chromadb]"
             echo ""
             echo "Options:"
             echo "  --all           Load ALL flows into LangFlow projects (default)"
             echo "  --demo <name>   Load a single demo's flows only"
-            echo "  --rits          Load flows from flows_rits/ (RITS/ELSER) instead of flows/ (Ollama/ChromaDB)"
             echo "  --no-ollama     Skip Ollama checks and LoRA adapter loading"
             echo "  --no-chromadb   Skip ChromaDB service"
             echo ""
@@ -106,13 +99,9 @@ while [[ $# -gt 0 ]]; do
 done
 
 # =============================================================================
-# Determine flows directory based on --rits flag
+# Flows directory
 # =============================================================================
-if [ "$USE_RITS" = true ]; then
-    FLOWS_BASE="flows_rits"
-else
-    FLOWS_BASE="flows"
-fi
+FLOWS_BASE="flows"
 
 # =============================================================================
 # Validate demo mode if specified
