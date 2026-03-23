@@ -33,33 +33,37 @@ The Regular RAG flow retrieves documents about driver's license renewal from var
 ```
 USER: My driver's license is about to expire. What do I need to renew it at the DMV?
 
-ASSISTANT: To renew your driver's license at the DMV, you will need to provide proof
-of identity, residency, and Social Security number. If you are renewing by mail, you
-will need to submit a renewal application, a photo of your license, and payment. If
-you are renewing in person, you will need to bring your current license, proof of
-identity, residency, and Social Security number, and pay the renewal fee.
+ASSISTANT: Renewing your driver's license typically involves several steps:
+
+1. **Check Your License Status**: First, you should check if your current driver's
+license has expired or will soon expire. You can usually find this information on
+your state's Department of Motor Vehicles (DMV) website.
+
+2. **Prepare Required Documents**: Most states require that you bring proof of identity
+and residency when renewing a driver's license. This could include documents like a
+birth certificate, passport, utility bill, or lease agreement. Check with your local
+DMV for specific requirements.
+
+3. **Schedule an Appointment**: Some DMVs allow walk-in renewals, while others may
+require you to schedule an appointment in advance. You can usually find this
+information on the DMV's website.
+
+4. **Complete the Renewal Process**: This typically involves filling out a renewal form
+and possibly taking a vision test or written test if your license has been expired for
+more than a certain number of years.
+
+5. **Pay the Fees**: There will be a fee to renew your driver's license, which can vary
+by state. Some DMVs allow you to pay this fee in person when you get your new license,
+while others require payment online or over the phone.
+
+6. **Receive Your New License**: Once everything is complete, you'll receive your new
+driver's license in the mail (usually within a few weeks).
+
+Please note that these are general steps and may vary by state. It's always best to
+check with your local DMV for specific requirements and procedures.
 ```
 
-The final response is a generic answer that may not apply to the specific state where the user is in. Furthermore, when taking a closer look at the quality of the response using the **Citation intrinsic**, it can be seen that the model response is an aggregation of facts that are specific to one state (e.g., California) with other facts that are specific to a different state (e.g., New York).
-
-#### Citation Analysis
-
-The Citation intrinsic annotates the response with references to the source documents:
-
-```
-To renew your driver's license at the DMV, you will need to provide proof of
-identity, residency, and Social Security number. [1] [2] If you are renewing
-by mail, you will need to submit a renewal application, a photo of your
-license, and payment. If you are renewing in person, you will need to bring
-your current license, proof of identity, residency, and Social Security
-number, and pay the renewal fee. [2]
-
-Sources:
-[1] California DMV - "Renew Your Vehicle's Registration"
-[2] New York DMV - "MyDMV"
-```
-
-This reveals that the model combined information from both California DMV and New York DMV documents into a single response, even though these states have different requirements. Without clarifying the user's location, the system cannot provide accurate, state-specific guidance.
+The response is generic and may not apply to the specific state where the user is located. In the absence of a specific state, the model response may mix facts from California DMV documents with facts from New York DMV documents, or even draw from its own general knowledge rather than the retrieved corpus.
 
 ### Query Clarification Flow Behavior
 
@@ -68,17 +72,37 @@ The Query Clarification flow recognizes that state-specific information is requi
 ```
 USER: My driver's license is about to expire. What do I need to renew it at the DMV?
 
-ASSISTANT: There are many DMVs, like the California DMV, which offers online services
-for renewing your driver's license, and the New York DMV, which also provides online
-renewal options. Which one are you referring to?
+ASSISTANT: Which state are you referring to?
 
 USER: I am in upstate New York
 
-ASSISTANT: If you are in upstate New York and your driver's license is about to expire,
-you can renew it online through the New York DMV's MyDMV service. You will need to
-provide proof of identification and take a written test. If you are unsure about the
-specific requirements or the process, you can visit the New York DMV's website or
-contact them directly for assistance.
+ASSISTANT: In Upstate New York, specifically in New York State, here are the general
+steps to renew your driver's license:
+
+1. **Prepare Required Documents**: You will need to bring proof of identity and date
+of birth such as a valid passport or birth certificate. If you have an out-of-state
+license, also bring that.
+
+2. **Check Your Eligibility**: Make sure your current license is not suspended or
+revoked. Also, ensure it's not expired by more than 1 year (for non-commercial drivers).
+
+3. **Visit the DMV Website**: Go to the New York State Department of Motor Vehicles
+website and look for information on renewing a driver's license.
+
+4. **Schedule an Appointment**: If required in your area, you may need to schedule an
+appointment online or by phone.
+
+5. **Attend the Renewal Process**: This usually involves taking a vision test, providing
+biometric data (fingerprints), and possibly taking a written test if it has been more
+than 1 year since your last renewal.
+
+6. **Pay the Fees**: There will be a fee for renewing your license. Check the DMV
+website for current fees.
+
+Please note that these are general steps and the process may vary slightly depending
+on your specific situation and location within New York State. It's always best to
+check with the local DMV office or visit their official website for the most accurate
+information.
 ```
 
 By asking for the user's location first, the system provides accurate, state-specific guidance rather than generic information that may not apply.
