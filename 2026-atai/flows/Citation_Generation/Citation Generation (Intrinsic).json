@@ -120,92 +120,6 @@
         "className": "",
         "data": {
           "sourceHandle": {
-            "dataType": "GraniteBaseModel",
-            "id": "GraniteBaseModel-6rS6z",
-            "name": "response",
-            "output_types": [
-              "Message"
-            ]
-          },
-          "targetHandle": {
-            "fieldName": "agent_response",
-            "id": "HallucinationDetection-i0Apm",
-            "inputTypes": [
-              "Message"
-            ],
-            "type": "str"
-          }
-        },
-        "id": "reactflow__edge-GraniteBaseModel-6rS6z{œdataTypeœ:œGraniteBaseModelœ,œidœ:œGraniteBaseModel-6rS6zœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}-HallucinationDetection-i0Apm{œfieldNameœ:œagent_responseœ,œidœ:œHallucinationDetection-i0Apmœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
-        "selected": false,
-        "source": "GraniteBaseModel-6rS6z",
-        "sourceHandle": "{œdataTypeœ:œGraniteBaseModelœ,œidœ:œGraniteBaseModel-6rS6zœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "HallucinationDetection-i0Apm",
-        "targetHandle": "{œfieldNameœ:œagent_responseœ,œidœ:œHallucinationDetection-i0Apmœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
-      },
-      {
-        "animated": false,
-        "className": "",
-        "data": {
-          "sourceHandle": {
-            "dataType": "ChatInput",
-            "id": "ChatInput-3ezRs",
-            "name": "message",
-            "output_types": [
-              "Message"
-            ]
-          },
-          "targetHandle": {
-            "fieldName": "chat_input",
-            "id": "HallucinationDetection-i0Apm",
-            "inputTypes": [
-              "Message"
-            ],
-            "type": "str"
-          }
-        },
-        "id": "reactflow__edge-ChatInput-3ezRs{œdataTypeœ:œChatInputœ,œidœ:œChatInput-3ezRsœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-HallucinationDetection-i0Apm{œfieldNameœ:œchat_inputœ,œidœ:œHallucinationDetection-i0Apmœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
-        "selected": false,
-        "source": "ChatInput-3ezRs",
-        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-3ezRsœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "HallucinationDetection-i0Apm",
-        "targetHandle": "{œfieldNameœ:œchat_inputœ,œidœ:œHallucinationDetection-i0Apmœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
-      },
-      {
-        "animated": false,
-        "className": "",
-        "data": {
-          "sourceHandle": {
-            "dataType": "HallucinationDetection",
-            "id": "HallucinationDetection-i0Apm",
-            "name": "response",
-            "output_types": [
-              "Message"
-            ]
-          },
-          "targetHandle": {
-            "fieldName": "input_value",
-            "id": "ChatOutput-GZViW",
-            "inputTypes": [
-              "Data",
-              "DataFrame",
-              "Message"
-            ],
-            "type": "other"
-          }
-        },
-        "id": "reactflow__edge-HallucinationDetection-i0Apm{œdataTypeœ:œHallucinationDetectionœ,œidœ:œHallucinationDetection-i0Apmœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}-ChatOutput-GZViW{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-GZViWœ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}",
-        "selected": false,
-        "source": "HallucinationDetection-i0Apm",
-        "sourceHandle": "{œdataTypeœ:œHallucinationDetectionœ,œidœ:œHallucinationDetection-i0Apmœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "ChatOutput-GZViW",
-        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-GZViWœ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}"
-      },
-      {
-        "animated": false,
-        "className": "",
-        "data": {
-          "sourceHandle": {
             "dataType": "LocalEmbeddingsComponent",
             "id": "LocalEmbeddingsComponent-4lYDx",
             "name": "embeddings",
@@ -314,35 +228,6 @@
         "sourceHandle": "{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-2UsHNœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}",
         "target": "Citations-vuV5p",
         "targetHandle": "{œfieldNameœ:œdocumentsœ,œidœ:œCitations-vuV5pœ,œinputTypesœ:[œDataœ,œSearch Resultsœ],œtypeœ:œotherœ}"
-      },
-      {
-        "animated": false,
-        "className": "",
-        "data": {
-          "sourceHandle": {
-            "dataType": "ChromaDBSearch",
-            "id": "ChromaDBSearch-2UsHN",
-            "name": "search_results",
-            "output_types": [
-              "Data"
-            ]
-          },
-          "targetHandle": {
-            "fieldName": "documents",
-            "id": "HallucinationDetection-i0Apm",
-            "inputTypes": [
-              "Data",
-              "Search Results"
-            ],
-            "type": "other"
-          }
-        },
-        "id": "reactflow__edge-ChromaDBSearch-2UsHN{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-2UsHNœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}-HallucinationDetection-i0Apm{œfieldNameœ:œdocumentsœ,œidœ:œHallucinationDetection-i0Apmœ,œinputTypesœ:[œDataœ,œSearch Resultsœ],œtypeœ:œotherœ}",
-        "selected": false,
-        "source": "ChromaDBSearch-2UsHN",
-        "sourceHandle": "{œdataTypeœ:œChromaDBSearchœ,œidœ:œChromaDBSearch-2UsHNœ,œnameœ:œsearch_resultsœ,œoutput_typesœ:[œDataœ]}",
-        "target": "HallucinationDetection-i0Apm",
-        "targetHandle": "{œfieldNameœ:œdocumentsœ,œidœ:œHallucinationDetection-i0Apmœ,œinputTypesœ:[œDataœ,œSearch Resultsœ],œtypeœ:œotherœ}"
       }
     ],
     "nodes": [
@@ -1676,372 +1561,6 @@
       },
       {
         "data": {
-          "description": "Detect hallucinated content not supported by the provided documents",
-          "display_name": "Hallucination Detection",
-          "id": "HallucinationDetection-i0Apm",
-          "node": {
-            "base_classes": [
-              "Message",
-              "Text"
-            ],
-            "beta": false,
-            "conditional_paths": [],
-            "custom_fields": {},
-            "description": "Detect hallucinated content not supported by the provided documents",
-            "display_name": "Hallucination Detection",
-            "documentation": "",
-            "edited": false,
-            "field_order": [
-              "model_backend",
-              "model_name",
-              "url",
-              "api_key",
-              "temperature",
-              "message_history",
-              "chat_input",
-              "agent_response",
-              "documents"
-            ],
-            "frozen": false,
-            "icon": "message-square",
-            "last_updated": "2026-03-21T05:25:58.024Z",
-            "legacy": false,
-            "metadata": {
-              "code_hash": "748252b6acf4",
-              "dependencies": {
-                "dependencies": [
-                  {
-                    "name": "langflow",
-                    "version": "1.7.3"
-                  },
-                  {
-                    "name": "httpx",
-                    "version": "0.28.1"
-                  },
-                  {
-                    "name": "openai",
-                    "version": "1.82.1"
-                  },
-                  {
-                    "name": "mellea",
-                    "version": "0.3.2"
-                  }
-                ],
-                "total_dependencies": 4
-              },
-              "module": "custom_components.hallucination_detection"
-            },
-            "minimized": false,
-            "output_types": [],
-            "outputs": [
-              {
-                "allows_loop": false,
-                "cache": true,
-                "display_name": "Response",
-                "group_outputs": false,
-                "loop_types": null,
-                "method": "get_response",
-                "name": "response",
-                "options": null,
-                "required_inputs": null,
-                "selected": "Message",
-                "tool_mode": true,
-                "types": [
-                  "Message"
-                ],
-                "value": "__UNDEFINED__"
-              },
-              {
-                "allows_loop": false,
-                "cache": true,
-                "display_name": "Full Response",
-                "group_outputs": false,
-                "loop_types": null,
-                "method": "get_full_response",
-                "name": "full_response",
-                "options": null,
-                "required_inputs": null,
-                "selected": "Text",
-                "tool_mode": true,
-                "types": [
-                  "Text"
-                ],
-                "value": "__UNDEFINED__"
-              }
-            ],
-            "pinned": false,
-            "template": {
-              "_frontend_node_flow_id": {
-                "value": "16d1afc7-5532-4c3e-983f-472a20389082"
-              },
-              "_frontend_node_folder_id": {
-                "value": "4b0b4ae8-eeef-4d87-96e8-8abb8a0b232e"
-              },
-              "_type": "Component",
-              "agent_response": {
-                "_input_type": "MessageInput",
-                "advanced": false,
-                "display_name": "Agent Response",
-                "dynamic": false,
-                "info": "Agent response to check for hallucinations",
-                "input_types": [
-                  "Message"
-                ],
-                "list": false,
-                "list_add_label": "Add More",
-                "load_from_db": false,
-                "name": "agent_response",
-                "override_skip": false,
-                "placeholder": "",
-                "required": true,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_input": true,
-                "trace_as_metadata": true,
-                "track_in_telemetry": false,
-                "type": "str",
-                "value": ""
-              },
-              "api_key": {
-                "_input_type": "SecretStrInput",
-                "advanced": false,
-                "display_name": "API Key",
-                "dynamic": false,
-                "info": "API key for authentication",
-                "input_types": [],
-                "load_from_db": false,
-                "name": "api_key",
-                "override_skip": false,
-                "password": true,
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "track_in_telemetry": false,
-                "type": "str",
-                "value": ""
-              },
-              "chat_input": {
-                "_input_type": "MessageInput",
-                "advanced": false,
-                "display_name": "Chat Input",
-                "dynamic": false,
-                "info": "Last user query",
-                "input_types": [
-                  "Message"
-                ],
-                "list": false,
-                "list_add_label": "Add More",
-                "load_from_db": false,
-                "name": "chat_input",
-                "override_skip": false,
-                "placeholder": "",
-                "required": true,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_input": true,
-                "trace_as_metadata": true,
-                "track_in_telemetry": false,
-                "type": "str",
-                "value": ""
-              },
-              "code": {
-                "advanced": true,
-                "dynamic": true,
-                "fileTypes": [],
-                "file_path": "",
-                "info": "",
-                "list": false,
-                "load_from_db": false,
-                "multiline": true,
-                "name": "code",
-                "password": false,
-                "placeholder": "",
-                "required": true,
-                "show": true,
-                "title_case": false,
-                "type": "code",
-                "value": "\"\"\"\nHallucination Detection Component for Langflow\n\nDetect hallucinated content not supported by the provided documents.\n\nInputs:\n- message_history (optional): Previous conversation turns (DataFrame)\n- chat_input (required): Last user query\n- agent_response (required): Agent response to check for hallucinations\n- documents (required): Documents to check against\n\"\"\"\n\nfrom langflow.custom import Component\nfrom langflow.io import (\n    SecretStrInput,\n    StrInput,\n    Output,\n    DropdownInput,\n    MessageInput,\n    HandleInput,\n    DataFrameInput,\n    SliderInput,\n)\nfrom langflow.schema import Message, Data\nfrom langflow.field_typing.range_spec import RangeSpec\nimport httpx\nimport json\n\nfrom openai import OpenAI\n\n# Global backend cache - stores initialized Mellea backends per model\n_mellea_backend_cache = {}\n\n# Model name mapping - maps user-facing names to actual model IDs\n_MODEL_NAME_MAPPING = {\n    \"granite-4.0-micro\": \"ibm-granite/granite-4.0-micro\",\n    \"ibm-granite/granite-4.0-micro\": \"ibm-granite/granite-4.0-micro\",\n    \"granite4:micro\": \"ibm-granite/granite-4.0-micro\",\n}\n\n_DEFAULT_MODEL = \"ibm-granite/granite-4.0-micro\"\n\n\nclass HallucinationDetection(Component):\n    display_name = \"Hallucination Detection\"\n    description = \"Detect hallucinated content not supported by the provided documents\"\n    category = \"tools\"\n    icon = \"message-square\"\n\n    intrinsic_name = \"hallucination_detection\"\n\n    BACKEND_CONFIG = {\n        \"LocalHF\": {\n            \"models\": [\"ibm-granite/granite-4.0-micro\"],\n            \"default_model\": \"ibm-granite/granite-4.0-micro\",\n            \"default_url\": \"local\",\n            \"url_editable\": False,\n        },\n        \"vLLM\": {\n            \"models\": [\"granite-4.0-micro\"],\n            \"default_model\": \"granite-4.0-micro\",\n            \"default_url\": \"http://localhost:8000\",\n            \"url_editable\": True,\n        },\n        \"Ollama\": {\n            \"models\": [\"granite4:micro\"],\n            \"default_model\": \"granite4:micro\",\n            \"default_url\": \"http://host.docker.internal:11434\",\n            \"url_editable\": True,\n        },\n    }\n\n    CHAT_COMPLETIONS_ENDPOINT = \"/v1/chat/completions\"\n\n    inputs = [\n        DropdownInput(\n            name=\"model_backend\",\n            display_name=\"Model Backend\",\n            info=\"Backend service for Granite model\",\n            options=[\"vLLM\", \"Ollama\", \"LocalHF\"],\n            value=\"Ollama\",\n            real_time_refresh=True,\n        ),\n        DropdownInput(\n            name=\"model_name\",\n            display_name=\"Model Name\",\n            info=\"Model name (options change based on backend)\",\n            options=[\"granite-4.0-micro\", \"gpt-oss-20b\"],\n            value=\"granite-4.0-micro\",\n        ),\n        StrInput(\n            name=\"url\",\n            display_name=\"API URL\",\n            info=\"Base URL for the model backend (e.g., http://localhost:8000)\",\n            value=\"http://host.docker.internal:11434\",\n            required=True,\n            show=True,\n        ),\n        SecretStrInput(\n            name=\"api_key\",\n            display_name=\"API Key\",\n            info=\"API key for authentication\",\n            required=False,\n            load_from_db=False,\n        ),\n        SliderInput(\n            name=\"temperature\",\n            display_name=\"Temperature\",\n            info=\"Controls randomness in responses\",\n            value=0.0,\n            range_spec=RangeSpec(min=0, max=2, step=0.01),\n            advanced=True,\n        ),\n        DataFrameInput(\n            name=\"message_history\",\n            display_name=\"Message History\",\n            info=\"Previous conversation messages as a DataFrame with 'role' (user/assistant) and 'content' columns\",\n            required=False,\n        ),\n        MessageInput(\n            name=\"chat_input\",\n            display_name=\"Chat Input\",\n            info=\"Last user query\",\n            required=True,\n        ),\n        MessageInput(\n            name=\"agent_response\",\n            display_name=\"Agent Response\",\n            info=\"Agent response to check for hallucinations\",\n            required=True,\n        ),\n        HandleInput(\n            name=\"documents\",\n            display_name=\"Documents\",\n            info=\"Documents to use with the intrinsic operation (accepts Data from vector stores)\",\n            input_types=[\"Data\", \"Search Results\"],\n            required=False,\n            is_list=True,\n        ),\n    ]\n\n    outputs = [\n        Output(\n            name=\"response\",\n            display_name=\"Response\",\n            method=\"get_response\",\n        ),\n        Output(\n            name=\"full_response\",\n            display_name=\"Full Response\",\n            method=\"get_full_response\",\n        ),\n    ]\n\n    def _extract_message_text(self, message: Message) -> str:\n        if message is None:\n            return \"\"\n        if hasattr(message, 'text'):\n            return message.text\n        if hasattr(message, 'content'):\n            return message.content\n        return str(message)\n\n    def _build_chat_messages(self) -> list:\n        \"\"\"\n        Build messages array for hallucination detection.\n\n        Format:\n        1. Message history (optional) - previous conversation turns\n        2. Last user query (required) - the question being answered\n        3. Agent response (required) - the response to check for hallucinations\n        \"\"\"\n        messages = []\n\n        # Add message history if provided\n        if hasattr(self, 'message_history'):\n            try:\n                df = self.message_history\n                for _, row in df.iterrows():\n                    sender = row.get(\"sender\", \"\")\n                    role = \"user\" if sender == \"User\" else \"assistant\"\n                    content = row.get(\"text\", \"\")\n                    if content and str(content).strip():\n                        messages.append({\"role\": role, \"content\": str(content)})\n            except (TypeError, AttributeError, ValueError):\n                # None or invalid - skip\n                pass\n\n        # Add last user query (required)\n        user_message = self._extract_message_text(self.chat_input)\n        if user_message and user_message.strip():\n            messages.append({\"role\": \"user\", \"content\": user_message})\n\n        # Add agent response to check for hallucinations (required)\n        agent_response = self._extract_message_text(self.agent_response)\n        if agent_response and agent_response.strip():\n            messages.append({\"role\": \"assistant\", \"content\": agent_response})\n\n        return messages\n\n    def _build_request(self) -> dict:\n        messages = self._build_chat_messages()\n        if not messages:\n            raise ValueError(\"No messages to send\")\n        request_body = {\n            \"messages\": messages,\n            \"model\": self.intrinsic_name,\n        }\n        if hasattr(self, 'temperature') and self.temperature is not None:\n            request_body[\"temperature\"] = self.temperature\n        document_texts = self._extract_documents()\n        if document_texts:\n            if \"extra_body\" not in request_body:\n                request_body[\"extra_body\"] = {}\n            request_body[\"extra_body\"][\"documents\"] = [{\"text\": t} for t in document_texts]\n        return request_body\n\n    def _extract_documents(self) -> list:\n        \"\"\"Extract document texts from the documents input.\n\n        Supports:\n        - list[Data] from vector store search results (each Data has text/page_content)\n        - Single Data with data[\"documents\"] list\n        - dict with \"documents\" key\n        \"\"\"\n        document_texts = []\n        if not hasattr(self, 'documents') or not self.documents:\n            return []\n\n        docs_input = self.documents\n        if not isinstance(docs_input, list):\n            docs_input = [docs_input]\n\n        for item in docs_input:\n            if isinstance(item, Data):\n                if hasattr(item, 'text') and item.text:\n                    document_texts.append(item.text)\n                elif hasattr(item, 'data') and isinstance(item.data, dict):\n                    nested = item.data.get(\"documents\")\n                    if nested and isinstance(nested, list):\n                        for doc in nested:\n                            if isinstance(doc, dict):\n                                text = doc.get(\"text\") or doc.get(\"content\") or doc.get(\"page_content\") or str(doc)\n                            else:\n                                text = str(doc)\n                            document_texts.append(text)\n            elif isinstance(item, dict):\n                nested = item.get(\"documents\")\n                if nested and isinstance(nested, list):\n                    for doc in nested:\n                        if isinstance(doc, dict):\n                            text = doc.get(\"text\") or doc.get(\"content\") or doc.get(\"page_content\") or str(doc)\n                        else:\n                            text = str(doc)\n                        document_texts.append(text)\n                else:\n                    text = item.get(\"text\") or item.get(\"content\") or item.get(\"page_content\") or str(item)\n                    document_texts.append(text)\n            else:\n                document_texts.append(str(item))\n\n        if not document_texts:\n            raise ValueError(\"Documents are required for hallucination detection\")\n\n        return document_texts\n\n    def _get_api_url(self) -> str:\n        base_url = self.url.rstrip('/')\n        return f\"{base_url}{self.CHAT_COMPLETIONS_ENDPOINT}\"\n\n    def _call_api(self) -> dict:\n        if self.model_backend == \"LocalHF\":\n            return self._call_with_mellea()\n        if not self.url or not self.url.strip():\n            raise ValueError(\"API URL is required\")\n        return self._call_with_granite_rewriter()\n\n    def _call_with_mellea(self) -> dict:\n        \"\"\"Call the Mellea backend using mellea directly.\"\"\"\n        # Lazy import mellea modules to avoid heavy imports during\n        # Langflow's component loading/introspection.\n        from mellea.backends.huggingface import LocalHFBackend\n        from mellea.stdlib.context import ChatContext\n        from mellea.stdlib.components import Document as MelleaDocument\n        from mellea.stdlib.components.chat import Message as MelleaMessage\n        from mellea.stdlib.components.intrinsic import rag as mellea_rag\n\n        assistant_response = self._extract_message_text(self.chat_input)\n        if not assistant_response or not assistant_response.strip():\n            raise ValueError(\"Assistant response is required\")\n\n        document_texts = self._extract_documents()\n\n        # Build context from message history\n        context_messages = []\n        if hasattr(self, 'message_history') and self.message_history is not None:\n            df = self.message_history\n            for _, row in df.iterrows():\n                sender = row.get(\"sender\", \"\")\n                role = \"user\" if sender == \"User\" else \"assistant\"\n                content = row.get(\"text\", \"\")\n                if content and str(content).strip():\n                    context_messages.append({\"role\": role, \"content\": str(content)})\n\n        actual_model_id = _MODEL_NAME_MAPPING.get(self.model_name, self.model_name or _DEFAULT_MODEL)\n\n        input_data = {\n            \"model\": actual_model_id,\n            \"assistant_response\": assistant_response,\n            \"documents\": document_texts,\n            \"context_messages\": context_messages,\n        }\n        self.log(json.dumps(input_data, indent=2), name=\"Mellea request\")\n\n        # Get or initialize the Mellea backend\n        if actual_model_id in _mellea_backend_cache:\n            backend = _mellea_backend_cache[actual_model_id]\n        else:\n            backend = LocalHFBackend(model_id=actual_model_id)\n            _mellea_backend_cache[actual_model_id] = backend\n\n        # Convert documents to Mellea format with IDs\n        mellea_documents = [\n            MelleaDocument(doc_id=str(idx), text=text)\n            for idx, text in enumerate(document_texts)\n        ]\n\n        context = ChatContext()\n        for msg in context_messages:\n            context = context.add(MelleaMessage(msg[\"role\"], msg[\"content\"]))\n\n        hallucination_result = mellea_rag.flag_hallucinated_content(\n            assistant_response, mellea_documents, context, backend\n        )\n\n        result_text = json.dumps(hallucination_result) if isinstance(hallucination_result, dict) else str(hallucination_result)\n        self.log(json.dumps(hallucination_result, indent=2), name=\"Mellea response\")\n\n        return {\n            \"choices\": [\n                {\n                    \"message\": {\n                        \"role\": \"assistant\",\n                        \"content\": result_text\n                    }\n                }\n            ],\n            \"model\": self.model_name,\n            \"backend\": \"LocalHF\",\n            \"hallucination_result\": hallucination_result\n        }\n\n    def _call_with_granite_rewriter(self) -> dict:\n        try:\n            from mellea.formatters import granite as granite_common\n            request_body = self._build_request()\n\n            self.log(json.dumps(request_body, indent=2), name=\"vLLM/Ollama request\")\n            intrinsics_repo_name = \"ibm-granite/granite-lib-rag-r1.0\"\n            use_alora = False\n            io_yaml_file = granite_common.intrinsics.obtain_io_yaml(\n                self.intrinsic_name, self.model_name, intrinsics_repo_name, alora=use_alora\n            )\n            rewriter = granite_common.IntrinsicsRewriter(config_file=io_yaml_file)\n            result_processor = granite_common.IntrinsicsResultProcessor(config_file=io_yaml_file)\n            rewritten_request = rewriter.transform(request_body)\n            api_url = self._get_api_url()\n            client = OpenAI(\n                base_url=api_url.replace(\"/chat/completions\", \"\"),\n                api_key=self.api_key or \"no-key\",\n            )\n            completion = client.chat.completions.create(**rewritten_request.model_dump())\n            try:\n                processed = result_processor.transform(completion, rewritten_request)\n                result = json.loads(processed.model_dump_json())\n                self.log(json.dumps(result, indent=2), name=\"vLLM/Ollama response\")\n            except (json.JSONDecodeError, IndexError, ValueError):\n                result = {\n                    \"choices\": [{\"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"[]\"}, \"finish_reason\": \"stop\"}]\n                }\n\n            self.log(json.dumps(result, indent=2), name=\"vLLM/Ollama MODEL OUTPUT\")\n\n            return result\n        except Exception as e:\n            raise ValueError(f\"vLLM/Ollama call with mellea failed: {e}\")\n\n    def _call_intrinsics_api(self) -> dict:\n        request_body = self._build_request()\n\n        self.log(json.dumps(request_body, indent=2), name=\"Intrinsics API request\")\n        api_url = self._get_api_url()\n        headers = {\"Content-Type\": \"application/json\"}\n        try:\n            with httpx.Client() as client:\n                response = client.post(\n                    api_url, json=request_body, headers=headers, timeout=30.0,\n                )\n                response.raise_for_status()\n        except httpx.HTTPStatusError as e:\n            error_detail = e.response.text\n            try:\n                error_detail = e.response.json()\n            except:\n                pass\n            raise ValueError(f\"API error {e.response.status_code}: {error_detail}\")\n        except httpx.ConnectError:\n            raise ValueError(f\"Could not connect to API at {api_url}\")\n        except httpx.RequestError as e:\n            raise ValueError(f\"Request failed: {e}\")\n        except Exception as e:\n            raise ValueError(f\"Unexpected error: {e}\")\n        try:\n            response_data = response.json()\n        except Exception as e:\n            raise ValueError(f\"Failed to parse API response as JSON: {e}\")\n        self.log(json.dumps(response_data, indent=2), name=\"Intrinsics API response\")\n        return response_data\n\n    def _extract_content_from_response(self, response_data: dict) -> str:\n        if \"choices\" in response_data and response_data[\"choices\"]:\n            choice = response_data[\"choices\"][0]\n            if \"message\" in choice:\n                message = choice[\"message\"]\n                if isinstance(message, dict):\n                    return message.get(\"content\", \"\")\n                return str(message)\n        return \"\"\n\n    async def update_build_config(self, build_config, field_value=None, field_name=None):\n        if field_name == \"model_backend\":\n            if field_value and field_value in self.BACKEND_CONFIG:\n                backend_config = self.BACKEND_CONFIG[field_value]\n                build_config[\"model_name\"][\"options\"] = backend_config[\"models\"]\n                build_config[\"model_name\"][\"value\"] = backend_config[\"default_model\"]\n                build_config[\"url\"][\"value\"] = backend_config[\"default_url\"]\n                build_config[\"url\"][\"show\"] = backend_config.get(\"url_editable\", True)\n                if field_value == \"LocalHF\":\n                    build_config[\"url\"][\"show\"] = False\n                    build_config[\"api_key\"][\"show\"] = False\n                    build_config[\"api_key\"][\"required\"] = False\n                else:\n                    build_config[\"api_key\"][\"display_name\"] = \"API Key\"\n                    build_config[\"api_key\"][\"show\"] = True\n        return build_config\n\n    def get_response(self) -> Message:\n        response_data = self._call_api()\n        content = self._extract_content_from_response(response_data)\n        return Message(text=content)\n\n    def get_full_response(self) -> str:\n        response_data = self._call_api()\n        return json.dumps(response_data, indent=2)\n"
-              },
-              "documents": {
-                "_input_type": "HandleInput",
-                "advanced": false,
-                "display_name": "Documents",
-                "dynamic": false,
-                "info": "Documents to use with the intrinsic operation (accepts Data from vector stores)",
-                "input_types": [
-                  "Data",
-                  "Search Results"
-                ],
-                "list": true,
-                "list_add_label": "Add More",
-                "name": "documents",
-                "override_skip": false,
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "trace_as_metadata": true,
-                "track_in_telemetry": false,
-                "type": "other",
-                "value": ""
-              },
-              "is_refresh": false,
-              "message_history": {
-                "_input_type": "DataFrameInput",
-                "advanced": false,
-                "display_name": "Message History",
-                "dynamic": false,
-                "info": "Previous conversation messages as a DataFrame with 'role' (user/assistant) and 'content' columns",
-                "input_types": [
-                  "DataFrame"
-                ],
-                "list": false,
-                "list_add_label": "Add More",
-                "name": "message_history",
-                "override_skip": false,
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_input": true,
-                "trace_as_metadata": true,
-                "track_in_telemetry": false,
-                "type": "other",
-                "value": ""
-              },
-              "model_backend": {
-                "_input_type": "DropdownInput",
-                "advanced": false,
-                "combobox": false,
-                "dialog_inputs": {},
-                "display_name": "Model Backend",
-                "dynamic": false,
-                "external_options": {},
-                "info": "Backend service for Granite model",
-                "name": "model_backend",
-                "options": [
-                  "vLLM",
-                  "Ollama",
-                  "LocalHF"
-                ],
-                "options_metadata": [],
-                "override_skip": false,
-                "placeholder": "",
-                "real_time_refresh": true,
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "toggle": false,
-                "tool_mode": false,
-                "trace_as_metadata": true,
-                "track_in_telemetry": true,
-                "type": "str",
-                "value": "Ollama"
-              },
-              "model_name": {
-                "_input_type": "DropdownInput",
-                "advanced": false,
-                "combobox": false,
-                "dialog_inputs": {},
-                "display_name": "Model Name",
-                "dynamic": false,
-                "external_options": {},
-                "info": "Model name (options change based on backend)",
-                "load_from_db": false,
-                "name": "model_name",
-                "options": [
-                  "granite4:micro"
-                ],
-                "options_metadata": [],
-                "override_skip": false,
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "toggle": false,
-                "tool_mode": false,
-                "trace_as_metadata": true,
-                "track_in_telemetry": true,
-                "type": "str",
-                "value": "granite4:micro"
-              },
-              "temperature": {
-                "_input_type": "SliderInput",
-                "advanced": true,
-                "display_name": "Temperature",
-                "dynamic": false,
-                "info": "Controls randomness in responses",
-                "max_label": "",
-                "max_label_icon": "",
-                "min_label": "",
-                "min_label_icon": "",
-                "name": "temperature",
-                "override_skip": false,
-                "placeholder": "",
-                "range_spec": {
-                  "max": 2,
-                  "min": 0,
-                  "step": 0.01,
-                  "step_type": "float"
-                },
-                "required": false,
-                "show": true,
-                "slider_buttons": false,
-                "slider_buttons_options": [],
-                "slider_input": false,
-                "title_case": false,
-                "tool_mode": false,
-                "track_in_telemetry": false,
-                "type": "slider",
-                "value": 0
-              },
-              "url": {
-                "_input_type": "StrInput",
-                "advanced": false,
-                "display_name": "API URL",
-                "dynamic": false,
-                "info": "Base URL for the model backend (e.g., http://localhost:8000)",
-                "list": false,
-                "list_add_label": "Add More",
-                "load_from_db": false,
-                "name": "url",
-                "override_skip": false,
-                "placeholder": "",
-                "required": true,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_metadata": true,
-                "track_in_telemetry": false,
-                "type": "str",
-                "value": "http://host.docker.internal:11434"
-              }
-            },
-            "tool_mode": false
-          },
-          "selected_output": "response",
-          "showNode": true,
-          "type": "HallucinationDetection"
-        },
-        "dragging": false,
-        "id": "HallucinationDetection-i0Apm",
-        "measured": {
-          "height": 721,
-          "width": 320
-        },
-        "position": {
-          "x": 970.5111661334371,
-          "y": 911.9222393981022
-        },
-        "selected": false,
-        "type": "genericNode"
-      },
-      {
-        "data": {
           "id": "ChatOutput-GZViW",
           "node": {
             "base_classes": [
@@ -2363,7 +1882,7 @@
             ],
             "frozen": false,
             "icon": "Chroma",
-            "last_updated": "2026-03-21T05:26:25.904Z",
+            "last_updated": "2026-03-23T19:57:06.440Z",
             "legacy": false,
             "lf_version": "1.7.3",
             "metadata": {
@@ -2411,10 +1930,10 @@
             "pinned": false,
             "template": {
               "_frontend_node_flow_id": {
-                "value": "16d1afc7-5532-4c3e-983f-472a20389082"
+                "value": "e9b6092c-7c4d-4c15-99ee-e2d3d0b4804f"
               },
               "_frontend_node_folder_id": {
-                "value": "4b0b4ae8-eeef-4d87-96e8-8abb8a0b232e"
+                "value": "5cbcdbd8-abb2-454a-b418-826e4d39c17d"
               },
               "_type": "Component",
               "code": {
@@ -2620,7 +2139,7 @@
           "x": 151.17446480392186,
           "y": 188.57475723216191
         },
-        "selected": true,
+        "selected": false,
         "type": "genericNode"
       },
       {
@@ -2749,7 +2268,7 @@
   },
   "description": "Generate citations through citation generation intrinsic",
   "endpoint_name": null,
-  "id": "16d1afc7-5532-4c3e-983f-472a20389082",
+  "id": "e9b6092c-7c4d-4c15-99ee-e2d3d0b4804f",
   "is_component": false,
   "last_tested_version": "1.7.3",
   "name": "Citation Generation (Intrinsic)",
