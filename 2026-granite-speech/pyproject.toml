@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "granite-speech-demo"
+version = "0.1.0"
+description = "Real-time voice conversation: Pipecat + Mellea stream_with_chunking"
+requires-python = ">=3.12"
+license = "Apache-2.0"
+dependencies = [
+    "pipecat-ai[webrtc,whisper,kokoro,silero]",
+    "pipecat-ai[mlx-whisper]; sys_platform == 'darwin'",
+    "mellea[all]>=0.4.1",
+    "fastapi>=0.115",
+    "uvicorn>=0.32",
+    "python-dotenv>=1.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
