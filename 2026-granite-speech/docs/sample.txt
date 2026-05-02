@@ -1,0 +1,51 @@
+Granite Speech 4.1 2B
+
+Granite Speech 4.1 2B is IBM's compact speech-language model for multilingual automatic speech recognition and bidirectional speech translation. It was released on April 29, 2026 under the Apache 2.0 license. It supports six languages for transcription: English, French, German, Spanish, Portuguese, and Japanese. For translation, it handles any of those languages into English, and English into French, German, Spanish, Italian, Portuguese, Japanese, and Mandarin Chinese.
+
+The model was built by taking an intermediate checkpoint of Granite 4.0 1B Base and aligning it with speech using 174,000 hours of audio. That training mix includes public corpora plus synthetic data targeted at Japanese ASR, keyword-biased ASR, and speech translation. Training took thirty days on eight NVIDIA H100 GPUs on IBM's Blue Vela supercomputing cluster.
+
+Compared to its predecessor Granite 4.0 1B Speech, the 4.1 release keeps the same parameter count but adds three capabilities. First, transcription accuracy improved for multilingual ASR thanks to a new dual-head CTC encoder that produces both character-level and subword outputs, combined with frame importance sampling that focuses the encoder on informative parts of the audio. Second, the model can now produce punctuation and true casing across all supported languages, including German noun capitalization, just by changing the prompt. Third, keyword biasing works better, which helps recognition of proper names, acronyms, and technical jargon when the user supplies a keyword list.
+
+Two sibling variants exist. Granite Speech 4.1 2B Plus adds speaker-attributed ASR and word-level timestamps. Granite Speech 4.1 2B NAR uses a non-autoregressive architecture for higher throughput.
+
+Architecturally, the model has three parts. The speech encoder is sixteen conformer blocks trained with connectionist temporal classification, using block attention over four-second audio windows. A two-layer window query transformer projects speech embeddings into the language model's input space with a total temporal downsampling factor of ten, producing a ten-hertz embedding rate. The language model is a finetuned Granite 4.0 1B Base with a 128k token context window.
+
+On the Open ASR leaderboard as of April 2026, Granite Speech 4.1 2B performs competitively with other speech-language models under eight billion parameters and with dedicated ASR systems. It also scores well on punctuation error rate and capitalization F1 across LibriSpeech, VoxPopuli, Earnings-22, and Common Voice.
+
+IBM recommends using the model for automatic speech recognition and translation in enterprise applications. For safety, IBM recommends pairing it with Granite Guardian, which detects risks in prompts and responses. If the model receives an unfamiliar or malformed prompt it falls back to plain transcription, which limits exposure to adversarial audio inputs.
+
+
+Common questions and answers:
+
+Q: What is Granite Speech 4.1?
+A: It's IBM's compact speech-language model for transcription and translation, released in April 2026.
+
+Q: What languages does it support?
+A: English, French, German, Spanish, Portuguese, and Japanese for transcription, plus Italian and Mandarin as translation targets from English.
+
+Q: How big is the model?
+A: About two billion parameters. The language model backbone is Granite 4.0 1B Base.
+
+Q: What's new compared to Granite 4.0 Speech?
+A: Higher multilingual accuracy from a dual-head CTC encoder, punctuation and true casing in every supported language, and better keyword biasing for names and jargon.
+
+Q: When was it released?
+A: April 29, 2026.
+
+Q: What license is it under?
+A: Apache 2.0.
+
+Q: How much audio was it trained on?
+A: About 174,000 hours, a mix of public corpora and synthetic data.
+
+Q: How long did training take?
+A: Thirty days on eight NVIDIA H100 GPUs on IBM's Blue Vela cluster.
+
+Q: Can it translate speech?
+A: Yes, into English from any supported language, and from English into French, German, Spanish, Italian, Portuguese, Japanese, and Mandarin.
+
+Q: Does it add punctuation?
+A: Yes, across all supported languages, including German noun capitalization.
+
+Q: Are there other variants?
+A: Yes. The Plus variant adds speaker attribution and word-level timestamps. The NAR variant uses a non-autoregressive architecture for higher throughput.

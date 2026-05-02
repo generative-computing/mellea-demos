@@ -1,0 +1,28 @@
+{
+  "name": "mellea-pipecat-voice-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "NODE_TLS_REJECT_UNAUTHORIZED=0 next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@carbon/icons-react": "^11.78.0",
+    "@carbon/react": "^1.105.0",
+    "@pipecat-ai/client-js": "^1.7.0",
+    "@pipecat-ai/client-react": "^1.2.1",
+    "@pipecat-ai/small-webrtc-transport": "^1.10.0",
+    "@pipecat-ai/voice-ui-kit": "^0.8.2",
+    "next": "16.2.4",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "sass": "^1.99.0",
+    "typescript": "^5"
+  }
+}
