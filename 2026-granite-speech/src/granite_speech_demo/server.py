@@ -9,8 +9,6 @@ import uuid
 from contextlib import asynccontextmanager
 from typing import Any, Dict
 
-import numpy as np
-
 import uvicorn
 from dotenv import load_dotenv
 
@@ -33,17 +31,13 @@ from pipecat.turns.user_stop import SpeechTimeoutUserTurnStopStrategy
 from pipecat.turns.user_turn_strategies import UserTurnStrategies
 from pipecat.services.kokoro.tts import KokoroTTSService
 from pipecat.services.tts_service import TextAggregationMode
-from pipecat.services.whisper.stt import WhisperSTTService, Model as WhisperModel
-
-if sys.platform == "darwin":
-    from pipecat.services.whisper.stt import WhisperSTTServiceMLX, MLXModel
 from pipecat.transports.base_transport import TransportParams
 from pipecat.transports.smallwebrtc.connection import IceServer, SmallWebRTCConnection
 from pipecat.transports.smallwebrtc.transport import SmallWebRTCTransport
 
+from granite_speech_demo.hosted_stt import HostedSTTService
 from granite_speech_demo.mellea_llm import (
     BEST_OF_N,
-    GRANITE_SWITCH_ENABLED,
     IVR_REQUIREMENT_LABELS,
     MelleaLLMService,
 )
@@ -60,26 +54,6 @@ logger = logging.getLogger(__name__)
 
 HOST = os.environ.get("HOST", "localhost")
 PORT = int(os.environ.get("PORT", "7860"))
-_whisper_key = os.environ.get("WHISPER_MODEL", "medium")
-
-if sys.platform == "darwin":
-    _WHISPER_MODELS = {
-        "tiny": MLXModel.TINY,
-        "medium": MLXModel.MEDIUM,
-        "large-v3": MLXModel.LARGE_V3,
-        "large-v3-turbo": MLXModel.LARGE_V3_TURBO,
-        "distil-large-v3": MLXModel.DISTIL_LARGE_V3,
-    }
-    WHISPER_MODEL = _WHISPER_MODELS.get(_whisper_key, MLXModel.MEDIUM)
-else:
-    _WHISPER_MODELS = {
-        "tiny": WhisperModel.TINY,
-        "medium": WhisperModel.MEDIUM,
-        "large-v3": WhisperModel.LARGE,
-        "large-v3-turbo": WhisperModel.LARGE_V3_TURBO,
-        "distil-large-v3": WhisperModel.DISTIL_LARGE_V2,
-    }
-    WHISPER_MODEL = _WHISPER_MODELS.get(_whisper_key, WhisperModel.MEDIUM)
 TTS_VOICE = os.environ.get("TTS_VOICE", "bf_emma")
 
 pcs_map: Dict[str, SmallWebRTCConnection] = {}
@@ -87,26 +61,8 @@ active_sessions: Dict[str, Dict[str, Any]] = {}
 ice_servers = [IceServer(urls="stun:stun.l.google.com:19302")]
 
 
-def _warmup_whisper():
-    silence = np.zeros(16000, dtype=np.float32)
-    if sys.platform == "darwin":
-        import mlx_whisper
-
-        logger.info("Warming up MLX Whisper model (%s)...", WHISPER_MODEL)
-        mlx_whisper.transcribe(silence, path_or_hf_repo=WHISPER_MODEL.value)
-    else:
-        from faster_whisper import WhisperModel as FWModel
-
-        model_name = WHISPER_MODEL if isinstance(WHISPER_MODEL, str) else WHISPER_MODEL.value
-        logger.info("Warming up faster-whisper model (%s)...", model_name)
-        model = FWModel(model_name, device="auto", compute_type="default")
-        model.transcribe(silence)
-    logger.info("Whisper warm-up complete")
-
-
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    await asyncio.to_thread(_warmup_whisper)
     yield
     coros = [pc.disconnect() for pc in pcs_map.values()]
     await asyncio.gather(*coros)
@@ -127,10 +83,7 @@ async def run_bot(webrtc_connection: SmallWebRTCConnection, session_config: dict
         ),
     )
 
-    if sys.platform == "darwin":
-        stt = WhisperSTTServiceMLX(model=WHISPER_MODEL)
-    else:
-        stt = WhisperSTTService(model=WHISPER_MODEL)
+    stt = HostedSTTService()
     tts = KokoroTTSService(
         settings=KokoroTTSService.Settings(voice=TTS_VOICE),
         text_aggregation_mode=TextAggregationMode.SENTENCE,
@@ -180,7 +133,6 @@ async def ivr_config():
     return {
         "requirements": IVR_REQUIREMENT_LABELS,
         "nSamples": BEST_OF_N,
-        "available": GRANITE_SWITCH_ENABLED,
     }
 
 

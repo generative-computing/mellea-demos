@@ -9,9 +9,9 @@ description = "Real-time voice conversation: Pipecat + Mellea stream_with_chunki
 requires-python = ">=3.12"
 license = "Apache-2.0"
 dependencies = [
-    "pipecat-ai[webrtc,whisper,kokoro,silero]",
-    "pipecat-ai[mlx-whisper]; sys_platform == 'darwin'",
+    "pipecat-ai[webrtc,kokoro,silero]",
     "mellea[all]>=0.4.1",
+    "aiohttp>=3.9",
     "fastapi>=0.115",
     "uvicorn>=0.32",
     "python-dotenv>=1.0",

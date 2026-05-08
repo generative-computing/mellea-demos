@@ -1,12 +1,12 @@
 # granite-speech-demo
 
-Real-time voice conversation demo showcasing IBM Granite models with [Pipecat](https://github.com/pipecat-ai/pipecat) for pipeline orchestration and [Mellea](https://github.com/generative-computing/mellea) for validated LLM generation.
+Real-time voice conversation demo built on [Granite Speech](https://huggingface.co/ibm-granite/granite-speech-4.1-2b) for transcription, [Granite Switch](https://huggingface.co/ibm-granite/granite-switch-4.1-3b-preview) for validated LLM generation via [Mellea](https://github.com/generative-computing/mellea)'s `requirement_check` intrinsics, and Pipecat for pipeline orchestration.
 
 ```
-Browser mic → WebRTC → Silero VAD → Whisper STT → Mellea LLM → Kokoro TTS → WebRTC → Browser speaker
+Browser mic → WebRTC → Silero VAD → Granite Speech STT → Mellea LLM (via Granite Switch) → Kokoro TTS → WebRTC → Browser speaker
 ```
 
-Everything runs on-device. STT is Whisper (MLX Whisper on macOS / Apple Silicon, faster-whisper on Linux with CUDA auto-detection), the LLM is served by Ollama over an OpenAI-compatible endpoint, and TTS is Kokoro. Any other OpenAI-compatible server (LM Studio, vLLM, etc.) works by pointing `LLM_URL` / `LLM_MODEL` at it.
+STT is [IBM Granite Speech 4.1 2B](https://huggingface.co/ibm-granite/granite-speech-4.1-2b) served by vLLM. The LLM is [IBM Granite Switch 4.1 3B](https://huggingface.co/ibm-granite/granite-switch-4.1-3b-preview), also served by vLLM — it exposes `requirement_check` ALoRA intrinsics that power the Best-of-N validation path (any other OpenAI-compatible server works if you don't need that path; point `LLM_URL` / `LLM_MODEL` at it). TTS is Kokoro running locally.
 
 The server ships with a persona of a virtual assistant, configured as the default system prompt. Override via `PROMPT_FILE` or ground with your own docs via `DOCUMENTS_DIR`.
 
@@ -14,7 +14,7 @@ The server ships with a persona of a virtual assistant, configured as the defaul
 
 By default, LLM tokens stream straight through to TTS sentence-by-sentence for low latency.
 
-When `GRANITE_SWITCH_ENABLED=true` (i.e. `LLM_MODEL` points at a Granite Switch model), a **Best-of-N parallel generation** path becomes available that uses the `requirement_check` ALoRA intrinsic to score each candidate against a set of requirements (e.g. "no markdown formatting", "≤50 words", "active voice") and picks the first passing answer. This path is non-streaming because intrinsic validation needs the full answer before scoring. Toggle it at runtime from the frontend.
+A **Best-of-N parallel generation** path is also available. It uses Granite Switch's `requirement_check` ALoRA intrinsic to score each candidate against a set of requirements (e.g. "no markdown formatting", "≤50 words", "active voice") and picks the first passing answer. This path is non-streaming because intrinsic validation needs the full answer before scoring. Toggle it at runtime from the frontend.
 
 Barge-in (interrupting the bot mid-response) is handled by Pipecat's `InterruptionFrame` propagation.
 
@@ -22,14 +22,40 @@ Barge-in (interrupting the bot mid-response) is handled by Pipecat's `Interrupti
 
 - Python 3.12+
 - [uv](https://docs.astral.sh/uv/)
-- An OpenAI-compatible LLM server running locally. [Ollama](https://ollama.com/) is the default — install it, then pull the model: `ollama pull granite4.1:3b`. Any other OpenAI-compatible backend works too; point `LLM_URL` / `LLM_MODEL` at it.
+- Two vLLM servers — one for Granite Speech (STT), one for Granite Switch (LLM). Both require NVIDIA GPUs. See [below](#serving-the-models). The two servers can be on the same host or on separate GPU boxes; set the `*_URL` env vars accordingly.
 
 ## Setup
 
 ```bash
-cp .env.example .env   # edit if your LLM URL/model differs
+cp .env.example .env   # edit if your vLLM URLs differ
 uv sync
 ```
+
+### Serving the models
+
+**Granite Speech 4.1 2B (STT)** — [`ibm-granite/granite-speech-4.1-2b`](https://huggingface.co/ibm-granite/granite-speech-4.1-2b):
+
+```bash
+vllm serve ibm-granite/granite-speech-4.1-2b \
+    --api-key token-abc123 \
+    --max-model-len 2048 \
+    --port 8083
+```
+
+**Granite Switch 4.1 3B (LLM)** — [`ibm-granite/granite-switch-4.1-3b-preview`](https://huggingface.co/ibm-granite/granite-switch-4.1-3b-preview). Adapters (including `requirement_check`) are embedded in the checkpoint; no extra flags needed:
+
+```bash
+vllm serve ibm-granite/granite-switch-4.1-3b-preview --port 8000
+```
+
+Then make sure `.env` points at them:
+
+```bash
+VLLM_SPEECH_URL=http://localhost:8083
+LLM_URL=http://localhost:8000/v1
+```
+
+If you don't have a second GPU, you can skip the Switch server and point `LLM_URL` / `LLM_MODEL` at any OpenAI-compatible backend — the Best-of-N validation path won't work (it requires Switch's `requirement_check` intrinsic), but the streaming conversation path does.
 
 ## Run
 
@@ -86,18 +112,21 @@ All settings are in `.env` (see `.env.example`).
 |---|---|---|
 | `HOST` | `localhost` | Server bind address |
 | `PORT` | `7860` | Server port |
-| `LLM_URL` | `http://localhost:11434/v1` | OpenAI-compatible LLM endpoint (default is Ollama) |
-| `LLM_MODEL` | `granite4.1:3b` | Chat model ID |
-| `LLM_API_KEY` | `ollama` | API key for the LLM endpoint. Ollama ignores it; set as needed for other backends. |
-| `WHISPER_MODEL` | `small` | Whisper model size (`tiny`, `medium`, `large-v3`, `large-v3-turbo`, `distil-large-v3`) |
+| `LLM_URL` | `http://localhost:8000/v1` | OpenAI-compatible LLM endpoint (default is vLLM serving Granite Switch) |
+| `LLM_MODEL` | `ibm-granite/granite-switch-4.1-3b-preview` | Chat model ID |
+| `LLM_API_KEY` | _(unset)_ | API key for the LLM endpoint. Not required for local vLLM; set as needed for other backends. |
+| `VLLM_SPEECH_URL` | `http://localhost:8083` | vLLM endpoint hosting the Granite Speech model |
+| `VLLM_SPEECH_MODEL` | `ibm-granite/granite-speech-4.1-2b` | Speech model ID passed in the chat/completions payload |
+| `VLLM_SPEECH_PATH` | `/v1/chat/completions` | Path on the vLLM server for audio-in chat completions |
+| `VLLM_SPEECH_BEARER_TOKEN` | `token-abc123` | Bearer token sent to the vLLM speech endpoint |
+| `STT_KEYWORD_BIAS` | `Granite,Mellea` | Comma-separated terms appended to the STT prompt to bias transcription |
 | `TTS_VOICE` | `bf_emma` | Kokoro voice ID |
-| `GRANITE_SWITCH_ENABLED` | `false` | Set to `true` when `LLM_MODEL` is a Granite Switch model. Gates the IVR validation path — flip the frontend toggle to turn it on per-session. |
 | `PROMPT_FILE` | _(unset)_ | Path to a text file whose contents are prepended to the default system/instruct prompts. |
 | `DOCUMENTS_DIR` | _(unset)_ | Directory of `.txt` files loaded at import time as Mellea `Document` objects and injected into the system prompt inside `<documents>` tags for grounded answers. |
 
-## Using Granite Switch
+## Granite Switch and Best-of-N validation
 
-[Granite Switch](https://github.com/generative-computing/granite-switch) is a Granite variant that exposes `requirement_check` ALoRA intrinsics — classifier heads that score a candidate answer against a natural-language requirement. When `GRANITE_SWITCH_ENABLED=true`, the demo unlocks a **Best-of-N IVR validation** path that generates several candidates in parallel, scores each against a fixed requirement set, and speaks the first passing answer.
+[Granite Switch](https://github.com/generative-computing/granite-switch) is a Granite variant that ships with `requirement_check` ALoRA intrinsics — classifier heads that score a candidate answer against a natural-language requirement. Because Switch is the default LLM, the demo can run a **Best-of-N IVR validation** path that generates several candidates in parallel, scores each against a fixed requirement set, and speaks the first passing answer. The IVR toggle in the frontend turns this on per-session — it's off by default so the baseline turn latency stays low.
 
 ### Requirements scored per turn
 
@@ -105,21 +134,9 @@ Defined in `src/granite_speech_demo/mellea_llm.py` as `IVR_REQUIREMENT_SPECS`.
 
 Each requirement has a pass threshold (default `0.5`). A candidate passes only if every requirement clears its threshold. If no candidate passes, a canned fallback answer is used.
 
-### Enabling it
-
-1. Follow the instructions in the [granite-switch repo](https://github.com/generative-computing/granite-switch) to run the model locally on an OpenAI-compatible endpoint that exposes the `requirement_check` intrinsic.
-2. Point `LLM_URL` / `LLM_MODEL` at that endpoint.
-3. In `.env`:
-
-   ```bash
-   GRANITE_SWITCH_ENABLED=true
-   ```
-
-4. Restart the server. The Switch gate is armed; flip the IVR toggle in the frontend to turn validation on.
-
 ### Runtime toggle
 
-The frontend's IVR toggle sends an RTVI `set_ivr_validation` message; the backend switches between streaming and Best-of-N without a reconnect. The toggle is a no-op if `GRANITE_SWITCH_ENABLED=false`.
+The frontend's IVR toggle sends an RTVI `set_ivr_validation` message; the backend switches between streaming and Best-of-N without a reconnect.
 
 ### What changes when validation is on
 
@@ -136,6 +153,7 @@ Requirement set, labels, instructions, and thresholds all live in `IVR_REQUIREME
 ```
 src/granite_speech_demo/
 ├── server.py          # FastAPI + SmallWebRTC signaling + pipeline wiring
+├── hosted_stt.py      # HostedSTTService — streams audio to the vLLM Granite Speech endpoint
 └── mellea_llm.py      # MelleaLLMService — streaming path + Best-of-N IVR validation path, document loading
 
 frontend/              # Next.js app (Carbon Design System, IBM Plex fonts)
@@ -155,13 +173,13 @@ frontend/              # Next.js app (Carbon Design System, IBM Plex fonts)
 **server.py** sets up the Pipecat pipeline and the FastAPI endpoints (RTVI protocol: `/start`, `/sessions/{id}/api/offer`, plus `/api/ivr/config` for the frontend). Each WebRTC connection spawns its own pipeline:
 
 ```
-transport.input → Whisper STT → UserAggregator → MelleaLLM → Kokoro TTS → transport.output → AssistantAggregator
+transport.input → HostedSTT (Granite Speech via vLLM) → UserAggregator → MelleaLLM → Kokoro TTS → transport.output → AssistantAggregator
 ```
 
 **mellea_llm.py** subclasses Pipecat's `LLMService` and has two code paths:
 
 - **Streaming (default):** on each `LLMContextFrame` it extracts the latest user message and streams tokens from the LLM endpoint, pushing `LLMTextFrame`s downstream. TTS is configured with `TextAggregationMode.SENTENCE` so each sentence passes directly to synthesis without additional buffering.
-- **Best-of-N (IVR, requires `GRANITE_SWITCH_ENABLED=true`):** runs `BEST_OF_N` (default 3) parallel generations in a thread pool; for each candidate answer it scores every requirement in parallel using Mellea's `requirement_check` ALoRA against the Switch backend, then selects the first passing answer. Intentionally non-streaming — the full answer must be produced before intrinsic validation can score it. Phase events (`start` / `sample_start` / `sample_text` / `check` / `done`) are pushed to the client as RTVI server messages so the UI can render a live validation grid.
+- **Best-of-N (IVR):** runs `BEST_OF_N` (default 3) parallel generations in a thread pool; for each candidate answer it scores every requirement in parallel using Mellea's `requirement_check` ALoRA against the Switch backend, then selects the first passing answer. Intentionally non-streaming — the full answer must be produced before intrinsic validation can score it. Phase events (`start` / `sample_start` / `sample_text` / `check` / `done`) are pushed to the client as RTVI server messages so the UI can render a live validation grid.
 
 The module also loads optional `DOCUMENTS_DIR` `.txt` files into Mellea `Document` objects at import time and embeds them in the system prompt inside `<documents>` tags for RAG-style grounded answers.
 

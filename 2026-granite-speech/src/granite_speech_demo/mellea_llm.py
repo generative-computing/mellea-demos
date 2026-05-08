@@ -31,12 +31,9 @@ from pipecat.services.llm_service import LLMService
 
 from loguru import logger
 
-LLM_URL = os.environ.get("LLM_URL", "http://localhost:11434/v1")
-LLM_MODEL = os.environ.get("LLM_MODEL", "granite4.1:3b")
-LLM_API_KEY = os.environ.get("LLM_API_KEY", "ollama")
-
-GRANITE_SWITCH_ENABLED = os.environ.get(
-    "GRANITE_SWITCH_ENABLED", "false").lower() in ("1", "true", "yes")
+LLM_URL = os.environ.get("LLM_URL", "http://localhost:8000/v1")
+LLM_MODEL = os.environ.get("LLM_MODEL", "ibm-granite/granite-switch-4.1-3b-preview")
+LLM_API_KEY = os.environ.get("LLM_API_KEY", "EMPTY")
 
 DEFAULT_REQUIREMENT_THRESHOLD = 0.5
 
@@ -222,24 +219,16 @@ class MelleaLLMService(LLMService):
     def __init__(self, ivr_validation: bool | str | None = None, **kwargs):
         super().__init__(**kwargs)
         if isinstance(ivr_validation, str):
-            requested = ivr_validation.lower() in ("1", "true", "yes")
+            self._ivr_validation = ivr_validation.lower() in ("1", "true", "yes")
         else:
-            requested = bool(ivr_validation)
-
-        if requested and not GRANITE_SWITCH_ENABLED:
-            logger.warning(
-                "IVR validation requested but GRANITE_SWITCH_ENABLED=false; "
-                "running without requirement-check validation."
-            )
-        self._ivr_validation = requested and GRANITE_SWITCH_ENABLED
+            self._ivr_validation = bool(ivr_validation)
 
         self._backend = OpenAIBackend(
             model_id=LLM_MODEL,
             base_url=LLM_URL,
             api_key=LLM_API_KEY,
         )
-        if self._ivr_validation:
-            self._backend.register_embedded_adapter_model(LLM_MODEL)
+        self._backend.register_embedded_adapter_model(LLM_MODEL)
 
     async def process_frame(self, frame: Frame, direction: FrameDirection):
         await super().process_frame(frame, direction)
@@ -264,12 +253,6 @@ class MelleaLLMService(LLMService):
             await self.push_frame(frame, direction)
 
     def _set_ivr_validation(self, enabled: bool):
-        if enabled and not GRANITE_SWITCH_ENABLED:
-            logger.warning(
-                "Ignoring set_ivr_validation=true: GRANITE_SWITCH_ENABLED=false."
-            )
-            self._ivr_validation = False
-            return
         logger.info("Dynamically setting IVR validation to {}", enabled)
         self._ivr_validation = enabled
         if self._ivr_validation:
