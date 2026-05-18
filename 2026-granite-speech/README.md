@@ -1,14 +1,12 @@
 # granite-speech-demo
 
-Real-time voice conversation demo built on [Granite Speech](https://huggingface.co/ibm-granite/granite-speech-4.1-2b) for transcription, [Granite Switch](https://huggingface.co/ibm-granite/granite-switch-4.1-3b-preview) for validated LLM generation via [Mellea](https://github.com/generative-computing/mellea)'s `requirement_check` intrinsics, and Pipecat for pipeline orchestration.
+A template for building real-time voice agents — speech in, validated language out. Built on [Pipecat](https://github.com/pipecat-ai/pipecat) for pipeline orchestration, [Mellea](https://github.com/generative-computing/mellea) for requirement-checked LLM calls, and any vLLM-served STT and chat models you point it at. Ships with a working example wired up around [Granite Speech 4.1](https://huggingface.co/ibm-granite/granite-speech-4.1-2b) for transcription and [Granite Switch 4.1](https://huggingface.co/ibm-granite/granite-switch-4.1-3b-preview) for generation with `requirement_check` ALoRA intrinsics — clone it to talk to a Granite assistant out of the box, or swap the persona, grounding documents, and requirement set to build your own.
 
 ```
 Browser mic → WebRTC → Silero VAD → Granite Speech STT → Mellea LLM (via Granite Switch) → Kokoro TTS → WebRTC → Browser speaker
 ```
 
 STT is [IBM Granite Speech 4.1 2B](https://huggingface.co/ibm-granite/granite-speech-4.1-2b) served by vLLM. The LLM is [IBM Granite Switch 4.1 3B](https://huggingface.co/ibm-granite/granite-switch-4.1-3b-preview), also served by vLLM — it exposes `requirement_check` ALoRA intrinsics that power the Best-of-N validation path (any other OpenAI-compatible server works if you don't need that path; point `LLM_URL` / `LLM_MODEL` at it). TTS is Kokoro running locally.
-
-The server ships with a persona of a virtual assistant, configured as the default system prompt. Override via `PROMPT_FILE` or ground with your own docs via `DOCUMENTS_DIR`.
 
 ## Generation modes
 
@@ -123,6 +121,14 @@ All settings are in `.env` (see `.env.example`).
 | `TTS_VOICE` | `bf_emma` | Kokoro voice ID |
 | `PROMPT_FILE` | _(unset)_ | Path to a text file whose contents replace the default system prompt. See `prompts/granite.txt` for the persona used in the THINK 2026 demo. |
 | `DOCUMENTS_DIR` | _(unset)_ | Directory of `.txt` files loaded at import time as Mellea `Document` objects and injected into the system prompt inside `<documents>` tags for grounded answers. |
+
+## Make it your own
+
+This repo is a template. The Granite assistant is the included example, but the demo is built to be retargeted at whatever voice agent you want to ship. Three levers, in increasing order of invasiveness:
+
+- **Persona — `PROMPT_FILE`.** The system prompt that shapes the agent's identity and behavior. The default is a one-line generic prompt; `prompts/granite.txt` is the THINK 2026 example. Point at your own `.txt` file to swap personas without touching code.
+- **Grounding — `DOCUMENTS_DIR`.** A folder of `.txt` files, loaded at startup and embedded in the system prompt inside `<documents>` tags. Use it to anchor answers to your own product docs, FAQ, knowledge base, or anything else the model shouldn't be guessing at.
+- **Requirements — `IVR_REQUIREMENT_SPECS` in `src/granite_speech_demo/mellea_llm.py`.** The list of plain-English rules that every Best-of-N candidate is scored against. The defaults are voice-agent staples ("no markdown," "no code"). Add your own — domain-specific rules, tone constraints, "must cite a document" — and Mellea routes each one through Granite Switch's `requirement_check` adapter automatically.
 
 ## Granite Switch and Best-of-N validation
 
