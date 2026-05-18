@@ -193,4 +193,4 @@ The module also loads optional `DOCUMENTS_DIR` `.txt` files into Mellea `Documen
 
 - **[Pipecat AI](https://github.com/pipecat-ai/pipecat)** — pipeline orchestration (WebRTC, Silero VAD, STT/TTS services, SmartTurn)
 - **[Mellea](https://github.com/generative-computing/mellea)** — LLM streaming with chunking and requirement-check validation
-- **IBM Granite models** — chat (`granite4.1:3b` by default, or a Granite Switch model for IVR validation)
+- **IBM Granite models** — [Granite Speech 4.1](https://huggingface.co/ibm-granite/granite-speech-4.1-2b) for transcription and [Granite Switch 4.1](https://huggingface.co/ibm-granite/granite-switch-4.1-3b-preview) for chat with `requirement_check` ALoRA intrinsics
