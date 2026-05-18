@@ -9,6 +9,7 @@ import uuid
 from contextlib import asynccontextmanager
 from typing import Any, Dict
 
+import httpx
 import uvicorn
 from dotenv import load_dotenv
 
@@ -58,7 +59,41 @@ TTS_VOICE = os.environ.get("TTS_VOICE", "bf_emma")
 
 pcs_map: Dict[str, SmallWebRTCConnection] = {}
 active_sessions: Dict[str, Dict[str, Any]] = {}
-ice_servers = [IceServer(urls="stun:stun.l.google.com:19302")]
+
+STUN_FALLBACK = [{"urls": ["stun:stun.l.google.com:19302"]}]
+
+
+async def _mint_ice_servers() -> list[dict]:
+    """Mint fresh ICE servers for one session. Falls back to STUN-only if
+    HF_TOKEN is unset or the TURN endpoint is unreachable, so the demo still
+    works on networks where direct WebRTC is possible (e.g. local dev)."""
+    hf_token = os.environ.get("HF_TOKEN")
+    if not hf_token:
+        return STUN_FALLBACK
+    try:
+        async with httpx.AsyncClient(timeout=10) as client:
+            r = await client.get(
+                "https://turn.fastrtc.org/credentials",
+                headers={"Authorization": f"Bearer {hf_token}"},
+                params={"ttl": 3600},
+            )
+            r.raise_for_status()
+            return r.json()["iceServers"]
+    except Exception as e:
+        logger.warning(f"TURN mint failed, falling back to STUN: {e}")
+        return STUN_FALLBACK
+
+
+def _ice_servers_from_dicts(servers: list[dict]) -> list[IceServer]:
+    """Convert the dict shape used in the /start response into the aiortc
+    dataclass shape SmallWebRTCConnection expects."""
+    out: list[IceServer] = []
+    for s in servers:
+        urls = s.get("urls") or s.get("url")
+        username = s.get("username")
+        credential = s.get("credential")
+        out.append(IceServer(urls=urls, username=username, credential=credential))
+    return out
 
 
 @asynccontextmanager
@@ -154,13 +189,14 @@ async def rtvi_start(request: Request):
     session_config = request_data.get("body", {})
     if "ivrValidation" in request_data:
         session_config["ivr_validation"] = request_data["ivrValidation"]
+
+    ice_servers_dicts = await _mint_ice_servers()
+    session_config["_ice_servers"] = ice_servers_dicts
     active_sessions[session_id] = session_config
 
     result = {"sessionId": session_id}
     if request_data.get("enableDefaultIceServers"):
-        result["iceConfig"] = {
-            "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
-        }
+        result["iceConfig"] = {"iceServers": ice_servers_dicts}
     return result
 
 
@@ -197,6 +233,10 @@ async def _handle_offer(data: dict, background_tasks: BackgroundTasks, session_c
             restart_pc=data.get("restart_pc", False),
         )
     else:
+        ice_servers_dicts = (session_config or {}).get("_ice_servers")
+        if not ice_servers_dicts:
+            ice_servers_dicts = await _mint_ice_servers()
+        ice_servers = _ice_servers_from_dicts(ice_servers_dicts)
         conn = SmallWebRTCConnection(ice_servers)
         await conn.initialize(sdp=data["sdp"], type=data["type"])
 
