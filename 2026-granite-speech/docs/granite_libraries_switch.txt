@@ -1,0 +1,13 @@
+To help developers build end-to-end AI pipelines with Granite, IBM is releasing a set of Granite Libraries — collections of lightweight LoRA adapters built on top of Granite 4.0 Micro. Each library packages task-specific capabilities that can be composed into agentic workflows.
+
+Granite Core Library provides three foundational adapters: context attribution, which identifies which parts of the context were most important for generating a response; requirement check, which evaluates whether a response satisfies user-specified constraints; and uncertainty, which provides calibrated confidence scores for model outputs.
+
+Granite RAG Library offers six adapters spanning the full retrieval-augmented generation pipeline. Pre-retrieval adapters handle query rewriting and query clarification. Pre-generation adapters assess context relevance and answerability. Post-generation adapters perform hallucination detection and citation generation.
+
+Granite Guardian Library includes four adapters for safety and compliance: guardian core for detecting harm, jailbreaking, profanity, and social bias; factuality detection for identifying conflicts or misrepresentations against source material; factuality correction for fixing incorrect claims while preserving the response; and policy guardrails for checking compliance against custom policies.
+
+All three libraries are available on Hugging Face under an Apache 2.0 license.
+
+Granite Switch is the composition technology that makes the Granite Libraries possible. It enables coarse-grained expert switching for LLMs by composing independently-trained LoRA adapters into a single model. Rather than routing tokens to multiple experts per layer, Granite Switch activates one expert across all layers for a contiguous span of tokens, then switches between experts via control tokens and a dedicated switch layer — a small attention-based mechanism inserted before the decoder stack that detects control tokens and produces adapter indices for every decoder layer.
+
+A key design principle is that experts are developed independently and never jointly trained. KV cache isolation ensures each expert sees only the base model representations it was trained on, enabling library-like composition where new capabilities can be added without retraining existing ones. The composed model produces a standard checkpoint compatible with both HuggingFace and vLLM deployment, with expert activation controlled either by the application (software-controlled) or by trained routers that emit control tokens within a single generation call (model-controlled).

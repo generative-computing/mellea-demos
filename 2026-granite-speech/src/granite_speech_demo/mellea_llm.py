@@ -35,6 +35,8 @@ LLM_URL = os.environ.get("LLM_URL", "http://localhost:8000/v1")
 LLM_MODEL = os.environ.get("LLM_MODEL", "ibm-granite/granite-switch-4.1-3b-preview")
 LLM_API_KEY = os.environ.get("LLM_API_KEY", "EMPTY")
 
+IVR_VALIDATION_DEFAULT = os.environ.get("IVR_VALIDATION", "false").lower() in ("1", "true", "yes")
+
 DEFAULT_REQUIREMENT_THRESHOLD = 0.5
 
 
@@ -44,13 +46,30 @@ class RequirementSpec:
     description: str
     instruction: str
     threshold: float = DEFAULT_REQUIREMENT_THRESHOLD
+    invert: bool = False
 
 
 IVR_REQUIREMENT_SPECS = [
     RequirementSpec(
+        label="Natural speech",
+        description="The response consists of short, complete sentences that sound natural when spoken aloud.",
+        instruction="Use short, complete sentences that sound natural when spoken aloud.",
+    ),
+    RequirementSpec(
         label="No markdown",
         description="The response contains no bullet points, no numbered lists, no headers, and no markdown formatting.",
         instruction="No bullet points. No numbered lists. No headers. No markdown formatting.",
+    ),
+    RequirementSpec(
+        label="Relevant to IBM",
+        description="The response is relevant to IBM offerings.",
+        instruction="Stay relevant to IBM offerings. Avoid passive voice.",
+    ),
+    RequirementSpec(
+        label="No code",
+        description="The response includes software code or pseudocode or offers to help with coding",
+        instruction="",
+        invert=True,
     ),
 ]
 
@@ -62,7 +81,23 @@ IVR_REQUIREMENT_INSTRUCTIONS = [
 
 BEST_OF_N = 3
 
-_BASE_SYSTEM_INSTRUCTION = (
+def _load_prompt_file() -> str | None:
+    prompt_file = os.environ.get("PROMPT_FILE", "")
+    if not prompt_file:
+        return None
+    path = Path(prompt_file)
+    if not path.is_absolute():
+        path = Path(__file__).resolve().parents[2] / path
+    if not path.is_file():
+        logger.warning("PROMPT_FILE={!r} is not a file, skipping", prompt_file)
+        return None
+    text = path.read_text().strip()
+    if text:
+        logger.info("Loaded system prompt from {} ({} chars)", path, len(text))
+    return text or None
+
+
+_BASE_SYSTEM_INSTRUCTION = _load_prompt_file() or (
     "You are Granite, IBM's real-time interactive speech assistant, running live."
 )
 
@@ -128,11 +163,11 @@ INSTRUCT_TEMPLATE = _DEFAULT_INSTRUCT_TEMPLATE
 
 
 def _check_one_requirement(gen_ctx, backend, req_desc, req_index, gen_index, t0, emit,
-                           threshold=DEFAULT_REQUIREMENT_THRESHOLD):
+                           threshold=DEFAULT_REQUIREMENT_THRESHOLD, invert=False):
     """Run a single requirement check. Executed in a thread."""
     check_started = time.monotonic()
     score = core.requirement_check(gen_ctx, backend, req_desc)
-    passed = score > threshold
+    passed = score < threshold if invert else score > threshold
     if emit is not None:
         emit({
             "phase": "check",
@@ -174,12 +209,14 @@ def _single_generation(action, ctx, backend, model_options, requirements, valida
             if isinstance(req, RequirementSpec):
                 req_desc = req.description
                 threshold = req.threshold
+                invert = req.invert
             else:
                 req_desc = req
                 threshold = DEFAULT_REQUIREMENT_THRESHOLD
+                invert = False
             futures.append(req_executor.submit(
                 _check_one_requirement, gen_ctx, backend, req_desc, i, gen_index, t0, emit,
-                threshold,
+                threshold, invert,
             ))
         req_results = [f.result() for f in futures]
     all_passed = all(r["passed"] for r in req_results)

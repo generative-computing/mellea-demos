@@ -1,0 +1,11 @@
+IBM just released the Granite 4.1 collection, the latest versions of its family of Granite models. The release covers small language models (SLMs), as well as Granite speech, vision, embeddings, and Guardian models. All Granite 4.1 models are released under an Apache 2.0 license and are available for download on Hugging Face, reinforcing IBM Research's commitment to open, transparent innovation. The aim is for developers to easily consume these models in real-world, enterprise-grade AI systems.
+
+Across the collection, Granite 4.1 features impressive language model performance in tool calling and instruction following; state-of-the-art transcription accuracy for the Granite speech models; harm detection capabilities delivered via Granite Guardian; and high leaderboard performance for Granite vision in table and chart extraction.
+
+Enterprise AI workflows handle more than just text. Alongside the language models, IBM is releasing updated models across several modalities that commonly appear in end-to-end AI systems.
+
+This expansive release of Granite 4.1 models represents a system-level perspective on the role of foundation models, showing how effective small models fit for purpose can help solve real problems for enterprise. The emphasis is on enabling modular, efficient, and governable AI systems that can move from research to deployment with fewer gaps.
+
+Whether the task requires tool calling, instruction following, harm detection, state-of-the-art transcription accuracy, or table and chart extraction, Granite 4.1 is designed to serve as a practical foundation for the next generation of enterprise AI applications.
+
+You can try out these models on watsonx and start putting them to work for your enterprise tasks today. Download the models on Hugging Face and check out the models on Granite Playground.

@@ -1,0 +1,3 @@
+Granite Guardian 4.1 is a dedicated model for evaluating risk, policy compliance, and output uncertainty. Rather than acting as a binary filter, Guardian now produces a calibrated uncertainty score, giving downstream users and systems more flexibility in how they respond — whether that means escalation, human review, or automatic mitigation.
+
+Granite Guardian is designed to run with any language model, regardless of whether its weights are open or proprietary. The models are trained under IBM's AI Risk Atlas to flag socially-biased content, hateful, abusive, or profane language, as well as any attempts by users to break through an LLM's safety controls. Previous versions of the model have topped independent benchmarks for evaluating guardrail models.

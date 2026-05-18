@@ -1,0 +1,11 @@
+At the heart of Granite 4.1 is a new generation of dense, decoder-only language models, offered in 3B, 8B, and 30B parameter base and instruct model sizes. Across weight classes, the models significantly outperform similarly sized Granite 4.0 language models. The new Granite 4.1 8B instruct model consistently matches or outperforms the Granite 4.0 32B Mixture-of-Experts model, while using a simpler and more flexible architecture for fine-tuning for downstream tasks. These models also perform competitively with other open-source, dense, decoder-only models on the market today, including the most recent Gemma and Qwen models, with thinking disabled, in two important metrics for enterprise use: instruction following and tool calling.
+
+In enterprise settings, token costs and speed are often as important as raw performance. That is why turning to less expensive, non-reasoning models with strong benchmark performance for tasks like instruction following and tool calling makes sense for enterprise users.
+
+The Granite 4.1 models are trained on approximately 15 trillion tokens across multiple phases, beginning with broad pre-training and progressively annealing toward higher-quality, technical, scientific and mathematical data focused on instruction following. The models support context lengths of up to 512K tokens, enabling them to work through long documents without any performance hit on shorter-context tasks.
+
+After pre-training, the models are refined through supervised fine-tuning and a multi-stage reinforcement learning (RL) pipeline. Each RL phase targets a distinct capability — instruction adherence, conversational quality, factual accuracy, or mathematical reasoning — helping avoid the trade-offs often introduced in single-stage optimization.
+
+"Granite 4.1 delivers competitive instruction-following and tool-calling performance without relying on long chains of thought, offering predictable latency, stable token usage, and lower operational cost," said Rameswar Panda, a distinguished engineer at IBM Research and the key architect of the Granite language models.
+
+All Granite 4.1 models are released under an Apache 2.0 license and are available for download on Hugging Face.

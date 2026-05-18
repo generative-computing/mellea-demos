@@ -121,7 +121,7 @@ All settings are in `.env` (see `.env.example`).
 | `VLLM_SPEECH_BEARER_TOKEN` | `token-abc123` | Bearer token sent to the vLLM speech endpoint |
 | `STT_KEYWORD_BIAS` | `Granite,Mellea` | Comma-separated terms appended to the STT prompt to bias transcription |
 | `TTS_VOICE` | `bf_emma` | Kokoro voice ID |
-| `PROMPT_FILE` | _(unset)_ | Path to a text file whose contents are prepended to the default system/instruct prompts. |
+| `PROMPT_FILE` | _(unset)_ | Path to a text file whose contents replace the default system prompt. See `prompts/granite.txt` for the persona used in the THINK 2026 demo. |
 | `DOCUMENTS_DIR` | _(unset)_ | Directory of `.txt` files loaded at import time as Mellea `Document` objects and injected into the system prompt inside `<documents>` tags for grounded answers. |
 
 ## Granite Switch and Best-of-N validation
