@@ -57,7 +57,7 @@ logger = logging.getLogger(__name__)
 HOST = os.environ.get("HOST", "localhost")
 PORT = int(os.environ.get("PORT", "7860"))
 TTS_BACKEND = os.environ.get("TTS_BACKEND", "kokoro")
-TTS_VOICE = os.environ.get("TTS_VOICE", "bf_emma")
+TTS_VOICE = os.environ.get("TTS_VOICE", "af_aoede")
 
 pcs_map: Dict[str, SmallWebRTCConnection] = {}
 active_sessions: Dict[str, Dict[str, Any]] = {}
