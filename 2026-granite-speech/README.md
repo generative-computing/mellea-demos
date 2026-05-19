@@ -6,7 +6,7 @@ A template for building real-time voice agents — speech in, validated language
 Browser mic → WebRTC → Silero VAD → Granite Speech STT → Mellea LLM (via Granite Switch) → Kokoro TTS → WebRTC → Browser speaker
 ```
 
-STT is [IBM Granite Speech 4.1 2B](https://huggingface.co/ibm-granite/granite-speech-4.1-2b) served by vLLM. The LLM is [IBM Granite Switch 4.1 3B](https://huggingface.co/ibm-granite/granite-switch-4.1-3b-preview), also served by vLLM — it exposes `requirement_check` ALoRA intrinsics that power the Best-of-N validation path (any other OpenAI-compatible server works if you don't need that path; point `LLM_URL` / `LLM_MODEL` at it). TTS is Kokoro running locally.
+STT is [IBM Granite Speech 4.1 2B](https://huggingface.co/ibm-granite/granite-speech-4.1-2b) served by vLLM. The LLM is [IBM Granite Switch 4.1 3B](https://huggingface.co/ibm-granite/granite-switch-4.1-3b-preview), also served by vLLM — it exposes `requirement_check` ALoRA intrinsics that power the Best-of-N validation path (any other OpenAI-compatible server works if you don't need that path; point `LLM_URL` / `LLM_MODEL` at it). TTS is Kokoro running locally by default; set `TTS_BACKEND=hosted` to call a remote HTTP TTS server instead (POST `{"text": "..."}` → streamed raw PCM at `HOSTED_TTS_SAMPLE_RATE`).
 
 ## Try it without GPUs — run in Colab
 
@@ -134,7 +134,11 @@ All settings are in `.env` (see `.env.example`).
 | `VLLM_SPEECH_PATH` | `/v1/chat/completions` | Path on the vLLM server for audio-in chat completions |
 | `VLLM_SPEECH_BEARER_TOKEN` | `token-abc123` | Bearer token sent to the vLLM speech endpoint |
 | `STT_KEYWORD_BIAS` | `Granite,Mellea` | Comma-separated terms appended to the STT prompt to bias transcription |
-| `TTS_VOICE` | `bf_emma` | Kokoro voice ID |
+| `TTS_BACKEND` | `kokoro` | TTS backend: `kokoro` (local) or `hosted` (remote HTTP server) |
+| `TTS_VOICE` | `bf_emma` | Kokoro voice ID (used when `TTS_BACKEND=kokoro`) |
+| `HOSTED_TTS_URL` | `http://localhost:8086` | Base URL of the remote TTS server (used when `TTS_BACKEND=hosted`) |
+| `HOSTED_TTS_PATH` | `/synth` | Path on the remote TTS server that accepts `POST {"text": "..."}` and streams raw PCM back |
+| `HOSTED_TTS_SAMPLE_RATE` | `24000` | Sample rate of the PCM audio returned by the hosted TTS server |
 | `PROMPT_FILE` | _(unset)_ | Path to a text file whose contents replace the default system prompt. See `prompts/granite.txt` for the persona used in the THINK 2026 demo. |
 | `DOCUMENTS_DIR` | _(unset)_ | Directory of `.txt` files loaded at import time as Mellea `Document` objects and injected into the system prompt inside `<documents>` tags for grounded answers. |
 
@@ -176,6 +180,7 @@ Requirement set, labels, instructions, and thresholds all live in `IVR_REQUIREME
 src/granite_speech_demo/
 ├── server.py          # FastAPI + SmallWebRTC signaling + pipeline wiring
 ├── hosted_stt.py      # HostedSTTService — streams audio to the vLLM Granite Speech endpoint
+├── hosted_tts.py      # HostedTTSService — POSTs text to a remote TTS server, streams PCM back
 └── mellea_llm.py      # MelleaLLMService — streaming path + Best-of-N IVR validation path, document loading
 
 frontend/              # Next.js app (Carbon Design System, IBM Plex fonts)

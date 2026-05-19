@@ -37,6 +37,7 @@ from pipecat.transports.smallwebrtc.connection import IceServer, SmallWebRTCConn
 from pipecat.transports.smallwebrtc.transport import SmallWebRTCTransport
 
 from granite_speech_demo.hosted_stt import HostedSTTService
+from granite_speech_demo.hosted_tts import HostedTTSService
 from granite_speech_demo.mellea_llm import (
     BEST_OF_N,
     IVR_REQUIREMENT_LABELS,
@@ -55,6 +56,7 @@ logger = logging.getLogger(__name__)
 
 HOST = os.environ.get("HOST", "localhost")
 PORT = int(os.environ.get("PORT", "7860"))
+TTS_BACKEND = os.environ.get("TTS_BACKEND", "kokoro")
 TTS_VOICE = os.environ.get("TTS_VOICE", "bf_emma")
 
 pcs_map: Dict[str, SmallWebRTCConnection] = {}
@@ -119,10 +121,15 @@ async def run_bot(webrtc_connection: SmallWebRTCConnection, session_config: dict
     )
 
     stt = HostedSTTService()
-    tts = KokoroTTSService(
-        settings=KokoroTTSService.Settings(voice=TTS_VOICE),
-        text_aggregation_mode=TextAggregationMode.SENTENCE,
-    )
+    if TTS_BACKEND == "hosted":
+        tts = HostedTTSService(
+            text_aggregation_mode=TextAggregationMode.SENTENCE,
+        )
+    else:
+        tts = KokoroTTSService(
+            settings=KokoroTTSService.Settings(voice=TTS_VOICE),
+            text_aggregation_mode=TextAggregationMode.SENTENCE,
+        )
 
     ivr_validation = (session_config or {}).get("ivr_validation")
     llm = MelleaLLMService(ivr_validation=ivr_validation)
