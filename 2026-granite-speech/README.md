@@ -8,22 +8,6 @@ Browser mic → WebRTC → Silero VAD → Granite Speech STT → Mellea LLM (via
 
 STT is [IBM Granite Speech 4.1 2B](https://huggingface.co/ibm-granite/granite-speech-4.1-2b) served by vLLM. The LLM is [IBM Granite Switch 4.1 3B](https://huggingface.co/ibm-granite/granite-switch-4.1-3b-preview), also served by vLLM — it exposes `requirement_check` ALoRA intrinsics that power the Best-of-N validation path (any other OpenAI-compatible server works if you don't need that path; point `LLM_URL` / `LLM_MODEL` at it). TTS is Kokoro running locally by default; set `TTS_BACKEND=hosted` to call a remote HTTP TTS server instead (POST `{"text": "..."}` → streamed raw PCM at `HOSTED_TTS_SAMPLE_RATE`).
 
-## Try it without GPUs — run in Colab
-
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/generative-computing/mellea-demos/blob/main/2026-granite-speech/colab/granite_speech_demo.ipynb)
-
-The whole stack — both vLLM model servers, the Pipecat backend, and the Next.js frontend — runs in a single Colab notebook. Hit **Runtime → Run all**, wait for the last cell to print a `*.trycloudflare.com` URL, open it, allow mic access, talk.
-
-Caveats, since there's no free lunch:
-
-- **Colab Pro** for the GPU. A100 recommended; L4 works; T4 will OOM (both Granite models won't fit).
-- **A free HuggingFace read token**, added as a Colab Secret named `HF_TOKEN`. Used for model downloads and to mint per-session WebRTC TURN credentials (the relay is what lets browser audio reach a Colab runtime that has no public IP).
-- **~8–10 min cold start** the first time (model downloads dominate); ~3 min on subsequent runs with weights cached.
-- **24-hour kernel cap** and idle timeout — you'll get a fresh URL each session.
-- The public URL has no auth. Anyone with the link can join.
-
-Notebook source: [`colab/granite_speech_demo.ipynb`](colab/granite_speech_demo.ipynb).
-
 ## Generation modes
 
 By default, LLM tokens stream straight through to TTS sentence-by-sentence for low latency.
