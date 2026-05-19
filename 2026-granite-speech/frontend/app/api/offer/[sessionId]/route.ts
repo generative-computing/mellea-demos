@@ -2,18 +2,18 @@ import { NextRequest, NextResponse } from 'next/server';
 
 const BACKEND_URL = process.env.PIPECAT_BACKEND_URL || 'http://127.0.0.1:7860';
 
-export async function POST(
+async function proxy(
   request: NextRequest,
-  { params }: { params: Promise<{ sessionId: string }> }
+  sessionId: string,
+  method: 'POST' | 'PATCH',
 ) {
   try {
-    const { sessionId } = await params;
     const body = await request.text();
 
     const response = await fetch(
       `${BACKEND_URL}/sessions/${sessionId}/api/offer`,
       {
-        method: 'POST',
+        method,
         headers: { 'Content-Type': 'application/json' },
         body,
       }
@@ -30,10 +30,26 @@ export async function POST(
     const data = await response.json();
     return NextResponse.json(data);
   } catch (error) {
-    console.error('Pipecat offer proxy error:', error);
+    console.error(`Pipecat offer proxy error (${method}):`, error);
     return NextResponse.json(
       { error: 'Failed to negotiate WebRTC offer' },
       { status: 502 }
     );
   }
+}
+
+export async function POST(
+  request: NextRequest,
+  { params }: { params: Promise<{ sessionId: string }> }
+) {
+  const { sessionId } = await params;
+  return proxy(request, sessionId, 'POST');
+}
+
+export async function PATCH(
+  request: NextRequest,
+  { params }: { params: Promise<{ sessionId: string }> }
+) {
+  const { sessionId } = await params;
+  return proxy(request, sessionId, 'PATCH');
 }
