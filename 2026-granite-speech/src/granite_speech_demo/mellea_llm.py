@@ -265,7 +265,18 @@ class MelleaLLMService(LLMService):
             base_url=LLM_URL,
             api_key=LLM_API_KEY,
         )
-        self._backend.register_embedded_adapter_model(LLM_MODEL)
+        # register_embedded_adapter_model is only on mellea main, not in the
+        # 0.4.2 release. It's needed for the Best-of-N IVR validation path
+        # (requirement_check ALoRA intrinsics on Granite Switch). The streaming
+        # path works without it. Skip if the method isn't available.
+        if hasattr(self._backend, "register_embedded_adapter_model"):
+            self._backend.register_embedded_adapter_model(LLM_MODEL)
+        else:
+            logger.warning(
+                "mellea backend has no register_embedded_adapter_model — "
+                "Best-of-N IVR validation will be unavailable. Upgrade mellea to "
+                "the unreleased main branch to enable it."
+            )
 
     async def process_frame(self, frame: Frame, direction: FrameDirection):
         await super().process_frame(frame, direction)
