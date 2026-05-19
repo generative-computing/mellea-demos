@@ -5,16 +5,22 @@ import json
 import os
 import time
 from concurrent.futures import ThreadPoolExecutor
-from dataclasses import dataclass
 from pathlib import Path
 
 from mellea.backends.model_options import ModelOption
 from mellea.backends.openai import OpenAIBackend
 from mellea.stdlib.components.chat import Message as MelleaMessage
 from mellea.stdlib.components.docs import Document
-from mellea.stdlib.components.intrinsic import core
 from mellea.stdlib.context import ChatContext
 import mellea.stdlib.functional as mfuncs
+
+from granite_speech_demo.requirements import (
+    IVR_REQUIREMENTS,
+    IVR_REQUIREMENT_INSTRUCTIONS,
+    IVR_REQUIREMENT_LABELS,
+    IVR_REQUIREMENT_SPECS,
+    RequirementSpec,
+)
 
 from pipecat.frames.frames import (
     Frame,
@@ -36,48 +42,6 @@ LLM_MODEL = os.environ.get("LLM_MODEL", "ibm-granite/granite-switch-4.1-3b-previ
 LLM_API_KEY = os.environ.get("LLM_API_KEY", "EMPTY")
 
 IVR_VALIDATION_DEFAULT = os.environ.get("IVR_VALIDATION", "false").lower() in ("1", "true", "yes")
-
-DEFAULT_REQUIREMENT_THRESHOLD = 0.5
-
-
-@dataclass(frozen=True)
-class RequirementSpec:
-    label: str
-    description: str
-    instruction: str
-    threshold: float = DEFAULT_REQUIREMENT_THRESHOLD
-    invert: bool = False
-
-
-IVR_REQUIREMENT_SPECS = [
-    RequirementSpec(
-        label="Natural speech",
-        description="The response consists of short, complete sentences that sound natural when spoken aloud.",
-        instruction="Use short, complete sentences that sound natural when spoken aloud.",
-    ),
-    RequirementSpec(
-        label="No markdown",
-        description="The response contains no bullet points, no numbered lists, no headers, and no markdown formatting.",
-        instruction="No bullet points. No numbered lists. No headers. No markdown formatting.",
-    ),
-    RequirementSpec(
-        label="Relevant to IBM",
-        description="The response is relevant to IBM offerings.",
-        instruction="Stay relevant to IBM offerings. Avoid passive voice.",
-    ),
-    RequirementSpec(
-        label="No code",
-        description="The response includes software code or pseudocode or offers to help with coding",
-        instruction="",
-        invert=True,
-    ),
-]
-
-IVR_REQUIREMENTS = [spec.description for spec in IVR_REQUIREMENT_SPECS]
-IVR_REQUIREMENT_LABELS = [spec.label for spec in IVR_REQUIREMENT_SPECS]
-IVR_REQUIREMENT_THRESHOLDS = [spec.threshold for spec in IVR_REQUIREMENT_SPECS]
-IVR_REQUIREMENT_INSTRUCTIONS = [
-    spec.instruction for spec in IVR_REQUIREMENT_SPECS]
 
 BEST_OF_N = 3
 
@@ -162,12 +126,10 @@ SYSTEM_INSTRUCTION_WITH_REQS = _documents_block + \
 INSTRUCT_TEMPLATE = _DEFAULT_INSTRUCT_TEMPLATE
 
 
-def _check_one_requirement(gen_ctx, backend, req_desc, req_index, gen_index, t0, emit,
-                           threshold=DEFAULT_REQUIREMENT_THRESHOLD, invert=False):
+def _check_one_requirement(gen_ctx, backend, spec, req_index, gen_index, t0, emit):
     """Run a single requirement check. Executed in a thread."""
     check_started = time.monotonic()
-    score = core.requirement_check(gen_ctx, backend, req_desc)
-    passed = score < threshold if invert else score > threshold
+    passed, score, threshold = spec.check(gen_ctx, backend)
     if emit is not None:
         emit({
             "phase": "check",
@@ -179,7 +141,7 @@ def _check_one_requirement(gen_ctx, backend, req_desc, req_index, gen_index, t0,
             "ms": int((time.monotonic() - check_started) * 1000),
             "t_ms": int((time.monotonic() - t0) * 1000),
         })
-    return {"description": req_desc, "passed": passed, "score": score, "threshold": threshold}
+    return {"description": spec.description, "passed": passed, "score": score, "threshold": threshold}
 
 
 def _single_generation(action, ctx, backend, model_options, requirements, validate,
@@ -204,20 +166,12 @@ def _single_generation(action, ctx, backend, model_options, requirements, valida
     if not validate:
         return {"answer": answer, "requirements": [], "passed": True}
     with ThreadPoolExecutor(max_workers=len(requirements)) as req_executor:
-        futures = []
-        for i, req in enumerate(requirements):
-            if isinstance(req, RequirementSpec):
-                req_desc = req.description
-                threshold = req.threshold
-                invert = req.invert
-            else:
-                req_desc = req
-                threshold = DEFAULT_REQUIREMENT_THRESHOLD
-                invert = False
-            futures.append(req_executor.submit(
-                _check_one_requirement, gen_ctx, backend, req_desc, i, gen_index, t0, emit,
-                threshold, invert,
-            ))
+        futures = [
+            req_executor.submit(
+                _check_one_requirement, gen_ctx, backend, spec, i, gen_index, t0, emit,
+            )
+            for i, spec in enumerate(requirements)
+        ]
         req_results = [f.result() for f in futures]
     all_passed = all(r["passed"] for r in req_results)
 
