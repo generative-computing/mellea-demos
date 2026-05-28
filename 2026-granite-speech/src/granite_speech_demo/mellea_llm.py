@@ -41,7 +41,7 @@ LLM_URL = os.environ.get("LLM_URL", "http://localhost:8000/v1")
 LLM_MODEL = os.environ.get("LLM_MODEL", "ibm-granite/granite-switch-4.1-3b-preview")
 LLM_API_KEY = os.environ.get("LLM_API_KEY", "EMPTY")
 
-IVR_VALIDATION_DEFAULT = os.environ.get("IVR_VALIDATION", "false").lower() in ("1", "true", "yes")
+IVR_VALIDATION_DEFAULT = os.environ.get("IVR_VALIDATION", "true").lower() in ("1", "true", "yes")
 
 BEST_OF_N = 3
 

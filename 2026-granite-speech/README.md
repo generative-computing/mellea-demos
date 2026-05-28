@@ -113,6 +113,7 @@ All settings are in `.env` (see `.env.example`).
 | `LLM_URL` | `http://localhost:8000/v1` | OpenAI-compatible LLM endpoint (default is vLLM serving Granite Switch) |
 | `LLM_MODEL` | `ibm-granite/granite-switch-4.1-3b-preview` | Chat model ID |
 | `LLM_API_KEY` | _(unset)_ | API key for the LLM endpoint. Not required for local vLLM; set as needed for other backends. |
+| `IVR_VALIDATION` | `true` | Default state of the Best-of-N validation path for new sessions. Set to `false` to start sessions on the streaming path instead. The frontend toggle still flips it at runtime. |
 | `VLLM_SPEECH_URL` | `http://localhost:8083` | vLLM endpoint hosting the Granite Speech model |
 | `VLLM_SPEECH_MODEL` | `ibm-granite/granite-speech-4.1-2b` | Speech model ID passed in the chat/completions payload |
 | `VLLM_SPEECH_PATH` | `/v1/chat/completions` | Path on the vLLM server for audio-in chat completions |
@@ -136,7 +137,7 @@ This repo is a template. The Granite assistant is the included example, but the 
 
 ## Granite Switch and Best-of-N validation
 
-[Granite Switch](https://github.com/generative-computing/granite-switch) is a Granite variant that ships with `requirement_check` ALoRA intrinsics — classifier heads that score a candidate answer against a natural-language requirement. Because Switch is the default LLM, the demo can run a **Best-of-N IVR validation** path that generates several candidates in parallel, scores each against a fixed requirement set, and speaks the first passing answer. The IVR toggle in the frontend turns this on per-session — it's off by default so the baseline turn latency stays low.
+[Granite Switch](https://github.com/generative-computing/granite-switch) is a Granite variant that ships with `requirement_check` ALoRA intrinsics — classifier heads that score a candidate answer against a natural-language requirement. Because Switch is the default LLM, the demo can run a **Best-of-N IVR validation** path that generates several candidates in parallel, scores each against a fixed requirement set, and speaks the first passing answer. It's on by default; the IVR toggle in the frontend flips it per-session, or set `IVR_VALIDATION=false` to default to the streaming path instead.
 
 ### Requirements scored per turn
 

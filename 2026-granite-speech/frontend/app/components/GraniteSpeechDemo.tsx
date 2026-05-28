@@ -50,7 +50,7 @@ const INTRINSICS = [
 ];
 
 export default function GraniteSpeechDemo() {
-  const [activeIntrinsic, setActiveIntrinsic] = useState<string | null>(null);
+  const [activeIntrinsic, setActiveIntrinsic] = useState<string | null>('intrinsic1');
   
   const ivrValidationRef = useRef(activeIntrinsic === 'intrinsic1');
   ivrValidationRef.current = activeIntrinsic === 'intrinsic1';
