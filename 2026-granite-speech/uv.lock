@@ -562,7 +562,7 @@ wheels = [
 
 [[package]]
 name = "cpex"
-version = "0.1.0.dev11"
+version = "0.1.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "fastapi" },
@@ -570,15 +570,16 @@ dependencies = [
     { name = "jinja2" },
     { name = "mcp" },
     { name = "orjson" },
+    { name = "packaging" },
     { name = "prometheus-client" },
     { name = "prometheus-fastapi-instrumentator" },
     { name = "pydantic" },
     { name = "pydantic-settings" },
     { name = "pyyaml" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/84/4c/c462d23f98b7b388dd6642d71702f5f47d120c0df471a22add22ad99fe69/cpex-0.1.0.dev11.tar.gz", hash = "sha256:c7c30650fd49fdae7ec67f46c1d57486db090ae79ec39a6ed2f8ed990b78f6e5", size = 754645, upload-time = "2026-04-13T21:02:26.901Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/fe/73/98eb3322c63fe8654e3db87b13557aff75eaeecf35aabb129901e5c7704e/cpex-0.1.0.tar.gz", hash = "sha256:d67fdb2892bb9c683d42c716be46d926fbb01b9f4c3d85d2cdf0869d7a0f2d0e", size = 1211837, upload-time = "2026-05-05T19:17:15.387Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/1f/5e/d051f25b6bb2241f61f710ef0a127cbdd4b8ca2612d8b777d4164347e1f6/cpex-0.1.0.dev11-py3-none-any.whl", hash = "sha256:c34d23f16191744e98415cdf850d981e377399a2d802abda565c276f217ae380", size = 167516, upload-time = "2026-04-13T21:02:25.687Z" },
+    { url = "https://files.pythonhosted.org/packages/e2/15/c1a98af9dca602846373a07dd09b3944f6e2fceee132df58772acc057d66/cpex-0.1.0-py3-none-any.whl", hash = "sha256:890db8077e05aedf8236b1ff140f39b677944a751afe57de6538faf884d64d4a", size = 241015, upload-time = "2026-05-05T19:17:13.614Z" },
 ]
 
 [[package]]
@@ -1247,7 +1248,7 @@ requires-dist = [
     { name = "aiohttp", specifier = ">=3.9" },
     { name = "fastapi", specifier = ">=0.115" },
     { name = "httpx", specifier = ">=0.27" },
-    { name = "mellea", extras = ["all"], specifier = ">=0.4.1" },
+    { name = "mellea", extras = ["all"], specifier = ">=0.6.0" },
     { name = "pipecat-ai", extras = ["webrtc", "kokoro", "silero"] },
     { name = "python-dotenv", specifier = ">=1.0" },
     { name = "uvicorn", specifier = ">=0.32" },
@@ -2108,13 +2109,13 @@ wheels = [
 
 [[package]]
 name = "mellea"
-version = "0.4.2"
+version = "0.6.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "click" },
     { name = "jinja2" },
     { name = "math-verify" },
     { name = "mistletoe" },
+    { name = "nltk" },
     { name = "ollama" },
     { name = "openai" },
     { name = "packaging" },
@@ -2123,11 +2124,10 @@ dependencies = [
     { name = "pyyaml" },
     { name = "requests" },
     { name = "rouge-score" },
-    { name = "typer" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/2f/41/210d0842847c2977ae26834f3f93ea824a3faeaa2b516315131dfaec672a/mellea-0.4.2.tar.gz", hash = "sha256:054fb4d4082674fa23482f705639d2ee19ddc4d241ffc6834944066b0a9e139d", size = 3977799, upload-time = "2026-04-08T20:20:16.012Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/4a/d5/90cad0dfc7b47bdfbe40eaad56d03845355592afd02b70e28409fd2de062/mellea-0.6.0.tar.gz", hash = "sha256:d1ef5873f28a66ee44448737ce270ac98dc50e57d0a3582fe102d598f5490ebc", size = 4316534, upload-time = "2026-05-19T20:52:13.505Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/a9/9c/a163fb82851bf81a1f0ede0851786bfa9f1bf6bdb8cad8e79d87ac15973a/mellea-0.4.2-py3-none-any.whl", hash = "sha256:cf31ecb897b49767069f5e2fbd09834148d99a322fbc957003a262269eb7de82", size = 4380414, upload-time = "2026-04-08T20:20:13.879Z" },
+    { url = "https://files.pythonhosted.org/packages/76/dd/2307b937f22a79ee569a8cc648560476064b13f14d23601ef715a961b912/mellea-0.6.0-py3-none-any.whl", hash = "sha256:8e9fcefc1aa571df88aa726174e8e94f13a24fc97280aafc9954d227edad8b7d", size = 4806315, upload-time = "2026-05-19T20:52:11.378Z" },
 ]
 
 [package.optional-dependencies]
@@ -2140,12 +2140,15 @@ all = [
     { name = "elasticsearch" },
     { name = "fastapi" },
     { name = "grpcio" },
+    { name = "httpx" },
     { name = "huggingface-hub" },
     { name = "ibm-watsonx-ai" },
     { name = "langchain-core" },
     { name = "litellm" },
     { name = "llguidance" },
     { name = "llm-sandbox", extra = ["docker"] },
+    { name = "mcp" },
+    { name = "omegaconf" },
     { name = "opencv-python-headless" },
     { name = "opentelemetry-api" },
     { name = "opentelemetry-distro" },
@@ -2158,6 +2161,7 @@ all = [
     { name = "smolagents" },
     { name = "transformers" },
     { name = "trl" },
+    { name = "typer" },
     { name = "uvicorn" },
     { name = "xgrammar" },
 ]
